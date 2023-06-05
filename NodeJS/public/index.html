@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    /* Global styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Header styles */
+    .header {
+      background-color: #f90;
+      padding: 16px;
+      color: #fff;
+    }
+
+    /* Main content styles */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 16px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 16px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #f90;
+    }
+
+    .state {
+      color: #666;
+    }
+
+    .power {
+      color: #999;
+    }
+
+    .value {
+      color: #f90;
+    }
+
+    .slider-container {
+      margin-top: 16px;
+    }
+
+    .slider {
+      width: 100%;
+    }
+
+    .slider-value {
+      font-weight: bold;
+      color: #666;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Dashboard</h1>
+  </header>
+
+  <main class="container">
+    <form id="fixtureForm">
+      <label for="fixtureId">Fixture ID:</label>
+      <input type="text" id="fixtureId" name="fixtureId" required>
+      <label for="fixtureState">Fixture State:</label>
+      <input type="text" id="fixtureState" name="fixtureState" required>
+      <label for="fixturePower">Fixture Power (W):</label>
+      <input type="number" id="fixturePower" name="fixturePower" required>
+      <button type="submit">Add Fixture</button>
+    </form>
+
+    <div class="dashboard"></div>
+  </main>
+
+  <script>
+    const wsFixtures = new WebSocket('ws://localhost:8080/fixtures');
+    const wsIncoming = new WebSocket('ws://localhost:3000/incoming');
+
+    wsFixtures.addEventListener('message', handleFixturesMessage);
+
+    // Function to handle incoming fixture data
+    function handleFixturesMessage(event) {
+      const fixtures = JSON.parse(event.data);
+      updateFixtureCards(fixtures);
+    }
+
+    // Function to update fixture cards
+    function updateFixtureCards(fixtures) {
+      const dashboard = document.querySelector('.dashboard');
+      dashboard.innerHTML = '';
+
+      fixtures.forEach((fixture) => {
+        const card = createFixtureCard(fixture);
+        dashboard.appendChild(card);
+      });
+    }
+
+    // Function to create a fixture card
+    function createFixtureCard(fixture) {
+      const card = document.createElement('div');
+      card.classList.add('card');
+      card.dataset.id = fixture.id;
+
+      const title = document.createElement('h2');
+      title.textContent = `Fixture ${fixture.id}`;
+      card.appendChild(title);
+
+      const stateElem = document.createElement('p');
+      stateElem.classList.add('state');
+      stateElem.textContent = `State: ${fixture.state}`;
+      card.appendChild(stateElem);
+
+      const powerElem = document.createElement('p');
+      powerElem.classList.add('power');
+      powerElem.textContent = `Power: ${fixture.power}W`;
+      card.appendChild(powerElem);
+
+      const valueElem = document.createElement('p');
+      valueElem.classList.add('value');
+      valueElem.textContent = `Value: ${fixture.value}%`;
+      card.appendChild(valueElem);
+
+      const sliderContainer = document.createElement('div');
+      sliderContainer.classList.add('slider-container');
+
+      const slider = document.createElement('input');
+      slider.type = 'range';
+      slider.min = '0';
+      slider.max = '100';
+      slider.value = fixture.value;
+      slider.classList.add('slider');
+      slider.dataset.id = fixture.id;
+      slider.addEventListener('input', handleSliderInput);
+      sliderContainer.appendChild(slider);
+
+      const sliderValue = document.createElement('span');
+      sliderValue.classList.add('slider-value');
+      sliderValue.textContent = `${fixture.value}%`;
+      sliderContainer.appendChild(sliderValue);
+
+      card.appendChild(sliderContainer);
+
+      return card;
+    }
+
+    // Function to handle slider input
+    function handleSliderInput(event) {
+      const id = event.target.dataset.id;
+      const value = event.target.value;
+
+      const valueElem = event.target.nextElementSibling;
+      valueElem.textContent = `${value}%`;
+
+      const message = JSON.stringify({ id, value });
+      wsIncoming.send(message);
+    }
+
+    // Function to handle form submission
+    document.getElementById('fixtureForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const form = event.target;
+      const fixtureId = form.elements.fixtureId.value;
+      const fixtureState = form.elements.fixtureState.value;
+      const fixturePower = form.elements.fixturePower.value;
+
+      const fixture = {
+        id: fixtureId,
+        state: fixtureState,
+        power: fixturePower,
+        value: 0
+      };
+
+      const card = createFixtureCard(fixture);
+      const dashboard = document.querySelector('.dashboard');
+      dashboard.appendChild(card);
+
+      form.reset();
+
+      const message = JSON.stringify(fixture);
+      wsFixtures.send(message);
+    });
+  </script>
+</body>
+</html>

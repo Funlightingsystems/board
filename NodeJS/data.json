@@ -1,0 +1,20 @@
+[
+  {
+    "id": "fixture1",
+    "state": "On",
+    "power": 50,
+    "value": 0
+  },
+  {
+    "id": "fixture2",
+    "state": "Off",
+    "power": 30,
+    "value": 0
+  },
+  {
+    "id": "fixture3",
+    "state": "On",
+    "power": 60,
+    "value": 0
+  }
+]
