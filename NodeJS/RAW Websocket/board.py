@@ -35,7 +35,7 @@ async def send_data(websocket, path):
 
 def start_server():
     asyncio.get_event_loop().run_until_complete(
-        websockets.serve(send_data, 'localhost', 8765)  # Replace 'localhost' with your desired server IP
+        websockets.serve(send_data, 'localhost', 8080)  # Replace 'localhost' with your desired server IP
     )
     asyncio.get_event_loop().run_forever()
 
