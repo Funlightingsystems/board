@@ -5,6 +5,9 @@ Use the "Open folder" option in the unity hub, the folder containing the 'game' 
 # i do know why i made this
 ## you can take the code if you want, idc. and laugh at my pathetic-ness
 
+## A comic strip for your enjoyment, many to annoy @thejades. Thx for being so overkill sometimes
+
+![A comic strip about sonething stupid](https://cdn.discordapp.com/attachments/1112763060998914192/1120437506295476354/standards.png)
 # HEY! I noticed something 'fun' 
 ## Haha, fun... get it? nope. Nevermind.
 
