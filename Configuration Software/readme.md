@@ -44,7 +44,9 @@ OK
 ```
 
 <br>
-If inputting the lighting data is too hard, an up to date version of the configuration file will be posted from time to time, this WILL overwrite your current data if you chose to update. Do this carefully. Backup any data you want to keep. To update you can run the command ``` git clone http://github.com/funlightingsystems/board.git ``` from the directory immediatly outside of the directory called board.
+If inputting the lighting data is too hard, an up to date version of the configuration file will be posted from time to time, this WILL overwrite your current data if you chose to update. Do this carefully. Backup any data you want to keep. To update you can run the command 
+``` git clone http://github.com/funlightingsystems/board.git ``` 
+from the directory immediatly outside of the directory called board.
 
 Thanks for reading this mouthful of stuff!
 
