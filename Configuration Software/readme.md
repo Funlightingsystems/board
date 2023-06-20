@@ -29,11 +29,13 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }' http://localhost:3000/lights/1111
 ```
 Before running the command please ensure that for optimal results you run it all on the same line like so.
-```curl -X POST -H "Content-Type: application/json" -d '{"serialNumber": 1234, "patch": "D1, A1", "colour": "RGB", "type": "SomeType"}' http://localhost:3000/lights/1234
+```
+curl -X POST -H "Content-Type: application/json" -d '{"serialNumber": 1234, "patch": "D1, A1", "colour": "RGB", "type": "SomeType"}' http://localhost:3000/lights/1234
 ```
 
 if you are on a windows based powershell command prompt please use this modified command with a simular syntax:
-```curl -X POST -H "Content-Type: application/json" -d "{\"serialNumber\": 1234, \"patch\": \"D1, A1\", \"colour\": \"RGB\", \"type\": \"SomeType\"}" http://localhost:3000/lights/1234
+```
+curl -X POST -H "Content-Type: application/json" -d "{\"serialNumber\": 1234, \"patch\": \"D1, A1\", \"colour\": \"RGB\", \"type\": \"SomeType\"}" http://localhost:3000/lights/1234
 ```
 
 ### If everything went according to plan you should see the output:
@@ -42,7 +44,7 @@ OK
 ```
 
 <br>
-If inputting the lighting data is too hard, an up to date version of the configuration file will be posted from time to time, this WILL overwrite your current data if you chose to update. Do this carefully. Backup any data you want to keep. To update you can run the command `git clone http://github.com/funlightingsystems/board.git` from the directory immediatly outside of the directory called board.
+If inputting the lighting data is too hard, an up to date version of the configuration file will be posted from time to time, this WILL overwrite your current data if you chose to update. Do this carefully. Backup any data you want to keep. To update you can run the command `git clone http://github.com/funlightingsystems/board.git ` from the directory immediatly outside of the directory called board.
 
 Thanks for reading this mouthful of stuff!
 
