@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Light Configuration</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      function saveConfig() {
+        var serialNumber = $('#serialNumber').val();
+        var patch = $('#patch').val();
+        var colour = $('#colour').val();
+
+        var config = {
+          serialNumber: parseInt(serialNumber),
+          patch: patch,
+          colour: colour
+        };
+
+        $.ajax({
+          url: '/lights/' + serialNumber,
+          type: 'POST',
+          data: JSON.stringify(config),
+          contentType: 'application/json',
+          success: function() {
+            alert('Configuration saved successfully.');
+          },
+          error: function(xhr, status, error) {
+            alert('Error saving configuration: ' + error);
+          }
+        });
+      }
+
+      function getConfig() {
+        var serialNumber = $('#serialNumber').val();
+
+        $.ajax({
+          url: '/lights/' + serialNumber,
+          type: 'GET',
+          success: function(data) {
+            $('#patch').val(data.patch);
+            $('#colour').val(data.colour);
+            $('#type').text(data.type);
+          },
+          error: function(xhr, status, error) {
+            alert('Error retrieving configuration: ' + error);
+          }
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Light Configuration</h1>
+    <label for="serialNumber">Serial Number:</label>
+    <input type="text" id="serialNumber" />
+    <br /><br />
+    <label for="type">Type:</label>
+    <div id="type"></div>
+    <br /><br />
+    <label for="patch">Patch:</label>
+    <input type="text" id="patch" />
+    <br /><br />
+    <label for="colour">Colour:</label>
+    <input type="text" id="colour" />
+    <br /><br />
+    <button onclick="saveConfig()">Save</button>
+    <button onclick="getConfig()">Load</button>
+  </body>
+</html>
