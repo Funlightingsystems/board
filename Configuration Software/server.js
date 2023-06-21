@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors'); // Import the cors middleware
 
 const app = express();
 app.use(bodyParser.json());
@@ -31,6 +32,9 @@ function saveConfigurations() {
 
 // Sample data store for configurations
 let configurations = loadConfigurations();
+
+// Enable CORS for all routes
+app.use(cors());
 
 // POST request to save configuration for a specific light
 app.post('/lights/:serialNumber', (req, res) => {

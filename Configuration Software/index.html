@@ -3,6 +3,117 @@
   <head>
     <title>Light Configuration</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      body {
+        background-color: #f9f9f9;
+        color: #333;
+        font-family: Arial, sans-serif;
+      }
+      
+      h1 {
+        color: orange;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      
+      input[type="text"] {
+        width: 200px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+      
+      button {
+        padding: 8px 15px;
+        background-color: orange;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #ff8000;
+      }
+      
+      /* Waffle menu styles */
+      .waffle-menu {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: inline-block;
+        margin-left: 10px;
+      }
+      
+      .waffle-link {
+        text-decoration: none;
+        color: #333;
+        font-size: 20px;
+      }
+      
+      .waffle-menu-icon {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: #ccc;
+        border-radius: 50%;
+      }
+      
+      .waffle-menu-icon:before,
+      .waffle-menu-icon:after {
+        content: "";
+        position: absolute;
+        background-color: #333;
+      }
+      
+      .waffle-menu-icon:before {
+        width: 8px;
+        height: 8px;
+        top: 11px;
+        left: 11px;
+        border-radius: 50%;
+      }
+      
+      .waffle-menu-icon:after {
+        width: 8px;
+        height: 8px;
+        top: 11px;
+        right: 11px;
+        border-radius: 50%;
+      }
+      
+      .waffle-dropdown {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        width: 200px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        display: none;
+      }
+      
+      .waffle-dropdown ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .waffle-dropdown li {
+        padding: 8px;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+      }
+      
+      .waffle-dropdown li:hover {
+        background-color: #f9f9f9;
+      }
+    </style>
     <script>
       function saveConfig() {
         var serialNumber = $('#serialNumber').val();
@@ -16,7 +127,7 @@
         };
 
         $.ajax({
-          url: '/lights/' + serialNumber,
+          url: 'https://example.com/lights/' + serialNumber, // Replace with your desired address
           type: 'POST',
           data: JSON.stringify(config),
           contentType: 'application/json',
@@ -33,7 +144,7 @@
         var serialNumber = $('#serialNumber').val();
 
         $.ajax({
-          url: '/lights/' + serialNumber,
+          url: 'https://example.com/lights/' + serialNumber, // Replace with your desired address
           type: 'GET',
           success: function(data) {
             $('#patch').val(data.patch);
@@ -45,10 +156,32 @@
           }
         });
       }
+      
+      function toggleDropdown() {
+        $('.waffle-dropdown').toggle();
+      }
+      
+      function addApp(app) {
+        // Code to add the selected app
+        alert('App added: ' + app);
+      }
     </script>
   </head>
   <body>
     <h1>Light Configuration</h1>
+    <div class="waffle-menu">
+      <a href="#" class="waffle-link" onclick="toggleDropdown()">
+        <div class="waffle-menu-icon"></div>
+      </a>
+      <div class="waffle-dropdown">
+        <ul>
+          <li onclick="addApp('App 1')">App 1</li>
+          <li onclick="addApp('App 2')">App 2</li>
+          <li onclick="addApp('App 3')">App 3</li>
+          <!-- Add more app options as needed -->
+        </ul>
+      </div>
+    </div>
     <label for="serialNumber">Serial Number:</label>
     <input type="text" id="serialNumber" />
     <br /><br />
