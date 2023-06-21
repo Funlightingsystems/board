@@ -28,7 +28,7 @@
       }
       
       button {
-        padding: 8px 15px;
+        padding: 15px 22px;
         background-color: orange;
         color: #fff;
         border: none;
@@ -127,7 +127,7 @@
         };
 
         $.ajax({
-          url: 'https://example.com/lights/' + serialNumber, // Replace with your desired address
+          url: 'http://10.0.0.169:3000/lights/' + serialNumber, // Update with the lights URL
           type: 'POST',
           data: JSON.stringify(config),
           contentType: 'application/json',
@@ -144,7 +144,7 @@
         var serialNumber = $('#serialNumber').val();
 
         $.ajax({
-          url: 'https://example.com/lights/' + serialNumber, // Replace with your desired address
+          url: 'http://10.0.0.169:3000/lights/' + serialNumber, // Update with the lights URL
           type: 'GET',
           success: function(data) {
             $('#patch').val(data.patch);
@@ -164,6 +164,13 @@
       function addApp(app) {
         // Code to add the selected app
         alert('App added: ' + app);
+      }
+      
+      function downloadConfig() {
+        var downloadLink = document.createElement('a');
+        downloadLink.href = '/configurations.json';
+        downloadLink.download = 'configurations.json';
+        downloadLink.click();
       }
     </script>
   </head>
@@ -196,5 +203,6 @@
     <br /><br />
     <button onclick="saveConfig()">Save</button>
     <button onclick="getConfig()">Load</button>
+    <button onclick="downloadConfig()">Download Config</button>
   </body>
 </html>
