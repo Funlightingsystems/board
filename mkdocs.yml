@@ -1,4 +1,5 @@
 site_name: Board
 nav:
-    - 'index.md'
-    - 'getting-started.md'
+    - 'Home' : 'index.md'
+
+    - 'Configuration Software': 'configuration-software.md'

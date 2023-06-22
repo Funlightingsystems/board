@@ -1,8 +1,59 @@
 # The web based system to configure your lighting system.
-## This system is designed to be as easy to use a possible.
+This system is designed to be as easy to use a possible.
 
-If you are setting up your system for the first time please run this command on a linux-based terminal
+
+## First Run
+Prerequisites:
+1. Have the board, and fixtures.
+2. Know the serial numbers of the fixtures.
+3. Have a linux based device ready for use.
+3.B) A raspberry pi computer works best, just not anything below a pi 3.
+3.C) Must have at least 8gb of free storage, the more the better.
+
+Instructions:
+1. SSH into the computer that you are trying to run the system on, or open up the terminal application.
+2. Type in the command
 ```
+git clone http://github.com/funlightingsystems/board
+```
+or if you are not using the root user (will prompt for password)
+``` 
+sudo git clone http://github.com/funlightingsystems/board
+```
+After running those commands to clone the repo, install the dependencies.
+```
+sudo apt-get update -y && sudo apt-get upgrade -y
+sudo apt-get install nodejs npm -y
+npm install fs ws express
+```
+Once you have installed the required dependencies enter into the directory with the configuration system
+```
+cd board/'Configuration Software'
+```
+To run the system please enter the command:
+```
+node server.js
+```
+
+
+
+
+To view the web portal enter the IP address of the computer followed by :3000, for example if the configuration utility is running on the same machine as the web browser you can enter the ip into our browser as:
+```
+127.0.0.1:3000
+```
+or
+```
+localhost:3000
+```
+If it is on a different device you can access it using the ip address of the device on your local area network (LAN)
+```
+10.0.0.1:3000
+```
+If you are unsure about the IP please check your routers configuration page.
+
+## Configuring
+
 curl -X POST -H "Content-Type: application/json" -d '{
   "serialNumber": SerialNumber,
   "patch": "DIMMER#, A(button)#",
