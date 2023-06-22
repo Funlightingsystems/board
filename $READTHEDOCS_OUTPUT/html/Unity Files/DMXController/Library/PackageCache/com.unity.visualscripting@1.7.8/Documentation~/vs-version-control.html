@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Version control systems &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Version control systems</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="version-control-systems">
+<h1>Version control systems<a class="headerlink" href="#version-control-systems" title="Permalink to this heading">¶</a></h1>
+<p>To avoid any problems with automatically generated files, exclude some Visual Scripting files from your version control solution.</p>
+<p>To exclude files from version control, include a file or configure your settings to specify which files and folders to exclude:</p>
+<ol class="arabic">
+<li><p>Create a new file at the root of your project directory.</p>
+<blockquote>
+<div><p>[!TIP]
+The root of your project directory is at the level above your <strong>Assets</strong> folder.</p>
+</div></blockquote>
+</li>
+<li><p>Name the file based on your chosen version control system:</p>
+<ul class="simple">
+<li><p><strong>Git</strong>: <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>. For more information, see <a class="reference external" href="https://git-scm.com/docs/gitignore">Git’s documentation on gitignore</a>.</p></li>
+<li><p><strong>Unity Collab</strong>: <code class="docutils literal notranslate"><span class="pre">.collabignore</span></code>. For more information, see the <a class="reference external" href="https://docs.unity3d.com/Manual/UnityCollaborateIgnoreFiles.html">Unity User Manual</a>.</p></li>
+<li><p><strong>Subversion</strong>: Ignore the files from your <code class="docutils literal notranslate"><span class="pre">svn:ignore</span></code> property or runtime configuration options. For more information, see Subversion’s documentation on <a class="reference external" href="https://svnbook.red-bean.com/en/1.7/svn.advanced.props.special.ignore.html">Ignoring Unversioned Items</a>.</p></li>
+</ul>
+</li>
+<li><p>Open the file in a text editor.</p></li>
+<li><p>Add the appropriate files or file patterns to your ignore file or configuration. For an example and more information, see <a class="reference internal" href="#ignore-file-template"><span class="xref myst">Ignore file template</span></a>.</p></li>
+</ol>
+<blockquote>
+<div><p>[!NOTE]
+If you have an issue when you try to create a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file on Windows, refer to Microsoft’s documentation on <a class="reference external" href="https://docs.microsoft.com/en-us/azure/devops/repos/git/ignore-files?view=azure-devops&amp;amp;tabs=command-line#create-a-gitignore">how to create a .gitignore file from the command line</a>.</p>
+</div></blockquote>
+<section id="ignore-file-template">
+<h2>Ignore file template<a class="headerlink" href="#ignore-file-template" title="Permalink to this heading">¶</a></h2>
+<p>The following template ignores all core Visual Scripting files, but preserves your project settings and variables. It also includes the standard Unity ignore directives for files that you can exclude from version control. For more information, see the <code class="docutils literal notranslate"><span class="pre">Unity.gitignore</span></code> file included in <a class="reference external" href="https://github.com/github/gitignore/blob/master/Unity.gitignore">GitHub’s gitignore template repository</a>.</p>
+<p>Refer to the comments in the template for which lines to comment or remove.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    # Optionally exclude these transient (generated) files, 
+    # because they can be easily re-generated by the package
+
+    Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
+    Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
+    Assets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers
+    Assets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
+
+    ## Unity
+    # From: https://github.com/github/gitignore/blob/master/Unity.gitignore
+
+    /[Ll]ibrary/
+    /[Tt]emp/
+    /[Oo]bj/
+    /[Bb]uild/
+    /[Bb]uilds/
+    /[Ll]ogs/
+    /[Uu]ser[Ss]ettings/
+
+    # MemoryCaptures can get excessive in size.
+    # They also could contain extremely sensitive data
+    /[Mm]emoryCaptures/
+
+    # Asset meta data should only be ignored when the corresponding asset is also ignored
+    !/[Aa]ssets/**/*.meta
+
+    # Uncomment this line if you want to ignore the asset store tools plugin
+    # /[Aa]ssets/AssetStoreTools*
+
+    # Autogenerated Jetbrains Rider plugin
+    /[Aa]ssets/Plugins/Editor/JetBrains*
+
+    # Visual Studio cache directory
+    .vs/
+
+    # Gradle cache directory
+    .gradle/
+
+    # Autogenerated VS/MD/Consulo solution and project files
+    ExportedObj/
+    .consulo/
+    *.csproj
+    *.unityproj
+    *.sln
+    *.suo
+    *.tmp
+    *.user
+    *.userprefs
+    *.pidb
+    *.booproj
+    *.svd
+    *.pdb
+    *.opendb
+    *.VC.db
+
+    # Unity3D generated meta files
+    *.pidb.meta
+    *.pdb.meta
+    *.mdb.meta
+
+    # Unity3D Generated File On Crash Reports
+    sysinfo.txt
+
+    # Builds
+    *.apk
+    *.aab
+    *.unitypackage
+
+    # Crashlytics generated file
+    crashlytics-build.properties
+
+    # Packed Addressables
+    /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*.*.bin*
+
+    # Temporary auto-generated Android Assets
+    /[Aa]ssets/[Ss]treamingAssets/aa.meta
+    /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+</pre></div>
+</div>
+</section>
+<section id="remove-previously-committed-files">
+<h2>Remove previously committed files<a class="headerlink" href="#remove-previously-committed-files" title="Permalink to this heading">¶</a></h2>
+<p>If you committed any files to a version control solution that you want to exclude:</p>
+<ul class="simple">
+<li><p>See Git’s documentation on <a class="reference external" href="https://git-scm.com/docs/git-rm">the <code class="docutils literal notranslate"><span class="pre">git-rm</span></code> command</a>.</p></li>
+<li><p>See Subversion’s documentation on <a class="reference external" href="https://svnbook.red-bean.com/en/1.6/svn.ref.svn.c.delete.html">the <code class="docutils literal notranslate"><span class="pre">svn</span> <span class="pre">delete</span></code> command</a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Version control systems</a><ul>
+<li><a class="reference internal" href="#ignore-file-template">Ignore file template</a></li>
+<li><a class="reference internal" href="#remove-previously-committed-files">Remove previously committed files</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-version-control.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Version control systems</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

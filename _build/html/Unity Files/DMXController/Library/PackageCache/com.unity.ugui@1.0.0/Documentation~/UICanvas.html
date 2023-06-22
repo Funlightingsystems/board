@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Canvas &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Canvas</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="canvas">
+<h1>Canvas<a class="headerlink" href="#canvas" title="Permalink to this heading">¶</a></h1>
+<p>The <strong>Canvas</strong> is the area that all UI elements should be inside. The Canvas is a Game Object with a Canvas component on it, and all UI elements must be children of such a Canvas.</p>
+<p>Creating a new UI element, such as an Image using the menu <strong>GameObject &gt; UI &gt; Image</strong>, automatically creates a Canvas, if there isn’t already a Canvas in the scene. The UI element is created as a child to this Canvas.</p>
+<p>The Canvas area is shown as a rectangle in the Scene View. This makes it easy to position UI elements without needing to have the Game View visible at all times.</p>
+<p><strong>Canvas</strong> uses the EventSystem object to help the Messaging System.</p>
+<section id="draw-order-of-elements">
+<h2>Draw order of elements<a class="headerlink" href="#draw-order-of-elements" title="Permalink to this heading">¶</a></h2>
+<p>UI elements in the Canvas are drawn in the same order they appear in the Hierarchy. The first child is drawn first, the second child next, and so on. If two UI elements overlap, the later one will appear on top of the earlier one.</p>
+<p>To change which element appear on top of other elements, simply reorder the elements in the Hierarchy by dragging them. The order can also be controlled from scripting by using these methods on the Transform component: SetAsFirstSibling, SetAsLastSibling, and SetSiblingIndex.</p>
+</section>
+<section id="render-modes">
+<h2>Render Modes<a class="headerlink" href="#render-modes" title="Permalink to this heading">¶</a></h2>
+<p>The Canvas has a <strong>Render Mode</strong> setting which can be used to make it render in screen space or world space.</p>
+<section id="screen-space-overlay">
+<h3>Screen Space - Overlay<a class="headerlink" href="#screen-space-overlay" title="Permalink to this heading">¶</a></h3>
+<p>This render mode places UI elements on the screen rendered on top of the scene. If the screen is resized or changes resolution, the Canvas will automatically change size to match this.</p>
+<p><img alt="UI in screen space overlay canvas" src="../../../../../../_images/GUI_Canvas_Screenspace_Overlay.png" /></p>
+</section>
+<section id="screen-space-camera">
+<h3>Screen Space - Camera<a class="headerlink" href="#screen-space-camera" title="Permalink to this heading">¶</a></h3>
+<p>This is similar to <strong>Screen Space - Overlay</strong>, but in this render mode the Canvas is placed a given distance in front of a specified <strong>Camera</strong>. The UI elements are rendered by this camera, which means that the Camera settings affect the appearance of the UI. If the Camera is set to <strong>Perspective</strong>, the UI elements will be rendered with perspective, and the amount of perspective distortion can be controlled by the Camera <strong>Field of View</strong>. If the screen is resized, changes resolution, or the camera frustum changes, the Canvas will automatically change size to match as well.</p>
+<p><img alt="UI in screen space camera canvas" src="../../../../../../_images/GUI_Canvas_Screenspace_Camera.png" /></p>
+</section>
+<section id="world-space">
+<h3>World Space<a class="headerlink" href="#world-space" title="Permalink to this heading">¶</a></h3>
+<p>In this render mode, the Canvas will behave as any other object in the scene. The size of the Canvas can be set manually using its Rect Transform, and UI elements will render in front of or behind other objects in the scene based on 3D placement. This is useful for UIs that are meant to be a part of the world. This is also known as a “diegetic interface”.</p>
+<p><img alt="UI in world space canvas" src="../../../../../../_images/GUI_Canvas_Worldspace.png" /></p>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Canvas</a><ul>
+<li><a class="reference internal" href="#draw-order-of-elements">Draw order of elements</a></li>
+<li><a class="reference internal" href="#render-modes">Render Modes</a><ul>
+<li><a class="reference internal" href="#screen-space-overlay">Screen Space - Overlay</a></li>
+<li><a class="reference internal" href="#screen-space-camera">Screen Space - Camera</a></li>
+<li><a class="reference internal" href="#world-space">World Space</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.ugui@1.0.0/Documentation~/UICanvas.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Canvas</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

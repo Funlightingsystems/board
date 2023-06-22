@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Canvas Scaler &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Canvas Scaler</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="canvas-scaler">
+<h1>Canvas Scaler<a class="headerlink" href="#canvas-scaler" title="Permalink to this heading">¶</a></h1>
+<p>The Canvas Scaler component is used for controlling the overall scale and pixel density of UI elements in the Canvas. This scaling affects everything under the Canvas, including font sizes and image borders.</p>
+<p><img alt="" src="../../../../../../_images/UI_CanvasScalerInspector.png" /></p>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">¶</a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Property:</strong></p></th>
+<th class="head text-left"><p><strong>Function:</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>UI Scale Mode</strong></p></td>
+<td class="text-left"><p>Determines how UI elements in the Canvas are scaled.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>        <strong>Constant Pixel Size</strong></p></td>
+<td class="text-left"><p>Makes UI elements retain the same size in pixels regardless of screen size.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>        <strong>Scale With Screen Size</strong></p></td>
+<td class="text-left"><p>Makes UI elements bigger the bigger the screen is.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>        <strong>Constant Physical Size</strong></p></td>
+<td class="text-left"><p>Makes UI elements retain the same physical size regardless of screen size and resolution.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Settings for Constant Pixel Size:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Property:</strong></p></th>
+<th class="head text-left"><p><strong>Function:</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Scale Factor</strong></p></td>
+<td class="text-left"><p>Scales all UI elements in the Canvas by this factor.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Reference Pixels Per Unit</strong></p></td>
+<td class="text-left"><p>If a sprite has this ‘Pixels Per Unit’ setting, then one pixel in the sprite will cover one unit in the UI.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Settings for Scale With Screen Size:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Property:</strong></p></th>
+<th class="head text-left"><p><strong>Function:</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Reference Resolution</strong></p></td>
+<td class="text-left"><p>The resolution the UI layout is designed for. If the screen resolution is larger, the UI will be scaled up, and if it’s smaller, the UI will be scaled down.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Screen Match Mode</strong></p></td>
+<td class="text-left"><p>A mode used to scale the canvas area if the aspect ratio of the current resolution doesn’t fit the reference resolution.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>        <strong>Match Width or Height</strong></p></td>
+<td class="text-left"><p>Scale the canvas area with the width as reference, the height as reference, or something in between.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>        <strong>Expand</strong></p></td>
+<td class="text-left"><p>Expand the canvas area either horizontally or vertically, so the size of the canvas will never be smaller than the reference.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>        <strong>Shrink</strong></p></td>
+<td class="text-left"><p>Crop the canvas area either horizontally or vertically, so the size of the canvas will never be larger than the reference.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Match</strong></p></td>
+<td class="text-left"><p>Determines if the scaling is using the width or height as reference, or a mix in between.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Reference Pixels Per Unit</strong></p></td>
+<td class="text-left"><p>If a sprite has this ‘Pixels Per Unit’ setting, then one pixel in the sprite will cover one unit in the UI.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Settings for Constant Physical Size:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Property:</strong></p></th>
+<th class="head text-left"><p><strong>Function:</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Physical Unit</strong></p></td>
+<td class="text-left"><p>The physical unit to specify positions and sizes in.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Fallback Screen DPI</strong></p></td>
+<td class="text-left"><p>The DPI to assume if the screen DPI is not known.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Default Sprite DPI</strong></p></td>
+<td class="text-left"><p>The pixels per inch to use for sprites that have a ‘Pixels Per Unit’ setting that matches the ‘Reference Pixels Per Unit’ setting.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Reference Pixels Per Unit</strong></p></td>
+<td class="text-left"><p>If a sprite has this ‘Pixels Per Unit’ setting, then its DPI will match the ‘Default Sprite DPI’ setting.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Settings for World Space Canvas (shown when Canvas component is set to World Space):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Property:</strong></p></th>
+<th class="head text-left"><p><strong>Function:</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Dynamic Pixels Per Unit</strong></p></td>
+<td class="text-left"><p>The amount of pixels per unit to use for dynamically created bitmaps in the UI, such as Text.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Reference Pixels Per Unit</strong></p></td>
+<td class="text-left"><p>If a sprite has this ‘Pixels Per Unit’ setting, then one pixel in the sprite will cover one unit in the world. If the ‘Reference Pixels Per Unit’ is set to 1, then the ‘Pixels Per Unit’ setting in the sprite will be used as-is.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this heading">¶</a></h2>
+<p>For a Canvas set to ‘Screen Space - Overlay’ or ‘Screen Space - Camera’, the Canvas Scaler UI Scale Mode can be set to Constant Pixel Size, Scale With Screen Size, or Constant Physical Size.</p>
+<section id="constant-pixel-size">
+<h3>Constant Pixel Size<a class="headerlink" href="#constant-pixel-size" title="Permalink to this heading">¶</a></h3>
+<p>Using the Constant Pixel Size mode, positions and sizes of UI elements are specified in pixels on the screen. This is also the default functionality of the Canvas when no Canvas Scaler is attached. However, With the Scale Factor setting in the Canvas Scaler, a constant scaling can be applied to all UI elements in the Canvas.</p>
+</section>
+<section id="scale-with-screen-size">
+<h3>Scale With Screen Size<a class="headerlink" href="#scale-with-screen-size" title="Permalink to this heading">¶</a></h3>
+<p>Using the Scale With Screen Size mode, positions and sizes can be specified according to the pixels of a specified reference resolution. If the current screen resolution is larger than the reference resolution, the Canvas will keep having only the resolution of the reference resolution, but will scale up in order to fit the screen. If the current screen resolution is smaller than the reference resolution, the Canvas will similarly be scaled down to fit.</p>
+<p>If the current screen resolution has a different aspect ratio than the reference resolution, scaling each axis individually to fit the screen would result in non-uniform scaling, which is generally undesirable. Instead of this, the ReferenceResolution component will make the Canvas resolution deviate from the reference resolution in order to respect the aspect ratio of the screen. It is possible to control how this deviation should behave using the Screen Match Mode setting.</p>
+</section>
+<section id="constant-physical-size">
+<h3>Constant Physical Size<a class="headerlink" href="#constant-physical-size" title="Permalink to this heading">¶</a></h3>
+<p>Using the Constant Physical Size mode, positions and sizes of UI elements are specified in physical units, such as millimeters, points, or picas. This mode relies on the device reporting its screen DPI correctly. You can specify a fallback DPI to use for devices that do not report a DPI.</p>
+</section>
+<section id="world-space">
+<h3>World Space<a class="headerlink" href="#world-space" title="Permalink to this heading">¶</a></h3>
+<p>For a Canvas set to ‘World Space’ the Canvas Scaler can be used to control the pixel density of UI elements in the Canvas.</p>
+</section>
+</section>
+<section id="hints">
+<h2>Hints<a class="headerlink" href="#hints" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>See the page <a class="reference internal" href="HOWTO-UIMultiResolution.html"><span class="std std-doc">Designing UI for Multiple Resolutions</span></a> for a step by step explanation of how Rect Transform anchoring and Canvas Scaler can be used in conjunction to make UI layouts that adapt to different resolutions and aspect ratios.</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Canvas Scaler</a><ul>
+<li><a class="reference internal" href="#properties">Properties</a></li>
+<li><a class="reference internal" href="#details">Details</a><ul>
+<li><a class="reference internal" href="#constant-pixel-size">Constant Pixel Size</a></li>
+<li><a class="reference internal" href="#scale-with-screen-size">Scale With Screen Size</a></li>
+<li><a class="reference internal" href="#constant-physical-size">Constant Physical Size</a></li>
+<li><a class="reference internal" href="#world-space">World Space</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hints">Hints</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.ugui@1.0.0/Documentation~/script-CanvasScaler.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Canvas Scaler</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

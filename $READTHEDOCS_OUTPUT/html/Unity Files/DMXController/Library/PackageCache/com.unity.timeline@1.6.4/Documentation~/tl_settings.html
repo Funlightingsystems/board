@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Timeline Settings &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Timeline Settings</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="timeline-settings">
+<h1>Timeline Settings<a class="headerlink" href="#timeline-settings" title="Permalink to this heading">¶</a></h1>
+<p>Use the Timeline Settings to choose the Timeline window and Timeline Asset settings such as the unit of measurement, the duration mode, audio waveform, and window snap settings.</p>
+<p><img alt="Click the Cog icon in the Timeline window to view the Timeline Settings menu" src="../../../../../../_images/timeline_cog_menu.png" /></p>
+<p><em>Click the Cog icon in the Timeline window to view the Timeline Settings menu</em></p>
+<section id="time-unit">
+<h2>Time Unit<a class="headerlink" href="#time-unit" title="Permalink to this heading">¶</a></h2>
+<p>Select either <strong>Frames</strong>, <strong>Timecode</strong> or <strong>Seconds</strong> to set the Timeline window to display time in that format. Timecode will display the time in seconds with sub-second values displayed in frames.</p>
+</section>
+<section id="duration-mode">
+<h2>Duration Mode<a class="headerlink" href="#duration-mode" title="Permalink to this heading">¶</a></h2>
+<p>Use the <strong>Duration Mode</strong> to set whether the duration of the Timeline Asset extends to the end of the last clip (<strong>Based On Clips</strong>), or ends at a specific time or frame (<strong>Fixed Length</strong>). When the <strong>Duration Mode</strong> is set to <strong>Fixed Length</strong>, use one of the following methods to change the length of the Timeline Asset:</p>
+<ul class="simple">
+<li><p>Select the Timeline Asset in the Project window and use the Inspector window to set the Duration in seconds or frames.</p></li>
+<li><p>In the Timeline window, drag the blue marker on the timeline. The blue marker indicates the end of the Timeline Asset. A blue line indicates the duration of the Timeline Asset.</p></li>
+</ul>
+<p><img alt="Timeline Asset duration (red rectangle) and end marker (green circle)" src="../../../../../../_images/timeline_duration_mode.png" /></p>
+<p><em>Timeline Asset duration (red rectangle) and end marker (green circle)</em></p>
+</section>
+<section id="frame-rate">
+<h2>Frame Rate<a class="headerlink" href="#frame-rate" title="Permalink to this heading">¶</a></h2>
+<p>Select one of the options under <strong>Frame Rate</strong> to set the unit of measurement for the Timeline ruler. Change the Frame Rate to align clips at precise frames but changing the Frame Rate is only visual and has no effect on play speed, keys, tracks, or clips. The following standard frame rates are listed: Film (24 fps), PAL (25 fps), NTSC (29.97 fps), 30, 50, or 60.</p>
+<p>Timeline supports custom frame rates from 1e-6 to 1000. To set a custom frame rate, you must use the <strong>Frame Rate</strong> property in the <a class="reference internal" href="insp_tl.html"><span class="std std-doc">Timeline Asset settings</span></a>. When the Timeline Asset is set to a custom frame rate, the Custom menu item is enabled and is automatically selected for the Timeline instance. The Custom menu item shows the custom frame rate in parentheses.</p>
+</section>
+<section id="show-audio-waveforms">
+<h2>Show Audio Waveforms<a class="headerlink" href="#show-audio-waveforms" title="Permalink to this heading">¶</a></h2>
+<p>Enable <strong>Show Audio Waveforms</strong> to draw the waveforms for all audio clips on all audio tracks. For example, use an audio waveform as a guide when manually positioning an Audio clip of footsteps with the Animation clip of a humanoid walking. Disable <strong>Show Audio Waveform</strong> to hide audio waveforms. <strong>Show Audio Waveforms</strong> is enabled by default.</p>
+</section>
+<section id="enable-audio-scrubbing">
+<h2>Enable Audio Scrubbing<a class="headerlink" href="#enable-audio-scrubbing" title="Permalink to this heading">¶</a></h2>
+<p><strong>Enable Audio Scrubbing</strong> to play audio while dragging the Timeline Playhead.</p>
+<p>Disable <strong>Enable Audio Scrubbing</strong> to stop playing audio while dragging the Timeline Playhead. When disabled, Timeline only plays audio when in <a class="reference internal" href="tl_play_cntrls.html#playbutton"><span class="std std-ref">Timeline Playback mode</span></a>.</p>
+</section>
+<section id="snap-to-frame">
+<h2>Snap to Frame<a class="headerlink" href="#snap-to-frame" title="Permalink to this heading">¶</a></h2>
+<p>Enable <strong>Snap to Frame</strong> to manipulate clips, preview Timeline instances, drag the Timeline Playhead, and position the Timeline Playhead using frames. Disable <strong>Snap to Frame</strong> to use subframes. <strong>Snap to Frame</strong> is enabled by default.</p>
+<p><img alt="Disable Snap to Frame to position clips and drag the playhead between frames" src="../../../../../../_images/timeline_frames_subframes.png" /></p>
+<p><em>Disable <strong>Snap to Frame</strong> to position clips and drag the playhead between frames</em></p>
+<p>For example, when <strong>Snap to Frame</strong> is disabled and you drag the Timeline Playhead, it moves the playhead between frames. The format of <a class="reference internal" href="tl_play_cntrls.html#playheadlocation"><span class="std std-ref">Playhead Location</span></a> displays differently depending on whether the Timeline window is set to <strong>Seconds</strong>, <strong>Timecode</strong> or <strong>Frames</strong>:</p>
+<ul class="simple">
+<li><p>When the Timeline window is set to <strong>Frames</strong>, the Playhead Location shows frames and subframes. For example, 8 frames and 34 subframes displays as 8.34.</p></li>
+<li><p>When the Timeline window is set to <strong>Timecode</strong>, the Playhead Location shows seconds, frames, and subframes. For example, 6 seconds, 17 frames, and 59 subframes displays as 6:17 [.59].</p></li>
+<li><p>When the Timeline window is set to <strong>Seconds</strong>, the Playhead Location shows seconds. For example, 6.5 seconds displays as 6:50.</p></li>
+</ul>
+<p>Manipulating clips, previewing Timeline instances, and positioning the playhead at the subframes level is useful when attempting to synchronize animation and effects with audio. Many high-end audio processing software products create audio waveforms with subframe accuracy.</p>
+</section>
+<section id="edge-snap">
+<h2>Edge Snap<a class="headerlink" href="#edge-snap" title="Permalink to this heading">¶</a></h2>
+<p>Enable the <strong>Edge Snap</strong> option to snap clips when you position, trim, and create blends.</p>
+<p>When enabled, the Timeline window snaps the start or end of a clip when dragged within 10 pixels of the Timeline Playhead, the start or end of a clip on the same track, the start or end of a clip on another track, or the start or end of the entire Timeline instance. The start guide or end guide is redrawn in white to indicate that the clip has snapped to the edge of another clip or the Timeline Playhead.</p>
+<p>Disable <strong>Edge Snap</strong> to create more accurate blends, ease-ins, or ease-outs. <strong>Edge Snap</strong> is enabled by default.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Timeline Settings</a><ul>
+<li><a class="reference internal" href="#time-unit">Time Unit</a></li>
+<li><a class="reference internal" href="#duration-mode">Duration Mode</a></li>
+<li><a class="reference internal" href="#frame-rate">Frame Rate</a></li>
+<li><a class="reference internal" href="#show-audio-waveforms">Show Audio Waveforms</a></li>
+<li><a class="reference internal" href="#enable-audio-scrubbing">Enable Audio Scrubbing</a></li>
+<li><a class="reference internal" href="#snap-to-frame">Snap to Frame</a></li>
+<li><a class="reference internal" href="#edge-snap">Edge Snap</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.timeline@1.6.4/Documentation~/tl_settings.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Timeline Settings</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

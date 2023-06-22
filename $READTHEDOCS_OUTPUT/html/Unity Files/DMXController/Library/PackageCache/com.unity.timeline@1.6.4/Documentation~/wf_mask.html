@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Using an Animation Override track and an Avatar Mask &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Using an Animation Override track and an Avatar Mask</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="using-an-animation-override-track-and-an-avatar-mask">
+<h1>Using an Animation Override track and an Avatar Mask<a class="headerlink" href="#using-an-animation-override-track-and-an-avatar-mask" title="Permalink to this heading">¶</a></h1>
+<p>This task demonstrates how to use an Animation Override track and an Avatar Mask to replace the upper-body animation of an Animation track. Use this technique to animate a humanoid to, for example, run and carry an object. For information on creating an Avatar mask, see <a class="reference external" href="https://docs.unity3d.com/Manual/class-AvatarMask.html">Avatar Mask window</a>.</p>
+<p>This task assumes that you have already <a class="reference internal" href="wf_instance.html"><span class="std std-doc">created a Timeline instance</span></a> with a simple Animation clip on an Animation track bound to a humanoid:</p>
+<p><img alt="This example uses a humanoid bound to a simple run cycle animation (RunForward) that loops once" src="../../../../../../_images/timeline_masking_start.png" /></p>
+<p><em>This example uses a humanoid bound to a simple run cycle animation (RunForward) that loops once</em></p>
+<p>Right-click the Animation track and select <strong>Add Override Track</strong> from the context menu. An Animation Override track, named Override 0, is linked to the selected Animation track. Notice that the Animation Override track is not bound to a GameObject. Because the Override track is linked to the Animation track above, the Override track is bound to the same GameObject, in this case, the DefaultMale humanoid.</p>
+<p><img alt="To add an Override track, right-click the Animation track and select Add Override Track from the context menu" src="../../../../../../_images/timeline_masking_override.png" /></p>
+<p><em>To add an Override track, right-click the Animation track and select Add Override Track from the context menu]</em></p>
+<p>From your Project, drag an Animation Clip with upper-body animation into the Override track. For example, drag an animation of a humanoid standing still and waving their arms. Position and resize the clip to match the Animation clip that you want to override.</p>
+<p><img alt="The Animation Override track contains an Animation clip of a humanoid standing still, waving their arms (WavingArms). This clip was resized to match the Animation clip (RunForward) of the parent Animation track." src="../../../../../../_images/timeline_masking_waving.png" /></p>
+<p><em>The Animation Override track contains an Animation clip of a humanoid standing still, waving their arms (WavingArms). This clip was resized to match the Animation clip (RunForward) of the parent Animation track.</em></p>
+<p>Play the Timeline instance. In this example, the WavingArms clip completely overrides the RunForward clip. To combine the lower-body animation from one Animation clip with upper-body animation from another Animation clip, specify an Avatar Mask for the Animation Override track.</p>
+<p><img alt="To specify an Avatar Mask, select the Override track to view its properties in the Inspector window" src="../../../../../../_images/timeline_masking_override_selected.png" /></p>
+<p><em>To specify an Avatar Mask, select the Override track to view its properties in the Inspector window</em></p>
+<p>From the Project, drag an Avatar Mask, that masks the lower body animation, into the Avatar Mask property in the Inspector window. Enable the <strong>Apply Avatar Mask</strong> checkbox. An Avatar Mask icon appears beside the track name.</p>
+<p><img alt="An Avatar Mask, that masks the lower body animation, is specified for the Animation Overview clip in the Inspector window. This allows the upper body animation to pass through." src="../../../../../../_images/timeline_masking_avatar_inspector.png" /></p>
+<p><em>An Avatar Mask, that masks the lower body animation, is specified for the Animation Overview clip in the Inspector window. This allows the upper body animation to pass through.</em></p>
+<p><img alt="The Avatar Mask icon (red) indicates that the Animation Override track uses an Avatar Mask." src="../../../../../../_images/timeline_masking_avatar_on.png" /></p>
+<p><em>The Avatar Mask icon (red) indicates that the Animation Override track uses an Avatar Mask.</em></p>
+<p>Play the Timeline instance. In this example, the DefaultMale humanoid uses upper-body animation from the WavingArms clip and lower-body animation from the RunForward clip. To temporarily disable the Avatar Mask, click the Avatar Mask icon.</p>
+<p><img alt="The Avatar Mask icon (red) is gray when disabled. The WavingArms clip completely overrides the RunForward clip." src="../../../../../../_images/timeline_masking_avatar_off.png" /></p>
+<p><em>The Avatar Mask icon (red) is gray when disabled. The WavingArms clip completely overrides the RunForward clip.</em></p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.timeline@1.6.4/Documentation~/wf_mask.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Using an Animation Override track and an Avatar Mask</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>TestPlayerBuildModifier attribute &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">TestPlayerBuildModifier attribute</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="testplayerbuildmodifier-attribute">
+<h1>TestPlayerBuildModifier attribute<a class="headerlink" href="#testplayerbuildmodifier-attribute" title="Permalink to this heading">¶</a></h1>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">TestPlayerBuildModifier</span></code> attribute to accomplish a couple of different scenarios:</p>
+<section id="modify-the-player-build-options-for-play-mode-tests">
+<h2>Modify the Player build options for Play Mode tests<a class="headerlink" href="#modify-the-player-build-options-for-play-mode-tests" title="Permalink to this heading">¶</a></h2>
+<p>It is possible to change the <a class="reference external" href="https://docs.unity3d.com/ScriptReference/BuildPlayerOptions.html">BuildPlayerOptions</a> for the test <strong>Player</strong>, to achieve custom behavior when running <strong>Play Mode</strong> tests. Modifying the build options allows for changing the target location of the build as well as changing <a class="reference external" href="https://docs.unity3d.com/ScriptReference/BuildOptions.html">BuildOptions</a>.</p>
+<p>To modify the <code class="docutils literal notranslate"><span class="pre">BuildPlayerOptions</span></code>, do the following:</p>
+<ul class="simple">
+<li><p>Implement the <code class="docutils literal notranslate"><span class="pre">ITestPlayerBuildModifier</span></code></p></li>
+<li><p>Reference the implementation type in a <code class="docutils literal notranslate"><span class="pre">TestPlayerBuildModifier</span></code> attribute on an assembly level.</p></li>
+</ul>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor.TestTools</span><span class="p">;</span>
+
+<span class="na">[assembly:TestPlayerBuildModifier(typeof(BuildModifier))]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BuildModifier</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ITestPlayerBuildModifier</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">BuildPlayerOptions</span><span class="w"> </span><span class="nf">ModifyOptions</span><span class="p">(</span><span class="n">BuildPlayerOptions</span><span class="w"> </span><span class="n">playerOptions</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">playerOptions</span><span class="p">.</span><span class="n">target</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">BuildTarget</span><span class="p">.</span><span class="n">iOS</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">playerOptions</span><span class="p">.</span><span class="n">options</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="n">BuildOptions</span><span class="p">.</span><span class="n">SymlinkLibraries</span><span class="p">;</span><span class="w"> </span><span class="c1">// Enable symlink libraries when running on iOS</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="n">playerOptions</span><span class="p">.</span><span class="n">options</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="n">BuildOptions</span><span class="p">.</span><span class="n">AllowDebugging</span><span class="p">;</span><span class="w"> </span><span class="c1">// Enable allow Debugging flag on the test Player.</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">playerOptions</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Note:</strong> When building the Player, it includes all <code class="docutils literal notranslate"><span class="pre">TestPlayerBuildModifier</span></code> attributes across all loaded assemblies, independent of the currently used test filter. As the implementation references the <code class="docutils literal notranslate"><span class="pre">UnityEditor</span></code> namespace, the code is typically implemented in an Editor only assembly, as the <code class="docutils literal notranslate"><span class="pre">UnityEditor</span></code> namespace is not available otherwise.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="split-build-and-run">
+<h2>Split build and run<a class="headerlink" href="#split-build-and-run" title="Permalink to this heading">¶</a></h2>
+<p>It is possible to use the Unity Editor for building the Player with tests, without <a class="reference internal" href="workflow-run-playmode-test-standalone.html"><span class="std std-doc">running the tests</span></a>. This allows for running the Player on e.g. another machine. In this case, it is necessary to modify the Player to build and implement a custom handling of the test result.</p>
+<p>By using <code class="docutils literal notranslate"><span class="pre">TestPlayerBuildModifier</span></code>, you can alter the <code class="docutils literal notranslate"><span class="pre">BuildOptions</span></code> to not start the Player after the build as well as build the Player at a specific location. Combined with <a class="reference internal" href="reference-setup-and-cleanup.html#prebuildsetup-and-postbuildcleanup"><span class="std std-ref">PostBuildCleanup</span></a>, you can automatically exit the Editor on completion of the build.</p>
+<section id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.IO</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Tests</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor.TestTools</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine.TestTools</span><span class="p">;</span>
+
+<span class="na">[assembly:TestPlayerBuildModifier(typeof(HeadlessPlayModeSetup))]</span>
+<span class="na">[assembly:PostBuildCleanup(typeof(HeadlessPlayModeSetup))]</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Tests</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">HeadlessPlayModeSetup</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ITestPlayerBuildModifier</span><span class="p">,</span><span class="w"> </span><span class="n">IPostBuildCleanup</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">s_RunningPlayerTests</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">BuildPlayerOptions</span><span class="w"> </span><span class="nf">ModifyOptions</span><span class="p">(</span><span class="n">BuildPlayerOptions</span><span class="w"> </span><span class="n">playerOptions</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Do not launch the player after the build completes.</span>
+<span class="w">            </span><span class="n">playerOptions</span><span class="p">.</span><span class="n">options</span><span class="w"> </span><span class="o">&amp;=</span><span class="w"> </span><span class="o">~</span><span class="n">BuildOptions</span><span class="p">.</span><span class="n">AutoRunPlayer</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// Set the headlessBuildLocation to the output directory you desire. It does not need to be inside the project.</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">headlessBuildLocation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="n">GetFullPath</span><span class="p">(</span><span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">dataPath</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.//..//PlayModeTestPlayer&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">fileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="n">GetFileName</span><span class="p">(</span><span class="n">playerOptions</span><span class="p">.</span><span class="n">locationPathName</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">fileName</span><span class="p">))</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">headlessBuildLocation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="n">headlessBuildLocation</span><span class="p">,</span><span class="w"> </span><span class="n">fileName</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">playerOptions</span><span class="p">.</span><span class="n">locationPathName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">headlessBuildLocation</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// Instruct the cleanup to exit the Editor if the run came from the command line. </span>
+<span class="w">            </span><span class="c1">// The variable is static because the cleanup is being invoked in a new instance of the class.</span>
+<span class="w">            </span><span class="n">s_RunningPlayerTests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">playerOptions</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Cleanup</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s_RunningPlayerTests</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">IsRunningTestsFromCommandLine</span><span class="p">())</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Exit the Editor on the next update, allowing for other PostBuildCleanup steps to run.</span>
+<span class="w">                </span><span class="n">EditorApplication</span><span class="p">.</span><span class="n">update</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">EditorApplication</span><span class="p">.</span><span class="n">Exit</span><span class="p">(</span><span class="m">0</span><span class="p">);</span><span class="w"> </span><span class="p">};</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">IsRunningTestsFromCommandLine</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">commandLineArgs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Environment</span><span class="p">.</span><span class="n">GetCommandLineArgs</span><span class="p">();</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">commandLineArgs</span><span class="p">.</span><span class="n">Any</span><span class="p">(</span><span class="k">value</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;-runTests&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If the Editor is still running after the Play Mode tests have run, the Player tries to report the results back, using <a class="reference external" href="https://docs.unity3d.com/ScriptReference/Networking.PlayerConnection.PlayerConnection.html">PlayerConnection</a>, which has a reference to the IP address of the Editor machine, when built.</p>
+<p>To implement a custom way of reporting the results of the test run, let one of the assemblies in the Player include a <a class="reference internal" href="reference-attribute-testruncallback.html"><span class="std std-doc">TestRunCallback</span></a>. At <code class="docutils literal notranslate"><span class="pre">RunFinished</span></code>, it is possible to get the full test report as XML from the <a class="reference external" href="http://www.nunit.org/">NUnit</a> test result by calling <code class="docutils literal notranslate"><span class="pre">result.ToXml(true)</span></code>. You can save the result and then save it on the device or send it to another machine as needed.</p>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">TestPlayerBuildModifier attribute</a><ul>
+<li><a class="reference internal" href="#modify-the-player-build-options-for-play-mode-tests">Modify the Player build options for Play Mode tests</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#split-build-and-run">Split build and run</a><ul>
+<li><a class="reference internal" href="#id1">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.test-framework@1.1.31/Documentation~/reference-attribute-testplayerbuildmodifier.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">TestPlayerBuildModifier attribute</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

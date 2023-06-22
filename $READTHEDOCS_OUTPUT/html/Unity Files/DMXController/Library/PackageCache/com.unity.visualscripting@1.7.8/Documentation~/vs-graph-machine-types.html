@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Script Machines and State Machines &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Script Machines and State Machines</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="script-machines-and-state-machines">
+<h1>Script Machines and State Machines<a class="headerlink" href="#script-machines-and-state-machines" title="Permalink to this heading">¶</a></h1>
+<p>A Script Machine is a GameObject component that lets you use a Script Graph in an application. You can’t use a Script Graph unless it’s attached to a Script Machine. For more information on components, see <a class="reference external" href="https://docs.unity3d.com/Manual/Components.html">Introduction to components</a> in the Unity User Manual.</p>
+<p>Script Machines can either link to a graph asset, or they can contain an embedded Script Graph asset.</p>
+<p><img alt="An image of the Unity Inspector that displays a blank Script Machine component on a GameObject." src="Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting&#64;1.7.8/Documentation~/images%5Cvs-script-machine-blank.png" /></p>
+<p>A State Machine is the same as a Script Machine, except it contains a State Graph.</p>
+<p><img alt="An image of the Unity Inspector that displays a blank State Machine component on a GameObject." src="Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting&#64;1.7.8/Documentation~/images%5Cvs-state-machine-blank.png" /></p>
+<p>For more information on the difference between a Script Graph and a State Graph, see <a class="reference internal" href="vs-graph-types.html"><span class="std std-doc">Graphs</span></a>.</p>
+<p>Add a Script Machine or State Machine component to a GameObject and Visual Scripting automatically adds a Variables component. The Variables component holds any Object variables that you define in a Script Graph or State Graph attached to the GameObject. For more information on variables, see <a class="reference internal" href="vs-variables.html"><span class="std std-doc">Variables</span></a>.</p>
+<p>For more information on how to add a Script Machine or State Machine to a GameObject and attach a graph file, see <a class="reference internal" href="vs-attach-graph-machine.html"><span class="std std-doc">Attach a graph file to a Script Machine or State Machine</span></a></p>
+<section id="source-types">
+<h2>Source types<a class="headerlink" href="#source-types" title="Permalink to this heading">¶</a></h2>
+<p>Script Machines and State Machines have two options for their Source: a graph file (<strong>Graph</strong>), or an embedded asset (<strong>Embed</strong>).</p>
+<p>Set the <strong>Source</strong> for a Script Machine or State Machine at any time. If you switch the Source from <strong>Graph</strong> to <strong>Embed</strong>, the graph file still exists as a separate file from the State Machine or Script Machine inside of your project.</p>
+<blockquote>
+<div><p>[!CAUTION]
+If you switch your Source from <strong>Embed</strong> to <strong>Graph</strong>, you will lose the embedded graph asset. You can copy the nodes from an embedded graph to a graph asset to avoid data loss.</p>
+</div></blockquote>
+<p>Other features of Visual Scripting, such as transitions, Super States, and Subgraphs, also have these source type options.</p>
+<section id="the-graph-source-type">
+<h3>The Graph source type<a class="headerlink" href="#the-graph-source-type" title="Permalink to this heading">¶</a></h3>
+<p>Use the <strong>Graph</strong> source type to make your graphs faster to load and easier to maintain. Any changes made to a graph file apply to every Script Machine or State Machine that links to that graph file, even if those GameObjects don’t use the same Prefab.</p>
+<p>To use the same graph across multiple GameObjects, use a <strong>Graph</strong> source type. You might encounter some situations where an embedded graph works best.</p>
+</section>
+<section id="the-embed-source-type">
+<h3>The Embed source type<a class="headerlink" href="#the-embed-source-type" title="Permalink to this heading">¶</a></h3>
+<p>An <strong>Embed</strong> graph exists only in the scene where it’s created, if it isn’t attached to a Prefab. This can cause problems with source control systems.</p>
+<p>If you delete a GameObject with an <strong>Embed</strong> graph asset, you will lose your graph. Changes made to an embedded graph aren’t saved while the Editor is in Play mode.</p>
+<p>Use the <strong>Embed</strong> source type if:</p>
+<ul class="simple">
+<li><p>You need references to GameObjects from the current scene in the graph and the graph isn’t on a Prefab.</p></li>
+<li><p>The graph is on a Prefab that you plan to instantiate in the application during runtime.</p></li>
+<li><p>You only need to use the logic in the graph once in the application.</p></li>
+</ul>
+<p>You can’t reuse an embedded graph across multiple GameObjects unless the graph is on a Prefab. An embed graph only exists on the Script Machine or State Machine where you created it. This means you can share the graph across instances of a Prefab, but not on more than one GameObject. For more information about Prefabs, see <a class="reference external" href="https://docs.unity3d.com/Manual/Prefabs.html">Prefabs</a> in the User Manual.</p>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Script Machines and State Machines</a><ul>
+<li><a class="reference internal" href="#source-types">Source types</a><ul>
+<li><a class="reference internal" href="#the-graph-source-type">The Graph source type</a></li>
+<li><a class="reference internal" href="#the-embed-source-type">The Embed source type</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-graph-machine-types.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Script Machines and State Machines</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

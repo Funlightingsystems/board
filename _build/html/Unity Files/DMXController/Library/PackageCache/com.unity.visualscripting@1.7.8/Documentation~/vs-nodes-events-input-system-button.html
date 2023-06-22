@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>On Input System Event Button node &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">On Input System Event Button node</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="on-input-system-event-button-node">
+<h1>On Input System Event Button node<a class="headerlink" href="#on-input-system-event-button-node" title="Permalink to this heading">¶</a></h1>
+<blockquote>
+<div><p>[!NOTE]
+The On Input System Event Button node [!include<a class="reference internal" href="snippets/input-system/nodes-note-package.html"><span class="std std-doc">nodes-note-package</span></a>]</p>
+</div></blockquote>
+<p>The On Input System Event Button node listens for a specific Input Action from a Player Input component. It doesn’t send or read any other data.</p>
+<p>Use this node when you want to read user input but don’t require any other data from an Input Action.</p>
+<p><img alt="An image of the Graph window. An On Input System Event Button node displays with its details in the Graph Inspector." src="../../../../../../_images/vs-on-input-system-event-button-node.png" /></p>
+<section id="fuzzy-finder-category">
+<h2>Fuzzy finder category<a class="headerlink" href="#fuzzy-finder-category" title="Permalink to this heading">¶</a></h2>
+<p>The On Input System Event Button node is in the <strong>Events</strong> &gt; <strong>Input</strong> category in the fuzzy finder.</p>
+</section>
+<section id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this heading">¶</a></h2>
+<p>The On Input System Event Button [!include<a class="reference internal" href="snippets/nodes-inputs.html"><span class="std std-doc">nodes-inputs</span></a>]</p>
+<p>[!include<a class="reference internal" href="snippets/input-system/nodes-input-system-ports.html"><span class="std std-doc">nodes-input-system-ports</span></a>]</p>
+</section>
+<section id="controls">
+<h2>Controls<a class="headerlink" href="#controls" title="Permalink to this heading">¶</a></h2>
+<p>The On Input System Event Button [!include<a class="reference internal" href="snippets/nodes-controls.html"><span class="std std-doc">nodes-controls</span></a>]</p>
+<p>[!include<a class="reference internal" href="snippets/input-system/nodes-input-action-change.html"><span class="std std-doc">nodes-input-action-change</span></a>]</p>
+<p>You can also set this control from the <a class="reference internal" href="vs-interface-overview.html#the-graph-inspector"><span class="std std-ref">Graph Inspector</span></a>.</p>
+</section>
+<section id="additional-node-settings">
+<h2>Additional node settings<a class="headerlink" href="#additional-node-settings" title="Permalink to this heading">¶</a></h2>
+<p>The On Input System Event Button [!include<a class="reference internal" href="snippets/nodes-additional-settings.html"><span class="std std-doc">nodes-additional-settings</span></a>]</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+[!include[nodes-coroutine](./snippets/nodes-coroutine.md)]
+</tbody>
+</table>
+</section>
+<section id="outputs">
+<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this heading">¶</a></h2>
+<p>The On Input System Event Button [!include<a class="reference internal" href="snippets/nodes-single-output.html"><span class="std std-doc">nodes-single-output</span></a>]</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+[!include[nodes-input-system-output-trigger-port](./snippets/input-system/nodes-input-system-output-trigger-port.md)]
+</tbody>
+</table>
+</section>
+<section id="example-graph-usage">
+<h2>Example graph usage<a class="headerlink" href="#example-graph-usage" title="Permalink to this heading">¶</a></h2>
+<p>In the following example, an On Input System Event Button node counts how many times the user has pressed a button from the <strong>Fire</strong> Input Action and logs the result to the console.</p>
+<p>When a user presses a button associated with the <strong>Fire</strong> Input Action, Visual Scripting gets the current value of the <code class="docutils literal notranslate"><span class="pre">Count</span></code> Object variable with a Get Variable node. The Get Variable node sends <code class="docutils literal notranslate"><span class="pre">Count</span></code>’s current value to an Add Inputs node’s <strong>A</strong> port. Then, the Float literal node sends a value of <code class="docutils literal notranslate"><span class="pre">1</span></code> to the Add Inputs node’s <strong>B</strong> port.</p>
+<p>The On Input System Event Button node triggers the Set Variable node and assigns the value from the Add Inputs node’s <strong>Sum</strong> port as the <strong>New Value</strong> of <strong>Count</strong>. The Set Variable node logs the value of <strong>Count</strong> to the console with the Debug Log node:</p>
+<p><img alt="An image of the Graph window, that displays an On Input System Event Button node connected to a Set Variable node. The Set Variable node takes its New Value input from an Add Inputs node, which adds the current value of the Count variable to the value from a Float literal node. The Set Variable node logs the result to the console with a Debug Log node." src="../../../../../../_images/vs-on-input-system-event-button-node-example.png" /></p>
+</section>
+<section id="related-nodes">
+<h2>Related nodes<a class="headerlink" href="#related-nodes" title="Permalink to this heading">¶</a></h2>
+<p>[!include<a class="reference internal" href="snippets/nodes-related.html"><span class="std std-doc">vs-nodes-related</span></a>] On Input System Event Button node:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="vs-nodes-events-input-system-float.html"><span class="std std-doc">On Input System Event Float node</span></a></p></li>
+<li><p><a class="reference internal" href="vs-nodes-events-input-system-vector2.html"><span class="std std-doc">On Input System Event Vector 2 node</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">On Input System Event Button node</a><ul>
+<li><a class="reference internal" href="#fuzzy-finder-category">Fuzzy finder category</a></li>
+<li><a class="reference internal" href="#inputs">Inputs</a></li>
+<li><a class="reference internal" href="#controls">Controls</a></li>
+<li><a class="reference internal" href="#additional-node-settings">Additional node settings</a></li>
+<li><a class="reference internal" href="#outputs">Outputs</a></li>
+<li><a class="reference internal" href="#example-graph-usage">Example graph usage</a></li>
+<li><a class="reference internal" href="#related-nodes">Related nodes</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-nodes-events-input-system-button.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">On Input System Event Button node</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

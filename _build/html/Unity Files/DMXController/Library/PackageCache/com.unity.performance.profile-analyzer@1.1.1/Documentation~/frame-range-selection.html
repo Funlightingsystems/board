@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Frame Control pane &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Frame Control pane</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="frame-control-pane">
+<h1>Frame Control pane<a class="headerlink" href="#frame-control-pane" title="Permalink to this heading">¶</a></h1>
+<p>You can use the <strong>Frame Control</strong> pane in both the <a class="reference internal" href="single-view.html"><span class="std std-doc">Single</span></a> and <a class="reference internal" href="compare-view.html"><span class="std std-doc">Compare</span></a> views  to select a range of frames to reduce the working set. The Frame Control pane is laid out as follows:</p>
+<p><img alt="Frame Control pane" src="../../../../../../_images/profile-analyzer-frame-control-pane.png" /><br/><em>The Frame Control in the Single view (top), and in the Compare view (bottom)</em></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Control</strong></p></th>
+<th class="head"><p><strong>Function</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>A:</strong> Pull Data / Load / Save</p></td>
+<td><p>Click the <strong>Pull Data</strong> button to pull any data that is loaded in the <a class="reference external" href="https://docs.unity3d.com/Manual/Profiler.html">Profiler</a> window.<br/>Click the <strong>Save</strong> button to save the data as a .pdata file.<br/>Click the <strong>Load</strong> button to load a .pdata file. <strong>Note:</strong> You can only load a .pdata file. If you have data from the Profiler in the .data file format, open it in the Profiler first, and then select the <strong>Pull Data</strong> button in the Profile Analyzer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>B:</strong> Frame control scale</p></td>
+<td><p>You can adjust the scale of the y-axis of the Frame Control graph by selecting this dropdown. By default, it scales to the maximum value of the data set. You can also choose from traditional frame boundaries. 16.67ms is equivalent to 60Hz/FPS, 33.33ms is equivalent to 30Hz/FPS, and  66.67ms is equivalent to 15Hz/FPS.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>C:</strong> Selected thread</p></td>
+<td><p>This displays the name of the marker which is selected in the <strong>Marker Details</strong> pane. When you select a thread from this list, the Profile Analyzer highlights its corresponding timings on the Frame Control graph in a green-blue color.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>D:</strong> Pair Graph Selection<br/><em>(Compare view only)</em></p></td>
+<td><p>When you enable this checkbox, the Profile Analyzer reflects any changes you make in the range selection of a data set in both data sets. This is important to ensure you compare the exact same number of frames in both data sets and get an accurate comparison.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="selecting-a-frame-range">
+<h2>Selecting a frame range<a class="headerlink" href="#selecting-a-frame-range" title="Permalink to this heading">¶</a></h2>
+<p>The Profile Analyzer uses all the frames in the data sets unless you select a sub-range. When you select a sub-range, it limits the analysis to just those frames which lets you focus on a specific frame or set of frames. To select a range of frames, click and drag on the Frame Control graph. To clear the selection, right click on the Frame Control graph and select <strong>Clear Selection</strong>.</p>
+<p>To help visualize which frames are in the current selection, the start and end frame number, plus the frame count in square brackets appears on the x-axis of the graph.</p>
+<p><img alt="Frame Control pane with selected item" src="../../../../../../_images/profile-analyzer-frame-control-selection.png" /><br/><em>The Frame Control in the Single view (top), with 204 frames selected, starting on frame 115 and ending on frame 318. The  Compare view (bottom) has Pair Graph Selection enabled, with the same 237 frames selected on both graphs, starting on frame 135 and ending on frame 371.</em></p>
+</section>
+<section id="frame-range-controls">
+<h2>Frame range controls<a class="headerlink" href="#frame-range-controls" title="Permalink to this heading">¶</a></h2>
+<p>You can control the selection of data in both the <strong>Single</strong> and <strong>Compare</strong> views by using the following shortcuts, or by right-clicking and selecting an option from the context menu.</p>
+<blockquote>
+<div><p>[!NOTE]
+In <strong>Compare</strong> view, make sure you enable the <strong>Pair Graph Selection</strong> checkbox to carry out the following commands on both graphs at the same time.</p>
+</div></blockquote>
+<section id="shortcuts">
+<h3>Shortcuts<a class="headerlink" href="#shortcuts" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Shortcut</strong></p></th>
+<th class="head"><p><strong>Function</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Shift+click</strong></p></td>
+<td><p>Hold down the Shift key while clicking on the selection on the Frame Control graph to move the selection around freely.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Left/Right arrow</strong></p></td>
+<td><p>Move the selection forward or backwards by one frame.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Ctrl + click</strong><br/>(<strong>Command + click</strong> on macOS)</p></td>
+<td><p>Selects multiple parts of the data set. Hold down the Ctrl key (Command key on macOS) while making a selection and then click, and optionally drag, on different sections of the chart to select multiple parts of the data set.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Equals (=)</strong></p></td>
+<td><p>Extend the selection by one frame on each end of the selection.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Alt+Equals</strong><br/>(<strong>⌥ + Equals</strong> on macOS)</p></td>
+<td><p>Reduce the selection by one frame on each end of the selection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Shift+Equals</strong></p></td>
+<td><p>Extend the selection by 10 frames on each end of the selection.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Hyphen (-)</strong></p></td>
+<td><p>Reduce the selection by one frame on each end of the selection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Alt+Hyphen</strong><br/>(<strong>⌥ + Hyphen</strong> on macOS)</p></td>
+<td><p>Extend the selection by one frame on each end of the selection.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Shift+Hyphen</strong></p></td>
+<td><p>Reduce the selection by 10 frames on each end of the selection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Comma (,)</strong></p></td>
+<td><p>Extend the start of the selection by one frame.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Alt+Comma</strong><br/>(<strong>⌥ + Comma</strong>) on macOS</p></td>
+<td><p>Reduce the start of the selection by one frame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Shift+Comma</strong></p></td>
+<td><p>Extend the start of the selection by 10 frames.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Period (.)</strong></p></td>
+<td><p>Extend the end of the selection by one frame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Alt+Period</strong><br/><strong>(⌥ + Period on macOS)</strong></p></td>
+<td><p>Reduce the end of the selection by one frame.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Shift+Period</strong></p></td>
+<td><p>Extend the end of the selection by 10 frames.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>1</strong><br/><strong>2</strong><br/><em>Compare view only</em></p></td>
+<td><p>In <strong>Compare</strong> view, with <strong>Pair Graph Selection</strong> disabled, use the 1 or 2 key on your keyboard to switch between frames. 1 selects the top data, and 2 selects the bottom data.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="context-menu-commands">
+<h3>Context menu commands<a class="headerlink" href="#context-menu-commands" title="Permalink to this heading">¶</a></h3>
+<p>Right click on the Frame Control graph to bring up the context menu.</p>
+<p><img alt="Frame Control context menu" src="../../../../../../_images/frame-control-context-menu.png" /><br/><em>Frame Control context menu</em></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Menu item</strong></p></th>
+<th class="head"><p><strong>Function</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Clear Selection</strong></p></td>
+<td><p>Clears the selected range. The Profile Analyzer then performs the analysis on the whole data set.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Invert Selection</strong></p></td>
+<td><p>Inverts the selected range.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Select Shortest Frame</strong></p></td>
+<td><p>Selects the frame with the shortest time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Select Longest Frame</strong></p></td>
+<td><p>Selects the frame with the longest time.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Select Median Frame</strong></p></td>
+<td><p>Selects the frame with the Median time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Move selection left / right</strong></p></td>
+<td><p>Move the whole selection one frame backwards, or one frame forwards.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Grow selection</strong></p></td>
+<td><p>Extend the selection by one frame on each end of the selection. Select the <strong>(fast)</strong> operation to extend the selection by 10 frames at each end.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Shrink selection</strong></p></td>
+<td><p>Reduce the selection by one frame on each end of the selection. Select the <strong>(fast)</strong> operation to reduce the selection by 10 frames at each end.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Grow selection left / right</strong></p></td>
+<td><p>Extend the start or the end of the selection by one frame. Select the <strong>(fast)</strong> operation to extend the start or the end of the selection by 10 frames.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Shrink selection left /right</strong></p></td>
+<td><p>Reduce the selection by one frame at the beginning or the end of the selection. Select the <strong>(fast)</strong> operation to reduce the start or the end of the selection by 10 frames.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Zoom Selection</strong></p></td>
+<td><p>Zoom the Frame Control graph to display the selected range only.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Zoom All</strong></p></td>
+<td><p>Zoom out to show all frames. The current selection range is highlighted.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Show Selected Marker</strong></p></td>
+<td><p>Enable this setting to highlight the selected marker’s time on the Frame Control graph. By default, this setting is enabled and the Profile Analyzer highlights the marker’s timings in green on the graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Show Filtered Threads</strong></p></td>
+<td><p>Enable this setting to highlight the current filtered thread times on the Frame Control graph. The Profile Analyzer highlights the timings in purple. This setting is disabled by default.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Show Frame Lines</strong></p></td>
+<td><p>Enable this setting to display the common frame boundaries as a horizontal line on the Frame Control graph. This setting is enabled by default.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Order By Frame Duration</strong></p></td>
+<td><p>Enable this setting to display the order of the frames by their duration from smallest to largest on the Frame Control graph, rather than by frame index. By default, this setting is disabled. This setting is particularly useful to group similar performant frames together.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Frame Control pane</a><ul>
+<li><a class="reference internal" href="#selecting-a-frame-range">Selecting a frame range</a></li>
+<li><a class="reference internal" href="#frame-range-controls">Frame range controls</a><ul>
+<li><a class="reference internal" href="#shortcuts">Shortcuts</a></li>
+<li><a class="reference internal" href="#context-menu-commands">Context menu commands</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.performance.profile-analyzer@1.1.1/Documentation~/frame-range-selection.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Frame Control pane</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

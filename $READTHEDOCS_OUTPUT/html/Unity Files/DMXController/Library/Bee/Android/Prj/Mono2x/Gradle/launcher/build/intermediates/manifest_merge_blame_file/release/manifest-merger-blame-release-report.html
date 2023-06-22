@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../../../../../../../../" id="documentation_options" src="../../../../../../../../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../../../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../../../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../../../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../../../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>1&lt;?xml version=”1.0” encoding=”utf-8”?&gt;
+2&lt;manifest xmlns:android=”http://schemas.android.com/apk/res/android”
+3    package=”com.DefaultCompany.DMXController”
+4    android:installLocation=”preferExternal”
+5    android:versionCode=”1”
+6    android:versionName=”1.0” &gt;
+7
+8    &lt;uses-sdk
+9        android:minSdkVersion=”22”
+9–&gt;C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradlelaunchersrcmainAndroidManifest.xml
+10        android:targetSdkVersion=”30” /&gt;
+10–&gt;C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradlelaunchersrcmainAndroidManifest.xml
+11
+12    &lt;supports-screens
+12–&gt;C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradlelaunchersrcmainAndroidManifest.xml:3:3-163
+13        android:anyDensity=”true”
+13–&gt;C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradlelaunchersrcmainAndroidManifest.xml:3:135-160
+14        android:largeScreens=”true”
+14–&gt;C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradlelaunchersrcmainAndroidManifest.xml:3:78-105
+15        android:normalScreens=”true”
+15–&gt;C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradlelaunchersrcmainAndroidManifest.xml:3:49-77
+16        android:smallScreens=”true”
+16–&gt;C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradlelaunchersrcmainAndroidManifest.xml:3:21-48
+17        android:xlargeScreens=”true” /&gt;
+17–&gt;C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradlelaunchersrcmainAndroidManifest.xml:3:106-134
+18
+19    &lt;uses-feature android:glEsVersion=”0x00030000” /&gt;
+19–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:12:5-54
+19–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:12:19-51
+20    &lt;uses-feature
+20–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:13:5-15:36
+21        android:name=”android.hardware.vulkan.version”
+21–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:14:9-55
+22        android:required=”false” /&gt;
+22–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:15:9-33
+23
+24    &lt;uses-permission android:name=”android.permission.INTERNET” /&gt;
+24–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:17:5-67
+24–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:17:22-64
+25    &lt;uses-permission android:name=”android.permission.ACCESS_NETWORK_STATE” /&gt;
+25–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:18:5-79
+25–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:18:22-76
+26
+27    &lt;uses-feature
+27–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:20:5-22:36
+28        android:name=”android.hardware.touchscreen”
+28–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:21:9-52
+29        android:required=”false” /&gt;
+29–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:22:9-33
+30    &lt;uses-feature
+30–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:23:5-25:36
+31        android:name=”android.hardware.touchscreen.multitouch”
+31–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:24:9-63
+32        android:required=”false” /&gt;
+32–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:25:9-33
+33    &lt;uses-feature
+33–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:26:5-28:36
+34        android:name=”android.hardware.touchscreen.multitouch.distinct”
+34–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:27:9-72
+35        android:required=”false” /&gt;
+35–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:28:9-33
+36
+37    &lt;application
+37–&gt;C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradlelaunchersrcmainAndroidManifest.xml:4:3-126
+38        android:extractNativeLibs=”true”
+38–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:30:18-50
+39        android:icon=”&#64;mipmap/app_icon”
+39–&gt;C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradlelaunchersrcmainAndroidManifest.xml:4:49-80
+40        android:label=”&#64;string/app_name”
+40–&gt;C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradlelaunchersrcmainAndroidManifest.xml:4:16-48
+41        android:roundIcon=”&#64;mipmap/app_icon_round” &gt;
+41–&gt;C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradlelaunchersrcmainAndroidManifest.xml:4:81-123
+42        &lt;activity
+42–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:31:9-51:20
+43            android:name=”com.unity3d.player.UnityPlayerActivity”
+43–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:32:13-66
+44            android:configChanges=”mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density”
+44–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:33:13-194
+45            android:hardwareAccelerated=”false”
+45–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:34:13-48
+46            android:launchMode=”singleTask”
+46–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:35:13-44
+47            android:resizeableActivity=”false”
+47–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:36:13-47
+48            android:screenOrientation=”fullUser”
+48–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:37:13-49
+49            android:theme=”&#64;style/UnityThemeSelector” &gt;
+49–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:38:13-54
+50            &lt;intent-filter&gt;
+50–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:39:13-43:29
+51                &lt;action android:name=”android.intent.action.MAIN” /&gt;
+51–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:40:17-69
+51–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:40:25-66
+52
+53                &lt;category android:name=”android.intent.category.LAUNCHER” /&gt;
+53–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:42:17-77
+53–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:42:27-74
+54            &lt;/intent-filter&gt;
+55
+56            &lt;meta-data
+56–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:45:13-47:40
+57                android:name=”unityplayer.UnityActivity”
+57–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:46:17-57
+58                android:value=”true” /&gt;
+58–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:47:17-37
+59            &lt;meta-data
+59–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:48:13-50:40
+60                android:name=”android.notch_support”
+60–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:49:17-53
+61                android:value=”true” /&gt;
+61–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:50:17-37
+62        &lt;/activity&gt;
+63
+64        &lt;meta-data
+64–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:53:9-55:33
+65            android:name=”unity.splash-mode”
+65–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:54:13-45
+66            android:value=”0” /&gt;
+66–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:55:13-30
+67        &lt;meta-data
+67–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:56:9-58:36
+68            android:name=”unity.splash-enable”
+68–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:57:13-47
+69            android:value=”True” /&gt;
+69–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:58:13-33
+70        &lt;meta-data
+70–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:59:9-61:36
+71            android:name=”unity.launch-fullscreen”
+71–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:60:13-51
+72            android:value=”True” /&gt;
+72–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:61:13-33
+73        &lt;meta-data
+73–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:62:9-64:37
+74            android:name=”unity.allow-resizable-window”
+74–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:63:13-56
+75            android:value=”False” /&gt;
+75–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:64:13-34
+76        &lt;meta-data
+76–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:65:9-67:50
+77            android:name=”notch.config”
+77–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:66:13-40
+78            android:value=”portrait|landscape” /&gt;
+78–&gt;[:unityLibrary] C:UsersgriffDMXControllerLibraryBeeAndroidPrjMono2xGradleunityLibrarybuildintermediateslibrary_manifestreleaseAndroidManifest.xml:67:13-47
+79    &lt;/application&gt;
+80
+81&lt;/manifest&gt;</p>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../../../../../../../../_sources/Unity Files/DMXController/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/build/intermediates/manifest_merge_blame_file/release/manifest-merger-blame-release-report.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../../../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../../../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../../../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

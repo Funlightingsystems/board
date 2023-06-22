@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Text &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Text</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="text">
+<h1>Text<a class="headerlink" href="#text" title="Permalink to this heading">¶</a></h1>
+<p>The <strong>Text</strong> control displays a non-interactive piece of text to the user. This can be used to provide captions or labels for other GUI controls or to display instructions or other text.</p>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">¶</a></h2>
+<p><img alt="" src="../../../../../../_images/UI_TextInspector.png" /></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Property:</strong></p></th>
+<th class="head text-left"><p><strong>Function:</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Text</strong></p></td>
+<td class="text-left"><p>The text displayed by the control.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Character</strong></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Font</strong></p></td>
+<td class="text-left"><p>The <a class="reference external" href="https://docs.unity3d.com/Manual/class-Font.html">Font</a> used to display the text.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Font Style</strong></p></td>
+<td class="text-left"><p>The style applied to the text. The options are <em>Normal</em>, <em>Bold</em>, <em>Italic</em> and <em>Bold And Italic</em>.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Font Size</strong></p></td>
+<td class="text-left"><p>The size of the displayed text.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Line Spacing</strong></p></td>
+<td class="text-left"><p>The vertical separation between lines of text.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Rich Text</strong></p></td>
+<td class="text-left"><p>Should markup elements in the text be interpreted as <a class="reference internal" href="StyledText.html"><span class="std std-doc">Rich Text</span></a> styling?</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Paragraph</strong></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Alignment</strong></p></td>
+<td class="text-left"><p>The horizontal and vertical alignment of the text.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Align by Geometry</strong></p></td>
+<td class="text-left"><p>Use the extents of glyph geometry to perform horizontal alignment rather than glyph metrics.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Horizontal Overflow</strong></p></td>
+<td class="text-left"><p>The method used to handle the situation where the text is too wide to fit in the rectangle. The options are <em>Wrap</em> and <em>Overflow</em>.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Vertical Overflow</strong></p></td>
+<td class="text-left"><p>The method used to handle the situation where wrapped text is too tall to fit in the rectangle. The options are <em>Truncate</em> and <em>Overflow</em>.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Best Fit</strong></p></td>
+<td class="text-left"><p>Should Unity ignore the size properties and simply try to fit the text to the control’s rectangle?</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Color</strong></p></td>
+<td class="text-left"><p>The color used to render the text.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Material</strong></p></td>
+<td class="text-left"><p>The <a class="reference external" href="https://docs.unity3d.com/Manual/class-Material.html">Material</a> used to render the text.</p></td>
+</tr>
+</tbody>
+</table>
+<p>A default text element looks like this:</p>
+<p><img alt="A Text element." src="../../../../../../_images/UI_TextExample.png" /></p>
+</section>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this heading">¶</a></h2>
+<p>Some controls (such as <a class="reference internal" href="script-Button.html"><span class="std std-doc">Buttons</span></a> and <a class="reference internal" href="script-Toggle.html"><span class="std std-doc">Toggles</span></a>) have textual descriptions built-in. For controls that have no implicit text (such as <a class="reference internal" href="script-Slider.html"><span class="std std-doc">Sliders</span></a>), you can indicate the purpose using a label created with a Text control. Text is also useful for lists of instructions, story text, conversations and legal disclaimers.</p>
+<p>The Text control offers the usual parameters for font size, style, etc, and text alignment. When the <em>Rich Text</em> option is enabled, markup elements within the text will be treated as styling information, so you can have just a single word or short section in boldface or in a different color, say (see the page about <a class="reference internal" href="StyledText.html"><span class="std std-doc">Rich Text</span></a> for details of the markup scheme).</p>
+</section>
+<section id="hints">
+<h2>Hints<a class="headerlink" href="#hints" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>See the <a class="reference internal" href="comp-UIEffects.html"><span class="std std-doc">Effects</span></a> page for how to apply a simple shadow or outline effect to the text.</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Text</a><ul>
+<li><a class="reference internal" href="#properties">Properties</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+<li><a class="reference internal" href="#hints">Hints</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.ugui@1.0.0/Documentation~/script-Text.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Text</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Nulls node &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Nulls node</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="nulls-node">
+<h1>Nulls node<a class="headerlink" href="#nulls-node" title="Permalink to this heading">¶</a></h1>
+<blockquote>
+<div><p>[!NOTE]
+For versions 2019/2020 LTS, download the Visual Scripting package from the <a class="reference external" href="https://assetstore.unity.com/packages/tools/visual-bolt-163802">Unity Asset Store</a>.</p>
+</div></blockquote>
+<p>Null nodes deal with the null value, which is scripting lingo for “nothing”.</p>
+<section id="the-null-node">
+<h2>The null node<a class="headerlink" href="#the-null-node" title="Permalink to this heading">¶</a></h2>
+<p>The null node always returns null as a value. Leaving a Unity object reference field empty (“None”) automatically means null.</p>
+</section>
+<section id="null-check">
+<h2>Null Check<a class="headerlink" href="#null-check" title="Permalink to this heading">¶</a></h2>
+<p>The null check is a shortcut for a branch on an equality comparison with null. It can be useful to direct the flow in different directions depending on whether a value is null.</p>
+<p>For example, it can be used to handle a situation differently whether a transform has a parent in the hierarchy or not.</p>
+<p><img alt="" src="../../../../../../_images/vs-nulls-null-check-node.png" /></p>
+</section>
+<section id="null-coalesce">
+<h2>Null Coalesce<a class="headerlink" href="#null-coalesce" title="Permalink to this heading">¶</a></h2>
+<p>The null coalesce node provides a fallback value in case the original input is null.</p>
+<p>For example, the null coalesce node defines a default fallback audio clip in case the one on the audio source is missing.</p>
+<p><img alt="" src="../../../../../../_images/vs-nulls-null-coalesce-node.png" /></p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Nulls node</a><ul>
+<li><a class="reference internal" href="#the-null-node">The null node</a></li>
+<li><a class="reference internal" href="#null-check">Null Check</a></li>
+<li><a class="reference internal" href="#null-coalesce">Null Coalesce</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-nulls.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Nulls node</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

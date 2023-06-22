@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Timeline Playback Controls &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Timeline Playback Controls</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="timeline-playback-controls">
+<h1>Timeline Playback Controls<a class="headerlink" href="#timeline-playback-controls" title="Permalink to this heading">¶</a></h1>
+<p>To play the Timeline instance and to control the location of the Timeline Playhead, use the Timeline Playback Controls.</p>
+<p><img alt="Timeline Playback Controls" src="../../../../../../_images/timeline_playback_controls.png" /></p>
+<p><em>Timeline Playback Controls</em></p>
+<section id="timeline-start-button">
+<h2>Timeline Start button<a class="headerlink" href="#timeline-start-button" title="Permalink to this heading">¶</a></h2>
+<p><img alt="" src="../../../../../../_images/timeline_start_button.png" /></p>
+<p>To move the Timeline Playhead to the start of the Timeline instance, click the Timeline Start button, or hold Shift and press Comma (,).</p>
+</section>
+<section id="previous-frame-button">
+<h2>Previous Frame button<a class="headerlink" href="#previous-frame-button" title="Permalink to this heading">¶</a></h2>
+<p><img alt="" src="../../../../../../_images/timeline_previous_frame_button.png" /></p>
+<p>To move the Timeline Playhead to the previous frame, click the Previous Frame button, or press Comma (,).</p>
+<p><a name="playbutton"></a></p>
+</section>
+<section id="timeline-play-button">
+<h2>Timeline Play button<a class="headerlink" href="#timeline-play-button" title="Permalink to this heading">¶</a></h2>
+<p><img alt="" src="../../../../../../_images/timeline_play_button.png" /></p>
+<p>To preview the Timeline instance in Timeline Playback mode, click the Timeline Play button, or press the Spacebar. Timeline Playback mode does the following:</p>
+<ul class="simple">
+<li><p>Begins playback at the current location of the Timeline Playhead and continues to the end of the Timeline instance. If the Play Range button is enabled, playback is restricted to a specified time range.</p></li>
+<li><p>The Timeline Playhead position moves along the Timeline instance. The Playhead Location field shows the position of the Timeline Playhead in either frames, timecode or seconds, depending on the <a class="reference internal" href="tl_settings.html"><span class="std std-doc">Timeline settings</span></a>.</p></li>
+<li><p>To pause playback, click the Timeline Play button again, or press the Spacebar.</p></li>
+<li><p>When playback reaches the end of the Timeline instance, the Wrap Mode determines whether playback should hold, repeat, or do nothing. The Wrap Mode setting is a <a class="reference internal" href="play_director.html"><span class="std std-doc">Playable Director component</span></a> property.</p></li>
+</ul>
+<p>Timeline Playback mode provides a preview of the Timeline instance while in the Timeline window. Timeline Playback mode is only a simulation of <a class="reference external" href="https://docs.unity3d.com/Manual/GameView.html">Play Mode in the Game View</a>.</p>
+<p>The Timeline Playback mode does not support audio playback. To preview a Timeline instance with audio, enable the Play on Awake option in the <a class="reference internal" href="play_director.html"><span class="std std-doc">Playable Director component</span></a> and preview game play in Play Mode.</p>
+</section>
+<section id="next-frame-button">
+<h2>Next Frame button<a class="headerlink" href="#next-frame-button" title="Permalink to this heading">¶</a></h2>
+<p><img alt="" src="../../../../../../_images/timeline_next_frame_button.png" /></p>
+<p>To move the Timeline Playhead to the next frame, click the Next Frame button, or press Period (.).</p>
+</section>
+<section id="timeline-end-button">
+<h2>Timeline End button<a class="headerlink" href="#timeline-end-button" title="Permalink to this heading">¶</a></h2>
+<p><img alt="" src="../../../../../../_images/timeline_end_button.png" /></p>
+<p>To move the Timeline Playhead to the end of the Timeline instance, click the Timeline End button, or hold Shift and press Period (.).</p>
+<p><a name="playrange"></a></p>
+</section>
+<section id="play-range-button">
+<h2>Play Range button<a class="headerlink" href="#play-range-button" title="Permalink to this heading">¶</a></h2>
+<p><img alt="" src="../../../../../../_images/timeline_play_range_button.png" /></p>
+<p>Enable the <strong>Play Range</strong> button to restrict playback to a specific range of seconds or frames. You can only set a play range when previewing a Timeline instance within the Timeline window. Unity ignores the play range in <a class="reference external" href="https://docs.unity3d.com/Manual/GameView.html">Play Mode</a>.</p>
+<p>The Timeline ruler highlights the play range and indicates its start and end with white markers. To modify the play range, drag either marker.</p>
+<p><img alt="Play Range (red circle) enabled with while markers and highlighted area defining range" src="../../../../../../_images/timeline_play_range.png" /></p>
+<p><em>Play Range (red circle) enabled with while markers and highlighted area defining range</em></p>
+<p><a name="playheadlocation"></a></p>
+</section>
+<section id="timeline-playhead-and-playhead-location-field">
+<h2>Timeline Playhead and Playhead Location field<a class="headerlink" href="#timeline-playhead-and-playhead-location-field" title="Permalink to this heading">¶</a></h2>
+<p>The Timeline Playhead indicates the exact point in time being previewed in the Timeline window. The Playhead Location field expresses the location of the Timeline Playhead in either frames or seconds.</p>
+<p><img alt="Playhead Location field and Timeline Playhead (red). The Timeline Playhead also appears on the Zoombar (red arrow)." src="../../../../../../_images/timeline_playhead_location.png" /></p>
+<p><em>Playhead Location field and Timeline Playhead (red). The Timeline Playhead also appears on the Zoombar (red arrow).</em></p>
+<p>Use the <a class="reference internal" href="clp_pan_zoom.html"><span class="std std-doc">Zoombar to navigate, scroll, and zoom</span></a> the Clips view. A white line indicates the location of the Timeline Playhead in relation to the entire Timeline instance.</p>
+<p>To jump the Timeline Playhead to a specific time, click the Timeline ruler. You can also enter the time value in the Playhead Location field and press Enter. When entering a value, frames are converted to seconds or seconds are converted to frames, based on the Timeline settings. For example, if the Timeline ruler is expressed as seconds with a frame rate of 30 frames per second, entering 180 in the Playhead Location field converts 180 frames to seconds and moves the Timeline Playhead to 6:00. To set the time format that the Timeline window uses, configure the <a class="reference internal" href="tl_settings.html"><span class="std std-doc">Timeline Settings</span></a>.</p>
+</section>
+<section id="switching-between-local-and-global">
+<h2>Switching between Local and Global<a class="headerlink" href="#switching-between-local-and-global" title="Permalink to this heading">¶</a></h2>
+<p>Use the Local or Global button to change the Timeline ruler from local time to global time. Local time and global time are only relevant when editing a nested Timeline instance.</p>
+<p><a class="reference internal" href="wf_nested.html"><span class="std std-doc">To create a nested Timeline instance</span></a>, drag a GameObject associated with a Timeline instance into another Timeline instance. The Timeline instance you are dragging into becomes the master Timeline instance. The Timeline instance associated with the GameObject becomes a nested Timeline instance.</p>
+<p><img alt="A nested Timeline instance appears as a Control clip on a Control track (red arrow)" src="../../../../../../_images/timeline_nesting_example.png" /></p>
+<p><em>A nested Timeline instance appears as a Control clip on a Control track (red arrow)</em></p>
+<p>To edit a nested Timeline instance, double-click the Control clip that contains the nested Timeline instance. The Timeline window switches to the nested Timeline instance, indicated by the Timeline title which shows the name and GameObject of the master Timeline instance, followed by the name and GameObject of the nested Timeline instance.</p>
+<p><img alt="The Timeline title indicates that you are editing a nested Timeline instance (red outline). The Global button (red arrow) indicates that the nested Timeline instance is shown using global time." src="../../../../../../_images/timeline_nesting_editing.png" /></p>
+<p><em>The Timeline title indicates that you are editing a nested Timeline instance (red outline). The Global button (red arrow) indicates that the nested Timeline instance is shown using global time.</em></p>
+<p>When editing a nested Timeline instance, click <strong>Global</strong> to switch the Timeline ruler to Local time. Local time is relative to the nested Timeline. This means that the Timeline ruler starts at zero.</p>
+<p><img alt="A nested Timeline instance in Local time." src="../../../../../../_images/timeline_nesting_local.png" /></p>
+<p><em>A nested Timeline instance in Local time.</em></p>
+<p>Click <strong>Local</strong> to view the Timeline ruler in relation to the placement of the nested Timeline in the master Timeline instance. This means that if, for example, if the Control clip is placed at frame 70 of the master Timeline then the Timeline ruler starts at 70 at the beginning of the nested Timeline instance.</p>
+<p><img alt="A nested Timeline instance in Global time." src="../../../../../../_images/timeline_nesting_global.png" /></p>
+<p><em>A nested Timeline instance in Global time.</em></p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Timeline Playback Controls</a><ul>
+<li><a class="reference internal" href="#timeline-start-button">Timeline Start button</a></li>
+<li><a class="reference internal" href="#previous-frame-button">Previous Frame button</a></li>
+<li><a class="reference internal" href="#timeline-play-button">Timeline Play button</a></li>
+<li><a class="reference internal" href="#next-frame-button">Next Frame button</a></li>
+<li><a class="reference internal" href="#timeline-end-button">Timeline End button</a></li>
+<li><a class="reference internal" href="#play-range-button">Play Range button</a></li>
+<li><a class="reference internal" href="#timeline-playhead-and-playhead-location-field">Timeline Playhead and Playhead Location field</a></li>
+<li><a class="reference internal" href="#switching-between-local-and-global">Switching between Local and Global</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.timeline@1.6.4/Documentation~/tl_play_cntrls.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Timeline Playback Controls</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

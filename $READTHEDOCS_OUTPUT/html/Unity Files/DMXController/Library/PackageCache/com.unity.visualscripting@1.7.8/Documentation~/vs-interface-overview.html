@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The interface &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">The interface</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="the-interface">
+<h1>The interface<a class="headerlink" href="#the-interface" title="Permalink to this heading">¶</a></h1>
+<p>Visual Scripting’s main window is the Graph window.</p>
+<p><img alt="An image of the Visual Scripting Graph window. The Graph Inspector and Blackboard are open and a graph is visible in the other half of the window." src="Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting&#64;1.7.8/Documentation~/images%5Cvs-graph-window-overview.png" /></p>
+<p>The Graph window has five main elements:</p>
+<ul class="simple">
+<li><p>The <a class="reference internal" href="#the-graph-editor"><span class="xref myst"><strong>Graph Editor</strong></span></a>, where you create, arrange, and connect nodes.</p></li>
+<li><p>The <a class="reference internal" href="#the-fuzzy-finder"><span class="xref myst"><strong>fuzzy finder</strong></span></a>, which you can use to find nodes and add them to your graph.</p></li>
+<li><p>The <a class="reference internal" href="#the-graph-toolbar"><span class="xref myst"><strong>Graph toolbar</strong></span></a>, where you can change settings specific to your view in the Graph Editor and perform some common layout operations.</p></li>
+<li><p>The <a class="reference internal" href="#the-graph-inspector"><span class="xref myst"><strong>Graph Inspector</strong></span></a>, where you can view detailed information about your nodes and configure additional settings for your graph.</p></li>
+<li><p>The <a class="reference internal" href="#the-blackboard"><span class="xref myst"><strong>Blackboard</strong></span></a>, where you can define and edit variables to use in your graphs.</p></li>
+</ul>
+<section id="the-graph-editor">
+<h2>The Graph Editor<a class="headerlink" href="#the-graph-editor" title="Permalink to this heading">¶</a></h2>
+<p>The Graph Editor is the center editing area of the Graph window.</p>
+<p><img alt="An image of the Graph Editor. It displays a graph with multiple nodes and connections." src="Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting&#64;1.7.8/Documentation~/images%5Cvs-graph-editor.png" /></p>
+<p>You can use the Graph Editor to create your Visual Scripting graphs. You can create nodes and connect them with edges.</p>
+<p>You can change some default shortcuts and behaviors in the Graph Editor through your control scheme. For more information on the available control schemes in Visual Scripting, see <a class="reference internal" href="vs-control-schemes.html"><span class="std std-doc">Choose a control scheme</span></a>.</p>
+</section>
+<section id="the-fuzzy-finder">
+<h2>The fuzzy finder<a class="headerlink" href="#the-fuzzy-finder" title="Permalink to this heading">¶</a></h2>
+<p>The fuzzy finder is a searchable menu that lists every node available in Visual Scripting. Right-click anywhere in the Graph Editor to open the fuzzy finder.</p>
+<p><img alt="An image of the Graph Editor, with the fuzzy finder menu open" src="Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting&#64;1.7.8/Documentation~/images%5Cvs-fuzzy-finder.png" /></p>
+<p>Search for a node by name with the Search bar, or open a category from the list to view related nodes. For example, nodes related to the creation or manipulation of variables are in the <strong>Variables</strong> category.</p>
+<p>You can add new nodes to Visual Scripting from your own code, from other packages, or from other Unity features. For more information on how to add nodes to the fuzzy finder, see <a class="reference internal" href="vs-configuration.html"><span class="std std-doc">Configure project settings</span></a>.</p>
+</section>
+<section id="the-graph-toolbar">
+<h2>The Graph toolbar<a class="headerlink" href="#the-graph-toolbar" title="Permalink to this heading">¶</a></h2>
+<p>The Graph toolbar lets you display or hide the Graph Inspector and Blackboard. The Graph toolbar also includes a breadcrumb trail for navigation through nested graphs that displays your current location. Select a graph from the trail to return to that graph file.</p>
+<p>You can also configure some additional settings that control how nodes display in the Graph Editor.</p>
+<p><img alt="An image of the Graph toolbar" src="Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting&#64;1.7.8/Documentation~/images%5Cvs-toolbar.png" /></p>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th colspan="2"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lock</strong></td>
+<td colspan="2">Lock the current Script Graph or State Graph to the Graph window. Visual Scripting keeps the current graph open, even if you select another GameObject with a graph file in the <a href="https://docs.unity3d.com/Manual/Hierarchy.html">Hierarchy window</a>.</td>
+</tr>
+<tr>
+<td><strong>Graph Inspector</strong></td>
+<td colspan="2">Display or hide <a href="#the-graph-inspector">the Graph Inspector</a>.</td>
+</tr>
+<tr>
+<td><strong>Blackboard</strong></td>
+<td colspan="2">Display or hide <a href="#the-blackboard">the Blackboard</a>.</td>
+</tr>
+<tr>
+<td><strong>Breadcrumb Location</strong></td>
+<td colspan="2">Displays the name of the current graph. If you open a <a href="vs-nesting-subgraphs-state-units.md">Subgraph or State Unit</a>, or a <a href="vs-graph-types.md#state-graphs">State node</a> inside a State Graph, use the breadcrumbs to navigate back to the parent graph.</td>
+</tr>
+<tr>
+<td><strong>Zoom</strong></td>
+<td colspan="2">Set a zoom level for your view of the Graph Editor.</td>
+</tr>
+<tr>
+<td><strong>Relations</strong></td>
+<td colspan="2">Enable <strong>Relations</strong> to display inner flow connections for Script Graph nodes. For example, on a standard <code>Multiply</code> node, the <strong>Relations</strong> setting draws a line from each input port that merges into a single line on the output port. The lines display the flow of data inside the node. <br/>Disable <strong>Relations</strong> to hide these inner connections.</td>
+</tr>
+<tr>
+<td><strong>Values</strong></td>
+<td colspan="2">Enable <strong>Values</strong> to display the input and output values sent between nodes while the Unity Editor is in Play mode. This can make it easier to debug your scripts. <br/>Disable <strong>Values</strong> to hide input and output values while in Play mode. <br/>For more information on Play mode, see <a href="https://docs.unity3d.com/Manual/GameView.html">The Game view</a> in the Unity User Manual. <div class="NOTE"><h5>NOTE</h5><p>This setting corresponds to the <strong>Show Connection Values</strong> setting in the Preferences window for Visual Scripting. For more information on this preference, see <a href="vs-set-preferences.md#script-graphs-preferences">Configure your preferences</a>.</p></div></td>
+</tr>
+<tr>
+<td><strong>Dim</strong></td>
+<td colspan="2">Enable <strong>Dim</strong> to dim any nodes in the Graph Editor that aren't yet connected to the control flow in your graph. The <strong>Dim</strong> setting provides you with a visual cue that a node isn't used in the current configuration of your graph. <br/>Disable <strong>Dim</strong> to display all nodes as active regardless of their connection state. <div class="NOTE"><h5>NOTE</h5><p>This setting corresponds to the <strong>Dim Inactive Nodes</strong> setting in the Preferences window for Visual Scripting. For more information on this preference, see <a href="vs-set-preferences.md#core-preferences">Configure your preferences</a>.</p></div></td>
+</tr>
+<tr>
+<td><strong>Carry</strong></td>
+<td colspan="2">Enable <strong>Carry</strong> to move all connected child nodes when you move a parent node. Disable <strong>Carry</strong> to only move the currently selected node.<div class="NOTE"><h5>NOTE</h5><p>This setting corresponds to the <strong>Carry Children</strong> setting in the Preferences window for Visual Scripting. For more information on this preference, see <a href="vs-set-preferences.md#core-preferences">Configure your preferences</a>.</p></div></td>
+</tr>
+<tr>
+<td rowspan="7"><strong>Align</strong></td>
+<td colspan="2">Choose an alignment option to align any nodes in your current selection.</td>
+</tr>
+<tr>
+<td><strong>Align Left Edges</strong></td>
+<td>Align all nodes in the selection based on their left edge.</td>
+</tr>
+<tr>
+<td><strong>Align Centers</strong></td>
+<td>Align all nodes in the selection based on their vertical centers.</td>
+</tr>
+<tr>
+<td><strong>Align Right Edges</strong></td>
+<td>Align all nodes in the selection based on their right edges.</td>
+</tr>
+<tr>
+<td><strong>Align Top Edges</strong></td>
+<td>Align all nodes in the selection based on their top edges.</td>
+</tr>
+<tr>
+<td><strong>Align Middles</strong></td>
+<td>Align all nodes in the selection based on their horizontal middles.</td>
+</tr>
+<tr>
+<td><strong>Align Bottom Edges</strong></td>
+<td>Align all nodes in the selection based on their bottom edges.</td>
+</tr>
+<tr>
+<td rowspan="9"><strong>Distribute</strong></td>
+<td colspan="2">Choose a distribution option to evenly distribute space between any nodes in your current selection.</td>
+</tr>
+<tr>
+<td><strong>Distribute Left Edges</strong></td>
+<td>Distribute all nodes in the selection to leave an equal distance between the left edges of each node.</td>
+</tr>
+<tr>
+<td><strong>Distribute Centers</strong></td>
+<td>Distribute all nodes in the selection to leave an equal distance between the vertical centers of each node.</td>
+</tr>
+<tr>
+<td><strong>Distribute Right Edges</strong></td>
+<td>Distribute all nodes in the selection to leave an equal distance between the right edges of each node.</td>
+</tr>
+<tr>
+<td><strong>Distribute Horizontal Gaps</strong></td>
+<td>Distribute all nodes in the selection to leave an equal-sized horizontal gap between each node. This distribution affects the space between the left and right edges of nodes.</td>
+</tr>
+<tr>
+<td><strong>Distribute Top Edges</strong></td>
+<td>Distribute all nodes in the selection to leave an equal distance between the top edges of each node.</td>
+</tr>
+<tr>
+<td><strong>Distribute Middles</strong></td>
+<td>Distribute all nodes in the selection to leave an equal distance between the horizontal middles of each node.</td>
+</tr>
+<tr>
+<td><strong>Distribute Bottom Edges</strong></td>
+<td>Distribute all nodes in the selection to leave an equal distance between the bottom edges of each node.</td>
+</tr>
+<tr>
+<td><strong>Distribute Vertical Gaps</strong></td>
+<td>Distribute all nodes in the selection to leave an equal-sized vertical gap between each node. This distribution affects the space between the top and bottom edges of nodes.</td>
+</tr>
+<tr>
+<td><strong>Overview</strong></td>
+<td colspan="2">Select <strong>Overview</strong> to automatically pan and zoom to fit all elements of your current graph within the Graph Editor.</td>
+</tr>
+<tr>
+<td><strong>Full Screen</strong></td>
+<td colspan="2">Select <strong>Full Screen</strong> when the Graph window is docked in the Unity Editor to maximize the Graph window to the full size of the Editor window.</td>
+</tr>
+</tbody>
+</table>
+<p>Your Visual Scripting preferences can change some settings in the Graph toolbar or change how these settings behave. For example, you can control how fast the Graph Editor zooms in and out when you set a zoom level. For more information, see <a class="reference internal" href="vs-set-preferences.html"><span class="std std-doc">Configure your preferences</span></a>.</p>
+</section>
+<section id="the-graph-inspector">
+<h2>The Graph Inspector<a class="headerlink" href="#the-graph-inspector" title="Permalink to this heading">¶</a></h2>
+<p>The Graph Inspector provides additional information about an open graph, or about any node you select in the Graph Editor.</p>
+<p><img alt="An image of the Graph Inspector with a Switch on String node selected" src="Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting&#64;1.7.8/Documentation~/images%5Cvs-graph-inspector-switch-node.png" /></p>
+<p>If a node requires additional configuration, you can use the Graph Inspector to set these values.</p>
+<p>To display or hide the Graph Inspector, select <strong>Graph Inspector</strong> (<img alt="The Graph Inspector icon, of a grey circle with a black, lower case letter &quot;i&quot; in the center." src="Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting&#64;1.7.8/Documentation~/images%5Cvs-graph-inspector-icon.png" />) from the toolbar.</p>
+<p>To move the Graph Inspector to the other side of the Graph window, select either <strong>Dock Right</strong> (<img alt="The Dock Right button. An arrow points to the right side of a rectangle." src="Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting&#64;1.7.8/Documentation~/images%5CVS-RightSide.png" />) or <strong>Dock Left</strong> (<img alt="The Dock Left button. An arrow points to the left side of a rectangle." src="Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting&#64;1.7.8/Documentation~/images%5CVS-LeftSide.png" />).</p>
+</section>
+<section id="the-blackboard">
+<h2>The Blackboard<a class="headerlink" href="#the-blackboard" title="Permalink to this heading">¶</a></h2>
+<p>The Blackboard provides options to configure and manage variables in a graph. The Blackboard divides variables into five distinct scopes, across five tabs: <strong>Graph</strong>, <strong>Object</strong>, <strong>Scene</strong>, <strong>App</strong>, and <strong>Saved</strong>.</p>
+<p><img alt="An image of the Blackboard open to the Graph variables tab" src="Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting&#64;1.7.8/Documentation~/images%5Cvs-blackboard.png" /></p>
+<p>For more information on the available variable scopes in Visual Scripting, see <a class="reference internal" href="vs-variables.html"><span class="std std-doc">Variables</span></a>.</p>
+<p>To display or hide the Blackboard, select <strong>Blackboard</strong> (<img alt="The Blackboard icon. A letter &quot;x&quot; is surrounded by angled brackets." src="Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting&#64;1.7.8/Documentation~/images%5Cvs-blackboard-icon.png" />) from the toolbar.</p>
+<p>To move the Blackboard to the other side of the Graph window, select either <strong>Dock Right</strong> (<img alt="The Dock Right button. An arrow points to the right side of a rectangle." src="Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting&#64;1.7.8/Documentation~/images%5CVS-RightSide.png" />) or <strong>Dock Left</strong> (<img alt="The Dock Left button. An arrow points to the left side of a rectangle." src="Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting&#64;1.7.8/Documentation~/images%5CVS-LeftSide.png" />).</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">The interface</a><ul>
+<li><a class="reference internal" href="#the-graph-editor">The Graph Editor</a></li>
+<li><a class="reference internal" href="#the-fuzzy-finder">The fuzzy finder</a></li>
+<li><a class="reference internal" href="#the-graph-toolbar">The Graph toolbar</a></li>
+<li><a class="reference internal" href="#the-graph-inspector">The Graph Inspector</a></li>
+<li><a class="reference internal" href="#the-blackboard">The Blackboard</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-interface-overview.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">The interface</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

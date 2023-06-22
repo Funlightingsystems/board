@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../../../../" id="documentation_options" src="../../../../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>== MergetoolWindowTitle ==
+Plastic SCM 合并工具</p>
+<p>== FirstConflictButtonTooltip ==
+转到第一个冲突 (Ctrl + Shift + -)</p>
+<p>== PrevConflictButtonTooltip ==
+上一个冲突 (Ctrl + -)</p>
+<p>== NextConflictButtonTooltip ==
+下一个冲突 (Ctrl + +)</p>
+<p>== LastConflictButtonTooltip ==
+转到最后一个冲突 (Ctrl + Shift + +)</p>
+<p>== PrevNotAutomaticConflictButtonTooltip ==
+上一个非自动冲突 (Ctrl + PageUp)</p>
+<p>== NextNotAutomaticConflictButtonTooltip ==
+下一个非自动冲突 (Ctrl + PageDown)</p>
+<p>== GtkPendingAutomaticConflictsLabel ==
+{0}/{1}</p>
+<p>== GtkPendingNonAutomaticConflictsLabel ==
+待定非自动冲突：{0}/{1}</p>
+<p>== PendingAutomaticConflictsLabel ==
+当前冲突：{0} / {1}</p>
+<p>== PendingNonAutomaticConflictsLabel ==
+待定未解决冲突：{0} / {1}</p>
+<p>== NonAutomaticConflictsLabelTooltip ==
+当前未解决非自动冲突</p>
+<p>== CurrentConflictLabelTooltip ==
+当前合并冲突</p>
+<p>== NonAutomaticConflictsNavigationTooltip ==
+浏览当前未解决的冲突</p>
+<p>== AutomaticConflictsNavigationTooltip ==
+浏览合并冲突</p>
+<p>== AutomaticConflictMarkup ==
+当前冲突是&lt;span foreground=’green’&gt;自动&lt;/span&gt;的。无需用户干预。</p>
+<p>== NonAutomaticConflictMarkup ==
+当前冲突是&lt;span foreground=’red’&gt;非自动&lt;/span&gt;的。通过单击上面的按钮、编辑结果文件或将冲突标记为已解决来解决冲突。</p>
+<p>== NonAutomaticConflictMarkedAsResolvedMarkup ==
+当前冲突是&lt;span foreground=’green’&gt;非自动&lt;/span&gt;的，并且用户&lt;span foreground=’green’&gt;已解决&lt;/span&gt;该冲突。</p>
+<p>== MarkAsResolvedButton ==
+标记为已解决</p>
+<p>== MarkAsUnresolvedButton ==
+标记为未解决</p>
+<p>== MergetoolUsageTitle ==
+Mergetool 用法</p>
+<dl>
+<dt>== GtkMergetoolUsageHeader ==</dt><dd><p>用法：gtkmergetool</p>
+</dd>
+<dt>== MacMergetoolUsageHeader ==</dt><dd><p>用法：macmergetool</p>
+</dd>
+<dt>== MergetoolUsage ==</dt><dd><dl>
+<dt>mergeOptions:&lt;sourceFile&gt; [&lt;sourceSymbolicName&gt;]</dt><dd><blockquote>
+<div><p>&lt;baseFile&gt; [&lt;baseSymbolicName&gt;]
+&lt;destinationfile&gt; [&lt;destinationSymbolicName&gt;]
+[[&lt;autosave&gt;] &lt;resultFile&gt;]
+[&lt;mergeType&gt;]
+[&lt;generalOptions&gt;]</p>
+</div></blockquote>
+<p>sourceFile:{-s | –source}=&lt;filename&gt;
+sourceSymbolicName:{-sn | –srcsymbolicname}=&lt;symbolicname&gt;
+baseFile:{-b | –base}=&lt;filename&gt;
+baseSymbolicName:{-bn | –basesymbolicname}=&lt;symbolicname&gt;
+destinationFile:{-d | –destination}=&lt;filename&gt;;
+destinationSymbolicName:{-dn | –dstsymbolicname}=&lt;symbolicname&gt;
+autosave:-as | –autosave
+automatic:-a | –automatic
+silent:–silent
+resultFile:{-r | –result}=&lt;filename&gt;
+mergeType:{-m | –mergeresolutiontype}={onlyone | onlysrc | onlydst | try | forced}</p>
+</dd>
+</dl>
+<p>generalOptions:[&lt;defaultEncoding&gt;] [&lt;comparisonMethod&gt;] [&lt;resultEncoding&gt;]</p>
+<blockquote>
+<div><p>defaultEncoding:{-e | –defaultencoding}={none <a href="#id1"><span class="problematic" id="id2">|</span></a>ascii | unicode | bigendian | utf7 | utf8}
+resultEncoding:{-re | –resultencoding}={none <a href="#id3"><span class="problematic" id="id4">|</span></a>ascii | unicode | bigendian | utf7 | utf8}
+comparisonMethod:{-i | –ignore}={none | eol | whitespaces | “”eol&amp;whitespaces””}</p>
+</div></blockquote>
+<p>备注：</p>
+<blockquote>
+<div><dl class="simple">
+<dt>-a | –automatic:尝试自动解决合并。</dt><dd><p>如果无法自动解决合并（需要用户交互），则会显示合并工具。</p>
+</dd>
+<dt>–silent:此选项必须与 –automatic 选项结合使用。</dt><dd><p>当无法自动解决合并时，此选项将使该工具立即返回
+一个非零退出代码（不显示任何合并工具）。
+如果该工具能够自动解决合并，则程序将返回退出代码 0。</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+<p>== WinMergetoolUsage ==
+用法：mergetool [&lt;diffOptions&gt; | &lt;mergeOptions&gt;]</p>
+<blockquote>
+<div><p>diffOptions:&lt;generalFiles&gt; [&lt;generalOptions&gt;]</p>
+<p>mergeOptions:&lt;generalFiles&gt; &lt;baseFile&gt; [&lt;baseSymbolicName&gt;] [[&lt;automatic&gt;] [&lt;silent&gt;] &lt;resultFile&gt;] [&lt;mergeType&gt;] [&lt;generalOptions&gt;]</p>
+<blockquote>
+<div><p>baseFile:{-b | –base}=&lt;filename&gt;
+baseSymbolicName:{-bn | –basesymbolicname}=&lt;symbolicname&gt;
+automatic:-a | –automatic
+silent:–silent
+resultFile:{-r | –result}=&lt;filename&gt;
+mergeType:{-m | –mergeresolutiontype}={onlyone | onlysrc | onlydst | try | forced}</p>
+</div></blockquote>
+<p>generalFiles:&lt;sourceFile&gt; [&lt;srcSymbolicName&gt;] &lt;destination&gt; [&lt;dstSymbolicName&gt;]</p>
+<blockquote>
+<div><p>sourceFile:{-s | –source}=&lt;filename&gt;
+srcSymbolicName:{-sn | –srcsymbolicname}=&lt;symbolicname&gt;
+destinationFile:{-d | –destination}=&lt;filename&gt;
+dstSymbolicName:{-dn | –dstsymbolicname}=&lt;symbolicname&gt;</p>
+</div></blockquote>
+<p>generalOptions:[&lt;defaultEncoding&gt;] [&lt;comparisonMethod&gt;] [&lt;fileType&gt;] [&lt;resultEncoding&gt;]</p>
+<blockquote>
+<div><p>defaultEncoding:{-e | –encoding}={none <a href="#id5"><span class="problematic" id="id6">|</span></a>ascii | unicode | bigendian | utf7 | utf8}
+comparisonMethod:{-i | –ignore}={none | eol | whitespaces | eol&amp;whitespaces}
+fileType:{-t | –filestype}={text/csharp | text/XML | text}
+resultEncoding:{-re | –resultencoding}={none <a href="#id7"><span class="problematic" id="id8">|</span></a>ascii | unicode | bigendian | utf7 | utf8}
+progress:{–progress}=指示当前进度的进度字符串，例如：正在合并文件 1/8
+extraInfoFile:{–extrainfofile}=文件的路径，文件中包含有关合并的额外信息</p>
+</div></blockquote>
+<p>备注：</p>
+<blockquote>
+<div><dl class="simple">
+<dt>-a | –automatic:尝试自动解决合并。</dt><dd><p>如果无法自动解决合并（需要用户交互），则会显示合并工具。</p>
+</dd>
+<dt>–silent:此选项必须与 –automatic 选项结合使用。</dt><dd><p>当无法自动解决合并时，此选项将使该工具立即返回
+一个非零退出代码（不显示任何合并工具）。
+如果该工具能够自动解决合并，则程序将返回退出代码 0。</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>示例：</p>
+<blockquote>
+<div><p>mergetool
+mergetool -s=file1.txt -d=file2.txt
+mergetool -s=file1.txt -b=file0.txt –destination=file2.txt
+mergetool –base=file0.txt -d=file2.txt –source=file1.txt –automatic –result=result.txt
+mergetool -b=file0.txt -s=file1.txt -d=file2.txt -a -r=result.txt -e=utf7 -i=eol -t=text/csharp -m=onlyone</p>
+</div></blockquote>
+</div></blockquote>
+<p>== BrowseForSaveFileTitle ==
+保存文件</p>
+<p>== PendingUnsolvedConflicts ==
+该文件仍然有 {0} 个未解决的冲突。</p>
+<p>== FileChangedSinceSaved ==
+自上次保存以来，该文件已更改。</p>
+<p>== SaveAndExitDialogButton ==
+保存并退出</p>
+<p>== ExitWithoutSavingButton ==
+退出但不保存</p>
+<p>== CloseButton ==
+关闭</p>
+<p>== OkButton ==
+确定</p>
+<p>== CancelButton ==
+取消</p>
+<p>== SourceHeaderButton ==
+选择源：’{0}’</p>
+<p>== SourceHeaderPressedButton ==
+取消选择选择源：’{0}’</p>
+<p>== SourceHeaderButtonTooltip ==
+(Ctrl+1)</p>
+<p>== BaseHeaderButton ==
+选择基项：’{0}’</p>
+<p>== BaseHeaderPressedButton ==
+取消选择基项：’{0}’</p>
+<p>== BaseHeaderButtonTooltip ==
+(Ctrl+2)</p>
+<p>== DestinationHeaderButton ==
+选择目标：’{0}’</p>
+<p>== DestinationHeaderPressedButton ==
+取消选择目标：’{0}’</p>
+<p>== DestinationHeaderButtonTooltip ==
+(Ctrl+3)</p>
+<p>== ResultButton ==
+选择结果</p>
+<p>== ResultPressedButton ==
+取消选择结果</p>
+<p>== ResultButtonTooltip ==
+(Ctrl+4)</p>
+<p>== SaveAndExitButton ==
+保存并退出</p>
+<p>== SaveAndExitTooltip ==
+保存结果并关闭 Mergetool</p>
+<p>== SaveAsTooltip ==
+将结果保存到新文件中</p>
+<p>== SaveButton ==
+保存</p>
+<p>== SaveButtonTooltip ==
+保存更改 (Ctrl+S)</p>
+<p>== SaveAsMenu ==
+另存为…</p>
+<p>== MergeButton ==
+合并</p>
+<p>== KeepSrcMenu ==
+保留源参与者并退出</p>
+<p>== KeepBaseMenu ==
+保留基项参与者并退出</p>
+<p>== KeepDstMenu ==
+保留目标参与者并退出</p>
+<p>== SrcNeeded ==
+需要源文件名</p>
+<p>== DstNeeded ==
+需要目标文件名</p>
+<p>== ResultNeeded ==
+在自动合并中，需要结果文件名</p>
+<p>== AutomaticNeeded ==
+在静默模式中，需要自动合并选项</p>
+<p>== FileTypeError ==
+{0} 不是用于强调语法的有效文件类型</p>
+<p>== CompMethodError ==
+无效的比较方法</p>
+<p>== ArgError ==
+指定的参数无效</p>
+<p>== SrcEncodingMenuTitle ==
+源编码</p>
+<p>== DstEncodingMenuTitle ==
+目标编码</p>
+<p>== BaseEncodingMenuTitle ==
+基项编码</p>
+<p>== ResultEncodingMenuTitle ==
+结果编码</p>
+<p>== SplitBlocksMenuTitle ==
+拆分冲突块</p>
+<p>== ComparisonMethodMenuTitle ==
+比较方法</p>
+<p>== RecognizeAll ==
+识别全部</p>
+<p>== IgnoreEol ==
+忽略行尾</p>
+<p>== IgnoreWhitespace ==
+忽略空格</p>
+<p>== IgnoreEolWhitespace ==
+忽略行尾和空格</p>
+<p>== EncodingDialogTitle ==
+选择编码</p>
+<p>== EncodingDialogDescription ==
+选择字符编码</p>
+<p>== EncodingDialogLabel ==
+编码：</p>
+<p>== DefaultEncoding ==
+默认编码：</p>
+<p>== ResultEncoding ==
+结果编码：</p>
+<p>== NoneEncoding ==
+无</p>
+<p>== AsciiEncoding ==
+ASCII</p>
+<p>== UnicodeEncoding ==
+Unicode</p>
+<p>== UnicodeBigEndianEncoding ==
+Unicode Big-Endian</p>
+<p>== Utf7Encoding ==
+UTF-7</p>
+<p>== Utf8Encoding ==
+UTF-8</p>
+<p>== OtherEncoding ==
+其他…</p>
+<p>== ChangeEncoding ==
+更改…</p>
+<p>== Options ==
+选项</p>
+<p>== FindButton ==
+查找…</p>
+<p>== MatchCase ==
+匹配大小写</p>
+<p>== MergeResolutionOptionsTooltip ==
+合并解决选项</p>
+<p>== MergeOptionsTooltip ==
+显示和计算选项</p>
+<p>== SyntaxHighlight ==
+语法强调</p>
+<p>== FirstDiffButtonTooltip ==
+第一个差异</p>
+<p>== PrevDiffButtonTooltip ==
+上一个差异</p>
+<p>== NextDiffButtonTooltip ==
+下一个差异</p>
+<p>== LastDiffButtonTooltip ==
+最后一个差异</p>
+<p>== FirstDiffButtonTooltipWithShortcut ==
+第一个差异 (Ctrl + Shift + n)</p>
+<p>== PrevDiffButtonTooltipWithShortcut ==
+上一个差异 (Ctrl + n)</p>
+<p>== NextDiffButtonTooltipWithShortcut ==
+下一个差异 (Ctrl + m)</p>
+<p>== LastDiffButtonTooltipWithShortcut ==
+最后一个差异 (Ctrl + Shift + m)</p>
+<p>== CurrentDifference ==
+当前：{0}/{1}</p>
+<p>== LeftEncoding ==
+左侧编码</p>
+<p>== RightEncoding ==
+右侧编码</p>
+<p>== DifferencesWindowTitle ==
+差异</p>
+<p>== AutomaticConflictChunk1 ==
+当前冲突是</p>
+<p>== AutomaticConflictChunk2 ==
+自动冲突</p>
+<p>== AutomaticConflictChunk3 ==
+.无需用户干预。</p>
+<p>== SolvedConflictChunk1 ==
+当前冲突是</p>
+<p>== SolvedConflictChunk2 ==
+非自动冲突</p>
+<p>== SolvedConflictChunk3 ==
+，并且已被</p>
+<p>== SolvedConflictChunk4 ==
+解决</p>
+<dl class="simple">
+<dt>== SolvedConflictChunk5 ==</dt><dd><p>（由用户解决）。</p>
+</dd>
+</dl>
+<p>== NonAutomaticConflictChunk1 ==
+当前冲突是</p>
+<p>== NonAutomaticConflictChunk2 ==
+非自动冲突</p>
+<p>== NonAutomaticConflictChunk3 ==
+.通过单击上面的按钮、编辑结果文件或将冲突标记为已解决来解决冲突。</p>
+<p>== PatternNotFound ==
+找不到模式</p>
+<p>== PreviousSearchButtonTooltip ==
+搜索上一个匹配项</p>
+<p>== NextSearchButtonTooltip ==
+搜索下一个匹配项</p>
+<p>== UnexpectedError ==
+发生了意外错误。</p>
+<p>== GoToLineMenuItem ==
+转到行…</p>
+<p>== AddDiffSelectionMenuItem ==
+添加差异比较选择项</p>
+<p>== DiffWithPreviousSelectionMenuItem ==
+与前一个选择项进行差异比较</p>
+<p>== FindMenuItem ==
+查找…</p>
+<p>== FindNextMenuItem ==
+查找下一个</p>
+<p>== FirstSelection ==
+第一个选择项</p>
+<p>== SecondSelection ==
+第二个选择项</p>
+<p>== SemanticDiffMovedCode ==
+差异比较已移动的代码…</p>
+<p>== SemanticGoToMovedCode ==
+转到已移动的代码</p>
+<p>== SemanticDiffChangedCode ==
+差异比较已更改的代码…</p>
+<p>== SyncMovedCode ==
+同步顶部已移动的代码</p>
+<p>== UnsyncMovedCode ==
+还原滚动位置</p>
+<p>== OutliningMenu ==
+大纲</p>
+<p>== CollapseRegionsWithoutDiffsMenu ==
+折叠没有差异的区域</p>
+<p>== CollapseToDefinitionsMenu ==
+折叠到定义</p>
+<p>== ExpandAllMenu ==
+全部展开</p>
+<p>== Merged ==
+已合并</p>
+<p>== LoadingAnnotations ==
+正在加载批注…</p>
+<p>== AnnotateLineInfoChangeset ==
+变更集</p>
+<p>== AnnotateLineInfoTimeStamp ==
+创建日期</p>
+<p>== AnnotateLineInfoOwner ==
+所有者</p>
+<p>== AnnotateLineInfoComments ==
+注释</p>
+<p>== AnnotateColorByAuthor ==
+按作者着色</p>
+<p>== AnnotateColorByDate ==
+按日期着色</p>
+<p>== AnnotateContextMenu ==
+批注</p>
+<p>== AnnotateShowAuthor ==
+显示作者</p>
+<p>== AnnotateShowBranch ==
+显示分支</p>
+<p>== AnnotateShowChangeInMerge ==
+显示是否在合并中更改了行</p>
+<p>== AnnotateShowChangeset ==
+显示变更集</p>
+<p>== AnnotateShowDateModified ==
+显示修改日期</p>
+<p>== AnnotateShowLineAge ==
+显示行的存在时间</p>
+<p>== BigFileMessage ==
+该文件很大。计算差异可能需要一段时间。如果确实要计算此文件的差异，请单击按钮。</p>
+<p>== CalculateDifferencesButton ==
+计算差异</p>
+<p>== BranchChanges ==
+分支更改</p>
+<p>== BranchChangesTooltip ==
+突出显示分支中所做的更改</p>
+<p>== ConflictChanges ==
+冲突更改</p>
+<p>== ConflictChangesTooltip ==
+突出显示用户在合并期间已解决冲突的更改</p>
+<p>== MergedChanges ==
+已合并更改</p>
+<p>== MergedChangesTooltip ==
+突出显示来自合并的更改</p>
+<p>== CaseSensitiveCheckBox ==
+匹配大小写</p>
+<p>== ColorsConfigurationMenuItem ==
+配置字体和颜色…</p>
+<p>== ComparisonMethodMenuItem ==
+比较方法</p>
+<p>== ComparisonMethodIgnoreEolMenuItem ==
+忽略行尾</p>
+<p>== ComparisonMethodIgnoreWhitespacesMenuItem ==
+忽略空格</p>
+<p>== ComparisonMethodIgnoreEolWhitespacesMenuItem ==
+忽略行尾和空格</p>
+<p>== ComparisonMethodRecognizeAllMenuItem ==
+识别全部</p>
+<p>== Content ==
+{0} 的内容</p>
+<p>== CopyToClipboard ==
+复制到剪贴板</p>
+<p>== DiffWaitingAnimation ==
+正在计算差异…</p>
+<p>== DiscardButton ==
+放弃</p>
+<p>== DiscardButtonTooltip ==
+放弃更改</p>
+<p>== EditorOptions ==
+编辑器选项</p>
+<p>== EditorOptionsConvertTabsToSpaces ==
+编辑时将制表符转换为空格</p>
+<p>== EditorOptionsWhistespaces ==
+查看空格</p>
+<p>== EditorOptionsTabs ==
+制表符</p>
+<p>== EditorOptionsTabsSpacesNumber ==
+{0} 个空格</p>
+<p>== EditorOptionsColumnGuides ==
+分列辅助线</p>
+<p>== EditorOptionsColumnsNumber ==
+{0} 列</p>
+<p>== EditorOptionsBorderLines ==
+查看未选定区域的边界线</p>
+<p>== EncodingDifferences ==
+编码已从 {0} 更改为 {1}。</p>
+<p>== FsProtectionDifferences ==
+文件系统权限已从 {0} 更改为 {1}</p>
+<p>== UnableCalculateDiffs ==
+无法计算差异。</p>
+<p>== HideUnchanged ==
+隐藏未更改项</p>
+<p>== HideUnchangedTooltip ==
+仅显示已更改的声明</p>
+<p>== ShowUnchanged ==
+显示未更改项</p>
+<p>== ShowUnchangedTooltip ==
+显示完整的文件树，以便能够检查每个声明</p>
+<p>== GroupUnchanged ==
+将未更改项分组</p>
+<p>== GroupUnchangedTooltip ==
+显示已更改的声明，并将其余声明分组为单个未更改项</p>
+<p>== ZoomIn ==
+放大</p>
+<p>== ZoomInTooltip ==
+放大图形 - 也可以在按住 Control 键的同时使用滚轮</p>
+<p>== ZoomOut ==
+缩小</p>
+<p>== ZoomOutTooltip ==
+缩小图形 - 也可以在按住 Control 键的同时使用滚轮</p>
+<p>== ErrorSavingFile ==
+保存文件时发生了错误：{0}</p>
+<p>== Find ==
+查找：</p>
+<p>== FindCloseButtonTooltip ==
+关闭搜索栏</p>
+<p>== FindPreviousButtonTooltip ==
+搜索上一个匹配项</p>
+<p>== FindNextButtonTooltip ==
+搜索下一个匹配项</p>
+<p>== MovedDetectionMenuItem ==
+已移动检测</p>
+<p>== MovedDetectionDialogMenuItem ==
+已移动检测…</p>
+<p>== EnableMoveDetectionMenuItem ==
+启用已移动检测</p>
+<p>== MoveDetectionRatio ==
+移动检测比率</p>
+<p>== MinimumLinesInDifference ==
+最少差异行数</p>
+<p>== MaximizeButtonLeftTooltip ==
+最大化左侧面板</p>
+<p>== MaximizeButtonRightTooltip ==
+最大化右侧面板</p>
+<p>== RestoreButtonLeftTooltip ==
+还原左侧面板</p>
+<p>== RestoreButtonRightTooltip ==
+还原右侧面板</p>
+<p>== OutliningPreferencesTitle ==
+大纲首选项</p>
+<p>== OutliningPreferencesCaption ==
+大纲首选项</p>
+<p>== OutliningPreferencesDetails ==
+选择加载文件时首选的大纲模式</p>
+<p>== OutliningPreferencesExplanation ==
+加载文件后，使用以下大纲模式：</p>
+<p>== OutliningPreferencesCollapseWithoutDiffs ==
+折叠没有差异的区域</p>
+<p>== OutliningPreferencesCollapseToDefinitions ==
+折叠到定义</p>
+<p>== OutliningPreferencesExpandAll ==
+全部展开</p>
+<p>== NavigationTooltip ==
+转到已移动的片段</p>
+<p>== XDiffTooltip ==
+并排显示已移动的片段的差异</p>
+<p>== XDiffFragment ==
+[片段]</p>
+<p>== FontsAndColorsMenuItem ==
+字体和颜色</p>
+<p>== FontDoesNotSupportStrikeout ==
+字体 {0} 不支持应用程序使用的删除线样式。请选择其他字体。</p>
+<p>== ChangeFontMenuItem ==
+更改字体…</p>
+<p>== LeftDiffColorMenuItem ==
+左侧差异颜色</p>
+<p>== RightDiffColorMenuItem ==
+右侧差异颜色</p>
+<p>== RestoreDefaultsMenuItem ==
+还原默认值</p>
+<p>== FilesIdentical ==
+文件相同。</p>
+<p>== AddDiffSelection ==
+添加差异比较选择项</p>
+<p>== DiffWithPreviousSelection ==
+与前一个选择项进行差异比较</p>
+<p>== DiffSourceWithBase ==
+差异比较基项和源参与者</p>
+<p>== DiffDestinationWithBase ==
+差异比较基项和目标参与者</p>
+<p>== DiffDestinationWithSource ==
+差异比较源参与者和目标参与者</p>
+<p>== Encoding ==
+编码</p>
+<p>== FontMenuItem ==
+字体</p>
+<p>== DuplicatedArg ==
+重复参数 {0}。</p>
+<p>== MergeTypeError ==
+{0} 不是有效的合并解决类型</p>
+<p>== MergeExplanation ==
+此选项将启动一个三向合并工具，涉及基项文件、源文件和目标文件。您将能够将结果保存到另一个文件中。</p>
+<p>== DifferencesExplanation ==
+此选项将启动可视文本文件差异比较工具。请选择两个文件以查看它们之间的文本差异。</p>
+<p>== XMergeNoChanges ==
+Xmerge 结果为空。不会执行任何更改。</p>
+<p>== XMergeConfirmationMessage ==
+Xmerge 结果将替换您的选择，并会丢弃非自动冲突。是否要继续？</p>
+<p>== SourceDesc ==
+源（要合并的代码）</p>
+<p>== SourceLoc ==
+在源中</p>
+<p>== DestinationDesc ==
+目标（工作副本）</p>
+<p>== DestinationLoc ==
+在目标中</p>
+<p>== HowXMergeFormat ==
+您有一个合并冲突，但{0}不再存在于该处。</p>
+<p>发生了什么情况？一名开发者很可能已经移动了一段代码 ({1})，而另一名开发者已经在原始位置 ({2}) 修改了这段代码。</p>
+<p>== UnauthorizedAccessFile ==
+无法保存文件 ‘{0}’，因为您没有权限。您可以将文件保存在其他路径中。</p>
+<p>== AutomaticConflictMarkup1 ==
+当前冲突是</p>
+<p>== AutomaticConflictMarkup2 ==
+自动冲突</p>
+<p>== AutomaticConflictMarkup3 ==
+.无需用户干预。</p>
+<p>== SolvedConflictMarkup1 ==
+当前冲突是</p>
+<p>== SolvedConflictMarkup2 ==
+非自动冲突</p>
+<dl class="simple">
+<dt>== SolvedConflictMarkup3 ==</dt><dd><p>，并且已被</p>
+</dd>
+</dl>
+<p>== SolvedConflictMarkup4 ==
+解决</p>
+<dl class="simple">
+<dt>== SolvedConflictMarkup5 ==</dt><dd><p>（由用户解决）。</p>
+</dd>
+</dl>
+<p>== NonAutomaticConflictMarkup1 ==
+当前冲突是</p>
+<p>== NonAutomaticConflictMarkup2 ==
+非自动冲突</p>
+<p>== NonAutomaticConflictMarkup3 ==
+.通过单击上面的按钮、编辑结果文件或将冲突标记为已解决来解决冲突。</p>
+<p>== MarkAsResolvedExplanation ==
+使用下面的按钮选择应转到结果文件的参与者（源、基项或目标）。或者，如果建议的结果已经很好，请单击“标记为已解决”</p>
+<p>== MarkAsUnresolvedButton ==
+标记为未解决</p>
+<p>== SourceFileName ==
+源文件：{0}</p>
+<p>== BaseFileName ==
+基项文件：{0}</p>
+<p>== DestinationFileName ==
+目标文件：{0}</p>
+<p>== RestoreButtonSrcTooltip ==
+还原源面板</p>
+<p>== RestoreButtonBaseTooltip ==
+还原基项面板</p>
+<p>== RestoreButtonDstTooltip ==
+还原目标面板</p>
+<p>== RestoreButtonResultTooltip ==
+还原结果面板</p>
+<p>== MaximizeButtonSrcTooltip ==
+最大化源面板</p>
+<p>== MaximizeButtonBaseTooltip ==
+最大化基项面板</p>
+<p>== MaximizeButtonDstTooltip ==
+最大化目标面板</p>
+<p>== MaximizeButtonResultTooltip ==
+最大化结果面板</p>
+<p>== PendingNonAutomatic ==
+待解决：{0}/{1}</p>
+<p>== PreviousConflictButtonTooltip ==
+上一个冲突 (Ctrl+-)</p>
+<p>== PreviousUnsolvedConflictButtonTooltip ==
+上一个非自动冲突 (Ctrl+PageUp)</p>
+<p>== NextUnsolvedConflictButtonTooltip ==
+下一个非自动冲突 (Ctrl+PagDown)</p>
+<p>== OptionsButton ==
+选项</p>
+<p>== BaseEncodingMenuItem ==
+基项编码</p>
+<p>== SrcEncodingMenuItem ==
+源编码</p>
+<p>== DstEncodingMenuItem ==
+目标编码</p>
+<p>== ResultEncodingMenuItem ==
+结果编码</p>
+<p>== SplitMenuItem ==
+拆分冲突块</p>
+<p>== XmergeButton ==
+XMerge…</p>
+<p>== XmergeButtonTooltip ==
+启动 XMerge 向导</p>
+<p>== XmergeMenuItem ==
+XMerge…</p>
+<p>== XmergeNoTextSelected ==
+未选择文本。无法执行 Xmerge。</p>
+<p>== XmergeNotEnoughInfo ==
+没有足够的信息来执行 XMerge</p>
+<p>== XmergeRemovedTextSelected ==
+选择的行已被删除。它们不再是有效的 Xmerge 选择项。</p>
+<p>== XmergeStartTip ==
+此窗口显示已移动和已修改的代码片段。已移动的代码位于{0} ({1})。{2} ({3}) 是在移动代码之前的已修改代码。请解决剩余的手动冲突，然后单击“保存并退出”。</p>
+<p>== UnsolvedPendingConflicts ==
+该文件仍然有 {0} 个未解决的冲突。</p>
+<p>== ChangedFile ==
+自上次保存以来，该文件已更改。</p>
+<p>== MergeWaitingAnimation ==
+正在计算冲突。请稍候…</p>
+<p>== SaveAsButton ==
+另存为…</p>
+<p>== SaveBaseContributor ==
+保留基项参与者并退出</p>
+<p>== SaveDstContributor ==
+保留目标参与者并退出</p>
+<p>== SaveSrcContributor ==
+保留源参与者并退出</p>
+<p>== ExtraInfoButton ==
+有关此合并的信息</p>
+<p>== ExtraInfoButtonTooltip ==
+在面板中显示有关此合并的信息</p>
+<p>== Left ==
+左侧</p>
+<p>== Right ==
+右侧</p>
+<p>== SourceContributor ==
+源参与者</p>
+<p>== DestinationContributor ==
+目标参与者</p>
+<p>== MovedCode ==
+已移动代码段。</p>
+<p>== ModifiedCode ==
+原始位置中已修改代码段。</p>
+<p>== OriginalCode ==
+原始代码段。</p>
+<p>== ResultFile ==
+结果文件</p>
+<p>== AnnotateOptions ==
+批注选项</p>
+<p>== Copy ==
+复制</p>
+<p>== Cut ==
+剪切</p>
+<p>== Paste ==
+粘贴</p>
+<p>== SelectAll ==
+全选</p>
+<p>== FileTooLargeToDisplay ==
+文件太大，无法显示内容。</p>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.collab-proxy@1.17.7/Lib/Editor/PlasticSCM/localization/mergetool.zh-Hans.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

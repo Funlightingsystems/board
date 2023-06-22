@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Add a Subgraph to a Script Graph &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Add a Subgraph to a Script Graph</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="add-a-subgraph-to-a-script-graph">
+<h1>Add a Subgraph to a Script Graph<a class="headerlink" href="#add-a-subgraph-to-a-script-graph" title="Permalink to this heading">¶</a></h1>
+<p>A Subgraph is a Script Graph nested inside of another Script Graph. A Subgraph appears as a single node inside the parent Script Graph.</p>
+<p>You can add a Subgraph to a Script Graph in two ways: create an entirely new Script Graph, or add an existing Script Graph file.</p>
+<section id="add-a-new-subgraph-to-a-script-graph">
+<h2>Add a new Subgraph to a Script Graph<a class="headerlink" href="#add-a-new-subgraph-to-a-script-graph" title="Permalink to this heading">¶</a></h2>
+<p>To add a new blank Subgraph to an existing Script Graph:</p>
+<ol class="arabic">
+<li><p>[!include<a class="reference internal" href="snippets/vs-with-graph-open-ff.html"><span class="std std-doc">with-graph-open-ff</span></a>]. Go to <strong>Nesting</strong> and select <strong>Subgraph</strong>.</p></li>
+<li><p>In the Graph Inspector, choose the <strong>Source</strong> for your Subgraph:</p>
+<ul class="simple">
+<li><p><strong>Embed</strong>: The Subgraph only exists on the Subgraph node. You can only modify the Subgraph from the node in its parent graph.</p></li>
+<li><p><strong>Graph</strong>: The Subgraph exists in a separate file. You can modify the Subgraph outside of its parent graph and reuse the graph in other areas of your application.
+<br/></p></li>
+</ul>
+<p>[!include<a class="reference internal" href="snippets/vs-graph-inspector-tip.html"><span class="std std-doc">graph-inspector-tip.md</span></a>]</p>
+</li>
+<li><p>If you chose <strong>Graph</strong>, select <strong>New</strong>, enter a name for your graph file, and choose where you want to save it. Select <strong>Save</strong>.</p></li>
+</ol>
+<p><img alt="An image of the Graph window, showing a new blank Subgraph node added to a Script Graph" src="../../../../../../_images/vs-blank-graph-subgraph-example.png" /></p>
+</section>
+<section id="add-an-existing-script-graph-as-a-subgraph">
+<h2>Add an existing Script Graph as a Subgraph<a class="headerlink" href="#add-an-existing-script-graph-as-a-subgraph" title="Permalink to this heading">¶</a></h2>
+<p>To add an existing graph file as a Subgraph in a Script Graph:</p>
+<blockquote>
+<div><p>[!NOTE]
+You can’t nest a Script Graph as a Subgraph in its own graph file.</p>
+</div></blockquote>
+<ol class="arabic">
+<li><p>[!include<a class="reference internal" href="snippets/vs-with-graph-open-ff.html"><span class="std std-doc">with-graph-open-ff</span></a>]. Go to <strong>Nesting</strong> and select <strong>Subgraph</strong>.</p></li>
+<li><p>In the Graph Inspector, set your <strong>Source</strong> to <strong>Graph</strong>.
+<br/></p>
+<p>[!include<a class="reference internal" href="snippets/vs-graph-inspector-tip.html"><span class="std std-doc">graph-inspector-tip.md</span></a>]</p>
+</li>
+<li><p>In the <strong>Graph</strong> field, select the object picker (circle icon) and choose a compatible Script Graph from your project. You can also click and drag a Script Graph file from your Project window and drop it into the <strong>Graph</strong> field.</p></li>
+</ol>
+<p><img alt="An image of the Graph window, showing a new Subgraph node created from an existing Script Graph added to another Script Graph file" src="../../../../../../_images/vs-existing-graph-example-subgraph.png" /></p>
+<blockquote>
+<div><p>[!TIP]
+For a faster way to add a Script Graph as a Subgraph, click and drag the Script Graph from your Project window into the Graph Editor to automatically create a Subgraph node.</p>
+</div></blockquote>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">¶</a></h2>
+<p>To open your new Subgraph for editing, select <strong>Edit Graph</strong>.</p>
+<p>Once you’ve added a Subgraph to your Script Graph, define its Input and Output Triggers and Input and Output Data. For more information, see <a class="reference internal" href="vs-add-triggers-data-graph.html"><span class="std std-doc">Add a Trigger or Data port to a Script Graph</span></a>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Add a Subgraph to a Script Graph</a><ul>
+<li><a class="reference internal" href="#add-a-new-subgraph-to-a-script-graph">Add a new Subgraph to a Script Graph</a></li>
+<li><a class="reference internal" href="#add-an-existing-script-graph-as-a-subgraph">Add an existing Script Graph as a Subgraph</a></li>
+<li><a class="reference internal" href="#next-steps">Next steps</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-add-subgraph.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Add a Subgraph to a Script Graph</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

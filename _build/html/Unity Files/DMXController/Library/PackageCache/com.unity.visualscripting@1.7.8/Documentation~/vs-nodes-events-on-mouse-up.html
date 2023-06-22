@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>On Mouse Up node &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">On Mouse Up node</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="on-mouse-up-node">
+<h1>On Mouse Up node<a class="headerlink" href="#on-mouse-up-node" title="Permalink to this heading">¶</a></h1>
+<blockquote>
+<div><p>[!NOTE]
+The On Mouse Up [!include<a class="reference internal" href="snippets/input-manager/nodes-note-manual.html"><span class="std std-doc">nodes-note-manual</span></a>]</p>
+</div></blockquote>
+<p>The On Mouse Up node listens for a user to release their mouse button after they click a Collider in your application. [!include<a class="reference internal" href="snippets/input-manager/nodes-desc-end.html"><span class="std std-doc">nodes-desc-end</span></a>]</p>
+<p>The user can release their mouse button anywhere in your application to trigger the On Mouse Up node. If you want the node to trigger after the user releases the mouse button over the same Collider specified in the node’s <strong>Target</strong>, use the <a class="reference internal" href="vs-nodes-events-on-mouse-up-button.html"><span class="std std-doc">On Mouse Up As Button node</span></a> instead.</p>
+<p><img alt="An image of the Graph window. An On Mouse Up node displays with its details in the Graph Inspector." src="../../../../../../_images/vs-nodes-events-on-mouse-up-node.png" /></p>
+<section id="fuzzy-finder-category">
+<h2>Fuzzy finder category<a class="headerlink" href="#fuzzy-finder-category" title="Permalink to this heading">¶</a></h2>
+<p>The On Mouse Up node is in the <strong>Events</strong> &gt; <strong>Input</strong> category in the fuzzy finder.</p>
+</section>
+<section id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this heading">¶</a></h2>
+<p>The On Mouse Up [!include<a class="reference internal" href="snippets/nodes-single-input.html"><span class="std std-doc">nodes-single-input</span></a>]</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Name</strong></p></th>
+<th class="head text-left"><p><strong>Type</strong></p></th>
+<th class="head text-left"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Target</strong></p></td>
+<td class="text-left"><p>GameObject</p></td>
+<td class="text-left"><p>The GameObject the user needs to click with their mouse button to have the On Mouse Up node listen for a mouse button release action. The user can release their mouse button anywhere to trigger the On Mouse Up node, but they must click the GameObject specified as the <strong>Target</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="additional-node-settings">
+<h2>Additional node settings<a class="headerlink" href="#additional-node-settings" title="Permalink to this heading">¶</a></h2>
+<p>The On Mouse Up [!include<a class="reference internal" href="snippets/nodes-additional-settings.html"><span class="std std-doc">nodes-additional-settings</span></a>]</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+[!include[nodes-coroutine](./snippets/nodes-coroutine.md)]
+</tbody>
+</table>
+</section>
+<section id="outputs">
+<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this heading">¶</a></h2>
+<p>The On Mouse Up [!include<a class="reference internal" href="snippets/nodes-single-output.html"><span class="std std-doc">nodes-single-output</span></a>]</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+[!include[nodes-input-output-trigger](./snippets/input-manager/nodes-input-output-trigger.md)]
+</tbody>
+</table>
+</section>
+<section id="example-graph-usage">
+<h2>Example graph usage<a class="headerlink" href="#example-graph-usage" title="Permalink to this heading">¶</a></h2>
+<p>In the following example, the On Mouse Up node adds a force to a GameObject based on the user’s mouse position when they release their mouse button. The On Mouse Up node triggers a Camera Screen To World Point node to get the user’s mouse position, before it sends the <strong>X</strong> value of the mouse to a Rigidbody Add Force node to move the GameObject.</p>
+<p><img alt="An image of the Graph window. An On Mouse Up node has its Target set to This. Its Trigger output node connects to the Invoke input port on a Camera Screen To World Point node. The Screen To World Point node gets its Target input from a Get Variable input node, which outputs the value of the MainCamera variable. The Screen To World Point node gets its Position Input from a Vector 3 Create node. The Vector 3 Create node takes its X input from an Input Get Mouse Position node, with a Vector 3 Get X node to get only the X value. It does the same for its Y input, with a Vector 3 Get Y node. The Screen To World Point node's Exit output trigger triggers the Invoke input port on a Rigidbody Add Force node, with its Target set to This and its Force Mode set to Velocity Change. The Rigidbody Add Force node takes an X input from the Screen To World Point Vector 3 Result output port, with a Vector 3 Get X node." src="../../../../../../_images/vs-nodes-events-on-mouse-up-example.png" /></p>
+<p>When the user clicks on the sphere in the middle of the scene and releases their mouse button, the sphere moves towards their mouse location.</p>
+<p><img alt="An image of the Game view. Three red spheres sit on a plane. The middle sphere moves towards the sphere on the right and the mouse cursor." src="../../../../../../_images/vs-nodes-events-on-mouse-up-example-2.png" /></p>
+</section>
+<section id="related-nodes">
+<h2>Related nodes<a class="headerlink" href="#related-nodes" title="Permalink to this heading">¶</a></h2>
+<p>[!include<a class="reference internal" href="snippets/nodes-related.html"><span class="std std-doc">nodes-related</span></a>] On Mouse Up node:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="vs-nodes-events-on-button-input.html"><span class="std std-doc">On Button Input node</span></a></p></li>
+<li><p><a class="reference internal" href="vs-nodes-events-on-keyboard-input.html"><span class="std std-doc">On Keyboard Input node</span></a></p></li>
+<li><p><a class="reference internal" href="vs-nodes-events-on-mouse-down.html"><span class="std std-doc">On Mouse Down node</span></a></p></li>
+<li><p><a class="reference internal" href="vs-nodes-events-on-mouse-drag.html"><span class="std std-doc">On Mouse Drag node</span></a></p></li>
+<li><p><a class="reference internal" href="vs-nodes-events-on-mouse-enter.html"><span class="std std-doc">On Mouse Enter node</span></a></p></li>
+<li><p><a class="reference internal" href="vs-nodes-events-on-mouse-exit.html"><span class="std std-doc">On Mouse Exit node</span></a></p></li>
+<li><p><a class="reference internal" href="vs-nodes-events-on-mouse-input.html"><span class="std std-doc">On Mouse Input node</span></a></p></li>
+<li><p><a class="reference internal" href="vs-nodes-events-on-mouse-over.html"><span class="std std-doc">On Mouse Over node</span></a></p></li>
+<li><p><a class="reference internal" href="vs-nodes-events-on-mouse-up-button.html"><span class="std std-doc">On Mouse Up As Button node</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">On Mouse Up node</a><ul>
+<li><a class="reference internal" href="#fuzzy-finder-category">Fuzzy finder category</a></li>
+<li><a class="reference internal" href="#inputs">Inputs</a></li>
+<li><a class="reference internal" href="#additional-node-settings">Additional node settings</a></li>
+<li><a class="reference internal" href="#outputs">Outputs</a></li>
+<li><a class="reference internal" href="#example-graph-usage">Example graph usage</a></li>
+<li><a class="reference internal" href="#related-nodes">Related nodes</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-nodes-events-on-mouse-up.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">On Mouse Up node</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

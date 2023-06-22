@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Transform Tween track sample &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Transform Tween track sample</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="transform-tween-track-sample">
+<h1>Transform Tween track sample<a class="headerlink" href="#transform-tween-track-sample" title="Permalink to this heading">¶</a></h1>
+<p><img alt="Transform tween sample" src="../../../../../../_images/smpl_tween.png" /></p>
+<p>This track can be used for simple transform movements between two points.</p>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h2>
+<p>This track can be used for simple transform movements. All translation happens in a straight line but the speed can be controlled with an animation curve. The Tween track binds to the scene <code class="docutils literal notranslate"><span class="pre">Transform</span></code> you wish to move.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Start Location</p></td>
+<td><p>This is a reference to a Transform in the scene that marks the position and/or rotation of the moving Transform when the playable starts. If it is left null the position/rotation of the moving Transform when the playable starts will be used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>End Location</p></td>
+<td><p>This is a reference to a Transform in the scene that marks the position and/or rotation of the moving Transform when the playable finishes.</p></td>
+</tr>
+<tr class="row-even"><td><p>Tween Position</p></td>
+<td><p>Whether or not the position of the Transform should change.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tween Rotation</p></td>
+<td><p>Whether or not the rotation of the Transform should change.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="custom-clip-workflow-example">
+<h2>Custom clip workflow example<a class="headerlink" href="#custom-clip-workflow-example" title="Permalink to this heading">¶</a></h2>
+<p>This example will demonstrate how to:</p>
+<ul class="simple">
+<li><p>create a custom clip, track and mixer;</p></li>
+<li><p>use the PlayableGraph API to animate an object’s transform;</p></li>
+<li><p>customize a clip with <code class="docutils literal notranslate"><span class="pre">ClipEditor</span></code>;</p></li>
+</ul>
+<section id="custom-clip">
+<h3>1. Custom clip<a class="headerlink" href="#custom-clip" title="Permalink to this heading">¶</a></h3>
+<p>when a Timeline begins playing, nodes called <code class="docutils literal notranslate"><span class="pre">Playable</span></code>s are created. They are organized in a tree-like structure called the <code class="docutils literal notranslate"><span class="pre">PlayableGraph</span></code>. For each frame, Timeline samples this graph to read and mix multiple data sources (animation, audio and more).</p>
+<p>The first step to create a custom clip is to define a new <code class="docutils literal notranslate"><span class="pre">PlayableBehaviour</span></code> that will be added to a graph. It will need to store the data needed to implement the transform tween:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TweenBehaviour</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">PlayableBehaviour</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Transform</span><span class="w"> </span><span class="n">startLocation</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Transform</span><span class="w"> </span><span class="n">endLocation</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">shouldTweenPosition</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">shouldTweenRotation</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">AnimationCurve</span><span class="w"> </span><span class="n">curve</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">PlayableBehaviour</span></code>’s data is not serialized and will be lost once its parent graph is destroyed. To save this data, the next step is to define a new <code class="docutils literal notranslate"><span class="pre">PlayableAsset</span></code>:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="na">[Serializable]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TweenClip</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">PlayableAsset</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ExposedReference</span><span class="o">&lt;</span><span class="n">Transform</span><span class="o">&gt;</span><span class="w"> </span><span class="n">startLocation</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ExposedReference</span><span class="o">&lt;</span><span class="n">Transform</span><span class="o">&gt;</span><span class="w"> </span><span class="n">endLocation</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">shouldTweenPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">shouldTweenRotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">AnimationCurve</span><span class="w"> </span><span class="n">curve</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>Note:</em> The clip needs to store a start and an end location. Since an asset cannot directly reference a scene object, it cannot store a transform object directly. This is why an <code class="docutils literal notranslate"><span class="pre">ExposedReference&lt;Transform&gt;</span></code> is used.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">PlayableAsset</span></code>’s main purpose is to build a <code class="docutils literal notranslate"><span class="pre">PlayableBehaviour</span></code>. This is done with the <code class="docutils literal notranslate"><span class="pre">CreatePlayable</span></code> method:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TweenClip</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">PlayableAsset</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//...</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Playable</span><span class="w"> </span><span class="nf">CreatePlayable</span><span class="p">(</span><span class="n">PlayableGraph</span><span class="w"> </span><span class="n">graph</span><span class="p">,</span><span class="w"> </span><span class="n">GameObject</span><span class="w"> </span><span class="n">owner</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// create a new TweenBehaviour</span>
+<span class="w">        </span><span class="n">ScriptPlayable</span><span class="o">&lt;</span><span class="n">TweenBehaviour</span><span class="o">&gt;</span><span class="w"> </span><span class="n">playable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScriptPlayable</span><span class="o">&lt;</span><span class="n">TweenBehaviour</span><span class="o">&gt;</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">graph</span><span class="p">);</span>
+<span class="w">        </span><span class="n">TweenBehaviour</span><span class="w"> </span><span class="n">tween</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playable</span><span class="p">.</span><span class="n">GetBehaviour</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// set the behaviour&#39;s data</span>
+<span class="w">        </span><span class="n">tween</span><span class="p">.</span><span class="n">startLocation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">startLocation</span><span class="p">.</span><span class="n">Resolve</span><span class="p">(</span><span class="n">graph</span><span class="p">.</span><span class="n">GetResolver</span><span class="p">());</span>
+<span class="w">        </span><span class="n">tween</span><span class="p">.</span><span class="n">endLocation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">endLocation</span><span class="p">.</span><span class="n">Resolve</span><span class="p">(</span><span class="n">graph</span><span class="p">.</span><span class="n">GetResolver</span><span class="p">());</span>
+<span class="w">        </span><span class="n">tween</span><span class="p">.</span><span class="n">curve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curve</span><span class="p">;</span>
+<span class="w">        </span><span class="n">tween</span><span class="p">.</span><span class="n">shouldTweenPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shouldTweenPosition</span><span class="p">;</span>
+<span class="w">        </span><span class="n">tween</span><span class="p">.</span><span class="n">shouldTweenRotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shouldTweenRotation</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">playable</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">CreatePlayable</span></code> will initialize a new <code class="docutils literal notranslate"><span class="pre">TweenBehaviour</span></code> using <code class="docutils literal notranslate"><span class="pre">TweenClip</span></code>’s data.</p>
+</section>
+<section id="custom-track">
+<h3>2. Custom track<a class="headerlink" href="#custom-track" title="Permalink to this heading">¶</a></h3>
+<p>A custom track is created by defining a <a class="reference internal" href="#xref:UnityEngine.Timeline.TrackAsset"><span class="xref myst">TrackAsset</span></a> subclass. The following attributes can be added to a <code class="docutils literal notranslate"><span class="pre">TrackAsset</span></code>:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#xref:UnityEngine.Timeline.TrackBindingTypeAttribute"><span class="xref myst">TrackBindingType</span></a>: defines which type of object should be bound to a track;</p></li>
+<li><p><a class="reference internal" href="#xref:UnityEngine.Timeline.TrackClipTypeAttribute"><span class="xref myst">TrackClipType</span></a>: defines which type of clip should be associated to a track.</p></li>
+</ul>
+<p>For this example, the track needs a <code class="docutils literal notranslate"><span class="pre">Transform</span></code> object binding and can only accepts clips of type <code class="docutils literal notranslate"><span class="pre">TweenClip</span></code>, which was previously defined in step 1:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="na">[TrackBindingType(typeof(Transform))]</span>
+<span class="na">[TrackClipType(typeof(TweenClip))]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TweenTrack</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">TrackAsset</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The data setup is complete; <code class="docutils literal notranslate"><span class="pre">TweenTrack</span></code> and <code class="docutils literal notranslate"><span class="pre">TweenClip</span></code> can now be added to a timeline:</p>
+<p><img alt="Transform tween track and clip" src="../../../../../../_images/smpl_tween_empty.png" /></p>
+<p>However, no transform tween has been implemented yet. To do this, a track mixer is needed.</p>
+</section>
+<section id="define-a-track-mixer">
+<h3>3. Define a track mixer<a class="headerlink" href="#define-a-track-mixer" title="Permalink to this heading">¶</a></h3>
+<p>To properly handle blending, or crossfading, between two clips, a track mixer is needed. A track mixer is a <code class="docutils literal notranslate"><span class="pre">PlayableBehaviour</span></code> that will have access to all clips data and will blend those together.</p>
+<section id="track-mixer-setup">
+<h4>Track mixer setup<a class="headerlink" href="#track-mixer-setup" title="Permalink to this heading">¶</a></h4>
+<p>By default, when a track is added to a timeline, an empty playable is generated and is connected to each clip’s playable.</p>
+<p>For example, this track:</p>
+<p><img alt="Track with default track mixer" src="../../../../../../_images/smpl_tween_default_track.png" /></p>
+<p>will generate the following playable graph:</p>
+<p><img alt="Graph with default track mixer" src="../../../../../../_images/smpl_tween_default_graph.png" /></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Timeline</span></code>: this playable is the <code class="docutils literal notranslate"><span class="pre">root</span></code> playable; all playables related to tracks are connected to this node.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Playable</span></code>: this playable represents the track mixer. Since no track mixer is defined, an empty one is generated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TweenBehaviour</span></code>: this playable represents a clip. One per clip is generated. All clip playables are connected to the track mixer.</p></li>
+</ul>
+<p>In order to define a custom track mixer, a new <code class="docutils literal notranslate"><span class="pre">PlayableBehaviour</span></code> needs to be defined:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TweenMixerBehaviour</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">PlayableBehaviour</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+<p>then, in <code class="docutils literal notranslate"><span class="pre">TrackAsset</span></code>, the <a class="reference internal" href="#xref:UnityEngine.Timeline.TrackAsset#UnityEngine_Timeline_TrackAsset_CreateTrackMixer_UnityEngine_Playables_PlayableGraph_UnityEngine_GameObject_System_Int32_"><span class="xref myst">CreateTrackMixer</span></a> method can be used to specify a custom track mixer:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TweenTrack</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">TrackAsset</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Playable</span><span class="w"> </span><span class="nf">CreateTrackMixer</span><span class="p">(</span><span class="n">PlayableGraph</span><span class="w"> </span><span class="n">graph</span><span class="p">,</span><span class="w"> </span><span class="n">GameObject</span><span class="w"> </span><span class="n">go</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">inputCount</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ScriptPlayable</span><span class="o">&lt;</span><span class="n">TweenMixerBehaviour</span><span class="o">&gt;</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span><span class="w"> </span><span class="n">inputCount</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now the playable graph looks like this:</p>
+<p><img alt="Graph with custom track mixer" src="../../../../../../_images/smpl_tween_custom_graph.png" /></p>
+<p>The empty playable that used to connect clip playables together is now replaced by <code class="docutils literal notranslate"><span class="pre">TweenMixerBehaviour</span></code>.</p>
+</section>
+<section id="transform-tween-implementation">
+<h4>Transform tween implementation<a class="headerlink" href="#transform-tween-implementation" title="Permalink to this heading">¶</a></h4>
+<p>The implementation of the transform tween resides in the <code class="docutils literal notranslate"><span class="pre">ProcessFrame</span></code> method from <code class="docutils literal notranslate"><span class="pre">TweenMixerBehaviour</span></code>. Here are the main steps of that implementation:</p>
+<ul class="simple">
+<li><p><em>Initialization</em>: When the timeline is first played, the initial transform of the track binding is fetched. If the start or end transform is <code class="docutils literal notranslate"><span class="pre">null</span></code>, the initial transform will be used instead.</p></li>
+<li><p><em>Get clip behaviours &amp; weights</em>: to appropriately blend, the mixer needs to ask information for all of its inputs (clips):</p></li>
+</ul>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="c1">// Iterate on all the playable&#39;s (mixer) inputs (ie each clip on the track)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">inputCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playable</span><span class="p">.</span><span class="n">GetInputCount</span><span class="p">();</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">inputCount</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// get the input connected to the mixer</span>
+<span class="w">    </span><span class="n">Playable</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playable</span><span class="p">.</span><span class="n">GetInput</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// get the weight of the connection</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">inputWeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playable</span><span class="p">.</span><span class="n">GetInputWeight</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// get the clip&#39;s behaviour</span>
+<span class="w">    </span><span class="n">TweenBehaviour</span><span class="w"> </span><span class="n">tweenInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetTweenBehaviour</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>Calculate and blend</em>: A linear interpolation is used to calculate a transform between two points.</p></li>
+<li><p><em>Apply result</em>: Once the calculation is done, the transform is written in the track binding object:</p></li>
+</ul>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="c1">// Apply the final position and rotation values in the track binding</span>
+<span class="n">trackBinding</span><span class="p">.</span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accumPosition</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m_InitialPosition</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="m">1.0f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">totalPositionWeight</span><span class="p">);</span>
+<span class="n">trackBinding</span><span class="p">.</span><span class="n">rotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accumRotation</span><span class="p">.</span><span class="n">Blend</span><span class="p">(</span><span class="n">m_InitialRotation</span><span class="p">,</span><span class="w"> </span><span class="m">1.0f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">totalRotationWeight</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="customize-a-clip-s-appearance">
+<h3>4. Customize a clip’s appearance<a class="headerlink" href="#customize-a-clip-s-appearance" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ClipEditor</span></code> can be used to augment the capabilities of a clip in the editor. It works like a custom <a class="reference external" href="https://docs.unity3d.com/ScriptReference/CustomEditor.html">Inspector</a>; the <a class="reference internal" href="#xref:UnityEditor.Timeline.CustomTimelineEditorAttribute"><span class="xref myst">CustomTimelineEditor attribute</span></a> is used to tell Timeline that a <a class="reference internal" href="#xref:UnityEditor.Timeline.ClipEditor"><span class="xref myst">ClipEditor</span></a> class should be associated to a given clip.</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="na">[CustomTimelineEditor(typeof(TweenClip))]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TweenClipEditor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ClipEditor</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>It is possible to customize the appearance of a clip with the <a class="reference internal" href="#xref:UnityEditor.Timeline.ClipEditor#UnityEditor_Timeline_ClipEditor_DrawBackground_UnityEngine_Timeline_TimelineClip_UnityEditor_Timeline_ClipBackgroundRegion_"><span class="xref myst">DrawBackground</span></a> method:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DrawBackground</span><span class="p">(</span><span class="n">TimelineClip</span><span class="w"> </span><span class="n">clip</span><span class="p">,</span><span class="w"> </span><span class="n">ClipBackgroundRegion</span><span class="w"> </span><span class="n">region</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">TweenClip</span><span class="w"> </span><span class="n">asset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clip</span><span class="p">.</span><span class="n">asset</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">TweenClip</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">asset</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Drawing code here...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Only the portion between (0,1) of the curve will be used.</p></li>
+<li><p>When a clip ends, the object bound to the track will return to its original position.</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Transform Tween track sample</a><ul>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#custom-clip-workflow-example">Custom clip workflow example</a><ul>
+<li><a class="reference internal" href="#custom-clip">1. Custom clip</a></li>
+<li><a class="reference internal" href="#custom-track">2. Custom track</a></li>
+<li><a class="reference internal" href="#define-a-track-mixer">3. Define a track mixer</a><ul>
+<li><a class="reference internal" href="#track-mixer-setup">Track mixer setup</a></li>
+<li><a class="reference internal" href="#transform-tween-implementation">Transform tween implementation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customize-a-clip-s-appearance">4. Customize a clip’s appearance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#notes">Notes</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.timeline@1.6.4/Documentation~/smpl_custom_tween.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Transform Tween track sample</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

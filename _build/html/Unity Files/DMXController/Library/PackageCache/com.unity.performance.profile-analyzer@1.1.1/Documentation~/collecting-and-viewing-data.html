@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Collecting and viewing data &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Collecting and viewing data</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="collecting-and-viewing-data">
+<h1>Collecting and viewing data<a class="headerlink" href="#collecting-and-viewing-data" title="Permalink to this heading">¶</a></h1>
+<p>This workflow explains how to populate the <a class="reference external" href="https://docs.unity3d.com/Manual/Profiler.html">Unity Profiler</a> and Profile Analyzer with data. Note that the Profile Analyzer only analyzes CPU data from the Profiler.</p>
+<section id="step-1-open-the-unity-profiler">
+<h2>Step 1: Open the Unity Profiler<a class="headerlink" href="#step-1-open-the-unity-profiler" title="Permalink to this heading">¶</a></h2>
+<p>Go to the menu: <strong>Window &gt; Analysis &gt; Profiler</strong> or press Ctrl+7 (Command+7 on macOS). If you have the Profile Analyzer window open, you can click the <strong>Open Profiler Window</strong> button.</p>
+</section>
+<section id="step-2-populate-the-profiler-with-data">
+<h2>Step 2: Populate the Profiler with data<a class="headerlink" href="#step-2-populate-the-profiler-with-data" title="Permalink to this heading">¶</a></h2>
+<p>To use the Profile Analyzer, you must populate it with data from the Profiler. To add data to the Profiler, you can either record some new data, or load a Profiler capture file in the .data file format.</p>
+<section id="a-record-new-data">
+<h3>a) Record new data<a class="headerlink" href="#a-record-new-data" title="Permalink to this heading">¶</a></h3>
+<p>Click the <strong>Attach to Player</strong> dropdown at the top of the window (next to the Record button) and select a player to profile. By default this is set to <strong>Playmode</strong>. Click the <strong>Record</strong> button to start recording data. If you enabled <strong>Autoconnect to Profiler</strong> in the Build Settings, the Profiler automatically collects data when you start a built player.</p>
+<p><img alt="Profiler dropdown" src="../../../../../../_images/profiler-attach-to-player-dropdown.png" /><br/><em>The Attach To Player dropdown in the Profiler</em></p>
+<p>For more information on how to record data in the Profiler, see the documentation on <a class="reference external" href="https://docs.unity3d.com/Manual/profiler-profiling-applications.html">Profiling your application</a> in the Unity User Manual.</p>
+</section>
+<section id="b-load-data">
+<h3>b) Load data<a class="headerlink" href="#b-load-data" title="Permalink to this heading">¶</a></h3>
+<p>To load a saved .data file, in the top right of the Profiler window, select the <strong>Load</strong> button.</p>
+</section>
+</section>
+<section id="step-3-pull-the-data-into-the-profile-analyzer-window">
+<h2>Step 3: Pull the data into the Profile Analyzer window<a class="headerlink" href="#step-3-pull-the-data-into-the-profile-analyzer-window" title="Permalink to this heading">¶</a></h2>
+<p>Open the Profile Analyzer window (menu: <strong>Window &gt; Analysis &gt; Profile Analyzer</strong>) and then select the <strong>Pull Data</strong> button in the <a class="reference internal" href="frame-range-selection.html"><span class="std std-doc">Frame Control</span></a> pane. The Profile Analyzer then pulls in the data that is loaded in the Profiler window.</p>
+<blockquote>
+<div><p>[!TIP]
+The Profiler window and the Profile Analyzer window require a lot of screen real-estate. Docking the two windows together in a single tabbed window lets you navigate between the two views quickly.</p>
+</div></blockquote>
+<p><img alt="Profiler and Profile Analyzer" src="../../../../../../_images/profile-analyzer-profiler-docked.png" /><br/><em>The Profiler and Profile Analyzer docked side by-side in one window</em></p>
+</section>
+<section id="step-4-load-and-save-profile-analyzer-data">
+<h2>Step 4: Load and save Profile Analyzer data<a class="headerlink" href="#step-4-load-and-save-profile-analyzer-data" title="Permalink to this heading">¶</a></h2>
+<p>To save the data from the Profile Analyzer, click the <strong>Save</strong> button in any view. Select where you would like to save your data, and then Unity saves the data in the .pdata format. To load this data, click the <strong>Load</strong> button in any view.</p>
+<blockquote>
+<div><p>[!NOTE]
+When you load data into the Profile Analyzer, the data must be in the Profile Analyzer .pdata format. If you have data from the Profiler in the .data file format, open it in the Profiler first, and in the Profile Analyzer select the <strong>Pull Data</strong> button.</p>
+</div></blockquote>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Collecting and viewing data</a><ul>
+<li><a class="reference internal" href="#step-1-open-the-unity-profiler">Step 1: Open the Unity Profiler</a></li>
+<li><a class="reference internal" href="#step-2-populate-the-profiler-with-data">Step 2: Populate the Profiler with data</a><ul>
+<li><a class="reference internal" href="#a-record-new-data">a) Record new data</a></li>
+<li><a class="reference internal" href="#b-load-data">b) Load data</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#step-3-pull-the-data-into-the-profile-analyzer-window">Step 3: Pull the data into the Profile Analyzer window</a></li>
+<li><a class="reference internal" href="#step-4-load-and-save-profile-analyzer-data">Step 4: Load and save Profile Analyzer data</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.performance.profile-analyzer@1.1.1/Documentation~/collecting-and-viewing-data.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Collecting and viewing data</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

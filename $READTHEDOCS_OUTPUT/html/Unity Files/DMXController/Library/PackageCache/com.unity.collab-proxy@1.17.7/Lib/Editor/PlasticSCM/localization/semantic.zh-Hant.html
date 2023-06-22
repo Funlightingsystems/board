@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../../../../" id="documentation_options" src="../../../../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>== Base ==
+基底:</p>
+<p>== ChangedResultFile ==
+您是否想要儲存結果檔案?</p>
+<p>== ChangedDestinationFile ==
+您是否想要儲存目的地檔案?</p>
+<p>== CloseButton ==
+關閉</p>
+<p>== ConfiguredStatus ==
+已設定!</p>
+<p>== NotConfigureStatus ==
+未設定</p>
+<p>== Destination ==
+目的地:</p>
+<p>== ErrorAutomaticOptionNeeded ==
+在無訊息模式中，需要自動合併選項</p>
+<p>== ErrorComparisonMethod ==
+無效的比較方法</p>
+<p>== ErrorConflictCanNotBeApplied ==
+無法套用衝突解決，因為它取決於其他衝突的解決。請嘗試以不同的順序解決衝突。衝突解決傳回下列錯誤:{0}</p>
+<p>== ErrorContributorsMustBeSpecified ==
+必須指定貢獻者</p>
+<p>== ErrorEncoding ==
+無法識別指定的編碼 ({0})</p>
+<p>== ErrorExecutingExternalDiffTool ==
+執行外部差異比對工具時發生錯誤:</p>
+<p>== ErrorExecutingExternalMergeTool ==
+執行外部合併工具時發生錯誤:</p>
+<p>== ErrorExecutingExternal2WayMergeTool ==
+執行外部雙向合併工具時發生錯誤:</p>
+<p>== ErrorFileTitleType ==
+糟糕!我們尚不支援您的語言!</p>
+<p>== ErrorFileType ==
+SemanticMerge 收到下列檔案:{0}.
+檔案副檔名不視為支援的語言。
+您可以執行預設的文字型 {1} 工具。</p>
+<p>請注意: 若您知道這些檔案包含支援的語言，請查看如何在 SemanticMerge 中使用 -l 參數。</p>
+<p>== ErrorJVMNotAvailableTitle ==
+糟糕!找不到 JVM - 這是剖析您的檔案所必備</p>
+<p>== ErrorJVMNotAvailable ==
+SemanticMerge 需要有效的可用 JVM 安裝
+才能剖析您的 {0} 檔案。</p>
+<p>您可以改執行預設的文字型 {1} 工具。</p>
+<p>== ErrorNumberOfContributorsDoesNotMatch ==
+貢獻者的人數不符</p>
+<p>== ErrorTabSpaces ==
+無效的定位字元空格</p>
+<p>== ErrorVersionControl ==
+設定的版本控制無效</p>
+<p>== OpenDialogFilterForExecutableFile ==
+可執行檔 (<em>.exe)|</em>.exe</p>
+<p>== OpenDialogTitleForConfigFile ==
+瀏覽設定檔</p>
+<p>== OpenDialogTitleForExecutableFile ==
+瀏覽可執行檔</p>
+<p>== PlasticSCMConfigurationNotification ==
+變更要等到您重新開啟 Plastic SCM GUI 才會生效</p>
+<p>== RestartMergeWithConfigChangesMessage ==
+為了套用新儲存的設定，必須重新啟動合併。</p>
+<p>== RestartDiffWithConfigChangesMessage ==
+為了套用新儲存的設定，必須重新啟動差異比對。</p>
+<p>== RestartMergeQuestion ==
+您已經解決 {0} 個衝突，這些衝突將遺失。您確定要重新啟動合併?</p>
+<p>== ResultNeeded ==
+必須指定結果檔案路徑</p>
+<p>== Source ==
+來源:</p>
+<p>== UnsolvedPendingConflicts ==
+檔案仍有 {0} 個未解決的衝突。</p>
+<p>== UnexpectedError ==
+發生未預期的錯誤。</p>
+<dl>
+<dt>== Usage ==</dt><dd><p>用法：semanticmerge [&lt;configureversioncontrol&gt; | &lt;mergeOptions&gt;]</p>
+<dl class="simple">
+<dt>configureversioncontrol:{–configure-version-control}=&lt;versioncontrolkey&gt;</dt><dd><p>versioncontrolkey:{plasticscm | git}</p>
+</dd>
+<dt>mergeOptions:&lt;檔案&gt; [-a|–automatic] [–silent] [–merge-decl] [–process-all-merges]</dt><dd><p>[–nolangwarn] [–nostructurewarn] [–include-format-change] [–log-external-parser]
+[&lt;contributorSymbolicNames&gt;] [&lt;generalOptions&gt;]
+[&lt;contributorExtendedInfo&gt;]</p>
+</dd>
+<dt>檔案:{&lt;sortedFiles&gt; | &lt;unsortedFiles&gt;}</dt><dd><dl class="simple">
+<dt>sortedFiles:&lt;filename1&gt; &lt;filename2&gt; &lt;filename3&gt; &lt;filename4&gt; &lt;fileparamorder&gt;</dt><dd><dl class="simple">
+<dt>fileparamorder:{-fpo | –fileparamorder}=&lt;以分號分隔的按鍵清單&gt;</dt><dd><p>預設值為 –fileparamorder=s;d;b;r</p>
+</dd>
+</dl>
+</dd>
+<dt>unsortedFiles:&lt;sourceFile&gt; &lt;destinationFile&gt; &lt;baseFile&gt; &lt;resultFile&gt;</dt><dd><p>sourceFile:{-s | –source}=&lt;filename&gt;
+destinationFile:{-d | –destination}=&lt;filename&gt;
+baseFile:{-b | –base}=&lt;filename&gt;
+resultFile:{-r | –result}=&lt;filename&gt;</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>-a | –automatic:自動合併而無須使用者操作，除非找到衝突。</p>
+<dl class="simple">
+<dt>–silent:此選項必須搭配 –automatic 選項使用。</dt><dd><p>當無法自動解決合併時，此選項會導致工具立即傳回
+非零退出碼 (不顯示 Semanticmerge 工具)。
+如果工具能夠自動解決合併，則程式會傳回退出碼 0。</p>
+</dd>
+</dl>
+<p>–merge-decl:自動合併盡可能多的宣告*。</p>
+<dl>
+<dt>–process-all-merges:自動合併盡可能多的宣告*並</dt><dd><blockquote>
+<div><p>針對每個非自動合併宣告執行外部文字型工具。</p>
+</div></blockquote>
+<dl class="simple">
+<dt><a href="#id1"><span class="problematic" id="id2">*</span></a>宣告是陳述式，定義任何支援的語意元素:類別、方法、屬性等。</dt><dd><p>視元素類型而定 (例如類別、方法)，其中包含實作元素的本文。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>–nolangwarn:當語言不受支援時，直接執行外部文字型工具。</p>
+<p>–nostructurewarn:若找到結構錯誤，直接執行外部文字型工具。</p>
+<dl class="simple">
+<dt>–include-format-change:包含僅修改縮排和 EOL 的變更。</dt><dd><p>這包括在每行開頭的空白字元和定位字元間的差異以及
+EOL 中的差異。當中也包括在宣告開頭的空白行。
+預設會忽略所有這些差異，以簡化合併/差異比對。</p>
+</dd>
+</dl>
+<p>–log-external-parser:啟用將檔案內容記錄到偵錯外部剖析器。</p>
+<dl>
+<dt>contributorSymbolicNames:&lt;srcSymbolicName&gt; &lt;dstSymbolicName&gt; &lt;baseSymbolicName&gt;</dt><dd><p>srcSymbolicName:{-sn | –srcsymbolicname}=&lt;symbolicname&gt;
+dstSymbolicName:{-dn | –dstsymbolicname}=&lt;symbolicname&gt;
+baseSymbolicName:{-bn | –basesymbolicname}=&lt;symbolicname&gt;</p>
+</dd>
+<dt>generalOptions:[&lt;defaultEncoding&gt;] [&lt;resultEncoding&gt;] [&lt;fileLanguage&gt;] [&lt;virtualMachine&gt;]</dt><dd><blockquote>
+<div><p>[&lt;externalMergeTool&gt;] [&lt;external2WayMerge&gt;] [&lt;externalDiffTool&gt;]
+[&lt;tabSpaces&gt;] [&lt;extrainfofile&gt;] [&lt;progress&gt;]</p>
+</div></blockquote>
+<p>defaultEncoding:{-e | –defaultencoding}=&lt;encoding&gt;
+resultEncoding:{-re | –resultencoding}=&lt;encoding&gt;</p>
+<blockquote>
+<div><p>encoding:{ascii | ansi | unicode | bigendian | utf7 | utf8 | utf8bom | utf32be | utf32le}</p>
+</div></blockquote>
+<p>fileLanguage:{-l | –fileslanguage}={csharp | vb | java | cplusplus | php}
+virtualMachine:{-vm | –virtualmachine}=&lt;Java 虛擬機器可執行檔的路徑&gt;
+externalParser:{-ep | –externalparser}=&lt;執行外部剖析器的命令&gt;
+externalMergeTool:{-emt  | –externalmergetool}={default | &lt;使用者_定義的_工具&gt;}
+external2WayMerge:{-e2mt | –external2waymergetool}={ &lt;使用者_定義的_工具&gt;}
+externalDiffTool:{-edt  | –externalDiffTool}={default | &lt;使用者_定義的_工具&gt;}
+tabSpaces:{-ts   | –tabspaces}={4 | &lt;使用者_定義&gt;}
+extrainfofile:{-ei   | –extrainfofile}={包含額外合併資訊之檔案的路徑}
+progress:{-pg   | –progress}={代表整個合併過程進度的字串}</p>
+</dd>
+<dt>contributorExtendedInfo:&lt;contributorOwnerName&gt; &lt;contributorBranchName&gt;</dt><dd><p>&lt;contributorChangeset&gt; &lt;contributorComment&gt;</p>
+</dd>
+<dt>contributorOwnerName:&lt;srcOwnerName&gt; &lt;dstOwnerName&gt; &lt;baseOwnerName&gt;</dt><dd><p>srcOwnerName:{-so | –srcowner}=&lt;ownername&gt;
+dstOwnerName:{-do | –dstowner}=&lt;ownername&gt;
+baseOwnerName:{-bo | –baseowner}=&lt;ownername&gt;</p>
+</dd>
+<dt>contributorBranchName:&lt;srcBranchName&gt;; &lt;dstBranchName&gt; &lt;baseBranchName&gt;</dt><dd><p>srcBranchName:{-sb | –srcbranch}=&lt;name&gt;
+dstBranchName:{-db | –dstbranch}=&lt;branchname&gt;
+baseBranchName:{-bb | –basebranch}=&lt;branchname&gt;</p>
+</dd>
+<dt>contributorChangeset:&lt;srcChangeset&gt; &lt;dstChangeset&gt; &lt;baseChangeset&gt;</dt><dd><p>srcChangeset:{-sc | –srccset}=&lt;changeset&gt;
+dstChangeset:{-dc | –dstcset}=&lt;changeset&gt;
+baseChangeset:{-bc | –basecset}=&lt;changeset&gt;</p>
+</dd>
+<dt>contributorComment:&lt;srcComment&gt; &lt;dstComment&gt; &lt;baseComment&gt;</dt><dd><p>srcComment:{-sm | –srccomment}=&lt;changeset&gt;
+dstComment:{-dm | –dstcomment}=&lt;changeset&gt;
+baseComment:{-bm | –basecomment}=&lt;changeset&gt;</p>
+</dd>
+</dl>
+<p>範例：</p>
+<blockquote>
+<div><p>semanticmergetool -b=base.cs -d=dst.cs -s=src.cs -r=result.cs</p>
+<p>semanticmergetool base.cs dst.cs src.cs result.cs –fileparamorder=b;d;s;r</p>
+<dl class="simple">
+<dt>semanticmergetool -b=base.cs -d=dst.cs -s=src.cs -r=result.cs</dt><dd><p>-e2mt=””kdiff3.exe #sourcefile #destinationfile -o #output””</p>
+</dd>
+<dt>semanticmergetool -b=base.cs -d=dst.cs -s=src.cs -r=result.cs</dt><dd><p>-emt=””kdiff3.exe #basefile #sourcefile #destinationfile -o #output””</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+<p>== UsageCaption ==
+SemanticMerge 工具用法</p>
+<p>== WarningNoExternalDiffTool ==
+未指定任何外部差異比對工具以繼續差異比對。</p>
+<p>== WarningNoExternal2MergeTool ==
+未指定任何雙向合併工具以合併選取衝突的內容。</p>
+<p>== WarningNoExternalMergeTool ==
+未指定任何外部合併工具以繼續合併。</p>
+<p>== WarningExternalToolNotFound ==
+找不到工具，請引入有效工具</p>
+<p>== WarningSemanticToolNotFound ==
+找不到 SemanticMerge 工具，請引入有效工具</p>
+<p>== WarningConfigFileNotFound ==
+找不到設定檔，請引入有效檔案</p>
+<p>== WarningInvalidJavaVirtualMachinePath ==
+找不到 Java 虛擬機器路徑</p>
+<p>== WarningInvalidTabSize ==
+無效的定位字元大小</p>
+<p>== RenameWindowTitle ==
+重新命名來源</p>
+<p>== RenameWindowLabel ==
+{0} 的新名稱:</p>
+<p>== RenameButton ==
+重新命名</p>
+<p>== CancelButton ==
+取消</p>
+<p>== PendingConflictsToSolve ==
+{0}/{1}  -  待解決的衝突:{2}</p>
+<p>== NextConflictButtonTooltip ==
+下一個衝突 (Ctrl+PagDown)</p>
+<p>== PreviousConflictButtonTooltip ==
+上一個衝突 (Ctrl+PageUp)</p>
+<p>== SaveAndExitExplanation ==
+儲存結果檔案並退出工具</p>
+<p>== SaveAndExitButton ==
+儲存並退出 (_X)</p>
+<p>== MergeWaitingAnimation ==
+正在計算衝突。請稍候…</p>
+<p>== SyncDeclarationMenuItem ==
+同步宣告</p>
+<p>== OptionsButton ==
+選項</p>
+<p>== FindMenuItem ==
+尋找…</p>
+<p>== OptionsMenuItem ==
+選項</p>
+<p>== ConfigureFontsAndColorsMenuItem ==
+設定字型和顏色…</p>
+<p>== DisplayInfoAboutThisMerge ==
+顯示關於此合併的資訊</p>
+<p>== LeftEncodingMenuItem ==
+左側編碼</p>
+<p>== RightEncodingMenuItem ==
+右側編碼</p>
+<p>== SkipFormatChangesMenuItem ==
+跳過格式變更</p>
+<p>== ReformatSourceCode ==
+重新格式化原始程式碼</p>
+<p>== ConfigurationMenuItem ==
+設定…</p>
+<p>== GetLicense ==
+取得授權</p>
+<p>== ShowUserGuideMenuItem ==
+使用者指南</p>
+<p>== UserGuideURL ==
+<a class="reference external" href="https://semanticmerge.com/documentation">https://semanticmerge.com/documentation</a></p>
+<p>== ShowIntroGuideMenuItem ==
+顯示簡介指南</p>
+<p>== OpenSamplesDirectoryMenuItem ==
+開啟樣本</p>
+<p>== FollowSemanticmergeMenuItem ==
+關注 &#64;semanticmerge</p>
+<p>== AboutSemanticmergeMenuItem ==
+關於和授權</p>
+<p>== VisualDiffWindowTitle ==
+視覺差異比對</p>
+<p>== VisualDiffExplanation ==
+顯示解釋差異比對的圖形</p>
+<p>== VisualDiffOptionExplanation ==
+選取兩個宣告並按一下差異比對以查看差異</p>
+<p>== VisualDiffControlExplanation ==
+使用控制鍵搭配滾輪進行放大和縮小</p>
+<p>== ZoomInExplanation ==
+放大圖形; 您也可以在使用控制鍵搭配滾軸來放大</p>
+<p>== ZoomOutExplanation ==
+縮小圖形; 您也可以在使用控制鍵搭配滾軸來縮小</p>
+<p>== VisualMergeWindowTitle ==
+視覺合併</p>
+<p>== VisualMerge ==
+視覺合併 (_V)</p>
+<p>== VisualMergeExplanation ==
+顯示解釋合併的圖形</p>
+<p>== RunTextMerge ==
+執行文字合併 (_T)</p>
+<p>== RunTextMergeExplanation ==
+執行傳統的文字型合併工具</p>
+<p>== RestartMerge ==
+重新啟動合併 (_E)</p>
+<p>== RestartMergeExplanation ==
+捨棄所有變更並重新啟動合併作業</p>
+<p>== ProcessAllMerges ==
+處理所有合併</p>
+<p>== ProcessAllMergesExplanation ==
+自動合併盡可能多的宣告並針對每個非自動合併宣告執行外部文字型工具</p>
+<p>== VisualDiffButton ==
+視覺差異比對 (_V)</p>
+<p>== RestartDiffButton ==
+重新啟動差異比對 (_R)</p>
+<p>== RestartDiffExplanation ==
+重新啟動差異比對作業</p>
+<p>== RunTextDiffButton ==
+執行文字差異比對 (_T)</p>
+<p>== RunTextDiffExplanation ==
+執行傳統的文字型差異比對工具</p>
+<p>== OutlinePanelVisualDiffButton ==
+視覺差異比對 (_V)</p>
+<p>== OutlinePanelRunTextDiffButton ==
+執行文字差異比對 (_T)</p>
+<p>== DivergentMoveDetails ==
+分歧的移動詳細資料</p>
+<p>== ShowMergeInfoExplanation ==
+顯示合併資訊</p>
+<p>== MergeInfoResultFile ==
+結果檔案:</p>
+<p>== MergeInfoLanguage ==
+語言:</p>
+<p>== MergeInfoBaseFile ==
+基底檔案</p>
+<p>== MergeInfoSourceFile ==
+來源檔案</p>
+<p>== MergeInfoDestinationFile ==
+目的地檔案</p>
+<p>== MergeInfoFileName ==
+名稱:</p>
+<p>== MergeInfoFilePath ==
+路徑:</p>
+<p>== MergeInfoExtraInfo ==
+額外資訊</p>
+<p>== SemanticOutline ==
+語意輪廓</p>
+<p>== ExpandSemanticOutlineTooltip ==
+展開語意輪廓</p>
+<p>== CollapseSemanticOutlineTooltip ==
+折疊語意輪廓</p>
+<p>== PendingConflicts ==
+待解決的衝突 ({0})</p>
+<p>== PendingConflictsExplanation ==
+顯示需要手動解決的衝突:當「他們的變更」和「您的變更」中同時修改了相同元素時，便會發生這種情況</p>
+<p>== DiffExplanation ==
+顯示此元素的差異比對</p>
+<p>== SourceDifferences ==
+來源 - 他們的變更 ({0})</p>
+<p>== SourceDifferencesExplanation ==
+在您合併的來源程式碼 (他們的) 中所做的變更。顯示基底和來源貢獻者之間的差異</p>
+<p>== DestinationDifferences ==
+目的地 - 您的變更 ({0})</p>
+<p>== DestinationDifferencesExplanation ==
+您的工作副本 (您的) 上的變更。顯示基底和目的地貢獻者之間的差異</p>
+<p>== NoConflictMessageText ==
+沒有可檢查的衝突。</p>
+<p>== NoConflictMessageDetail ==
+這表示工具可以解決合併而無須使用者操作。</p>
+<p>您會看到此訊息可能是因為您仍想檢閱合併。</p>
+<p>但若是您寧可盡可能將衝突解決自動化:請新增 &quot;-a&quot; 引數到 Semanticmerge 命令列。</p>
+<p>== MaximizeButtonLeftTooltip ==
+最大化左側窗格</p>
+<p>== RestoreButtonLeftTooltip ==
+還原左側窗格</p>
+<p>== MaximizeButtonSrcTooltip ==
+最大化來源窗格</p>
+<p>== RestoreButtonSrcTooltip ==
+還原來源窗格</p>
+<p>== MaximizeButtonDstTooltip ==
+最大化目的地窗格</p>
+<p>== RestoreButtonDstTooltip ==
+還原目的地窗格</p>
+<p>== MaximizeButtonBaseTooltip ==
+最大化基底窗格</p>
+<p>== RestoreButtonBaseTooltip ==
+還原基底窗格</p>
+<p>== MaximizeButtonResultTooltip ==
+最大化結果窗格</p>
+<p>== RestoreButtonResultTooltip ==
+還原結果窗格</p>
+<p>== CopyToClipboard ==
+複製至剪貼簿</p>
+<p>== BackButtonTooltip ==
+上一步</p>
+<p>== FindMatchesButton ==
+尋找相符項目 (_M)</p>
+<p>== DiffMatchButton ==
+差異比對 (_D)</p>
+<p>== MatchButton ==
+比對 (_M)</p>
+<p>== UnMatchButton ==
+取消比對 (_U)</p>
+<p>== SelectElementToMatch ==
+選取要比對的元素</p>
+<p>== EditResultExplanation ==
+您必須等到所有衝突都解決後，才能編輯結果檔案。還剩下 {0} 個衝突。</p>
+<p>== KeepSourceExplanation ==
+保留來源變更</p>
+<p>== KeepDestinationExplanation ==
+保留目的地變更</p>
+<p>== KeepBothExplanation ==
+保留兩種變更</p>
+<p>== RenameExplanation ==
+重新命名目的地</p>
+<p>== MergeExplanation ==
+執行外部文字合併工具來解決此衝突</p>
+<p>== TwoWayMergeExplanation ==
+啟動外部雙向 Mergetool 來解決此衝突</p>
+<p>== DisplayConfigurationWindowExplanation ==
+顯示設定視窗</p>
+<p>== DisplayAboutWindowExplanation ==
+顯示關於視窗</p>
+<p>== HideUnchangedSelectionExplanation ==
+僅顯示已變更的宣告</p>
+<p>== ShowUnchangedSelectionExplanation ==
+顯示完整的樹狀結構檔案，以便檢查每個宣告</p>
+<p>== GroupUnchangedSelectionExplanation ==
+顯示將其餘的宣告組成未變更宣告的已變更宣告</p>
+<p>== ExplainMoveMoveExplanation ==
+解釋元素如何在來源和目的地貢獻者上移至不同的位置</p>
+<p>== SourceFileExplanation ==
+來源貢獻者檔案</p>
+<p>== BaseFileExplanation ==
+基底檔案，合併期間使用的來源和目的地檔案的上層</p>
+<p>== DestinationFileExplanation ==
+目的地貢獻者檔案</p>
+<p>== FindMatchesExplanation ==
+開啟比對視窗，將已新增項比對到已刪除項</p>
+<p>== UnmatchExplanation ==
+取消比對 - 若基底和此貢獻者之間的方法比對有誤，您可以取消比對，將它們轉換成已新增/已刪除，並手動修正比對</p>
+<p>== MatchExplanation ==
+將比對套用到選取的項目</p>
+<p>== InvalidEmail ==
+無效的電子郵件</p>
+<p>== InvalidReport ==
+無效的報告</p>
+<p>== EnterValidEmailAndReport ==
+請輸入您的電子郵件地址、主旨和註解。</p>
+<p>== EnterValidEmailAddress ==
+請輸入有效的電子郵件地址。</p>
+<p>== ErrorReadingSampleTitle ==
+讀取樣本時出錯</p>
+<p>== ErrorReadingSampleDescription ==
+無法從檔案 {0} 剖析樣本:{1}</p>
+<p>== SamplesWindowExplanation ==
+對於每個樣本案例，我們建議您執行傳統合併工具，並將之與 SemanticMerge 比較</p>
+<p>== ShowIntroGuideButton ==
+顯示簡介指南 (_G)</p>
+<p>== RunTextMergetoolButton ==
+文字</p>
+<p>== RunSemanticMergetoolButton ==
+語意</p>
+<p>== WelcomeSemantic20 ==
+歡迎使用 SemanticMerge 2.0</p>
+<p>== WelcomeExplanation1 ==
+語意是不同類型的合併工具。它會在計算合併前剖析程式碼，而能夠偵測並自動解決大多數衝突。</p>
+<p>== WelcomeExplanation2 ==
+它與您目前所用的大多數合併工具不同，因此值得花幾分鐘的時間瀏覽樣本案例，成為真正的合併大師並充分利用此工具。</p>
+<p>== ExploreTheSamplesButton ==
+探索樣本 (_E)</p>
+<p>== ReadTheIntroGuideLinkText1 ==
+若要深入瞭解 SemanticMerge 基礎</p>
+<p>== ReadTheIntroGuideLinkText2 ==
+請閱讀簡介指南</p>
+<dl class="simple">
+<dt>== ReadTheIntroGuideLinkText3 ==</dt><dd><p>(3 分鐘閱讀時間)。</p>
+</dd>
+</dl>
+<p>== DontShowThisDialogOnStartup ==
+不要在開機時顯示這個對話方塊 (_S)</p>
+<p>== RunTheToolButton ==
+執行工具 (_T)</p>
+<p>== ParsingErrorsLabel ==
+處理這些檔案時找到一些問題。</p>
+<p>== ShowParsingErrorsButton ==
+顯示剖析錯誤</p>
+<p>== ReleaseNotesBaseUrl ==
+<a class="reference external" href="https://www.plasticscm.com/download/releasenotes">https://www.plasticscm.com/download/releasenotes</a></p>
+<p>== MultifileCurrentFile ==
+檔案 {1} 之 {0}:</p>
+<p>== MultifileCurrentFileExplanation ==
+這是目前的檔案。若要變更檔案，請使用衝突瀏覽按鈕，還有多檔案移動。</p>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.collab-proxy@1.17.7/Lib/Editor/PlasticSCM/localization/semantic.zh-Hant.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

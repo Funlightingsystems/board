@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>DMX-Controller-App &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">DMX-Controller-App</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="dmx-controller-app">
+<h1>DMX-Controller-App<a class="headerlink" href="#dmx-controller-app" title="Permalink to this heading">¶</a></h1>
+<p>Includes the backend and the unity package</p>
+<p>Use the “Open folder” option in the unity hub, the folder containing the ‘game’ files is called like DMXController.</p>
+</section>
+<section id="i-do-know-why-i-made-this">
+<h1>i do know why i made this<a class="headerlink" href="#i-do-know-why-i-made-this" title="Permalink to this heading">¶</a></h1>
+<section id="you-can-take-the-code-if-you-want-idc-and-laugh-at-my-pathetic-ness">
+<h2>you can take the code if you want, idc. and laugh at my pathetic-ness<a class="headerlink" href="#you-can-take-the-code-if-you-want-idc-and-laugh-at-my-pathetic-ness" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="a-comic-strip-for-your-enjoyment-many-to-annoy-thejades-thx-for-being-so-overkill-sometimes">
+<h2>A comic strip for your enjoyment, many to annoy &#64;thejades. Thx for being so overkill sometimes<a class="headerlink" href="#a-comic-strip-for-your-enjoyment-many-to-annoy-thejades-thx-for-being-so-overkill-sometimes" title="Permalink to this heading">¶</a></h2>
+<p><img alt="A comic strip about sonething stupid" src="https://cdn.discordapp.com/attachments/1112763060998914192/1120437506295476354/standards.png" /></p>
+</section>
+</section>
+<section id="hey-i-noticed-something-fun">
+<h1>HEY! I noticed something ‘fun’<a class="headerlink" href="#hey-i-noticed-something-fun" title="Permalink to this heading">¶</a></h1>
+<section id="haha-fun-get-it-nope-nevermind">
+<h2>Haha, fun… get it? nope. Nevermind.<a class="headerlink" href="#haha-fun-get-it-nope-nevermind" title="Permalink to this heading">¶</a></h2>
+<p>I noticed that the StageCL UI is rendered with Qt Widgets, I have linked the .ss file below with the things included. If I need to take pictures of certain screens on the stageCL I can. I can add my current pictures here aswell if requested.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+QWidget
+{ 
+    font: 14px &quot;Sans Serif&quot;; 
+    /*background: transparent;*/
+    /*background: #f0f0f0;*/
+    background: #e0e0e0;
+}
+
+QCheckBox::indicator:unchecked {
+    image: url(:/StageLedWidgetsResources/checkbox_off.png);
+}
+
+QCheckBox::indicator:checked {
+    image: url(:/StageLedWidgetsResources/checkbox_on.png);
+}
+
+MonitorMimicWidget
+{
+     background: #f0f0f0;
+}
+
+QTableView, QListView
+{
+    background: #f0f0f0;
+}
+
+JGroupBox
+{ 
+    font: 9pt &quot;Sans Serif&quot;; 
+}
+
+
+QLabel 
+{
+    font: 20px &quot;Sans Serif&quot;; 
+}
+
+QLabel#_statsLabel 
+{
+    font: 12px &quot;Sans Serif&quot;; 
+    background: lightGray;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+QLabel#_intensityLabel,  QLabel#_fadeTimeLabel, QLabel#_secondsLabel
+{
+    font: 20px &quot;Sans Serif&quot;;
+    border: 2px solid gray;
+    border-radius: 2px;
+    padding: 0 0px;
+    background: lightgray;
+    selection-background-color: darkgray;
+}
+
+QLabel#_fixtureFaderLabel, QLabel#_sceneFaderLabel, QLabel#_chaseFaderLabel, QLabel#_cuelistFaderLabel, QLabel#_gmFaderLabel, QLabel#_monitorFadeTimeLabel
+{
+    font: 14px &quot;Sans Serif&quot;;
+    border: 2px solid gray;
+    border-radius: 2px;
+    padding: 0 0px;
+    background: lightgray;
+    selection-background-color: darkgray;
+}
+
+QLabel#previewLabel
+{
+    border: 4px solid gray;
+    border-radius: 6px;
+    padding: 0 0px;
+    background: lightgray;
+}
+
+QLabel#_monitorLabel_1, QLabel#_monitorLabel_2, QLabel#_monitorLabel_3, QLabel#_monitorLabel_4, QLabel#_monitorLabel_5, QLabel#_monitorLabel_6
+{
+    font: 14px &quot;Sans Serif&quot;;
+}
+
+QLabel#_fixtureTypeLabel
+{
+    font: 20px &quot;Sans Serif&quot;;
+    border: 2px solid gray;
+    border-radius: 2px;
+    padding: 0 0px;
+    padding-left: 4px;
+    background: gray;
+    color: white;
+    selection-background-color: darkgray;
+}
+
+QLabel#_fixtureNumberLabel, QLabel#_fixtureFolderLabel
+{
+    font: 16px &quot;Arial&quot;; 
+    border: 4px solid #888888;
+    border-radius: 8px;
+    color: black;
+    background-color: #e0e0e0;
+}
+
+MultiPatchDialog QLabel#_label
+{
+    font: 14px &quot;Sans Serif&quot;; 
+}
+
+PatchWizardBaseWidget QLabel
+{
+    font: 16px &quot;Sans Serif&quot;; 
+}
+
+PatchWizardPatchWidget QLabel#_statusLabel 
+{
+    font: 12px &quot;Sans Serif&quot;; 
+    background: lightGray;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+
+PatchWizardPatchWidget QLineEdit:focus
+{
+    color: white;
+    background: gray;
+}
+
+PatchWizardIntroWidget QLabel
+{
+    font: 14px &quot;Sans Serif&quot;; 
+}
+
+QPushButton
+{ 
+    font: 20px &quot;Arial&quot;; 
+    border: 4px solid #888888;
+    border-radius: 8px;
+    color: black;
+    background-color: #aaaaaa;
+}
+
+QPushButton:disabled
+{ 
+    border-color: #bbbbbb;
+    background-color: #bbbbbb;
+    color: #777777;
+}
+
+QPushButton:pressed, QPushButton:selected, QPushButton:focus
+{ 
+    border-color: red;
+}
+
+QPushButton#_fixtureNameButton
+{ 
+    border-color: gray;
+}
+
+QPushButton:checked 
+{ 
+    background-color: #444444;
+    color: white;
+}
+
+QAbstractButton[jButtonStyle=&quot;Middle&quot;]
+{
+	border-radius: 0px;
+	border-left-width: 2px; 
+     border-right-width: 2px;
+}
+
+QAbstractButton[jButtonStyle=&quot;First&quot;]
+{
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-right-width: 2px;
+}
+
+QAbstractButton[jButtonStyle=&quot;Last&quot;]
+{
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-left-width: 2px;
+}
+
+VirtualKeyboardBase QPushButton:checked
+{ 
+    font: 20px &quot;Arial&quot;; 
+    border: 2px solid #ff0000;
+    border-radius: 6px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #a7a9af);
+}
+
+VirtualKeyboardBase QPushButton:focus
+{ 
+    outline: none;
+    border-color: black;
+
+}
+
+
+QPushButton#_lineEditButton
+{ 
+    border: 0px solid #8f8f91;
+    border-radius: 0px;
+    background:transparent;
+}
+
+MenuButton, PatchWizardBaseWidget QPushButton
+{ 
+    font: 20px &quot;Arial&quot;; 
+    color: black;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #ffffff, stop: 1 #c0c0c0);
+    border: 1px solid #000000;
+    border-radius: 0px;
+}
+
+
+MenuButton:pressed, PatchWizardBaseWidget QPushButton:pressed
+{ 
+    font: 20px &quot;Arial&quot;; 
+    color: white;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #c0c0c0, stop: 1 #000000);
+    border: 1px solid #000000;
+    border-radius: 0px;
+}
+
+MenuButton:checked, PatchWizardBaseWidget QPushButton:checked
+{ 
+    font: 20px &quot;Arial&quot;; 
+    color: white;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #c0c0c0, stop: 1 #000000);
+    border: 1px solid #000000;
+    border-radius: 0px;
+}
+
+MenuButton:disabled, PatchWizardBaseWidget QPushButton:disabled
+{ 
+    font: 20px &quot;Arial&quot;; 
+    color: white;
+    background-color: #e0e0e0;
+    border: 1px solid #000000;
+    border-radius: 0px;
+}
+
+QListView#_monitorListWidget 
+{
+    selection-background-color: #6470b9;
+}
+
+QListView::item#_monitorListWidget
+{
+    font: 22px &quot;Sans Serif&quot;; 
+}
+
+
+QTableView 
+{
+    font: 20px &quot;Sans Serif&quot;; 
+    selection-background-color: #6470b9;
+}
+
+QTableView::item
+{
+    selection-color : white;
+}
+
+QTableView::item:!enabled
+{
+    color: #505050;
+}
+
+QWidget#_instructionsWidget
+{ 
+    font: 14px &quot;Arial&quot;; 
+    border: 4px solid #303030;
+    border-radius: 8px;
+    color: white;
+    background-color: #303030;
+    /*background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #8C8F8C, stop: 1 #000000)*/
+}
+
+QTableView#_dmxTable 
+{
+    font: 14px &quot;Arial&quot;; 
+    selection-background-color: #6470b9;
+}
+
+QTableView#_modelTableWidget, QTableView#_manufacturerTableWidget  
+{
+    font: 14px &quot;Arial&quot;; 
+}
+
+QTableView#_fileTableWidget 
+{
+    font: 14px &quot;Arial&quot;; 
+}
+
+QHeaderView::section
+{
+    font: 18px &quot;Arial&quot;; 
+    background-color: gray;
+    color: white;
+    padding-left: 4px;
+    border: 1px solid white;
+}
+
+QScrollBar:vertical {
+    border: 0px solid grey;
+    background: lightgray;
+    width: 12px;
+    margin: 1px 0 1px 0;
+}
+
+QScrollBar:horizontal {
+    border: 0px solid grey;
+    background: lightgray;
+    height: 12px;
+    margin: 0 1px 0 1px;
+}
+
+QScrollBar::handle:vertical {
+    background: #6470b9;
+    min-height: 20px;
+    width: 8px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #6470b9;
+    min-width: 20px;
+    width: 8px;
+}
+
+QScrollBar::add-line:vertical {
+    border: 0px solid grey;
+    background: lightgray;
+    height: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:horizontal {
+    border: 0px solid grey;
+    background: lightgray;
+    height: 0px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical {
+    border: 0px solid grey;
+    background: lightgray;
+    height: 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:horizontal {
+    border: 0px solid grey;
+    background: lightgray;
+    height: 0px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical, QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+    border: 0px lightgray;
+    width: 0px;
+    height: 0px;
+    background: white;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical, QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+EditFadeTimingDialog
+{
+    background: white;
+}
+
+VirtualKeyboardBase
+{
+    background: white;
+}
+
+
+VirtualKeyboardBase QLineEdit
+{
+    font: 20px &quot;Arial&quot;; 
+    color: white;
+    background: gray;
+}
+
+QLineEdit
+{
+    font: 20px &quot;Arial&quot;; 
+    color: white;
+    background: gray;
+}
+
+VirtualKeyboardBase QPushButton
+{
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #8C8F8C, stop: 1 #000000);
+    color:white; 
+    border: 1px solid #000000;
+    border-radius:6px;
+}
+
+
+QPushButton[isDialogNavigationButton=&quot;true&quot;]
+{ 
+    font: 16px &quot;Arial&quot;; 
+    color: white;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #8C8F8C, stop: 1 #000000);
+}
+
+QPushButton:pressed[isDialogNavigationButton=&quot;true&quot;]
+{ 
+    font: 16px &quot;Arial&quot;; 
+    color: red;
+    border: 2px solid #ff0000;
+    border-radius: 4px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #8C8F8C, stop: 1 #000000);
+}
+
+QPushButton[isHomeScreenButton=&quot;true&quot;]
+{ 
+    font: 16px &quot;Sans Serif&quot;;
+}
+
+EditFadeTimingDialog QLabel 
+{
+    font: 14px &quot;Arial&quot;; 
+}
+
+
+ChaseLiveWidget QLineEdit:read-only#_chaseLabelLineEdit, ChaseStepsWidget QLineEdit:read-only#_chaseLabelLineEdit, FilesSaveWidget QLineEdit {
+    font: 20px &quot;Arial&quot;; 
+    color: white;
+    background: gray;
+}
+
+
+ChaseLiveWidget QLineEdit:read-only, ChaseStepsWidget QLineEdit:read-only {
+    font: 20px &quot;Arial&quot;; 
+    background: lightGray;
+}
+
+QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid #8f8f91;
+    border-left: 2px solid #8f8f91;
+    border-right: 2px solid #8f8f91;
+    border-bottom: 2px solid #8f8f91;
+    /*background: white;*/
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+QWidget#_questionLabelLargeFont {
+    font: 20px &quot;Sans Serif&quot;;
+}
+
+QWidget#_questionLabelSmallFont {
+    font: 16px &quot;Sans Serif&quot;;
+}
+
+QTabBar::tab {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #f6f7fa, stop: 1 #dadbde);
+    border: 2px solid #8f8f91;
+    border-bottom-color: #8f8f91;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-width: 8ex;
+    padding: 2px;
+}
+
+QTabBar::tab:selected {
+    font: 14px &quot;Arial&quot;; 
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #dadbde, stop: 1 #a7a9af);
+    border-color: #8f8f91;
+    border-bottom-color: #8f8f91;
+}
+
+
+HomeWidget
+{
+    background-image: url(:/StageLedWidgetsResources/mainBackground.png);
+}
+
+
+HomeWidget QPushButton
+{
+    font: 8px &quot;Arial&quot;; 
+    border: 2px solid #ffffff;
+}
+
+
+HomeWidget QPushButton:disabled
+{
+    font: 30px &quot;Arial&quot;; 
+    color: #808080;
+    border: 2px solid #808080;
+}
+
+
+HomeWidget QLabel
+{
+    background: transparent;
+}
+
+HomeWidget QPushButton:checked
+{ 
+    font: 20px &quot;Arial&quot;; 
+    border: 2px solid #0000ff;
+    border-radius: 6px;
+}
+
+HomeWidget QAbstractButton
+{
+    icon-size: 72px, 60px;
+    padding-top: 66px;
+    color: white;
+}
+
+HomeWidget QAbstractButton:disabled
+{
+    background: transparent;
+    color: gray;
+}
+
+HomeWidget QAbstractButton#_channelButton
+{
+    background: url(:/StageLedWidgetsResources/colour_n.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:pressed#_channelButton, HomeWidget QAbstractButton:checked#_channelButton
+{
+    background: url(:/StageLedWidgetsResources/colour_s.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:disabled#_channelButton
+{
+    background: url(:/StageLedWidgetsResources/colour_c.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton#_sceneButton
+{
+    background: url(:/StageLedWidgetsResources/scenes_n.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:pressed#_sceneButton, HomeWidget QAbstractButton:checked#_sceneButton
+{
+    background: url(:/StageLedWidgetsResources/scenes_s.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:disabled#_sceneButton
+{
+    background: url(:/StageLedWidgetsResources/scenes_c.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton#_chaseButton
+{
+    background: url(:/StageLedWidgetsResources/chases_n.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:pressed#_chaseButton, HomeWidget QAbstractButton:checked#_chaseButton
+{
+    background: url(:/StageLedWidgetsResources/chases_s.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:disabled#_chaseButton
+{
+    background: url(:/StageLedWidgetsResources/chases_c.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton#_cueListButton
+{
+    background: url(:/StageLedWidgetsResources/cuelist_n.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:pressed#_cueListButton, HomeWidget QAbstractButton:checked#_cueListButton
+{
+    background: url(:/StageLedWidgetsResources/cuelist_s.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:disabled#_cueListButton
+{
+    background: url(:/StageLedWidgetsResources/cuelist_c.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton#_monitorButton
+{
+    background: url(:/StageLedWidgetsResources/monitor_n.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:pressed#_monitorButton, HomeWidget QAbstractButton:checked#_monitorButton
+{
+    background: url(:/StageLedWidgetsResources/monitor_s.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:disabled#_monitorButton
+{
+    background: url(:/StageLedWidgetsResources/monitor_c.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton#_filesButton
+{
+    background: url(:/StageLedWidgetsResources/files_n.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:pressed#_filesButton, HomeWidget QAbstractButton:checked#_filesButton
+{
+    background: url(:/StageLedWidgetsResources/files_s.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:disabled#_filesButton
+{
+    background: url(:/StageLedWidgetsResources/files_c.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton#_patchButton
+{
+    background: url(:/StageLedWidgetsResources/patch_n.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:pressed#_patchButton, HomeWidget QAbstractButton:checked#_patchButton
+{
+    background: url(:/StageLedWidgetsResources/patch_s.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:disabled#_patchButton
+{
+    background: url(:/StageLedWidgetsResources/patch_c.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton#_setupButton
+{
+    background: url(:/StageLedWidgetsResources/setup_n.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:pressed#_setupButton, HomeWidget QAbstractButton:checked#_setupButton
+{
+    background: url(:/StageLedWidgetsResources/setup_s.png) top center no-repeat;
+}
+
+HomeWidget QAbstractButton:disabled#_setupButton
+{
+    background: url(:/StageLedWidgetsResources/setup_c.png) top center no-repeat;
+}
+
+ChannelColourWidget QFrame
+{
+    background: transparent;
+}
+
+HardwareTestHomeWidget QPushButton:focus
+{ 
+    font: 20px &quot;Arial&quot;; 
+    border: 2px solid #0000ff;
+    border-radius: 6px;
+}
+
+QToolButton
+{ 
+    font: 20px &quot;Arial&quot;; 
+    border: 0px solid #ff0000;
+    border-radius: 0px;
+    color: #000000;
+    background-color: transparent;
+}
+
+HardwareTestHomeWidget QPushButton[test_passed=&quot;true&quot;]:enabled
+{
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #00FF00, stop: 1 #004000);
+}
+
+HardwareTestHomeWidget QPushButton[test_failed=&quot;true&quot;]:enabled
+{
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #FF0000, stop: 1 #400000);
+}
+
+HardwareTestHomeWidget QPushButton[beat_detected=&quot;true&quot;]:enabled
+{
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #00FF00, stop: 1 #004000);
+}
+
+HardwareTestHomeWidget JLabel#_label3
+{
+    font: 16px &quot;Courier&quot;;
+    font-weight: bold;
+}
+
+QPushButton#_fixtureNameButton
+{ 
+    font: 16px &quot;Arial&quot;; 
+}
+
+QPushButton:disabled#_fixtureNameButton
+{ 
+    color: black;
+}
+
+
+</pre></div>
+</div>
+<p>It uses qt.io
+<code class="docutils literal notranslate"><span class="pre">qt.io</span> </code> for the UI.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">DMX-Controller-App</a></li>
+<li><a class="reference internal" href="#i-do-know-why-i-made-this">i do know why i made this</a><ul>
+<li><a class="reference internal" href="#you-can-take-the-code-if-you-want-idc-and-laugh-at-my-pathetic-ness">you can take the code if you want, idc. and laugh at my pathetic-ness</a></li>
+<li><a class="reference internal" href="#a-comic-strip-for-your-enjoyment-many-to-annoy-thejades-thx-for-being-so-overkill-sometimes">A comic strip for your enjoyment, many to annoy &#64;thejades. Thx for being so overkill sometimes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hey-i-noticed-something-fun">HEY! I noticed something ‘fun’</a><ul>
+<li><a class="reference internal" href="#haha-fun-get-it-nope-nevermind">Haha, fun… get it? nope. Nevermind.</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/readme.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">DMX-Controller-App</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

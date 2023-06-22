@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../../../../" id="documentation_options" src="../../../../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>== CmExistingCertificateChanged ==</p>
+<p>警告: このホストの証明書は、キーストアにある証明書と
+一致していません。これは、サーバーの ID が侵害されたか、
+中間者攻撃を受けていることを意味している可能性があります。</p>
+<p>証明書の詳細:
+- 発行先: {0}
+- 発行元: {1}
+- 有効期限: {3}
+- 証明書ハッシュ: {5}</p>
+<dl class="simple">
+<dt>この変更を予期しており、新しい証明書を信頼する場合は、「はい」を選択して</dt><dd><p>Plastic SCM キーストアにキーを追加し、今後この証明書を</p>
+</dd>
+</dl>
+<p>信頼します。
+ストアにキーを追加せずにこのまま 1 回だけ
+接続する場合は、「いいえ」を選択します。
+この接続を中止する場合は、「キャンセル」を選択します。これは唯一の
+保証された安全な選択肢です。</p>
+<p>== CmExistingCertificateChangedPrompt ==
+「はい(Y)」、「いいえ(N)」、「キャンセル(C)」のいずれかのオプションを選択してください (デフォルトは「キャンセル」):</p>
+<p>== CmInvalidCertificateHostname ==
+警告: サーバー証明書で指定されている安全な接続での
+ホスト名が、サーバーのホスト名と一致していません。これは、
+証明書がこのホスト名に対して発行されていないか、このホストにネットワーク
+設定の問題があることを意味します。</p>
+<ul class="simple">
+<li><p>証明書のホスト名: {0}</p></li>
+<li><p>サーバーのホスト名: {1}</p></li>
+</ul>
+<p>このホストへの接続を続行する場合は、「はい」を選択します。証明書の
+検証が続行されます (非推奨)。
+この接続を中止する場合は、「いいえ」を選択します (推奨)。</p>
+<p>== CmInvalidCertificateHostnamePrompt ==
+「はい(Y)」、「いいえ(N)」のいずれかのオプションを選択してください (Enter キーを押すと「いいえ」が選択されます):</p>
+<p>== CmInvalidCertuiResponse ==
+(!) 入力したオプションが有効でありません。</p>
+<p>== CmNewCertificate ==</p>
+<p>警告: 接続先のサーバーから、ストアにない証明書が
+送信されました。このサーバーに初めて接続する場合、これは正常な動作です。</p>
+<p>証明書の詳細:
+- 発行先: {0}
+- 発行元: {1}
+- 有効期限: {3}
+- 証明書ハッシュ: {5}</p>
+<p>このホストを信頼する場合は、「はい」を選択して Plastic SCM キーストアに
+キーを追加します (このサーバーに初めて接続する場合は推奨)。
+ストアにキーを追加せずにこのまま 1 回だけ
+接続する場合は、「いいえ」を選択します。
+このホストを信頼しない場合は、「キャンセル」を選択して接続を中止します。</p>
+<p>== CmNewCertificatePrompt ==
+「はい(Y)」、「いいえ(N)」、「キャンセル(C)」のいずれかのオプションを選択してください (Enter キーを押すとキャンセルされます):</p>
+<p>== CmdListCommandsAdditionalHeader ==
+追加のコマンド:</p>
+<p>== CmdListCommandsAdministrativeHeader ==
+管理コマンド:</p>
+<p>== CmdListCommandsAutomationHeader ==
+自動化コマンド:</p>
+<p>== CmdListCommandsCommandTypes ==</p>
+<dl class="simple">
+<dt>現在、使用できるコマンドの全リストのうちの一部のみが表示されています。次のコマンドを使用できます:</dt><dd><p>cm showcommands –essential: 必須のコマンドを表示する (デフォルト)
+cm showcommands –additional: 追加のコマンドを表示する
+cm showcommands –administrative: 管理者によって使用されるコマンドを表示する
+cm showcommands –security: セキュリティと ACL を管理するためのコマンドを表示する
+cm showcommands –automation: CLI を自動化するのに使用されるコマンドを表示する
+cm showcommands –all: 完全なコマンドリストを表示する</p>
+</dd>
+</dl>
+<p>== CmdListCommandsEnd ==</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>コマンドを実行中:</dt><dd><p>cm command_name</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>コマンドの使用方法を取得する:</dt><dd><p>cm command_name –usage
+cm command_name -?</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>コマンドからヘルプを取得する</dt><dd><p>cm help command_name
+cm command_name –help</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>コマンドラインの使用方法の詳細:
+<a class="reference external" href="https://www.plasticscm.com/documentation/cli/plastic-scm-version-control-cli-guide.shtml">https://www.plasticscm.com/documentation/cli/plastic-scm-version-control-cli-guide.shtml</a></p>
+<p>cm find の詳細:
+<a class="reference external" href="https://www.plasticscm.com/documentation/cmfind/plastic-scm-version-control-query-system-guide.shtml">https://www.plasticscm.com/documentation/cmfind/plastic-scm-version-control-query-system-guide.shtml</a></p>
+<p>cm automation の詳細:
+<a class="reference external" href="https://www.plasticscm.com/documentation/cmdrunner/plastic-scm-version-control-cmdrunner-guide.shtml">https://www.plasticscm.com/documentation/cmdrunner/plastic-scm-version-control-cmdrunner-guide.shtml</a></p>
+<p>== CmdListCommandsEssentialHeader ==
+必須のコマンド:</p>
+<p>== CmdListCommandsSecurityHeader ==
+セキュリティコマンド:</p>
+<p>== Description ==
+説明</p>
+<p>== EnterPassword ==
+パスワード:</p>
+<p>== EnterUser ==
+ユーザー:</p>
+<p>== EnterUserCredentials ==
+サーバー [{0}] に接続するための資格情報を入力してください</p>
+<p>== LongName ==
+コマンド</p>
+<p>== MsgCommandnotfound ==
+コマンド ‘{0}’ が見つかりません。コマンドリストを取得するには cm showcommands と入力してください。</p>
+<p>== MsgError ==
+エラー:</p>
+<p>== MsgNocommands ==
+コマンドが定義されていません!</p>
+<p>== ShortName ==
+短い</p>
+<p>== WkUpgradeFinished ==
+ワークスペースがアップグレードされました。</p>
+<p>== WkUpgradeStarted ==
+ワークスペースをアップグレードしています…</p>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.collab-proxy@1.17.7/Lib/Editor/PlasticSCM/localization/cm.ja.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Time nodes &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Time nodes</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="time-nodes">
+<h1>Time nodes<a class="headerlink" href="#time-nodes" title="Permalink to this heading">¶</a></h1>
+<blockquote>
+<div><p>[!NOTE]
+For versions 2019/2020 LTS, download the Visual Scripting package from the <a class="reference external" href="https://assetstore.unity.com/packages/tools/visual-bolt-163802">Unity Asset Store</a>.</p>
+</div></blockquote>
+<p>Time nodes include timer, cooldown and wait nodes.</p>
+<section id="wait">
+<h2>Wait<a class="headerlink" href="#wait" title="Permalink to this heading">¶</a></h2>
+<p>Wait nodes delay the execution of the rest of the script. The delay can be a set amount of seconds or a condition that must be fulfilled before moving on.</p>
+<p>Asynchronicity (delayed execution) in Unity is handled by <a class="reference external" href="https://docs.unity3d.com/Manual/Coroutines.html">coroutines</a> (not multithreading). You need to inform visual scripting to run the script as a coroutine in order to support wait nodes. To do this enable the <strong>Coroutine checkbox</strong> on the initial event that starts the script. Do this in the graph inspector.</p>
+<p><img alt="" src="../../../../../../_images/vs-time-coroutine-wait-nodes.png" /></p>
+<p>A small dual-arrow icon appears on the event, indicating that it runs as a coroutine.</p>
+<p>If the coroutine checkbox is not enabled, an error at runtime indicates a port ‘can only be triggered in a coroutine’ when reaching a wait node.</p>
+<p>All wait nodes are also used inside loops and sequences.</p>
+<section id="wait-for-seconds">
+<h3>Wait For Seconds<a class="headerlink" href="#wait-for-seconds" title="Permalink to this heading">¶</a></h3>
+<p>The Wait For Seconds node is the simplest and most common wait node. It delays the execution by a certain number of seconds.</p>
+<p><img alt="" src="../../../../../../_images/vs-time-wait-for-seconds-node.png" /></p>
+</section>
+<section id="wait-until">
+<h3>Wait Until<a class="headerlink" href="#wait-until" title="Permalink to this heading">¶</a></h3>
+<p>The Wait Until node stops execution until a given condition is met. For example, you could wait until an object is close enough.</p>
+<p><img alt="" src="../../../../../../_images/vs-time-wait-until-node.png" /></p>
+</section>
+<section id="wait-while">
+<h3>Wait While<a class="headerlink" href="#wait-while" title="Permalink to this heading">¶</a></h3>
+<p>The Wait While node is the opposite of the Wait Until node: it stops execution as long as a given condition is met. For example, you can wait while an object is out of range.</p>
+<p><img alt="" src="../../../../../../_images/vs-time-wait-while-node.png" /></p>
+</section>
+<section id="wait-for-frame">
+<h3>Wait For Frame<a class="headerlink" href="#wait-for-frame" title="Permalink to this heading">¶</a></h3>
+<p>As the name implies, Wait For End Of Frame and Wait For Next Frame nodes delays execution until a specific point in Unity’s update loop is met. For more information, see: <a class="reference external" href="https://docs.unity3d.com/Manual/ExecutionOrder.html">Execution Order of Events</a>.</p>
+</section>
+<section id="wait-for-script">
+<h3>Wait For Script<a class="headerlink" href="#wait-for-script" title="Permalink to this heading">¶</a></h3>
+<p>The Wait For Script node delays execution until all input scripts have been entered at least once. It’s a useful way of grouping conditions that occur over multiple events or frames. In other languages, this concept is sometimes called “promises”.</p>
+</section>
+</section>
+<section id="cooldown">
+<h2>Cooldown<a class="headerlink" href="#cooldown" title="Permalink to this heading">¶</a></h2>
+<p><img alt="" src="../../../../../../_images/vs-time-cooldown-node.png" /></p>
+<p>The Cooldown node implements a time restriction when the input script can only be triggered a limited number of times.</p>
+<p>When the cooldown is available, the input script gets transferred to the Ready port. When it is not, it gets transferred to the Not Ready port.</p>
+<p>The Duration port determines how long it takes for the cooldown to become available again. Checking <strong>Unscaled</strong> makes it ignore the <a class="reference external" href="https://docs.unity3d.com/ScriptReference/Time-timeScale.html">time scale</a>.</p>
+<p>The Tick port gets called at every frame while a cooldown is active. It is a good place to update any GUI code that show an indicator of the remaining duration until the action can be called again. In order to get that value, you have two options:</p>
+<ul class="simple">
+<li><p>Remaining, which returns the number of seconds until ready, and</p></li>
+<li><p>Remaining %, which returns a value between 0 and 1, respectively from ready to not ready.</p></li>
+</ul>
+<p>As soon as the cooldown is ready, the Completed port is triggered. There is no need to constantly pass input script for this port to get triggered.</p>
+<p>Finally, you can force the cooldown to become ready and reset its internal timer by triggering the Reset port.</p>
+<p>For example, a simple cooldown firing mechanic with a masked sprite and text that indicates how much time is remaining until it can fire again.</p>
+<p><img alt="" src="../../../../../../_images/vs-time-cooldown-node-example.png" /></p>
+</section>
+<section id="timer">
+<h2>Timer<a class="headerlink" href="#timer" title="Permalink to this heading">¶</a></h2>
+<p><img alt="" src="../../../../../../_images/vs-time-timer-node.png" /></p>
+<p>The Timer node implements and monitors a time pausable progression.</p>
+<p>The Duration port determines how long it takes for the cooldown to become available again. Checking Unscaled makes it ignore the <a class="reference external" href="https://docs.unity3d.com/ScriptReference/Time-timeScale.html">time scale</a>.</p>
+<p>A timer is started by triggering the Start input, which in turn triggers the Started output.</p>
+<p>It can be paused and resumed with the Pause and Resume inputs, or it can alternate between these states with the Toggle input.</p>
+<p>The Tick port gets called at every frame while a timer is active. In order to get the time measurements, you have two options:</p>
+<ul class="simple">
+<li><p>Elapsed, which returns the time since the timer was started, or</p></li>
+<li><p>Remaining, which returns the time until the timer completes.</p></li>
+</ul>
+<p>You can get each of these measurements in absolute number of seconds, or in %, which returns a value between 0 and 1. This is useful for lerping.</p>
+<p>As soon as the timer finishes, the Completed port is triggered.</p>
+<p>For example, a simple autodestroy mechanic on a sprite that is progressively colored red before being destroyed.</p>
+<p><img alt="" src="../../../../../../_images/vs-time-timer-node-example.png" /></p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Time nodes</a><ul>
+<li><a class="reference internal" href="#wait">Wait</a><ul>
+<li><a class="reference internal" href="#wait-for-seconds">Wait For Seconds</a></li>
+<li><a class="reference internal" href="#wait-until">Wait Until</a></li>
+<li><a class="reference internal" href="#wait-while">Wait While</a></li>
+<li><a class="reference internal" href="#wait-for-frame">Wait For Frame</a></li>
+<li><a class="reference internal" href="#wait-for-script">Wait For Script</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cooldown">Cooldown</a></li>
+<li><a class="reference internal" href="#timer">Timer</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-time.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Time nodes</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ordering frames by length &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Ordering frames by length</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="ordering-frames-by-length">
+<h1>Ordering frames by length<a class="headerlink" href="#ordering-frames-by-length" title="Permalink to this heading">¶</a></h1>
+<p>This workflow explains how to order the frame data in the Profile Analyzer by frame length, shortest to longest, which results in an s-curve style graph. The Profile Analyzer groups frames with similar performance together, which enables you to create sub-ranges over a set of similar performing frames without including any outliers. This is particularly useful to normalize the data and to focus on only the shortest, longest, or average frames in the data set.</p>
+<p>This workflow applies for both <a class="reference internal" href="single-view.html"><span class="std std-doc">Single view</span></a> and <a class="reference internal" href="compare-view.html"><span class="std std-doc">Compare view</span></a>.</p>
+<section id="step-1-collect-performance-data-to-analyze">
+<h2>Step 1: Collect performance data to analyze<a class="headerlink" href="#step-1-collect-performance-data-to-analyze" title="Permalink to this heading">¶</a></h2>
+<p>Open the Profile Analyzer window (menu: <strong>Window &gt; Analysis &gt; Profile Analyzer</strong>) and collect some profiling data. To pull data from an active profiling session, click the <strong>Pull Data</strong> button. This pulls in the current set of available frames from the Profiler. If you don’t have an active profile session, click the <strong>Open Profiler Window</strong> button, then load or record some data.</p>
+<p>For more information on how to collect data, see the workflow documentation on <a class="reference internal" href="collecting-and-viewing-data.html"><span class="std std-doc">Collecting and viewing data</span></a>.</p>
+</section>
+<section id="step-2-order-the-data-set">
+<h2>Step 2: Order the data set<a class="headerlink" href="#step-2-order-the-data-set" title="Permalink to this heading">¶</a></h2>
+<p>If you are in the Compare view, enable the <strong>Pair Graph Selection</strong> checkbox. By default, the data set is ordered by frame number. To order the frames by their length, right click on a graph in the Frame Control pane, and select <strong>Order by Frame Duration</strong>.</p>
+<p><img alt="Frame Control context menu" src="../../../../../../_images/frame-control-context-menu.png" /><br/><em>The Frame Control context menu</em></p>
+<p>The Profile Analyzer then orders the graph from shortest to longest frame.</p>
+</section>
+<section id="step-3-select-frames-of-interest">
+<h2>Step 3: Select frames of interest<a class="headerlink" href="#step-3-select-frames-of-interest" title="Permalink to this heading">¶</a></h2>
+<p>Click and drag on the graph to select a range of frames with similar performance from the middle of the distribution.</p>
+<p><img alt="Frames ordered by duration" src="../../../../../../_images/profile-analyzer-frame-duration.png" /><br/><em>Top, the Frame Control pane in Single view, with the graph ordered by frame duration, and a range of frames selected. Bottom, the Frame Control pane in Compare view, with the graph ordered by frame duration, and a range of frames selected.</em></p>
+<p>You can now use the Profile Analyzer to analyze data from frames that have a similar performance.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Ordering frames by length</a><ul>
+<li><a class="reference internal" href="#step-1-collect-performance-data-to-analyze">Step 1: Collect performance data to analyze</a></li>
+<li><a class="reference internal" href="#step-2-order-the-data-set">Step 2: Order the data set</a></li>
+<li><a class="reference internal" href="#step-3-select-frames-of-interest">Step 3: Select frames of interest</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.performance.profile-analyzer@1.1.1/Documentation~/ordering-frames-by-cost.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Ordering frames by length</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

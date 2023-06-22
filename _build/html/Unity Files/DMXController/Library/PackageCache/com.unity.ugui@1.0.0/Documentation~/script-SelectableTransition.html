@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Transition Options &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Transition Options</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="transition-options">
+<h1>Transition Options<a class="headerlink" href="#transition-options" title="Permalink to this heading">¶</a></h1>
+<p>Within a selectable component there are several transition options depending on what state the selectable is currently in. The different states are: normal, highlighted, pressed and disabled.</p>
+<p><img alt="" src="../../../../../../_images/UI_SelectableTransition.png" /></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Transition Options:</strong></p></th>
+<th class="head text-left"><p><strong>Function:</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>None</strong></p></td>
+<td class="text-left"><p>This option is for the button to have no state effects at all.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Color Tint</strong></p></td>
+<td class="text-left"><p>Changes the colour of the button depending on what state it is in. It is possible to select the colour for each individual state. It is also possible to set the Fade Duration between the different states. The higher the number is, the slower the fade between colors will be.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Sprite Swap</strong></p></td>
+<td class="text-left"><p>Allows different sprites to display depending on what state the button is currently in, the sprites can be customised.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Animation</strong></p></td>
+<td class="text-left"><p>Allows animations to occur depending on the state of the button, an animator component must exist in order to use animation transition. It’s important to make sure root motion is disabled. To create an animation controller click on generate animation (or create your own) and make sure that an animation controller has been added to the animator component of the button.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each Transition option (except None) provides additional options for controlling the transitions. We’ll go into details with those in each of the sections below.</p>
+<section id="color-tint">
+<h2>Color Tint<a class="headerlink" href="#color-tint" title="Permalink to this heading">¶</a></h2>
+<p><img alt="" src="../../../../../../_images/UI_SelectableColorTint.png" /></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Property:</strong></p></th>
+<th class="head text-left"><p><strong>Function:</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Target Graphic</strong></p></td>
+<td class="text-left"><p>The graphic used for the interaction component.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Normal Color</strong></p></td>
+<td class="text-left"><p>The normal color of the control</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Highlighted Color</strong></p></td>
+<td class="text-left"><p>The color of the control when it is highlighted</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Pressed Color</strong></p></td>
+<td class="text-left"><p>The color of the control when it is pressed</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Disabled Color</strong></p></td>
+<td class="text-left"><p>The color of the control when it is disabled</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Color Multiplier</strong></p></td>
+<td class="text-left"><p>This multiplies the tint color for each transition by its value. With this you can create colors greater than 1 to brighten the colors (or alpha channel) on graphic elements whose base color is less than white (or less then full alpha).</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Fade Duration</strong></p></td>
+<td class="text-left"><p>The time taken, in seconds,  to fade from one state to another</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sprite-swap">
+<h2>Sprite Swap<a class="headerlink" href="#sprite-swap" title="Permalink to this heading">¶</a></h2>
+<p><img alt="" src="../../../../../../_images/UI_SelectableSpriteSwap.png" /></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Property:</strong></p></th>
+<th class="head text-left"><p><strong>Function:</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Target Graphic</strong></p></td>
+<td class="text-left"><p>The normal sprite to use</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Highlighted Sprite</strong></p></td>
+<td class="text-left"><p>Sprite to use when the control is highlighted</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Pressed Sprite</strong></p></td>
+<td class="text-left"><p>Sprite to use when the control is pressed</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Disabled Sprite</strong></p></td>
+<td class="text-left"><p>Sprite to use when the control is disabled</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="animation">
+<h2>Animation<a class="headerlink" href="#animation" title="Permalink to this heading">¶</a></h2>
+<p><img alt="" src="../../../../../../_images/UI_SelectableAnimation.png" /></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Property:</strong></p></th>
+<th class="head text-left"><p><strong>Function:</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Normal Trigger</strong></p></td>
+<td class="text-left"><p>The normal animation trigger to use</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Highlighted Trigger</strong></p></td>
+<td class="text-left"><p>Trigger to use when the control is highlighted</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Pressed Trigger</strong></p></td>
+<td class="text-left"><p>Trigger to use when the control is pressed</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Disabled Trigger</strong></p></td>
+<td class="text-left"><p>Trigger to use when the control is disabled</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Transition Options</a><ul>
+<li><a class="reference internal" href="#color-tint">Color Tint</a></li>
+<li><a class="reference internal" href="#sprite-swap">Sprite Swap</a></li>
+<li><a class="reference internal" href="#animation">Animation</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.ugui@1.0.0/Documentation~/script-SelectableTransition.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Transition Options</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

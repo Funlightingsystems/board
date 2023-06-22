@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Changelog &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">¶</a></h1>
+<p>All notable changes to this package will be documented in this file.</p>
+<section id="id1">
+<h2>[1.17.7] - 2022-10-28<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="added">
+<h3>Added<a class="headerlink" href="#added" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added offline mode toggle for smoother offline experience</p></li>
+</ul>
+</section>
+<section id="fixed">
+<h3>Fixed<a class="headerlink" href="#fixed" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed performance issue with FindWorkspaceForPath method called multiple times every frame</p></li>
+<li><p>Fixed performance issue with UI.CooldownWindowDelayer.OnUpdate running on project without Plastic SCM workspace</p></li>
+</ul>
+</section>
+</section>
+<section id="id2">
+<h2>[1.17.6] - 2022-10-06<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="changed">
+<h3>Changed<a class="headerlink" href="#changed" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Changed the “Go back to changeset” option in Changesets tab to “Revert to changeset”</p></li>
+<li><p>Improved notification banner appearance</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Fixed<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed editor refresh triggering when a workspace update is in progress</p></li>
+<li><p>Fixed pending changes show global ignored as private</p></li>
+<li><p>Removed encryption checkbox from create organization dialog</p></li>
+</ul>
+</section>
+</section>
+<section id="id4">
+<h2>[1.17.2] - 2022-07-06<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id5">
+<h3>Added<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added notification banner on the status bar for live updates</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>Changed<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Renamed “Invite members to workspace” option to “Invite members to organization”</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>Fixed<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed not being able to view changesets in a Gluon workspace</p></li>
+<li><p>Fixed not being able to insert carriage return in checkin dialog</p></li>
+</ul>
+</section>
+</section>
+<section id="id8">
+<h2>[1.17.1] - 2022-06-21<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id9">
+<h3>Fixed<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed missing references in synced prefabs</p></li>
+</ul>
+</section>
+</section>
+<section id="id10">
+<h2>[1.17.0] - 2022-06-13<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id11">
+<h3>Added<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added option to enable changelists and display them in pending changes tab</p></li>
+<li><p>Added changelist related options to pending changes context menu</p></li>
+</ul>
+</section>
+<section id="id12">
+<h3>Fixed<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed editor hangs when there is no network available</p></li>
+<li><p>Fixed existing checkout has locked the workspace error</p></li>
+<li><p>Fixed checkin fails over unstable connection</p></li>
+</ul>
+</section>
+</section>
+<section id="id13">
+<h2>[1.15.18] - 2022-05-18<a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id14">
+<h3>Fixed<a class="headerlink" href="#id14" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed editor hang when entering Play Mode</p></li>
+</ul>
+</section>
+</section>
+<section id="id15">
+<h2>[1.15.17] - 2022-04-27<a class="headerlink" href="#id15" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id16">
+<h3>Added<a class="headerlink" href="#id16" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added checkin comment column to Incoming Changes view</p></li>
+</ul>
+</section>
+<section id="id17">
+<h3>Changed<a class="headerlink" href="#id17" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Updated Go Back confirmation message to be consistent with feature</p></li>
+<li><p>Updated Create Child Branch dialog to focus on branch name field when opened</p></li>
+<li><p>Improved messaging of Subtractive Merge after using Go Back feature</p></li>
+</ul>
+</section>
+<section id="id18">
+<h3>Fixed<a class="headerlink" href="#id18" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed assets not added correctly when Plastic SCM window is not open</p></li>
+<li><p>Fixed wrong position of overlay icons on Pending Changes view</p></li>
+<li><p>Disallowed Go Back feature to a changeset from another branch</p></li>
+</ul>
+</section>
+</section>
+<section id="id19">
+<h2>[1.15.16] - 2022-03-28<a class="headerlink" href="#id19" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id20">
+<h3>Added<a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added “Switch to changeset” menu option in changesets view</p></li>
+<li><p>Added “Go back to changeset” menu option in changesets view</p></li>
+</ul>
+</section>
+<section id="id21">
+<h3>Changed<a class="headerlink" href="#id21" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Removed category icons from views</p></li>
+<li><p>Removed “com.unity.services.core” package dependency</p></li>
+</ul>
+</section>
+<section id="id22">
+<h3>Fixed<a class="headerlink" href="#id22" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed light theme icons used in dark theme after pulling incoming changes</p></li>
+<li><p>Fixed “Input string was not in a correct format” error</p></li>
+</ul>
+</section>
+</section>
+<section id="id23">
+<h2>[1.15.15] - 2022-03-09<a class="headerlink" href="#id23" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id24">
+<h3>Added<a class="headerlink" href="#id24" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added checkout option in scene prefab view</p></li>
+</ul>
+</section>
+<section id="id25">
+<h3>Changed<a class="headerlink" href="#id25" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Updated file overlay icon size to adapt to project window zoom level</p></li>
+<li><p>Updated the styling of number of items in a category in Gluon incoming changes view</p></li>
+</ul>
+</section>
+<section id="id26">
+<h3>Fixed<a class="headerlink" href="#id26" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed Plastic X not opening from plugin menu</p></li>
+<li><p>Fixed error when trying to invite members to proect</p></li>
+<li><p>Fixed editor unhandled errors being hijacked by the plugin</p></li>
+<li><p>Fixed toolbar icon not displaying incoming changes notification when Plastic window is closed</p></li>
+<li><p>Fixed VCCache::instance != NULL error when opening a project with Plastic window opened</p></li>
+</ul>
+</section>
+</section>
+<section id="id27">
+<h2>[1.15.13] - 2022-02-14<a class="headerlink" href="#id27" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id28">
+<h3>Added<a class="headerlink" href="#id28" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added branch name column in changeset view</p></li>
+</ul>
+</section>
+<section id="id29">
+<h3>Changed<a class="headerlink" href="#id29" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Updated checkin comment box to keep the last comment after checkin error</p></li>
+</ul>
+</section>
+<section id="id30">
+<h3>Fixed<a class="headerlink" href="#id30" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed performance regression in large projects due to FindObjectsOfTypeAll calls</p></li>
+</ul>
+</section>
+</section>
+<section id="id31">
+<h2>[1.15.12] - 2022-01-27<a class="headerlink" href="#id31" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id32">
+<h3>Added<a class="headerlink" href="#id32" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added option to “Save Revision as” to the context menu in the changesets view</p></li>
+<li><p>Added incoming changes overview bar for Gluon workspace</p></li>
+</ul>
+</section>
+<section id="id33">
+<h3>Changed<a class="headerlink" href="#id33" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Updated the styling for number of items in category for pending changes view</p></li>
+<li><p>Updated the styling for number of items in category for changesets view</p></li>
+<li><p>Updated the styling for tabs close button</p></li>
+<li><p>Updated the color in different sections of the plugin</p></li>
+<li><p>Reduced dialog padding for the “Create Branch” dialog</p></li>
+<li><p>Updated the display overlay icons to show even if PlasticSCM window is closed</p></li>
+<li><p>Updated styling of number of items in incoming changes category</p></li>
+<li><p>Improved plugin initialization process and let the plugin functions without needing the Plastic window opened</p></li>
+<li><p>Disabled the invite button when user does not have invite permission or not on a cloud repo</p></li>
+</ul>
+</section>
+<section id="id34">
+<h3>Fixed<a class="headerlink" href="#id34" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed size info in incoming changes view does not match actual changes size</p></li>
+<li><p>Fixed checkin and checkout options not respecting inspector locked status</p></li>
+<li><p>Fixed buttons in inspector view displayed even when Plastic window is closed</p></li>
+<li><p>Fixed icon incorrect sizes</p></li>
+<li><p>Fixed errors on create branch dialog</p></li>
+<li><p>Fixed Newtonsoft.Json.dll conflicts with other external packages</p></li>
+<li><p>Fixed editor objects count increasing when hovering over Plastic window or toolbar button</p></li>
+<li><p>Fixed ArgumentOutOfRange exception when creating a branch</p></li>
+<li><p>Fixed scene reloading not happening after creating a new branch</p></li>
+</ul>
+</section>
+</section>
+<section id="id35">
+<h2>[1.15.7] - 2021-12-02<a class="headerlink" href="#id35" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id36">
+<h3>Added<a class="headerlink" href="#id36" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added option to “Save Revision as” to the context menu in the changesets view</p></li>
+<li><p>Added incoming changes overview bar for Gluon workspace</p></li>
+</ul>
+</section>
+<section id="id37">
+<h3>Changed<a class="headerlink" href="#id37" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Moved Plastic Package settings to the Unity Project Settings window</p></li>
+<li><p>Refined styling for Updating Workplace success state</p></li>
+<li><p>Updated texts for empty state and overview bar</p></li>
+<li><p>Removed Incoming Changes notification from empty state</p></li>
+<li><p>Updated the text for Forced Checkout option</p></li>
+<li><p>Refined the status overlay icons</p></li>
+<li><p>Updated the refresh icon on the toolbar</p></li>
+<li><p>Updated the texts for empty checkin message dialog</p></li>
+</ul>
+</section>
+<section id="id38">
+<h3>Fixed<a class="headerlink" href="#id38" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed capitalization of Pending Changes and File History tab names</p></li>
+<li><p>Fixed the amount of spacing after the Item column title in the Pending Changes tab</p></li>
+<li><p>Removed pin striping from line items in File History tab</p></li>
+<li><p>Fixed project view context menu and icons missing after Collaborate project migration</p></li>
+<li><p>Fixed migrated projects not downloading correctly from Unity Hub</p></li>
+</ul>
+</section>
+</section>
+<section id="id39">
+<h2>[1.15.4] - 2021-11-10<a class="headerlink" href="#id39" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id40">
+<h3>Added<a class="headerlink" href="#id40" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Add option to “Add to ignore file” in context menu in the project view</p></li>
+<li><p>Added empty state message for Pending Changes tab</p></li>
+<li><p>Added success state message for Pending Changes tab</p></li>
+<li><p>Added metrics for Branches tab functionalities</p></li>
+</ul>
+</section>
+<section id="id41">
+<h3>Changed<a class="headerlink" href="#id41" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Removed pinstriping in the Gluon Incoming Changes window</p></li>
+<li><p>Removed the “Nothing to download” bar from the Incoming Changes window when there are no items to download</p></li>
+<li><p>Changed the default metadata columns shown in the Incoming Changes screen</p></li>
+<li><p>Updated the alignment of sorting arrows to the right of the column</p></li>
+</ul>
+</section>
+<section id="id42">
+<h3>Fixed<a class="headerlink" href="#id42" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed UI overlays in Project view missing on changed assets when force checkout is disabled</p></li>
+<li><p>Fixed console error when selecting object in Scene view hierarchy or creating a new asset</p></li>
+<li><p>Fixed NullReferenceException after closing the Plastic SCM window</p></li>
+</ul>
+</section>
+</section>
+<section id="id43">
+<h2>[1.15.1] - 2021-10-21<a class="headerlink" href="#id43" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id44">
+<h3>Added<a class="headerlink" href="#id44" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added visual overview bar to the incoming changes tab</p></li>
+<li><p>Added progress dialog for the migration process</p></li>
+<li><p>Added Branches tab that shows a list of all branches in the repository</p></li>
+<li><p>Added option and dialog to create a child branch from selected branch.</p></li>
+<li><p>Added option to switch to another branch</p></li>
+<li><p>Added option and dialog to rename a branch</p></li>
+<li><p>Added option to delete a branch</p></li>
+<li><p>Added a preference to save if the window should open the Branches tab by default</p></li>
+<li><p>Added metrics for Plastic SCM installation window usage</p></li>
+</ul>
+</section>
+<section id="id45">
+<h3>Changed<a class="headerlink" href="#id45" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Updated texts for workspace modes selection and checkin comment box</p></li>
+<li><p>Updated status bar notification icons</p></li>
+</ul>
+</section>
+<section id="id46">
+<h3>Fixed<a class="headerlink" href="#id46" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed inverted text for the force checkout option</p></li>
+<li><p>Fixed typing capital O in checkin comment would open the selected item</p></li>
+<li><p>Fixed loading indicator not centered on Plastic SCM installation window</p></li>
+<li><p>Fixed installing Plastic SCM would sign out user from the plugin</p></li>
+<li><p>Removed extra refresh button on Gluon’s Incoming Changes tab</p></li>
+<li><p>Fixed loading indicator not centered on Plastic SCM installation window</p></li>
+<li><p>Fixed missing Plastic SCM window option when user is not signed in on Unity Hub</p></li>
+<li><p>Removed meta file warning message for the deleted Beta folder</p></li>
+<li><p>Fixed Plastic SCM menu missing from Project view context menu</p></li>
+</ul>
+</section>
+</section>
+<section id="id47">
+<h2>[1.13.5] - 2021-09-27<a class="headerlink" href="#id47" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id48">
+<h3>Added<a class="headerlink" href="#id48" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added workspace migration from Collab to Plastic which can be done with or without Plastic installed</p></li>
+<li><p>Added notification status icons</p></li>
+<li><p>Added light and dark mode versions of avatar icon</p></li>
+</ul>
+</section>
+<section id="id49">
+<h3>Changed<a class="headerlink" href="#id49" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Updated texts for migration</p></li>
+<li><p>Improved usage analytics around Editor and Plugin version</p></li>
+<li><p>Workspace Migration Adjustments</p></li>
+</ul>
+</section>
+<section id="id50">
+<h3>Fixed<a class="headerlink" href="#id50" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Renamed the CoreServices namespace so it doesn’t conflict with other packages</p></li>
+<li><p>Devex integration to properly depend on Core</p></li>
+<li><p>Fixed some situations where the history window would be blank</p></li>
+<li><p>Fixed missing Enterprise login link</p></li>
+<li><p>Fixed low resolution icons in light theme</p></li>
+</ul>
+</section>
+</section>
+<section id="id51">
+<h2>[1.11.2] - 2021-08-27<a class="headerlink" href="#id51" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id52">
+<h3>Added<a class="headerlink" href="#id52" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added horizontal scroll bar to Changesets list for easier viewing</p></li>
+<li><p>Added auto-login for SSO credentials handler</p></li>
+<li><p>Added metrics for changeset tab usage</p></li>
+<li><p>Added metrics for checkin actions</p></li>
+<li><p>Added new Undo icon</p></li>
+<li><p>Added missing API documentation</p></li>
+<li><p>Added ability to modify assets without checkout</p></li>
+<li><p>Added ability to allow empty checkin messages</p></li>
+<li><p>Added empty checking message localization</p></li>
+<li><p>Added Plastic toolbar button to Unity editor</p></li>
+<li><p>Added notification icon for incoming changes to Plastic toolbar button</p></li>
+</ul>
+</section>
+<section id="id53">
+<h3>Changed<a class="headerlink" href="#id53" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Removed the unneeded refresh button from History Tab</p></li>
+<li><p>Moved search bar to the top right global icon section in all tabs</p></li>
+<li><p>Updated capitalization of options in the Settings context menu</p></li>
+<li><p>Updated tab button styling to be consistent with Unity Editor conventions</p></li>
+<li><p>Status bar visible across all tabs</p></li>
+<li><p>Moved refresh button to the toolbar at the top right corner of the window</p></li>
+<li><p>Moved changesets time period selector to the right corner of the window</p></li>
+<li><p>Removed “Changes of changeset” header on the Changesets tab</p></li>
+<li><p>Moved number of selected items next to “Item” metadata title on the Pending Changes tab</p></li>
+<li><p>Improved refresh icon resolution</p></li>
+<li><p>Changed changesets detail to appear in vertical column</p></li>
+<li><p>Reduced default number of columns in changesets tab</p></li>
+<li><p>The number of changesets is no longer displayed in changesets tab</p></li>
+<li><p>Changed Launch branch explorer into an icon with tooltip</p></li>
+<li><p>Removed the hide changes button in changesets tab</p></li>
+<li><p>Moved incoming change prompt and button into a status bar</p></li>
+<li><p>Changed “Launch Plastic” to “Launch Plastic SCM” in options menu</p></li>
+<li><p>Wording change for plastic installation</p></li>
+<li><p>Updated file status icons</p></li>
+</ul>
+</section>
+<section id="id54">
+<h3>Fixed<a class="headerlink" href="#id54" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed a bug where the Texture2D error would pop up after downloading a project</p></li>
+<li><p>Fixed a bug when context menu would sometimes disappear</p></li>
+<li><p>Fixed small textbox on checkin dialog when launched from context menu</p></li>
+<li><p>Fixed a workspace NullReferenceException bug</p></li>
+<li><p>Fixed notification icon not showing on Plastic window</p></li>
+<li><p>Fixed auto login errors not showing up for users</p></li>
+<li><p>Fixed unexpected error message after user switched workspace to a label</p></li>
+</ul>
+</section>
+</section>
+<section id="id55">
+<h2>[1.9.0] - 2021-07-13<a class="headerlink" href="#id55" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id56">
+<h3>Added<a class="headerlink" href="#id56" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added Checkin and Update confirmation notification</p></li>
+<li><p>Added auto sign in when logged into Unity account</p></li>
+</ul>
+</section>
+<section id="id57">
+<h3>Changed<a class="headerlink" href="#id57" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Simplified UI: decluttered UI</p></li>
+<li><p>Improved load time performance</p></li>
+</ul>
+</section>
+<section id="id58">
+<h3>Fixed<a class="headerlink" href="#id58" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed view not switching to workspace after creating an Enterprise Gluon workspace</p></li>
+<li><p>Fixed contextual menu not showing up in project view</p></li>
+<li><p>Fixed SSO renew token after password change</p></li>
+<li><p>Fixed some namespace collisions with Antlr3</p></li>
+</ul>
+</section>
+</section>
+<section id="id59">
+<h2>[1.7.1] - 2021-06-25<a class="headerlink" href="#id59" title="Permalink to this heading">¶</a></h2>
+<p>Plastic SCM for Unity is now available as part of the Version Control Package! You can enable Plastic SCM via Window &gt; Plastic SCM to get started!
+If you have previously used the Unity Asset Store Plastic SCM plug-in, you can now simply use this package. Make sure you delete the plug-in from your project.
+Removing a previously added Plastic SCM Asset Store Plug-In:</p>
+<ul class="simple">
+<li><p>Select the PlasticSCM folder in the Assets\Plugins folder on the Project tab, then click Edit &gt; Delete</p></li>
+<li><p>Close the Unity Editor and open your project again. You will find the Plastic SCM menu item in the Window menu.</p></li>
+</ul>
+<section id="id60">
+<h3>Added<a class="headerlink" href="#id60" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added support for inviting other members. This option is available from the gear / settings icon.</p></li>
+<li><p>Added support for signing in with Cloud Edition. This is available during the onboarding screen if you have never signed in.</p></li>
+<li><p>Added support for turning off Plastic in their project. This option removes the Plastic metadata from your directory. This option is available under Assets &gt; Plastic SCM &gt; Turn off Plastic SCM</p></li>
+<li><p>Added notification on the Plastic SCM tab title to indicate incoming changes. Users will no longer need to have the Plastic SCM window visible to know there are incoming changes.</p></li>
+<li><p>Auto configuration of SSO</p></li>
+<li><p>Added date column in incoming changes</p></li>
+</ul>
+</section>
+<section id="id61">
+<h3>Changed<a class="headerlink" href="#id61" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Updating license to better conform with expected customer usage.</p></li>
+<li><p>Updated documentation file to meet standards.</p></li>
+<li><p>Updated third-party usage.</p></li>
+<li><p>No longer requires downloading of the full Plastic client. Basic features will work without additional installation. Features that require the full Plastic client will allow download and install as needed.</p></li>
+<li><p>Usability improvements around checking in code</p></li>
+<li><p>Improved update workspace tab UX</p></li>
+<li><p>Plastic SCM context menu is now available even if the Plastic SCM window is closed</p></li>
+</ul>
+</section>
+<section id="id62">
+<h3>Fixed<a class="headerlink" href="#id62" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Stability and performance improvements</p></li>
+</ul>
+</section>
+</section>
+<section id="id63">
+<h2>[1.5.7] - 2021-04-07<a class="headerlink" href="#id63" title="Permalink to this heading">¶</a></h2>
+<section id="unreleased">
+<h3>Unreleased<a class="headerlink" href="#unreleased" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>The Version Control package will be expanding to include both Collaborate and Plastic SCM version control interfaces. This release is preparing for that move and contains no new functionality or bug fixes for Collaborate.</p></li>
+</ul>
+</section>
+<section id="id64">
+<h3>Changed<a class="headerlink" href="#id64" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Collaborate Package renamed to Version Control with changes to package display name and description.</p></li>
+</ul>
+</section>
+<section id="id65">
+<h3>Fixed<a class="headerlink" href="#id65" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed NPE when updating the version of the Collab package.</p></li>
+</ul>
+</section>
+</section>
+<section id="id66">
+<h2>[1.3.9] - 2020-07-13<a class="headerlink" href="#id66" title="Permalink to this heading">¶</a></h2>
+<section id="id67">
+<h3>Fixed<a class="headerlink" href="#id67" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Unnecessary use of texture compression in icons that slowed down platform switching</p></li>
+<li><p>Update publish button state when selected changes update</p></li>
+<li><p>Use colorized icons when changes are available.</p></li>
+</ul>
+</section>
+</section>
+<section id="id68">
+<h2>[1.3.8] - 2020-06-08<a class="headerlink" href="#id68" title="Permalink to this heading">¶</a></h2>
+<section id="id69">
+<h3>Fixed<a class="headerlink" href="#id69" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fix incorrect priority of error messages</p></li>
+<li><p>Fix Collab button being stuck in inprogress state</p></li>
+<li><p>Fix error when partially publishing without the window open</p></li>
+</ul>
+</section>
+</section>
+<section id="id70">
+<h2>[1.3.7] - 2020-01-30<a class="headerlink" href="#id70" title="Permalink to this heading">¶</a></h2>
+<section id="id71">
+<h3>Changed<a class="headerlink" href="#id71" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Bulk revert is now supported.</p></li>
+<li><p>Collab is blocked in play mode.</p></li>
+</ul>
+</section>
+<section id="id72">
+<h3>Fixed<a class="headerlink" href="#id72" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed services window’s links to open Collab.</p></li>
+</ul>
+</section>
+</section>
+<section id="id73">
+<h2>[1.3.6] - 2020-01-21<a class="headerlink" href="#id73" title="Permalink to this heading">¶</a></h2>
+<section id="id74">
+<h3>Fixed<a class="headerlink" href="#id74" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed compile errors when removing the NUnit package by removing unnecessary references.</p></li>
+</ul>
+</section>
+</section>
+<section id="id75">
+<h2>[1.3.5] - 2020-01-08<a class="headerlink" href="#id75" title="Permalink to this heading">¶</a></h2>
+<section id="id76">
+<h3>Fixed<a class="headerlink" href="#id76" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fix “accept mine” / “accept remote” icon swap in conflicts view.</p></li>
+</ul>
+</section>
+</section>
+<section id="id77">
+<h2>[1.3.4] - 2019-12-16<a class="headerlink" href="#id77" title="Permalink to this heading">¶</a></h2>
+<section id="id78">
+<h3>Changed<a class="headerlink" href="#id78" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Window state is no longer restored after the window is closed and opened.</p></li>
+</ul>
+</section>
+<section id="id79">
+<h3>Fixed<a class="headerlink" href="#id79" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>History tab failing to load on startup if it is left open in the previous session.</p></li>
+<li><p>Progress bar percentage not matching the bar.</p></li>
+<li><p>History list correctly updates after a new revision is published.</p></li>
+<li><p>UI instabilities when restoring or going back to a revision with a different package manifest.</p></li>
+<li><p>Improve handling of changes to the project id.</p></li>
+</ul>
+</section>
+</section>
+<section id="id80">
+<h2>[1.3.3] - 2019-12-10<a class="headerlink" href="#id80" title="Permalink to this heading">¶</a></h2>
+<section id="id81">
+<h3>Changed<a class="headerlink" href="#id81" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Disable UI test cases that can be unstable.</p></li>
+</ul>
+</section>
+</section>
+<section id="id82">
+<h2>[1.3.2] - 2019-12-05<a class="headerlink" href="#id82" title="Permalink to this heading">¶</a></h2>
+<section id="id83">
+<h3>Changed<a class="headerlink" href="#id83" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Update UX to UIElements.</p></li>
+<li><p>Increased minimum supported version to 2020.1.</p></li>
+<li><p>Update Documentation to required standards.</p></li>
+</ul>
+</section>
+</section>
+<section id="id84">
+<h2>[1.2.16] - 2019-02-11<a class="headerlink" href="#id84" title="Permalink to this heading">¶</a></h2>
+<section id="id85">
+<h3>Fixed<a class="headerlink" href="#id85" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Update stylesheet to pass USS validation</p></li>
+</ul>
+</section>
+</section>
+<section id="id86">
+<h2>[1.2.15] - 2018-11-16<a class="headerlink" href="#id86" title="Permalink to this heading">¶</a></h2>
+<section id="id87">
+<h3>Changed<a class="headerlink" href="#id87" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added support for non-experimental UIElements.</p></li>
+</ul>
+</section>
+</section>
+<section id="id88">
+<h2>[1.2.11] - 2018-09-04<a class="headerlink" href="#id88" title="Permalink to this heading">¶</a></h2>
+<section id="id89">
+<h3>Fixed<a class="headerlink" href="#id89" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Made some performance improvements to reduce impact on ReloadAssemblies.</p></li>
+</ul>
+</section>
+</section>
+<section id="id90">
+<h2>[1.2.9] - 2018-08-13<a class="headerlink" href="#id90" title="Permalink to this heading">¶</a></h2>
+<section id="id91">
+<h3>Fixed<a class="headerlink" href="#id91" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Test issues for the Collab History Window are now fixed.</p></li>
+</ul>
+</section>
+</section>
+<section id="id92">
+<h2>[1.2.7] - 2018-08-07<a class="headerlink" href="#id92" title="Permalink to this heading">¶</a></h2>
+<section id="id93">
+<h3>Fixed<a class="headerlink" href="#id93" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Toolbar drop-down will no longer show up when package is uninstalled.</p></li>
+</ul>
+</section>
+</section>
+<section id="id94">
+<h2>[1.2.6] - 2018-06-15<a class="headerlink" href="#id94" title="Permalink to this heading">¶</a></h2>
+<section id="id95">
+<h3>Fixed<a class="headerlink" href="#id95" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed an issue where Collab’s History window wouldn’t load properly.</p></li>
+</ul>
+</section>
+</section>
+<section id="id96">
+<h2>[1.2.5] - 2018-05-21<a class="headerlink" href="#id96" title="Permalink to this heading">¶</a></h2>
+<p>This is the first release of <em>Unity Package CollabProxy</em>.</p>
+<section id="id97">
+<h3>Added<a class="headerlink" href="#id97" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Collab history and toolbar windows</p></li>
+<li><p>Collab view and presenter classes</p></li>
+<li><p>Collab Editor tests for view and presenter</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#id1">[1.17.7] - 2022-10-28</a><ul>
+<li><a class="reference internal" href="#added">Added</a></li>
+<li><a class="reference internal" href="#fixed">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">[1.17.6] - 2022-10-06</a><ul>
+<li><a class="reference internal" href="#changed">Changed</a></li>
+<li><a class="reference internal" href="#id3">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">[1.17.2] - 2022-07-06</a><ul>
+<li><a class="reference internal" href="#id5">Added</a></li>
+<li><a class="reference internal" href="#id6">Changed</a></li>
+<li><a class="reference internal" href="#id7">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">[1.17.1] - 2022-06-21</a><ul>
+<li><a class="reference internal" href="#id9">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id10">[1.17.0] - 2022-06-13</a><ul>
+<li><a class="reference internal" href="#id11">Added</a></li>
+<li><a class="reference internal" href="#id12">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id13">[1.15.18] - 2022-05-18</a><ul>
+<li><a class="reference internal" href="#id14">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id15">[1.15.17] - 2022-04-27</a><ul>
+<li><a class="reference internal" href="#id16">Added</a></li>
+<li><a class="reference internal" href="#id17">Changed</a></li>
+<li><a class="reference internal" href="#id18">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id19">[1.15.16] - 2022-03-28</a><ul>
+<li><a class="reference internal" href="#id20">Added</a></li>
+<li><a class="reference internal" href="#id21">Changed</a></li>
+<li><a class="reference internal" href="#id22">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id23">[1.15.15] - 2022-03-09</a><ul>
+<li><a class="reference internal" href="#id24">Added</a></li>
+<li><a class="reference internal" href="#id25">Changed</a></li>
+<li><a class="reference internal" href="#id26">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id27">[1.15.13] - 2022-02-14</a><ul>
+<li><a class="reference internal" href="#id28">Added</a></li>
+<li><a class="reference internal" href="#id29">Changed</a></li>
+<li><a class="reference internal" href="#id30">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id31">[1.15.12] - 2022-01-27</a><ul>
+<li><a class="reference internal" href="#id32">Added</a></li>
+<li><a class="reference internal" href="#id33">Changed</a></li>
+<li><a class="reference internal" href="#id34">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id35">[1.15.7] - 2021-12-02</a><ul>
+<li><a class="reference internal" href="#id36">Added</a></li>
+<li><a class="reference internal" href="#id37">Changed</a></li>
+<li><a class="reference internal" href="#id38">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id39">[1.15.4] - 2021-11-10</a><ul>
+<li><a class="reference internal" href="#id40">Added</a></li>
+<li><a class="reference internal" href="#id41">Changed</a></li>
+<li><a class="reference internal" href="#id42">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id43">[1.15.1] - 2021-10-21</a><ul>
+<li><a class="reference internal" href="#id44">Added</a></li>
+<li><a class="reference internal" href="#id45">Changed</a></li>
+<li><a class="reference internal" href="#id46">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id47">[1.13.5] - 2021-09-27</a><ul>
+<li><a class="reference internal" href="#id48">Added</a></li>
+<li><a class="reference internal" href="#id49">Changed</a></li>
+<li><a class="reference internal" href="#id50">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id51">[1.11.2] - 2021-08-27</a><ul>
+<li><a class="reference internal" href="#id52">Added</a></li>
+<li><a class="reference internal" href="#id53">Changed</a></li>
+<li><a class="reference internal" href="#id54">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id55">[1.9.0] - 2021-07-13</a><ul>
+<li><a class="reference internal" href="#id56">Added</a></li>
+<li><a class="reference internal" href="#id57">Changed</a></li>
+<li><a class="reference internal" href="#id58">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id59">[1.7.1] - 2021-06-25</a><ul>
+<li><a class="reference internal" href="#id60">Added</a></li>
+<li><a class="reference internal" href="#id61">Changed</a></li>
+<li><a class="reference internal" href="#id62">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id63">[1.5.7] - 2021-04-07</a><ul>
+<li><a class="reference internal" href="#unreleased">Unreleased</a></li>
+<li><a class="reference internal" href="#id64">Changed</a></li>
+<li><a class="reference internal" href="#id65">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id66">[1.3.9] - 2020-07-13</a><ul>
+<li><a class="reference internal" href="#id67">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id68">[1.3.8] - 2020-06-08</a><ul>
+<li><a class="reference internal" href="#id69">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id70">[1.3.7] - 2020-01-30</a><ul>
+<li><a class="reference internal" href="#id71">Changed</a></li>
+<li><a class="reference internal" href="#id72">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id73">[1.3.6] - 2020-01-21</a><ul>
+<li><a class="reference internal" href="#id74">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id75">[1.3.5] - 2020-01-08</a><ul>
+<li><a class="reference internal" href="#id76">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id77">[1.3.4] - 2019-12-16</a><ul>
+<li><a class="reference internal" href="#id78">Changed</a></li>
+<li><a class="reference internal" href="#id79">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id80">[1.3.3] - 2019-12-10</a><ul>
+<li><a class="reference internal" href="#id81">Changed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id82">[1.3.2] - 2019-12-05</a><ul>
+<li><a class="reference internal" href="#id83">Changed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id84">[1.2.16] - 2019-02-11</a><ul>
+<li><a class="reference internal" href="#id85">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id86">[1.2.15] - 2018-11-16</a><ul>
+<li><a class="reference internal" href="#id87">Changed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id88">[1.2.11] - 2018-09-04</a><ul>
+<li><a class="reference internal" href="#id89">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id90">[1.2.9] - 2018-08-13</a><ul>
+<li><a class="reference internal" href="#id91">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id92">[1.2.7] - 2018-08-07</a><ul>
+<li><a class="reference internal" href="#id93">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id94">[1.2.6] - 2018-06-15</a><ul>
+<li><a class="reference internal" href="#id95">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id96">[1.2.5] - 2018-05-21</a><ul>
+<li><a class="reference internal" href="#id97">Added</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.collab-proxy@1.17.7/CHANGELOG.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

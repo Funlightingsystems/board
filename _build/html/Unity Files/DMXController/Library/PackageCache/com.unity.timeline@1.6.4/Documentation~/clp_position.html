@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Positioning clips &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Positioning clips</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="positioning-clips">
+<h1>Positioning clips<a class="headerlink" href="#positioning-clips" title="Permalink to this heading">¶</a></h1>
+<p>To position a clip, select Mix mode as the Clip Edit mode. Select a clip and hover over the middle of the clip. When the cursor changes to a position cursor, click and drag the clip to its new position.</p>
+<p>While dragging, black lines indicate the selection of clips being positioned. The Timeline ruler shows the start time and end time of the selected clips being positioned.</p>
+<p><img alt="Select Mix mode (circled). Select and drag to position a clip." src="../../../../../../_images/timeline_clips_positioning.png" /></p>
+<p><em>Select Mix mode (circled). Select and drag to position a clip.</em></p>
+<p>By default, when you drag to position clips, both Snap to Frame and Edge Snap are enabled in the Clips view. You can change these snap settings in the <a class="reference internal" href="tl_settings.html"><span class="std std-doc">Timeline Settings</span></a> menu.</p>
+<p>You can also move a clip to another track of the same type. Drag the clip off of its current track and a white ghost indicates where the clip will be moved. If you drag a clip to an area where the clip cannot be placed, the ghost changes to red indicating that you cannot release the clip in that area. For example, you cannot drag a clip where there is no track.</p>
+<p><img alt="The ghost of the selection being moved is drawn in red if you attempt to move a clip to an invalid area" src="../../../../../../_images/timeline_clips_position_invalid.png" /></p>
+<p><em>The ghost of the selection being moved is drawn in red if you attempt to move a clip to an invalid area</em></p>
+<p>You can position a selection of clips on the same track, or on different tracks. You are not limited to positioning one clip at a time. The same edge snapping rules and invalid area restrictions apply when positioning a selection of clips on many tracks.</p>
+<section id="positioning-clips-with-the-inspector-window">
+<h2>Positioning clips with the Inspector window<a class="headerlink" href="#positioning-clips-with-the-inspector-window" title="Permalink to this heading">¶</a></h2>
+<p>You can use the <a class="reference internal" href="insp_clp.html"><span class="std std-doc">Inspector window to position clips</span></a>. To position a clip with the Inspector window, select a clip and use the Clip Timing properties in the Inspector window to change its <strong>Start</strong> property.</p>
+<p><img alt="Clip Timing properties for an Animation clip" src="../../../../../../_images/timeline_clips_anim_clip_timing.png" /></p>
+<p><em>Clip Timing properties for an Animation clip</em></p>
+<p>The effect that changing the Start value has on adjacent clips depends on the selected Clip Edit mode.</p>
+</section>
+<section id="positioning-clips-in-different-clip-edit-modes">
+<h2>Positioning clips in different Clip Edit modes<a class="headerlink" href="#positioning-clips-in-different-clip-edit-modes" title="Permalink to this heading">¶</a></h2>
+<p>You are not restricted to positioning clips with Mix mode as the selected Clip Edit mode. You can also position clips in Ripple mode and in Replace mode. The difference is the effect each Clip Edit mode has on adjacent clips on the tracks where clips are being moved:</p>
+<ul class="simple">
+<li><p>Positioning clips in Mix mode creates blends between intersecting clips.</p></li>
+<li><p>Positioning clips in Ripple mode ripples subsequent clips, respecting the gaps between clips.</p></li>
+<li><p>Positioning clips in Replace mode cuts or replaces intersecting clips.</p></li>
+</ul>
+</section>
+<section id="positioning-clips-with-the-timeline-playhead">
+<h2>Positioning clips with the Timeline Playhead<a class="headerlink" href="#positioning-clips-with-the-timeline-playhead" title="Permalink to this heading">¶</a></h2>
+<p>You can position clips by inserting frames at the position of the Timeline Playhead. To do this, move the Timeline Playhead to where you want to insert frames.</p>
+<p><img alt="To insert frames starting at frame 40, move the Timeline Playhead to frame 40" src="../../../../../../_images/timeline_playhead_insert_before.png" /></p>
+<p><em>To insert frames starting at frame 40, move the Timeline Playhead to frame 40</em></p>
+<p>Right-click the Timeline Playhead on the Timeline ruler above the Clips view, choose <strong>Insert</strong> &gt; <strong>Frame</strong>, and a number of frames.</p>
+<p><img alt="To insert 25 frames, right-click the Timeline Playhead and select Insert  Frame, then 25 Frames" src="../../../../../../_images/timeline_playhead_insert_menu.png" /></p>
+<p><em>To insert 25 frames, right-click the Timeline Playhead and select <strong>Insert</strong> &gt; <strong>Frame</strong>, then 25 Frames</em></p>
+<p>This inserts frames in the Timeline Asset at the position of the Timeline Playhead. Inserting frames only repositions the clips that start <strong>after</strong> the position of the Timeline Playhead.</p>
+<p><img alt="Only the clips that start after the Timeline Playhead are moved. In this example, inserting 25 frames at frame 40 affects Clip 1B, Clip 2B, and Clip 2C." src="Unity Files/DMXController/Library/PackageCache/com.unity.timeline&#64;1.6.4/Documentation~/images/timeline_playhead_insert_25_after.png" /></p>
+<p><em>Only the clips that start after the Timeline Playhead are moved. In this example, inserting 25 frames at frame 40 affects Clip 1B, Clip 2B, and Clip 2C.</em></p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Positioning clips</a><ul>
+<li><a class="reference internal" href="#positioning-clips-with-the-inspector-window">Positioning clips with the Inspector window</a></li>
+<li><a class="reference internal" href="#positioning-clips-in-different-clip-edit-modes">Positioning clips in different Clip Edit modes</a></li>
+<li><a class="reference internal" href="#positioning-clips-with-the-timeline-playhead">Positioning clips with the Timeline Playhead</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.timeline@1.6.4/Documentation~/clp_position.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Positioning clips</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Nesting Timeline instances &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Nesting Timeline instances</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="nesting-timeline-instances">
+<h1>Nesting Timeline instances<a class="headerlink" href="#nesting-timeline-instances" title="Permalink to this heading">¶</a></h1>
+<p>Timeline supports nesting Timeline instances. A nested Timeline instance refers to a Timeline instance that is added within another Timeline instance. The <strong>master Timeline instance</strong> refers to the main or parent Timeline instance that includes other Timeline instances.</p>
+<p>Nesting Timeline instances is useful if you have a large team working on different aspects of a Project and you want them to collaborate on the same cinematic or cut-scene.</p>
+<p>For example, you are developing a puzzle game that starts with a cinematic of the character walking into frame while the pieces on the game board move into position. You could create a master Timeline instance for the character walking into frame. You could create another Timeline instance for the game board animation. You could then nest the game board animation into the master Timeline instance of the character walking into frame.</p>
+<p><img alt="The master NestTL Timeline instance has a character walking and theme music. A Control track nests the BoardTL Timeline instance for the game board animation." src="../../../../../../_images/workflow_nesting_done.png" /></p>
+<p><em>The master NestTL Timeline instance has a character walking and theme music. A Control track nests the BoardTL Timeline instance for the game board animation.</em></p>
+<p>By creating a master Timeline instance with nested Timeline instances, different teams can work on different animations and then combine the animations into one master Timeline. In the puzzle game example, one team could work on the character Timeline instance, and another team could work on the game board animation.</p>
+<p>When you have two Timeline instances, and you want to nest one instance into the other, open the Timeline instance that you want to be the master Timeline instance. To ensure that the Timeline window does not switch while you select GameObjects, click the lock icon (red arrow):</p>
+<p><img alt="The master NestTL Timeline instance has a character walking and theme music." src="../../../../../../_images/workflow_nesting_master.png" /></p>
+<p><em>The master NestTL Timeline instance has a character walking and theme music.</em></p>
+<p>Find the GameObject in your Scene that is associated with the Timeline instance that you want to nest inside the master Timeline instance. Drag the GameObject into the Clips view of the Timeline window.</p>
+<p><img alt="The Board GameObject is associated with the BoardTL Timeline instance. Drag the Board GameObject into the NestTL master Timeline to nest the BoardTL Timeline instance in the NestTL Timeline instance." src="../../../../../../_images/workflow_nesting_drag_board.png" /></p>
+<p><em>The Board GameObject is associated with the BoardTL Timeline instance. Drag the Board GameObject into the NestTL master Timeline to nest the BoardTL Timeline instance in the NestTL Timeline instance.</em></p>
+<p>The Timeline window creates a Control track and places the Control clip where you drop the GameObject. The Control clip is set to the same size as the Timeline instance. When a Control clip contains a nested Timeline instance, a downward arrow appears beside its name. To edit a nested Timeline instance from the master timeline, double-click its Control clip.</p>
+<p><img alt="Double-click the Control clip to edit the nested BoardTL Timeline instance from within the master" src="../../../../../../_images/workflow_nesting_double_click.png" /></p>
+<p><em>Double-click the Control clip to edit the nested BoardTL Timeline instance from within the master</em></p>
+<p>A warning icon appears beside the name of the nested Timeline instance because the Timeline Playhead is outside the range of the nested Timeline. Timeline also disables the Timeline Playhead controls.</p>
+<p>When you edit a nested Timeline instance, you cannot change the duration of the nested Timeline instance. You must return to the master Timeline instance and change the duration of the Control clip to change the duration of the nested Timeline instance. To return to the master, click the name of the master Timeline instance (red arrow):</p>
+<p><img alt="Warning icon (red circle) means the Timeline Playhead Controls are disabled." src="../../../../../../_images/workflow_nesting_edit_warning.png" /></p>
+<p><em>Warning icon (red circle) means the Timeline Playhead Controls are disabled.</em></p>
+<p>The Timeline window is in this state because, by default, the size of the Control clip in the master Timeline instance determines when the nested Timeline instance is active. Use one of the following methods to change this state and edit the nested Timeline instance:</p>
+<ul class="simple">
+<li><p>Click the Timeline ruler to move the Timeline Playhead into the nested Timeline. This enables editing and the Timeline Playback Controls.</p></li>
+<li><p>In the master Timeline instance, move the Timeline Playhead to within the Control clip before you double-click the Control clip.</p></li>
+<li><p>In the master Timeline instance, select the Control clip, and disable the Control Activation property in the Inspector window.</p></li>
+</ul>
+<p><img alt="Disable the Control Activation property (red outline) to have the nested Timeline instance active throughout the duration of the master Timeline instance." src="../../../../../../_images/workflow_nesting_control_disabled.png" /></p>
+<p><em>Disable the Control Activation property (red outline) to have the nested Timeline instance active throughout the duration of the master Timeline instance.</em></p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.timeline@1.6.4/Documentation~/wf_nested.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Nesting Timeline instances</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

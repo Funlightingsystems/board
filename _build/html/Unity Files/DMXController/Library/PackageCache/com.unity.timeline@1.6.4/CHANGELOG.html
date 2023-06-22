@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Changelog &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">¶</a></h1>
+<p>All notable changes to this package will be documented in this file. The format is based on <a class="reference external" href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a></p>
+<section id="id1">
+<h2>[1.6.4] - 2022-01-21<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<section id="fixed">
+<h3>Fixed<a class="headerlink" href="#fixed" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>[Requires Unity 2021.2] Fixed an issue where the last frame of a Timeline was not guaranteed to be executed when the Playable Director had Wrap Mode <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p>Fixed an issue where the Timeline Window would not work correctly with read-only source controlled files.</p></li>
+<li><p>Fixed an issue where unused <code class="docutils literal notranslate"><span class="pre">TrackAsset</span></code>s would be saved in the <code class="docutils literal notranslate"><span class="pre">TimelineAsset</span></code> file after removing tracks.</p></li>
+<li><p>Fixed an issue where the a MissingReferenceException would be thrown when an IAnimationWindowPreview component previewed by Timeline would be destroyed. (1367640)</p></li>
+<li><p>Fixed an issue where grouped markers at time zero would sometimes disappear after clicking on them (https://issuetracker.unity3d.com/issues/timeline-markers-disappear-when-double-clicking-on-stacked-markers-at-0-frames)</p></li>
+<li><p>Fixed an issue where selecting a prefab in the project view could trigger an exception when parenting the prefab to a prefab sub-object. (1386125)</p></li>
+<li><p>Fixed an issue where duplicated or pasted tracks that were part of group tracks would lose their associated bindings (https://issuetracker.unity3d.com/issues/duplicated-track-groups-lose-their-nester-tracks-game-object-assignments)</p></li>
+<li><p>Fixed an issue where pasting a track after changing scenes would lose PlayableAsset references in clips (https://issuetracker.unity3d.com/issues/animation-tracks-copy-loses-its-properties-when-its-pasted-from-another-scene)</p></li>
+<li><p>Fixed an issue where the “Match Content” action would not apply on all selected clips.</p></li>
+<li><p>Fixed an issue where clicking on a clip during Play Mode would evaluate the Timeline unnecessarily. (https://issuetracker.unity3d.com/issues/timeline-rebuilds-playable-graph-when-selecting-a-timeline-clip-during-play-mode)</p></li>
+<li><p>Fixed an issue where control clips would behave inconsistently if the clip was set to hold, but the PlayableDirector was set to not extrapolate. (https://issuetracker.unity3d.com/product/unity/issues/guid/1375771)</p></li>
+</ul>
+</section>
+</section>
+<section id="id2">
+<h2>[1.6.3] - 2021-10-20<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<section id="id3">
+<h3>Fixed<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed an issue where the Timeline Window would not work correctly with read-only source controlled files.</p></li>
+<li><p>Fixed an issue where the a MissingReferenceException would be thrown when an IAnimationWindowPreview component previewed by Timeline would be destroyed. (https://issuetracker.unity3d.com/issues/missingreferenceexception-is-thrown-when-using-rigbuilder-inside-a-prefab)</p></li>
+<li><p>Fixed an issue where the “Match Content” action would not apply on all selected clips. (1368028)</p></li>
+</ul>
+</section>
+</section>
+<section id="id4">
+<h2>[1.6.2] - 2021-08-05<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<section id="id5">
+<h3>Fixed<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed an issue where copy-pasting Timeline Clips that contain Generic Lists of ExposedReferences would cause a NullReferenceException (1332377)</p></li>
+</ul>
+</section>
+</section>
+<section id="id6">
+<h2>[1.6.1] - 2021-06-22<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
+<section id="added">
+<h3>Added<a class="headerlink" href="#added" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ClipDrawOptions.hideScaleIndicator</span></code> can now be used to disable the clip scale indicator.</p></li>
+<li><p>Added an asterisk to the Timeline Window when the currently edited Timeline Asset is dirty (has unsaved changes). (1024230)</p></li>
+<li><p>Added the <code class="docutils literal notranslate"><span class="pre">IInspectorChangeHandler</span></code> interface to change what happens when a UI component in the inspector is modified. (1283486)</p></li>
+<li><p>(<em>Unity 2020.2+ only</em>) The Timeline window title displays an asterisk when there are unsaved changes.</p></li>
+<li><p>Double click now toggles the collapsed state of group tracks.</p></li>
+<li><p>A keyboard shortcut can now be mapped to expand or collapse group tracks.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">displayClipName</span></code> property to ClipDrawOption. Use <code class="docutils literal notranslate"><span class="pre">displayClipName</span></code> to display (true) or hide (false) the clip name.</p></li>
+<li><p>New API added to <code class="docutils literal notranslate"><span class="pre">TimelineEditorWindow</span></code>: <code class="docutils literal notranslate"><span class="pre">TimelineNavigator</span></code>.</p>
+<ul>
+<li><p>Enables navigation between timelines and nested timelines through code for automation purposes.</p></li>
+<li><p>Gives access to Timeline window breadcrumbs.</p></li>
+</ul>
+</li>
+<li><p><em>(Unity 2021.2+ only)</em> Added <code class="docutils literal notranslate"><span class="pre">Framelocked</span> <span class="pre">preview</span></code> option in Timeline preferences.</p></li>
+<li><p>Added framerate display with standard framerates.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimelineAsset</span></code> framerate can be set with a <code class="docutils literal notranslate"><span class="pre">StandardFramerate</span></code> value. (<code class="docutils literal notranslate"><span class="pre">TimelineAsset.SetStandardFramerate</span></code>)</p></li>
+</ul>
+</section>
+<section id="changed">
+<h3>Changed<a class="headerlink" href="#changed" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Removed non-working PlayRange options (Loop/Hold) as both were actually mapping to Loop behaviour and always have been.</p></li>
+<li><p>Timeline settings menu has been modified to use standard framerates in framerate submenu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimelineAsset.fps</span></code> is obsolete and is replaced by <code class="docutils literal notranslate"><span class="pre">TimelineAsset.frameRate</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimelineProjectSettings.assetDefaultFramerate</span></code> is obsolete and is replaced by <code class="docutils literal notranslate"><span class="pre">TimelineProjectSettings.defaultFramerate</span></code>.</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>Fixed<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Removed GC allocations in <code class="docutils literal notranslate"><span class="pre">PlayableDirector.duration</span></code> when a timeline asset is assigned. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1298818">1298818</a>)</p></li>
+<li><p>Removed warnings with AnimationWindowState snap mode. (1306205)</p></li>
+<li><p>Fixed issue where the “Navigate Right” (default key: <code class="docutils literal notranslate"><span class="pre">Right</span> <span class="pre">Arrow</span></code> ▶) would not behave consistently. The correct order of operations should now always be, in order: expand group, select first track of group, then select first item of the track.</p></li>
+<li><p>Fixed frame display not rounding up correctly. (1333009)</p></li>
+<li><p>Fixed an issue where <code class="docutils literal notranslate"><span class="pre">TimelinePlayable</span></code> duration would not be initialized if the playable is not created from the PlayableDirector. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1329151">1329151</a>)</p></li>
+<li><p>Fixed memory leak in custom playable inspectors. (1332377)</p></li>
+<li><p>Fixed exception when using the Key All Animated shortcut with no Timeline selected. (1334339)</p></li>
+<li><p>Fixed issue where a warning would appear regarding obsolete <code class="docutils literal notranslate"><span class="pre">AnimationWindowState.SnapMode</span></code> values.</p></li>
+</ul>
+</section>
+</section>
+<section id="id8">
+<h2>[1.5.5] - 2021-04-30<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
+<section id="id9">
+<h3>Fixed<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed an issue in the Curves view where the color indicator was sized incorrectly on high-res displays. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1318782">1318782</a>)</p></li>
+<li><p>Fixed a rare issue where keyframes were created for Playable Curves when switching to play mode. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1319124">1319124</a>)</p></li>
+<li><p>Fixed an issue where clearing the Unity selection did not refresh the Timeline window. (1320260)</p></li>
+<li><p>Fixed an issue with <code class="docutils literal notranslate"><span class="pre">IAnimationWindowPreview.StartPreview</span></code> not getting called for sub timelines. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1322571">1322571</a>)</p></li>
+<li><p>Fixed an issue where the curve color identifiers would overlap property names when the Timeline window was resized. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1323591">1323591</a>)</p></li>
+<li><p>Fixed a regression where changes made to clip curves would not be processed until another modification caused a graph rebuild.</p></li>
+<li><p>Fixed compilation issue on 2020.1 due to incorrect version checks.</p></li>
+<li><p>Fixed issue where text labels were incorrectly displayed when the mouse pointer was located above a clip.</p></li>
+</ul>
+</section>
+</section>
+<section id="id10">
+<h2>[1.5.4] - 2021-03-10<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h2>
+<section id="id11">
+<h3>Fixed<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed issue where the horizontal scrollbar could not be moved or resized.</p></li>
+</ul>
+</section>
+</section>
+<section id="id12">
+<h2>[1.5.3] - 2021-03-05<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h2>
+<section id="id13">
+<h3>Changed<a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Disabled edition of Track Asset Inspector Script field as it could break Timeline Assets.</p></li>
+</ul>
+</section>
+<section id="id14">
+<h3>Fixed<a class="headerlink" href="#id14" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed issue where the timeline header track would automatically open during a drag and drop operation. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1305436">1305436</a>)</p></li>
+<li><p>Fixed a rare issue where some broken tracks could not be removed. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1305388">1305388</a>)</p></li>
+<li><p>Fixed rare issue where the time field could not be edited after opening a timeline. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1312198">1312198</a>)</p></li>
+<li><p>Fixed cosmetic issue where the duration marker was drawn over the scroll bar.</p></li>
+<li><p>Fixed issue where times without a decimal separator (. or , depending on locale) would not be interpreted correctly by the time field. (1315605)</p></li>
+<li><p>Fixed issue where a selection rectangle could not be made when started inside a track. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1315840">1315840</a>)</p></li>
+<li><p>Performing Undo/Redo will not affect Timeline window selection when the window is locked. (Selecting sub-timelines can still be undone). (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1313515">1313515</a>)</p></li>
+<li><p>Fixed an issue where text would be clipped in the track header binding. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1302401">1302401</a>)</p></li>
+<li><p>Fixed issue where clicking in the Timeline window while there is no active timeline would throw an exception.</p></li>
+</ul>
+</section>
+</section>
+<section id="id15">
+<h2>[1.5.2] - 2021-01-08<a class="headerlink" href="#id15" title="Permalink to this heading">¶</a></h2>
+<section id="id16">
+<h3>Added<a class="headerlink" href="#id16" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>During recording, there are new ways to key animated properties:</p>
+<ul>
+<li><p>A new Inspector context menu has been added (<code class="docutils literal notranslate"><span class="pre">Key</span> <span class="pre">All</span> <span class="pre">Animated</span></code>) that sets a key to all currently animated properties.</p></li>
+<li><p>It is possible to make a multi-selection of tracks to set a keyframe to all currently animated properties. If no track is selected, all recording tracks are keyed.</p></li>
+<li><p>If properties are selected in the curve editor, only those properties are keyed.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimelineEditor.GetWindow</span></code> and <code class="docutils literal notranslate"><span class="pre">TimelineEditor.GetOrCreateWindow</span></code> to get the current Timeline window or create a Timeline window.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimelineEditorWindow.SetCurrentTimeline</span></code> to change which timeline asset is opened in the Timeline window.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimelineEditorWindow.lock</span></code> to lock or unlock the Timeline window.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TrackExtensions.GetCollapsed</span></code>, <code class="docutils literal notranslate"><span class="pre">TrackExtensions.SetCollapsed</span></code>, <code class="docutils literal notranslate"><span class="pre">TrackExtensions.IsVisibleRecursive</span></code> to get and change the visibility state of a track.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AnimationTrackExtensions.IsRecording</span></code>, <code class="docutils literal notranslate"><span class="pre">AnimationTrackExtensions.SetRecording</span></code>, <code class="docutils literal notranslate"><span class="pre">AnimationTrackExtensions.SupportsRecording</span></code> to get or change the recording state of an Animation track.</p></li>
+<li><p>Added two methods in <code class="docutils literal notranslate"><span class="pre">TrackEditor</span></code> to control how an object is bound to a track: <code class="docutils literal notranslate"><span class="pre">IsBindingAssignableFrom</span></code> and <code class="docutils literal notranslate"><span class="pre">GetBindingFrom</span></code>.</p></li>
+<li><p>Added Japanese translation.</p></li>
+<li><p>The Timeline window will automatically rebuild the graph when a notifications’s properties are changed.</p></li>
+<li><p>The Timeline window will be automatically refreshed when a marker’s properties are changed.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">TimelineEditor.GetInspectedTimeFromMasterTime</span></code> and <code class="docutils literal notranslate"><span class="pre">TimelineEditor.GetMasterTimeFromInspectedTime</span></code> to convert time from master to inspected timeline and vice versa when using sub-timelines.</p></li>
+<li><p>Added API to improve how to get/set a <code class="docutils literal notranslate"><span class="pre">TimelineClip</span></code>’s parent track:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimelineClip.GetParentTrack</span></code> (replaces obsolete property getter)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ItemsUtils.SetParentTrack</span></code> (extension method thar replaces obsolete property setter)</p></li>
+</ul>
+</li>
+<li><p>Added a new <code class="docutils literal notranslate"><span class="pre">Seconds</span></code> time display mode and renamed previous Seconds mode to Timecode.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimelinePreferences.timeFormat</span></code> field,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UnityEditor.Timeline.TimeFormat</span></code> enum.</p></li>
+</ul>
+</li>
+<li><p>Added API for the user to clip to the track area:</p>
+<ul>
+<li><p>API: Relevant member to <code class="docutils literal notranslate"><span class="pre">MarkerOverlayRegion</span></code>,</p></li>
+<li><p>API: <code class="docutils literal notranslate"><span class="pre">MarkerOverlayRegion.trackRegion</span></code>,</p></li>
+<li><p>API: <code class="docutils literal notranslate"><span class="pre">MarkerOverlayRegion</span></code> constructor.</p></li>
+</ul>
+</li>
+<li><p>Added <em>Gameplay sequence</em> sample.</p>
+<ul>
+<li><p>This sample demonstrates how Timeline can be used to create a small in-game moment, using built-in tracks.</p></li>
+</ul>
+</li>
+<li><p>Added <em>Customization</em> sample.</p>
+<ul>
+<li><p>This sample demonstrates how to create custom tracks, clips, markers and actions.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id17">
+<h3>Changed<a class="headerlink" href="#id17" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>The binding field on a track header will change its background color when dragging a valid object on it.</p></li>
+<li><p>Timeline marker track is now selectable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimelineClip</span></code> property <code class="docutils literal notranslate"><span class="pre">parentTrack</span></code> is now obsolete.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimelinePreferences.timeUnitInFrames</span></code> is now obsolete.</p></li>
+</ul>
+</section>
+<section id="id18">
+<h3>Fixed<a class="headerlink" href="#id18" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed a bug affecting the conversion between seconds and frames in the inspector.</p></li>
+<li><p>Fixed issue where <code class="docutils literal notranslate"><span class="pre">KeyAllAnimated</span></code> was available when right-clicking on markers and tracks that were not in record mode. (1270304)</p></li>
+<li><p>Fixed issue where the mouse cursor would stay stuck to a resize icon when resizing the track header. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1076031/">1076031</a>)</p></li>
+<li><p>Fixed case where an animation event at time 0 would not fire on a timeline loop. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1184106">1184106</a>)</p></li>
+<li><p>Fixed issue where Timeline objects (ie. <code class="docutils literal notranslate"><span class="pre">TrackAsset</span></code>, <code class="docutils literal notranslate"><span class="pre">ControlTrack</span></code>, <code class="docutils literal notranslate"><span class="pre">SignalAsset</span></code>, etc.) would have incorrect links to the documentation pages. <em>Available starting from Unity 2021.1</em>. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1082941">1082941</a>)</p></li>
+<li><p>Fixed multiple issues related to blends</p>
+<ul>
+<li><p>Fix display of blends when clips have ease-in/ease-out (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1178066">1178066</a>)</p></li>
+<li><p>Fix clip disappearing when dragging it from left to right completely inside another clip.</p></li>
+<li><p>Fix select and drag clip discarding foreground display rule of selected clip after releasing the drag.</p></li>
+<li><p>Fix fully blended clips selection not available. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1289912">1289912</a>)</p></li>
+</ul>
+</li>
+<li><p>Fixed issue where the clip display would flicker when moving two clips that are completely overlapped. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1085679">1085679</a>)</p></li>
+<li><p>The Timeline window will no longer revert to editing only the asset if the user uses the Timeline selector to pick a game object and switches focus. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1291455">1291455</a>)</p></li>
+<li><p>Create button on timeline panel no longer defaults to an invalid path. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1289923">1289923</a>)</p></li>
+<li><p>Fixed issue where Timeline’s bindings field would loses names and bindings when selecting clips. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1293941">1293941</a>)</p></li>
+<li><p>Make Timeline’s duration result displayed in the Inspector, when switching from duration mode: Based On Clips to Fixed Length, closer to the actual duration. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1156920">1156920</a>)</p></li>
+<li><p>Copy/Paste of clips in the Timeline Window will no longer paste clips at an invalid time in mix-mode. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1289925">1289925</a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="id19">
+<h2>[1.4.5] - 2020-11-19<a class="headerlink" href="#id19" title="Permalink to this heading">¶</a></h2>
+<section id="id20">
+<h3>Fixed<a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed issue where changing a clip’s extrapolation values would clear the current clip selection. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/936046">936046</a>)</p></li>
+<li><p>Fixed multiple issues related to the curves view:</p>
+<ul>
+<li><p>Fixed curve removal not functioning with <code class="docutils literal notranslate"><span class="pre">PlayableAsset</span></code>s (clips &amp; tracks curves). (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1231002">1231002</a>)</p></li>
+<li><p>Fixed inconsistent icon display on curves.</p></li>
+<li><p>Fixed incorrect ordering of properties. Properties now have a object/type/property ordering.</p></li>
+<li><p>Fixed unnecessary grouping of fields.</p></li>
+<li><p>Changed context menu from <code class="docutils literal notranslate"><span class="pre">Remove</span> <span class="pre">Properties</span></code> to <code class="docutils literal notranslate"><span class="pre">Remove</span> <span class="pre">Curves</span></code> to better reflect the change in functionality between curves for GameObjects and curves for <code class="docutils literal notranslate"><span class="pre">PlayableAssets</span></code>.</p></li>
+<li><p>Fixed behaviour where removing a single field in a <code class="docutils literal notranslate"><span class="pre">Position</span></code>, <code class="docutils literal notranslate"><span class="pre">Rotation</span></code> or <code class="docutils literal notranslate"><span class="pre">Scale</span></code> group would remove the entire group.</p></li>
+</ul>
+</li>
+<li><p>Fixed case where pausing in Playmode and switching the active director in editor could pause the director. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1263707">1263707</a>)</p></li>
+<li><p>Material properties are now displayed by their shader name in the curves view when possible. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1115961">1115961</a>)</p></li>
+<li><p>Fixed issue where a signal could be pasted on a track that doesn’t support notifications. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1283763">1283763</a>)</p></li>
+<li><p>Fixed issue where a clip could be paseted on an incompatible track. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1283763">1283763</a>)</p></li>
+<li><p>Fixed errors when leaving prefab mode when a timeline is opened. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1280331">1280331</a>)</p></li>
+<li><p>No preview will be shown when the PlayableDirector is disabled. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1286198">1286198</a>)</p></li>
+<li><p>Fixed issue where an infinite clip’s <code class="docutils literal notranslate"><span class="pre">Foot</span> <span class="pre">Ik</span></code> property was not visible in the Inspector when selecting its track. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1279824">1279824</a>)</p></li>
+<li><p>Fixed issue where child particle systems were not controlled correctly when they are not subemitters. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1212943">1212943</a>)</p></li>
+<li><p>Fixed inconsistent recording behaviour on audio tracks and <code class="docutils literal notranslate"><span class="pre">PlayableAssets</span></code>. Default values are changed when a value is not recorded, and the key added/updated when a value is already animated. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1283453">1283453</a>)</p></li>
+<li><p>Fixed issue where the curves view for tracks and <code class="docutils literal notranslate"><span class="pre">PlayableAsset</span></code>s would not update when changed externally (such as from the Animation window).</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Key</span></code>/<code class="docutils literal notranslate"><span class="pre">Remove</span> <span class="pre">Key</span></code> context menus not being properly enabled in some cases when using tracks and <code class="docutils literal notranslate"><span class="pre">PlayableAsset</span></code>s.</p></li>
+<li><p>Fixed simulation of subemitters when scrubbing a timeline. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1142781">1142781</a>)</p></li>
+<li><p>Fixed choppy playback of particles with a large fixed time step. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1262234">1262234</a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="id21">
+<h2>[1.4.4] - 2020-10-09<a class="headerlink" href="#id21" title="Permalink to this heading">¶</a></h2>
+<section id="id22">
+<h3>Fixed<a class="headerlink" href="#id22" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Disable drag and drop of Signal asset on Control Track. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1222760/">1222760</a>)</p></li>
+<li><p>Fixed system locale causing issues when keying float values on custom clips. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1190877/">1190877</a>)</p></li>
+<li><p>Fixed issue where recording to a clip would place keys on the frame. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1274892/">1274892</a>)</p></li>
+<li><p>Fixed keyboard clip selection from locked tracks. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1233612/">1233612</a>)</p></li>
+<li><p>Fixed issue where the Timeline window would stay locked even when no timeline asset is shown. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1278598/">1278598</a>)</p></li>
+<li><p>Fixed issue where invoking <code class="docutils literal notranslate"><span class="pre">SelectLeft</span></code> or <code class="docutils literal notranslate"><span class="pre">SelectRight</span></code> shortcuts on a group track, the group would not collapse or expand. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1279379/">1279379</a>)</p></li>
+<li><p>Fixed  Blend Curve Editor from the clip’s inspector that was not responding correctly to undo and redo commands. (978673)</p></li>
+<li><p>Fixed issue where the <code class="docutils literal notranslate"><span class="pre">Frame</span> <span class="pre">All</span></code> action would not frame keys outside of clips when the curve display is collapsed.  (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1273725/">1273725</a>, #295)</p></li>
+<li><p>Scrolling the horizontal scrollbar of the timeline to the right edge will no longer prevent the user from dragging left again. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1127199/">1127199</a>, #301)</p></li>
+<li><p>Splitting a clip with an ease in or out value now ensures ease duration stays on correct side of split. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1279350/">1279350</a>)</p></li>
+<li><p>Fixed delay when zooming in after reaching Timeline window’s maximum and then zooming back. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1214228/">1214228</a>)</p></li>
+<li><p>Prevent creation of presets with Group Tracks. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1281056">1281056</a>)</p></li>
+<li><p>Fixed issue where markers placed on top of clips could not be selected. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1284807">1284807</a>, #314)</p></li>
+<li><p>Fixed issue where multiple markers placed on top of each other could not be selected. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1284801">1284801</a>, #314)</p></li>
+</ul>
+</section>
+</section>
+<section id="id23">
+<h2>[1.4.3] - 2020-08-26<a class="headerlink" href="#id23" title="Permalink to this heading">¶</a></h2>
+<section id="id24">
+<h3>Fixed<a class="headerlink" href="#id24" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed incorrect selection when clicking on a clip’s blend. (1178052)</p></li>
+<li><p>Fixed issue where an exception was thrown when drawing an Audio clip’s waveform when that clip wasn’t in the AssetDatabase. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1268868/">1268868</a>)</p></li>
+<li><p>When choosing <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Signal</span> <span class="pre">Emitter</span> <span class="pre">from</span> <span class="pre">Signal</span> <span class="pre">Asset</span></code>, closing the Object Selector window will not add an empty Signal Emitter. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1261553/">1261553</a>)</p></li>
+<li><p>Fixed issue where an error would appear when editing keys in the Animation window if the Timeline window is opened. (1269829)</p></li>
+<li><p>Fixed issue where the <code class="docutils literal notranslate"><span class="pre">Frame</span> <span class="pre">All</span></code> operation would continually increase the zoom value when only empty tracks are added to the timeline (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1273540/">1273540</a>).</p></li>
+</ul>
+</section>
+</section>
+<section id="id25">
+<h2>[1.4.2] - 2020-08-04<a class="headerlink" href="#id25" title="Permalink to this heading">¶</a></h2>
+<section id="id26">
+<h3>Fixed<a class="headerlink" href="#id26" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed double-click not opening the AnimationWindow on clips with animated parameters. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1262950/">1262950</a>)</p></li>
+<li><p>Fixed issue where the Timeline window would rebuild its Playable Graph every time an AnimationClip would be added, changed or deserialized. (1265314, <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1267055/">1267055</a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="id27">
+<h2>[1.4.1] - 2020-07-15<a class="headerlink" href="#id27" title="Permalink to this heading">¶</a></h2>
+<section id="id28">
+<h3>Fixed<a class="headerlink" href="#id28" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">IndexOutOfRangeException</span></code> exception being thrown when editing inspector curves. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1259902/">1259902</a>)</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">IndexOutOfRangeException</span></code> exception being thrown when the <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Signal</span></code> dialog replaces an existing signal. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1241170/">1241170</a>)</p></li>
+<li><p>Fixed signal state being reset on paused timelines. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1257208/">1257208</a>)</p></li>
+<li><p>Fixed nested custom types not updating animation values in the inspector. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1239893/">1239893</a>)</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">AnimationTrack</span></code>s SceneOffset mode incorrectly overriding root transform on tracks without root transform in editor. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1237704/">1237704</a>)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">DisplayName</span></code> attribute is now supported when used with <code class="docutils literal notranslate"><span class="pre">TrackAsset</span></code>s. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1253397/">1253397</a>)</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">NullReference</span></code> exception being thrown when clicking on the <code class="docutils literal notranslate"><span class="pre">Scene</span> <span class="pre">Preview</span></code> checkbox if the Timeline window was closed. (1261543)</p></li>
+</ul>
+</section>
+</section>
+<section id="id29">
+<h2>[1.4.0] - 2020-06-26<a class="headerlink" href="#id29" title="Permalink to this heading">¶</a></h2>
+<section id="id30">
+<h3>Added<a class="headerlink" href="#id30" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">ClipCaps.AutoScale</span></code> to automatically change the speed multiplier value when the clip is trimmed in the Timeline window.</p></li>
+<li><p>Added a <code class="docutils literal notranslate"><span class="pre">DeleteClip</span></code> method in <code class="docutils literal notranslate"><span class="pre">TrackAsset</span></code>.</p></li>
+<li><p>Added dependency on Animation, Audio, Director and Particle System modules. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1229825/">1229825</a>)</p></li>
+<li><p>Added an option in <code class="docutils literal notranslate"><span class="pre">TimelineAsset.EditorSettings</span></code> to disable scene preview.</p></li>
+<li><p>Added base classes to define custom actions:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimelineAction</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TrackAction</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ClipAction</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MarkerAction</span></code></p></li>
+</ul>
+</li>
+<li><p>Added the following attributes that can be used with action classes:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ApplyDefaultUndo</span></code> to automatically manage undo operations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActiveInMode</span></code> to control in which Timeline mode the action is valid.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MenuEntry</span></code> to add the action to the context menu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimelineShortcut</span></code> can be added to a static method to invoke the action with a shortcut.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Invoker</span></code> to invoke actions using Timeline’s selection or context.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MenuOrder</span></code> contains menu priority values, to be used with <code class="docutils literal notranslate"><span class="pre">MenuEntry</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimelineModes</span></code> to specify in which mode an action is valid, to be used with <code class="docutils literal notranslate"><span class="pre">MenuEntry</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActionContext</span></code> to provide a context to invoke <code class="docutils literal notranslate"><span class="pre">TimelineAction</span></code>s.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActionValidity</span></code> to specify is an action is valid for a given context.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UndoExtension</span></code> to manage undo operations with common Timeline types.</p></li>
+</ul>
+</section>
+<section id="id31">
+<h3>Changed<a class="headerlink" href="#id31" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Improved performance with ControlTracks in preview mode for cases where multiple Control Tracks are assigned to the same PlayableDirector.</p></li>
+<li><p>Improved layout and appearance of track header buttons.</p></li>
+<li><p>Reduced icons’ file size without any quality loss.</p></li>
+<li><p>A track’s binding will be duplicated when pasting or duplicating a track.</p></li>
+<li><p>When creating a new timeline asset, the “Timeline” suffix will not be added to the file name twice.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ClipCaps.All</span></code> now includes the new <code class="docutils literal notranslate"><span class="pre">Autoscale</span></code> feature. To get the previous <code class="docutils literal notranslate"><span class="pre">ClipCaps.All</span></code> behaviour on clips, use</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ClipCaps</span><span class="o">.</span><span class="n">Looping</span> <span class="o">|</span> <span class="n">ClipCaps</span><span class="o">.</span><span class="n">Extrapolation</span> <span class="o">|</span> <span class="n">ClipCaps</span><span class="o">.</span><span class="n">ClipIn</span> <span class="o">|</span> <span class="n">ClipCaps</span><span class="o">.</span><span class="n">SpeedMultiplier</span> <span class="o">|</span> <span class="n">ClipCaps</span><span class="o">.</span><span class="n">Blending</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Inline curve selection is now synced with the clip’s selection.</p></li>
+<li><p>Selecting a curve view property will also select the corresponding curve view.</p></li>
+<li><p>Clicking and holding the <code class="docutils literal notranslate"><span class="pre">Command</span></code> or <code class="docutils literal notranslate"><span class="pre">Control</span></code> key on a curve view will deselect it if it was already selected.</p></li>
+<li><p>Improved Timeline window UI performance.</p></li>
+</ul>
+</section>
+<section id="id32">
+<h3>Fixed<a class="headerlink" href="#id32" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Selecting clips from locked tracks is not allowed anymore when using the playhead’s context menu.</p></li>
+<li><p>Inserting gaps in locked tracks is not allowed anymore.</p></li>
+<li><p>When adding an Activation track, the viewport is adjusted to show the new Activation clip.</p></li>
+<li><p>Fixed issue where trimming AnimationClips would also change the speed multiplier.</p></li>
+</ul>
+</section>
+</section>
+<section id="id33">
+<h2>[1.3.4] - 2020-06-09<a class="headerlink" href="#id33" title="Permalink to this heading">¶</a></h2>
+<section id="id34">
+<h3>Fixed<a class="headerlink" href="#id34" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fix a Control Track bug that caused the first frame of an animation to evaluated incorrectly when scrubbing forwards and backwards. (1253485)</p></li>
+<li><p>Fixed memory leak where the most recently played timeline would not get unloaded. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1214752/">1214752</a> and 1253974)</p></li>
+</ul>
+</section>
+</section>
+<section id="id35">
+<h2>[1.3.3] - 2020-05-29<a class="headerlink" href="#id35" title="Permalink to this heading">¶</a></h2>
+<section id="id36">
+<h3>Fixed<a class="headerlink" href="#id36" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed regression where animation tracks were writing root motion when the animation clip did not contain root transform values (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1249355/">1249355</a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="id37">
+<h2>[1.3.2] - 2020-04-02<a class="headerlink" href="#id37" title="Permalink to this heading">¶</a></h2>
+<section id="id38">
+<h3>Fixed<a class="headerlink" href="#id38" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed issue where the clip Inspector’s curve preview would close when clicking on the curve. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1228127/">1228127</a>)</p></li>
+<li><p>Fixed issue where the curves view was not synced between Animation and Timeline windows. (<a class="reference external" href="https://issuetracker.unity3d.com/issues/animation-window-curves-are-not-updated-immediately-when-changing-them-in-timeline-window">1213937</a>)</p></li>
+<li><p>Fixed issue where play range didn’t loop when range ends on the final frame. (<a class="reference external" href="https://issuetracker.unity3d.com/issues/timeline-play-range-doesnt-loop-when-play-range-ends-on-the-final-frame">1215926</a>)</p></li>
+<li><p>Fixed issue where displaying an array in the curves view generated errors. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1178251/">1178251</a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="id39">
+<h2>[1.3.1] - 2020-03-13<a class="headerlink" href="#id39" title="Permalink to this heading">¶</a></h2>
+<section id="id40">
+<h3>Fixed<a class="headerlink" href="#id40" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed issue where the curves view would flicker when editing multiple keys. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1217326/">1217326</a>)</p></li>
+<li><p>Fixed issue where adding a keyframe in the curves view at the end of a clip would not place the keyframe at the correct position. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1221337/">1221337</a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="id41">
+<h2>[1.3.0] - 2020-02-26<a class="headerlink" href="#id41" title="Permalink to this heading">¶</a></h2>
+<section id="id42">
+<h3>Added<a class="headerlink" href="#id42" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Inline Curve Properties can be removed.</p></li>
+<li><p>Tracks can be individually resized.</p></li>
+</ul>
+</section>
+<section id="id43">
+<h3>Changed<a class="headerlink" href="#id43" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Creating a new Timeline will no longer automatically add an Animation Track and an Animator to the target GameObject.</p></li>
+<li><p>Ease-in and ease-out values for clips are no longer restricted to 50% of the clip’s duration.</p></li>
+<li><p>The resize handle for inline curves has been moved to the track header area.</p></li>
+<li><p>Reduced the minimum width of the track header area.</p></li>
+<li><p>Trimming the left edge of a clip while pressing the Shift key will change the Speed Multiplier value.</p></li>
+</ul>
+</section>
+<section id="id44">
+<h3>Fixed<a class="headerlink" href="#id44" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed humanoid characters going to default pose during initial root motion recording. (1174752)</p></li>
+<li><p>Fixed Override Tracks not masking RootTransform when an AvatarMask without the Root Node is applied. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1190600/">1190600</a>)</p></li>
+<li><p>Fixed preview of Avatar Masks on base level Animation Tracks. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1190600/">1190600</a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="id45">
+<h2>[1.2.13] - 2020-02-24<a class="headerlink" href="#id45" title="Permalink to this heading">¶</a></h2>
+<section id="id46">
+<h3>Fixed<a class="headerlink" href="#id46" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed Performance issue where Control Tracks would resimulate during the tail of a non-looping particle clip. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1216702/">1216702</a>)</p></li>
+<li><p>Fixed adjacent recording clips highlighting the wrong clip. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1210312/">1210312</a>)</p></li>
+<li><p>Fixed timescale drawing to only draw visible lines which avoids a hang with very large clips. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1213189/">1213189</a>)</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">SignalReceiver.ChangeSignalAtIndex</span></code> incorrectly throwing exception when multiple entries are set to null. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1210877/">1210877</a>)</p></li>
+<li><p>Fixed a memory leak with Animation Clips in Edit mode.</p></li>
+<li><p>Fixed issue where changes to a Signal Receiver component in a prefab were reverted. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1210883/">1210883</a>)</p></li>
+<li><p>Fixed avatar mask reassignment not causing immediate re-evaluation. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1219326/">1219326</a>)</p></li>
+<li><p>Fixed issues related to recursive control tracks. (1178423)</p></li>
+<li><p>Fixed issue where using the <code class="docutils literal notranslate"><span class="pre">HideInMenu</span></code> attribute in combination with a class inheriting from <code class="docutils literal notranslate"><span class="pre">Marker</span></code> would not hide the marker from the Timeline context menus. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1221054/">1221054</a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="id47">
+<h2>[1.2.12] - 2020-02-21<a class="headerlink" href="#id47" title="Permalink to this heading">¶</a></h2>
+<section id="id48">
+<h3>Fixed<a class="headerlink" href="#id48" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed issue where the curves view would change its framing when moving a clip. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1217353/">1217353</a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="id49">
+<h2>[1.2.11] - 2020-01-22<a class="headerlink" href="#id49" title="Permalink to this heading">¶</a></h2>
+<section id="id50">
+<h3>Fixed<a class="headerlink" href="#id50" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed Control Track inspector dropdown not opening. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1208943/">1208943</a>)</p></li>
+<li><p>Fixed issue where applying the Match content command on subtimeline clip with a newly created subtimeline with no duration makes the clip disappear. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1203662/">1203662</a>)</p></li>
+<li><p>Fixed issue where the opened timeline is changed to another timeline when switching focus from Unity to a different application. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1087348/">1087348</a>)</p></li>
+<li><p>Fixed issue where the keys in the inline curves view were incorrectly positioned (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1205835/">1205835</a>)</p></li>
+</ul>
+</section>
+<section id="id51">
+<h3>Changed<a class="headerlink" href="#id51" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>ControlPlayableAsset.searchHierarchy (a.k.a. Control Children) now defaults to false.</p></li>
+</ul>
+</section>
+</section>
+<section id="id52">
+<h2>[1.2.10] - 2019-12-08<a class="headerlink" href="#id52" title="Permalink to this heading">¶</a></h2>
+<section id="id53">
+<h3>Fixed<a class="headerlink" href="#id53" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed issue where object selectors on tracks did not show bound objects. (1202853)</p></li>
+<li><p>Fixing inspector blend graph display for animation clips. (1201474)</p></li>
+<li><p>Fixed Timeline Window lock state when restarting Unity and no timeline are selected. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1201405/">1201405</a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="id54">
+<h2>[1.2.9] - 2019-12-06<a class="headerlink" href="#id54" title="Permalink to this heading">¶</a></h2>
+<section id="id55">
+<h3>Fixed<a class="headerlink" href="#id55" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added missing high-resolution icons for Personal Skin.</p></li>
+</ul>
+</section>
+</section>
+<section id="id56">
+<h2>[1.2.8] - 2019-11-21<a class="headerlink" href="#id56" title="Permalink to this heading">¶</a></h2>
+<section id="id57">
+<h3>Fixed<a class="headerlink" href="#id57" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed issue where recording couldn’t be turned on for override tracks. (1199389)</p></li>
+<li><p>Fixed overlay bug when panning. (1198348)</p></li>
+<li><p>Fixed Foot IK being applied in Editor when option is disabled. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1197426/">1197426</a>)</p></li>
+<li><p>Fixed issue where the Animation Track’s inline curves were not properly aligned when panning the timeline. (1198364)</p></li>
+</ul>
+</section>
+</section>
+<section id="id58">
+<h2>[1.2.7] - 2019-11-15<a class="headerlink" href="#id58" title="Permalink to this heading">¶</a></h2>
+<section id="id59">
+<h3>Fixed<a class="headerlink" href="#id59" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed inline curves to display PlayableBehaviour array properties. (1178251)</p></li>
+<li><p>Fixed clip selection from playhead. (1187495)</p></li>
+<li><p>Fixed recorded clips dirtying the scene on copy/paste. (1181492)</p></li>
+</ul>
+</section>
+</section>
+<section id="id60">
+<h2>[1.2.6] - 2019-10-25<a class="headerlink" href="#id60" title="Permalink to this heading">¶</a></h2>
+<section id="id61">
+<h3>Added<a class="headerlink" href="#id61" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added Timeline manual.</p></li>
+</ul>
+</section>
+</section>
+<section id="id62">
+<h2>[1.2.5] - 2019-10-16<a class="headerlink" href="#id62" title="Permalink to this heading">¶</a></h2>
+<section id="id63">
+<h3>Changed<a class="headerlink" href="#id63" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added tooltips that were missing for Timeline selector and settings buttons. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1152790/">1152790</a>)</p></li>
+<li><p>Removed Undo menu entry that was added when clicking on the Inline curves button. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1187402/">1187402</a>)</p></li>
+</ul>
+</section>
+<section id="id64">
+<h3>Fixed<a class="headerlink" href="#id64" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed issue where recording couldn’t be turned off when an object is deactivated. (1187174)</p></li>
+<li><p>Timelines listed in the Timeline selector will now be sorted alphabetically. (1190514)</p></li>
+<li><p>Fixed Insert Frames options from Trackhead context menu not applying to markers. (1187895)</p></li>
+<li><p>Fixed incorrect display when a large number of nested group tracks was added to a Timeline. (1157367)</p></li>
+</ul>
+</section>
+</section>
+<section id="id65">
+<h2>[1.2.4] - 2019-10-03<a class="headerlink" href="#id65" title="Permalink to this heading">¶</a></h2>
+<section id="id66">
+<h3>Changed<a class="headerlink" href="#id66" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Properties in the Inline Curve editor will now be listed in the same order as the Animation window. (1184058)</p></li>
+<li><p>Updated the appearance of the Timeline window to conform to the <a class="reference external" href="https://blogs.unity3d.com/2019/08/29/evolving-the-unity-editor-ux/">editor’s UX redesign</a></p></li>
+<li><p>Improved the appearance of clip blends.</p></li>
+</ul>
+</section>
+<section id="id67">
+<h3>Fixed<a class="headerlink" href="#id67" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Adding a PlayableDirector with no Playable Asset will no longer trigger a repaint of the Timeline Window on each frame. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1172707/">1172707</a>)</p></li>
+<li><p>Fixed issue where a clip’s blend selection border was not drawn correctly when there was a previous clip. (1178173)</p></li>
+<li><p>Fixed issue where Animation Events were fired twice when the Playable Director Wrap mode is set to Loop. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1173281/">1173281</a>)</p></li>
+<li><p>Fixed issue where double-clicking on a Timeline Asset would not open it in the Timeline window. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1182159">1182159</a>)</p></li>
+<li><p>Fixed issue where the paste shortcut would not work when copying and pasting between two different timelines. (1184967)</p></li>
+<li><p>Fixed audio stutter when going into playmode. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1167289/">1167289</a>)</p></li>
+<li><p>Fixed PreviousFrame and NextFrame controls in subtimelines with large offsets. (1175320)</p></li>
+<li><p>Fixed issue where exceptions were thrown when resetting a Signal Receiver component. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1158227/">1158227</a>)</p></li>
+<li><p>Increased font size of clip labels (1179642)</p></li>
+</ul>
+</section>
+</section>
+<section id="id68">
+<h2>[1.2.3] - 2019-10-03<a class="headerlink" href="#id68" title="Permalink to this heading">¶</a></h2>
+<section id="id69">
+<h3>Fixed<a class="headerlink" href="#id69" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Removed unnecessary directories from the package.</p></li>
+</ul>
+</section>
+</section>
+<section id="id70">
+<h2>[1.2.2] - 2019-08-20<a class="headerlink" href="#id70" title="Permalink to this heading">¶</a></h2>
+<section id="id71">
+<h3>Fixed<a class="headerlink" href="#id71" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed issue where fields for custom clips were not responding to Add Key commands. (1174416)</p></li>
+<li><p>Fixed issue where a different track’s bound GameObject is highlighted when clicking a track’s bound GameObject box. (1141836)</p></li>
+<li><p>Fixed issue where a clip locks to the playhead’s position when moving it. (1157280)</p></li>
+</ul>
+</section>
+</section>
+<section id="id72">
+<h2>[1.2.1] - 2019-08-01<a class="headerlink" href="#id72" title="Permalink to this heading">¶</a></h2>
+<section id="id73">
+<h3>Fixed<a class="headerlink" href="#id73" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed appearance of a selected clip’s border.</p></li>
+<li><p>Fixed non-transform properties from AnimationClips not being correctly put into preview mode when the avatar root does not contain the animator component. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1162334/">1162334</a>)</p></li>
+<li><p>Fixed an issue where the context menu for inline curves keys would not open on MacOS. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1158584/">1158584</a>)</p></li>
+<li><p>Fixed recording state being incorrect after toggling preview mode (1146551)</p></li>
+<li><p>Fixed copying clips without ExposedReferences causing the scene to dirty (1144469)</p></li>
+</ul>
+</section>
+</section>
+<section id="id74">
+<h2>[1.2.0] - 2019-07-16<a class="headerlink" href="#id74" title="Permalink to this heading">¶</a></h2>
+<p><em>Compatible with Unity 2019.3</em></p>
+<section id="id75">
+<h3>Added<a class="headerlink" href="#id75" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added ILayerable interface. Implementing this interface on a custom track will enable support for multiple layers, similar to the AnimationTracks override tracks.</p></li>
+<li><p>Added “Pan” autoscrolling option in the Timeline window.</p></li>
+<li><p>Enabled rectangle tool for inline curves.</p></li>
+</ul>
+</section>
+<section id="id76">
+<h3>Changed<a class="headerlink" href="#id76" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Scrolling horizontally with the mouse wheel or trackpad now pans the timeline view horizontally, instead of zooming.</p></li>
+<li><p>Scrolling vertically with the mouse wheel or trackpad on the track headers or on the vertical scroll bar now pans the timeline view vertically, instead of zooming.</p></li>
+</ul>
+</section>
+<section id="id77">
+<h3>Fixed<a class="headerlink" href="#id77" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed an issue causing info text to overlap when displaying multiple lines (1150863).</p></li>
+<li><p>Fixed duration mode not reverting from “Fixed Length” to “Based On Clips” properly. (1154034)</p></li>
+<li><p>Fixed playrange markers being drawn over horizontal scrollbar (1156023)</p></li>
+<li><p>Fixed an issue where a hotkey does not autofit all when Marker is present (1158704)</p></li>
+<li><p>Fixed an issue where an exception was thrown when overwriting a Signal Asset through the Signal Emitter inspector. (1152202)</p></li>
+<li><p>Fixed Control Tracks not updating instances when source prefab change. (case 1158592)</p></li>
+<li><p>An exception will be thrown when calling TrackAsset.CreateMarker() with a marker that implements INotification if the track does not support notifications. (1150248)</p></li>
+<li><p>Fixed preview mode being reenabled when warnings change on tracks. (case 1151381)</p></li>
+<li><p>Fixed minimum clip duration to be frame aligned. (case 1156602)</p></li>
+<li><p>Fixed playhead being moved when applying undo while recording.(case 1154802)</p></li>
+<li><p>Fixed warnings about localEulerAnglesRaw when using RectTransform. (case 1151100)</p></li>
+<li><p>Fixed precision error on the duration of infinite tracks. (case 1156723)</p></li>
+<li><p>Fixed issue where two GatherProperties call were made when switching between two PlayableDirectors. (1159036)</p></li>
+<li><p>Fixed issue where inspectors for clips, tracks and markers would get incorrectly displayed when no Timeline Window is opened. (1158242, 1158283)</p></li>
+<li><p>Fixed issue with clip connectors that were incorrectly drawn when the timeline was panned or zoomed. (1141960)</p></li>
+<li><p>Fixed issue where evaluating a Playable Graph inside a Notification Receiver would cause an infinite recursion. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1149930/">1149930</a>)</p></li>
+<li><p>Fixed Trim and Move operations to ensure playable duration is updated upon completion. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1151894/">1151894</a>)</p></li>
+<li><p>Fixed options menu icon that was blurry on high-dpi screens. (1154623)</p></li>
+<li><p>Track binding field is now larger. (1153446)</p></li>
+<li><p>Fixed issue where an empty Timeline window would create new objects on each repaint. (1142894)</p></li>
+<li><p>Fixed an issue causing info text to overlap when displaying multiple lines (when trimming + time scaling, for example). (1150863)</p></li>
+<li><p>Fixed duration mode not reverting from “Fixed Length” to “Based On Clips” properly. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1154034/">1154034</a>)</p></li>
+<li><p>Prevented the PlayableGraph from being created twice when playing a timeline in play mode with the Timeline window opened. (1147247)</p></li>
+<li><p>Fixed issue where an exception was thrown when clicking on a SignalEmitter with the Timeline window in asset mode. (1146261)</p></li>
+<li><p>A timeline will now be played correctly when building a player with Mono and Managed Stripping Level set higher than Low. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1133182/">1133182</a>)</p></li>
+<li><p>The Signal Asset creation dialog will no longer throw exceptions when canceled on macOS. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1141959/">1141959</a>)</p></li>
+<li><p>Fixed issue where the Emit Signal property on a Signal Emitter would not get saved correctly. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1148709/">1148709</a>)</p></li>
+<li><p>Fixed issue where a Signal Emitter placed at the start of a timeline would be fired twice. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1149653/">1149653</a>)</p></li>
+<li><p>Fixed record button state not updating when offset modes are changed. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1142747/">1142747</a>)</p></li>
+<li><p>Cleared invalid assets from the Timeline Clipboard when going into or out of PlayMode. (1144473)</p></li>
+<li><p>Copying a Control Clip during play mode no longer throws exceptions. (1141581)</p></li>
+<li><p>Going to Play Mode while inspecting a Track Asset will no longer throw exceptions. (1141958)</p></li>
+<li><p>Resizing Timeline’s window no longer affects the zoom value. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1147150/">1147150</a>)</p></li>
+<li><p>Snap relaxing now responds to Command on Mac, instead of Control. (1149144)</p></li>
+<li><p>Clips will no longer randomly disappear when showing or hiding inline curves. (1141661)</p></li>
+<li><p>The global/local time referential button will no longer be shown for a top-level timeline. (1080872)</p></li>
+<li><p>Playhead will not be drawn above the bottom scrollbar anymore. (1134016)</p></li>
+<li><p>Fixed moving a marker on an Infinite Track will keep the track in infinite mode (1141190)</p></li>
+<li><p>Fixed zooming in/out will keep the padding at the beginning of the timeline (1030689)</p></li>
+<li><p>Fixed marker UI is the same color and size on infinite track (1139370)</p></li>
+<li><p>Fixed Disable the possibility to add Markers to tracks of a Timeline that is ReadOnly (1134463)</p></li>
+<li><p>Fixed wrong context menu being shown when right-clicking a marker (1133592)</p></li>
+<li><p>Fixed creation of override track to work with multiselection (1133592)</p></li>
+</ul>
+</section>
+</section>
+<section id="id78">
+<h2>[1.1.0] - 2019-02-14<a class="headerlink" href="#id78" title="Permalink to this heading">¶</a></h2>
+<p><em>Compatible with Unity 2019.2</em></p>
+<section id="id79">
+<h3>Added<a class="headerlink" href="#id79" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>ClipEditor, TrackEditor and MarkerEditor classes users can derive from to control visual appearance of custom timeline clips, tracks and markers using the CustomTimelineEditor attribute.</p></li>
+<li><p>ClipEditor.GetSubTimelines to allow user created clips that support sub-timelines in editor</p></li>
+<li><p>TimelineEditor.selectedClip and TimelineEditor.selectedClips to set and retrieve the currently selected timeline clips</p></li>
+<li><p>IPropertyCollector.AddFromName override that takes a component.</p></li>
+<li><p>Warning icons to SignalEmitters when they do not reference an asset</p></li>
+<li><p>Ability to mute/unmute a Group Track.</p></li>
+<li><p>Mute/Unmute only selected track command added for tracks with multiple layers.</p></li>
+<li><p>Animate-able Properties on Tracks and Clips can now be edited through inline curves.</p></li>
+<li><p>Added loop override on AnimationTrack clips (1140766)</p></li>
+<li><p>ReadOnly/Source Control Lock support for Timeline Scene</p></li>
+</ul>
+</section>
+<section id="id80">
+<h3>Changed<a class="headerlink" href="#id80" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Control Track display to show a particle system icon when particle systems are being controlled</p></li>
+<li><p>Animate-able Properties for clips are no longer edited using by “recording”; they are edited through the inline curves just like tracks.</p></li>
+<li><p>AudioTrack properties can now be animated through inline curves.</p></li>
+<li><p>Changed Marker show/hide to be undoable. Hide will also unselect markers. (1124661)</p></li>
+<li><p>Changed SignalReceivers show their enabled state in the inspector. (1131163)</p></li>
+<li><p>Changed Track Context Menu to show “Add Signal Emitter” at the top of the list of Marker commands. (1131166)</p></li>
+<li><p>Moved “Add Signal Emitter” and “Add Signal Emitter From Asset” commands out of their sub-menu. (1131166)</p></li>
+</ul>
+</section>
+<section id="id81">
+<h3>Fixed<a class="headerlink" href="#id81" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed markers being drawn outside their pane. (1124381)</p></li>
+<li><p>Fixed non-public tracks not being recognized by the Timeline Editor. (1122803)</p></li>
+<li><p>Fixed keyboard shortcuts for <em>Frame All</em> (default: A) and <em>Frame Selected</em> (default: F) to also apply horizontally (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1126623/">1126623</a>)</p></li>
+<li><p>Fixed recording getting disabled when selecting a different GameObject while the Timeline Window is not locked. (1123119)</p></li>
+<li><p>Fixed time sync between Animation and Timeline windows when clips have non-default timescale or clip-in values. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/930909/">930909</a>)</p></li>
+<li><p>Fixed animation window link not releasing when deleting the timeline asset. (1127425)</p></li>
+<li><p>Fixed an exception being raised when selecting both a Track marker and a Timeline marker at the same time. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1113006/">1113006</a>)</p></li>
+<li><p>Fixed the header marker area will so it no longer opens its context menu if it’s hidden. (1124351)</p></li>
+<li><p>Fixed Signal emitters to show the Signals list when created on override tracks. (1102913)</p></li>
+<li><p>Fixed a crash on IL2CPP platforms when the VideoPlayer component is not used. (1129572)</p></li>
+<li><p>Fixed Timeline Duration changes in editor not being undoable. (1109279)</p></li>
+<li><p>Fixed <em>Match Offsets</em> commands causing improper animation defaults to be applied. (911678)</p></li>
+<li><p>Fixed Timeline Inspectors leaving <em>EditorGUI.showMixedValue</em> in the wrong state. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1123895/">1123895</a>)</p></li>
+<li><p>Fixed issue where performing undo after moving items on multiple tracks would not undo some items. (1131071)</p></li>
+<li><p>Fixed cog icon in the Signal Receiver inspector being blurry. (1130320)</p></li>
+<li><p>Fixed Timeline marker track hamburger icon not being centered vertically. (1131112)</p></li>
+<li><p>Fixed detection of signal receivers when track is in a group. (1131811)</p></li>
+<li><p>Fixed exception being thrown when deleting Signal entries. (1131065)</p></li>
+<li><p>Fixed Markers blocking against Clips when moving both Clips and Markers in Ripple mode. (1102594)</p></li>
+<li><p>Fixed NullReferenceException being thrown when muting an empty marker track. (1131106)</p></li>
+<li><p>Fixed SignalEmitter Inspector losing the Receiver UI when it is locked and another object is selected. (1116041)</p></li>
+<li><p>Fixed Marker and Clip appearing to be allowed to move to another track in Ripple mode. (1131123)</p></li>
+<li><p>Fixed issue where the Signal Emitter inspector did not show the Signal Receiver UI when placed on the timeline marker track. (1131811)</p></li>
+<li><p>Fixed Replace mode not drawing clips when moved together with a Marker. (1132605)</p></li>
+<li><p>Fixed inline curves to retain their state when performing undo/redo or keying from the inspector. (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1125443">1125443</a>)</p></li>
+<li><p>Fixed an issue preventing Timeline from entering preview mode when an Audio Track is present an a full assembly reload is performed. (1132243)</p></li>
+<li><p>Fixed an issue where the Marker context menu would show a superfluous line at the bottom. (1132662)</p></li>
+<li><p>Fixed an issue preventing Timeline asset to be removed from a locked Timeline Window when a new scene is loaded. (1135073)</p></li>
+<li><p>Fixed EaseIn/Out shortcut for clips</p></li>
+</ul>
+</section>
+</section>
+<section id="id82">
+<h2>[1.0.0] - 2019-01-28<a class="headerlink" href="#id82" title="Permalink to this heading">¶</a></h2>
+<p><em>Compatible with Unity 2019.1</em></p>
+<section id="id83">
+<h3>Added<a class="headerlink" href="#id83" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>This is the first release of Timeline, as a Package</p></li>
+<li><p>Added API calls to access all AnimationClips used by Timeline.</p></li>
+<li><p>Added support in the runtime API to Animate Properties used by template-style PlayableBehaviours used as Mixers.</p></li>
+<li><p>Added Markers. Markers are abstract types that represent a single point in time.</p></li>
+<li><p>Added Signal Emitters and Signal Assets. Signal Emitters are markers that send a notification, indicated by a SignalAsset, to a GameObject indicating an event has occurred during playback of the Timeline.</p></li>
+<li><p>Added Signal Receiver Components. Signal Receivers are MonoBehaviour that listen for Signals from Timeline and respond by invoking UnityEvents.</p></li>
+<li><p>Added Signal Tracks. Signal Tracks are Timeline Tracks that are used only for Signal Emitters.</p></li>
+</ul>
+</section>
+<section id="id84">
+<h3>Fixed<a class="headerlink" href="#id84" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Signal Receiver will no longer throw exceptions when its inspector is locked (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1114526/">1114526</a>)</p></li>
+<li><p>Context menu operations will now be applied on all selected tracks (1089820)</p></li>
+<li><p>Clip edit mode clutch keys will not get stuck when holding multiple keys at the same time (1097216)</p></li>
+<li><p>Marker inspector will be disabled when the marker is collapsed (1102860)</p></li>
+<li><p>Clip inspector will no longer throw exceptions when changing values when the inspector is locked (1115984)</p></li>
+<li><p>Fixed appearance of muted tracks (1018643)</p></li>
+<li><p>Fixed multiple issues where clips and markers were selectable when located under the time ruler and the marker header track (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1117925/">1117925</a>, 1102598)</p></li>
+<li><p>A marker aligned with the edge of a clip is now easier to select (1102591)</p></li>
+<li><p>Changed behaviour of the Timeline Window to apply modifications immediately during Playmode (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/922846/">922846</a>, 1111908)</p></li>
+<li><p>PlayableDirector.played event is now called after entering or exiting Playmode (<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/1088918/">1088918</a>)</p></li>
+<li><p>Undoing a paste track operation in a group will no longer corrupt the timeline (1116052)</p></li>
+<li><p>The correct context menu will now be displayed on the marker header track (1120857)</p></li>
+<li><p>Fixed an issue where a circular reference warning appeared in the Control Clip inspector even if there was no circular reference (1116520)</p></li>
+<li><p>Fixed preview mode when animation clips with root curves are used (case 1116297, case 1116007)</p></li>
+<li><p>Added option to disable foot IK on animation playable assets (case 1115652)</p></li>
+<li><p>Fixed unevaluated animation tracks causing default pose (case 1109118)</p></li>
+<li><p>Fixed drawing of Group Tracks when header is off-screen (case 876340)</p></li>
+<li><p>Fixed drag and drop of objects inside a group being inserted outside (case 1011381, case 1014774)</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#id1">[1.6.4] - 2022-01-21</a><ul>
+<li><a class="reference internal" href="#fixed">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">[1.6.3] - 2021-10-20</a><ul>
+<li><a class="reference internal" href="#id3">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">[1.6.2] - 2021-08-05</a><ul>
+<li><a class="reference internal" href="#id5">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">[1.6.1] - 2021-06-22</a><ul>
+<li><a class="reference internal" href="#added">Added</a></li>
+<li><a class="reference internal" href="#changed">Changed</a></li>
+<li><a class="reference internal" href="#id7">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">[1.5.5] - 2021-04-30</a><ul>
+<li><a class="reference internal" href="#id9">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id10">[1.5.4] - 2021-03-10</a><ul>
+<li><a class="reference internal" href="#id11">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id12">[1.5.3] - 2021-03-05</a><ul>
+<li><a class="reference internal" href="#id13">Changed</a></li>
+<li><a class="reference internal" href="#id14">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id15">[1.5.2] - 2021-01-08</a><ul>
+<li><a class="reference internal" href="#id16">Added</a></li>
+<li><a class="reference internal" href="#id17">Changed</a></li>
+<li><a class="reference internal" href="#id18">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id19">[1.4.5] - 2020-11-19</a><ul>
+<li><a class="reference internal" href="#id20">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id21">[1.4.4] - 2020-10-09</a><ul>
+<li><a class="reference internal" href="#id22">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id23">[1.4.3] - 2020-08-26</a><ul>
+<li><a class="reference internal" href="#id24">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id25">[1.4.2] - 2020-08-04</a><ul>
+<li><a class="reference internal" href="#id26">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id27">[1.4.1] - 2020-07-15</a><ul>
+<li><a class="reference internal" href="#id28">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id29">[1.4.0] - 2020-06-26</a><ul>
+<li><a class="reference internal" href="#id30">Added</a></li>
+<li><a class="reference internal" href="#id31">Changed</a></li>
+<li><a class="reference internal" href="#id32">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id33">[1.3.4] - 2020-06-09</a><ul>
+<li><a class="reference internal" href="#id34">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id35">[1.3.3] - 2020-05-29</a><ul>
+<li><a class="reference internal" href="#id36">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id37">[1.3.2] - 2020-04-02</a><ul>
+<li><a class="reference internal" href="#id38">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id39">[1.3.1] - 2020-03-13</a><ul>
+<li><a class="reference internal" href="#id40">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id41">[1.3.0] - 2020-02-26</a><ul>
+<li><a class="reference internal" href="#id42">Added</a></li>
+<li><a class="reference internal" href="#id43">Changed</a></li>
+<li><a class="reference internal" href="#id44">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id45">[1.2.13] - 2020-02-24</a><ul>
+<li><a class="reference internal" href="#id46">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id47">[1.2.12] - 2020-02-21</a><ul>
+<li><a class="reference internal" href="#id48">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id49">[1.2.11] - 2020-01-22</a><ul>
+<li><a class="reference internal" href="#id50">Fixed</a></li>
+<li><a class="reference internal" href="#id51">Changed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id52">[1.2.10] - 2019-12-08</a><ul>
+<li><a class="reference internal" href="#id53">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id54">[1.2.9] - 2019-12-06</a><ul>
+<li><a class="reference internal" href="#id55">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id56">[1.2.8] - 2019-11-21</a><ul>
+<li><a class="reference internal" href="#id57">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id58">[1.2.7] - 2019-11-15</a><ul>
+<li><a class="reference internal" href="#id59">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id60">[1.2.6] - 2019-10-25</a><ul>
+<li><a class="reference internal" href="#id61">Added</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id62">[1.2.5] - 2019-10-16</a><ul>
+<li><a class="reference internal" href="#id63">Changed</a></li>
+<li><a class="reference internal" href="#id64">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id65">[1.2.4] - 2019-10-03</a><ul>
+<li><a class="reference internal" href="#id66">Changed</a></li>
+<li><a class="reference internal" href="#id67">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id68">[1.2.3] - 2019-10-03</a><ul>
+<li><a class="reference internal" href="#id69">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id70">[1.2.2] - 2019-08-20</a><ul>
+<li><a class="reference internal" href="#id71">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id72">[1.2.1] - 2019-08-01</a><ul>
+<li><a class="reference internal" href="#id73">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id74">[1.2.0] - 2019-07-16</a><ul>
+<li><a class="reference internal" href="#id75">Added</a></li>
+<li><a class="reference internal" href="#id76">Changed</a></li>
+<li><a class="reference internal" href="#id77">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id78">[1.1.0] - 2019-02-14</a><ul>
+<li><a class="reference internal" href="#id79">Added</a></li>
+<li><a class="reference internal" href="#id80">Changed</a></li>
+<li><a class="reference internal" href="#id81">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id82">[1.0.0] - 2019-01-28</a><ul>
+<li><a class="reference internal" href="#id83">Added</a></li>
+<li><a class="reference internal" href="#id84">Fixed</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.timeline@1.6.4/CHANGELOG.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

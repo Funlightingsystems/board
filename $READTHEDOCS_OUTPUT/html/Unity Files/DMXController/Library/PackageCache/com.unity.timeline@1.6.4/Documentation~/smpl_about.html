@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Samples &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Samples</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="samples">
+<h1>Samples<a class="headerlink" href="#samples" title="Permalink to this heading">¶</a></h1>
+<section id="gameplay-sequence-demo">
+<h2>Gameplay Sequence Demo<a class="headerlink" href="#gameplay-sequence-demo" title="Permalink to this heading">¶</a></h2>
+<p><img alt="Gameplay Sequence Demo" src="../../../../../../_images/smpl_gameplay.png" /></p>
+<p>This sample demonstrates how Timeline can be used to create a small in-game moment, using built-in tracks.</p>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h3>
+<p>In this example, we have a <code class="docutils literal notranslate"><span class="pre">Player</span></code> character jogging and then colliding with another character. The <code class="docutils literal notranslate"><span class="pre">Player</span></code> character represents our gameplay character and is using a looping jog animation. The Timeline then takes control of the player character, collides with the other character, then returns to his original gameplay animation (jog) once the Timeline has finished. Note that the gameplay animation is driven by an Animator and will only play at runtime. The character will be in a T-Stance pose for the runtime portion when using the Timeline preview.</p>
+</section>
+<section id="timeline-structure">
+<h3>Timeline Structure<a class="headerlink" href="#timeline-structure" title="Permalink to this heading">¶</a></h3>
+<p>This sample uses the following tracks: Activation, Animation, Audio, Control and Marker track. The <code class="docutils literal notranslate"><span class="pre">GameplaySequence</span></code> timeline has been organized in the following groups: <code class="docutils literal notranslate"><span class="pre">Building</span></code>, <code class="docutils literal notranslate"><span class="pre">Lights</span></code>, <code class="docutils literal notranslate"><span class="pre">Cameras</span></code>, <code class="docutils literal notranslate"><span class="pre">Characters</span></code>, <code class="docutils literal notranslate"><span class="pre">Audio</span></code> and <code class="docutils literal notranslate"><span class="pre">Props</span></code>.</p>
+<section id="building-group">
+<h4><em>Building group</em><a class="headerlink" href="#building-group" title="Permalink to this heading">¶</a></h4>
+<p>This group contains two Control tracks: <code class="docutils literal notranslate"><span class="pre">Building</span> <span class="pre">Spawn</span></code> which spawns the building prefab, and <code class="docutils literal notranslate"><span class="pre">Building</span> <span class="pre">Particles</span></code> that controls two particle systems in the scene (<code class="docutils literal notranslate"><span class="pre">ElectricalSparks</span></code> and <code class="docutils literal notranslate"><span class="pre">SandSwirlsEffect</span></code>).</p>
+</section>
+<section id="lights-group">
+<h4><em>Lights group</em><a class="headerlink" href="#lights-group" title="Permalink to this heading">¶</a></h4>
+<p>This group contains two Animation tracks; one for the Sun light, and the other for the flickering light. Both tracks where animated in Unity and the curves can be seen by enabling the curves icon or double clicking on the track to open the Animation window. <code class="docutils literal notranslate"><span class="pre">Sun</span> <span class="pre">light</span></code> is animated in Rotation (sunrise) and the <code class="docutils literal notranslate"><span class="pre">Point</span> <span class="pre">light</span></code> has a spiked <code class="docutils literal notranslate"><span class="pre">Intensity</span></code> curve.</p>
+</section>
+<section id="cameras-group">
+<h4><em>Cameras group</em><a class="headerlink" href="#cameras-group" title="Permalink to this heading">¶</a></h4>
+<p>This group contains two cameras: <code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">camera</span></code> using an Animation track, and <code class="docutils literal notranslate"><span class="pre">Follow</span> <span class="pre">camera</span></code> using an Activation track. <code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">Camera</span></code> has an animation curve for the continuous movement (which can be seen by enabling the curves icon) and two override tracks, one for each character. The clips on the override tracks have static values for a fixed camera shot. <code class="docutils literal notranslate"><span class="pre">Follow</span> <span class="pre">camera</span></code> is simply parented child of the Player character’s root and activated for the follow-cam shots.</p>
+</section>
+<section id="characters-group">
+<h4><em>Characters group</em><a class="headerlink" href="#characters-group" title="Permalink to this heading">¶</a></h4>
+<p>The first track is an Animation track for the <code class="docutils literal notranslate"><span class="pre">Player</span></code>character. Notice that clip pre and post extrapolations are set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, meaning the character will not be influenced by the timeline during these gaps. At runtime, these gaps mean the <code class="docutils literal notranslate"><span class="pre">Player</span></code> character will be using his Animator state, jog. The second track is an Activation track for the second character, making his appear in the scene. The third and last track is an Animation track for the second character. On this track, the second character blends from one clip to another creating a cinematic sequence.</p>
+</section>
+<section id="audio-group">
+<h4><em>Audio group</em><a class="headerlink" href="#audio-group" title="Permalink to this heading">¶</a></h4>
+<p>This group contains four Audio tracks; <code class="docutils literal notranslate"><span class="pre">Player</span></code>, <code class="docutils literal notranslate"><span class="pre">crickets</span></code>, <code class="docutils literal notranslate"><span class="pre">neon-light</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">character2</span></code>. The <code class="docutils literal notranslate"><span class="pre">Player</span></code> track has a jog/breathing and bump clip. The <code class="docutils literal notranslate"><span class="pre">crickets</span></code> track has pan and volume animation curves (can be seen by enabling the curves icon). The <code class="docutils literal notranslate"><span class="pre">neon-light</span></code> sound is for the flickering <code class="docutils literal notranslate"><span class="pre">Point</span></code> light. The <code class="docutils literal notranslate"><span class="pre">Character2</span></code> tracks contains all audio clips for this second character.</p>
+</section>
+<section id="props-group">
+<h4><em>Props group</em><a class="headerlink" href="#props-group" title="Permalink to this heading">¶</a></h4>
+<p>This group animates <code class="docutils literal notranslate"><span class="pre">Table</span></code> and <code class="docutils literal notranslate"><span class="pre">Can</span></code>. The first Activation track makes <code class="docutils literal notranslate"><span class="pre">Table</span></code> appear in the scene. The second Activation track makes a static version of <code class="docutils literal notranslate"><span class="pre">Can</span></code> appear in the scene. The third track is an Animation track that animates the table bump animation. The last track is a Control track with a sub-timeline for the can animation. The static version of the can is disabled and replaced with the animated version when the Control clip starts. Double-clicking the Control track clip will enter the <code class="docutils literal notranslate"><span class="pre">Can</span></code> sub-timeline.</p>
+</section>
+<section id="can-sub-timeline">
+<h4><code class="docutils literal notranslate"><span class="pre">Can</span></code> Sub-Timeline<a class="headerlink" href="#can-sub-timeline" title="Permalink to this heading">¶</a></h4>
+<p>This sub-timeline contains an Animation track for the can rolling off the table and bouncing on the ground, an Audio track for the sounds effects and a Control track for the liquid particles splashing out of the can.</p>
+</section>
+<section id="marker-track">
+<h4>Marker track<a class="headerlink" href="#marker-track" title="Permalink to this heading">¶</a></h4>
+<p>In the Timeline window, under the time ruler, there is a Marker track with one Signal at frame 1200. This is the Signal marker that triggers the jog audio clip on <code class="docutils literal notranslate"><span class="pre">Player</span></code> once the timeline finishes the gameplay jog.</p>
+</section>
+</section>
+</section>
+<section id="customization-samples">
+<h2>Customization samples<a class="headerlink" href="#customization-samples" title="Permalink to this heading">¶</a></h2>
+<p><img alt="Customization samples" src="../../../../../../_images/smpl_custom.png" /></p>
+<p>This sample includes tracks, clips, markers and actions that demonstrate how to extend and customize timeline in different ways.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="smpl_custom_annotation.html"><span class="std std-doc">Annotation</span></a>: provides a marker that can be used as a bookmark.</p></li>
+<li><p><a class="reference internal" href="smpl_custom_video.html"><span class="std std-doc">Video track</span></a>: provides a track capable of playing video clips.</p></li>
+<li><p><a class="reference internal" href="smpl_custom_time.html"><span class="std std-doc">Time dilation track</span></a>: provides a track that can be used to adjust Unity’s global <code class="docutils literal notranslate"><span class="pre">Time.timeScale</span></code>.</p></li>
+<li><p><a class="reference internal" href="smpl_custom_tween.html"><span class="std std-doc">Tween track</span></a>: provides a track that can be used for simple transform movements.</p></li>
+<li><p><a class="reference internal" href="smpl_custom_text.html"><span class="std std-doc">Text track</span></a>: provides a track that can be used to display different messages to the screen using a TextMeshPro Text component.</p></li>
+</ul>
+<section id="demo">
+<h3>Demo<a class="headerlink" href="#demo" title="Permalink to this heading">¶</a></h3>
+<p><img alt="Customization demo" src="../../../../../../_images/smpl_custom_demo.png" /></p>
+<p>Included is a demo timeline that showcases all the of the above samples.</p>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Samples</a><ul>
+<li><a class="reference internal" href="#gameplay-sequence-demo">Gameplay Sequence Demo</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#timeline-structure">Timeline Structure</a><ul>
+<li><a class="reference internal" href="#building-group"><em>Building group</em></a></li>
+<li><a class="reference internal" href="#lights-group"><em>Lights group</em></a></li>
+<li><a class="reference internal" href="#cameras-group"><em>Cameras group</em></a></li>
+<li><a class="reference internal" href="#characters-group"><em>Characters group</em></a></li>
+<li><a class="reference internal" href="#audio-group"><em>Audio group</em></a></li>
+<li><a class="reference internal" href="#props-group"><em>Props group</em></a></li>
+<li><a class="reference internal" href="#can-sub-timeline"><code class="docutils literal notranslate"><span class="pre">Can</span></code> Sub-Timeline</a></li>
+<li><a class="reference internal" href="#marker-track">Marker track</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customization-samples">Customization samples</a><ul>
+<li><a class="reference internal" href="#demo">Demo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.timeline@1.6.4/Documentation~/smpl_about.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Samples</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

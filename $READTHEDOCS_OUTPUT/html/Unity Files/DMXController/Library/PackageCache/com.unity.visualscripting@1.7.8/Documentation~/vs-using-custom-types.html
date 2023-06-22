@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Use a custom type &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Use a custom type</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="use-a-custom-type">
+<h1>Use a custom type<a class="headerlink" href="#use-a-custom-type" title="Permalink to this heading">¶</a></h1>
+<p>Visual Scripting supports every class and struct type available in Unity. By default, the most common are available in <a class="reference internal" href="vs-interface-overview.html#the-fuzzy-finder"><span class="std std-ref">the fuzzy finder</span></a>. Add additional Unity assemblies, such as custom types and classes, through your <a class="reference internal" href="vs-configuration.html"><span class="std std-doc">project settings</span></a>.</p>
+<p>You must write some additional code to use a custom type or class in a graph. You can’t assign a value to a variable with a custom type from Unity’s <a class="reference external" href="https://docs.unity3d.com/Manual/UsingTheInspector.html">Inspector window</a>, or initialize it from inside the Unity Editor if this additional code isn’t available. You must assign a default value for a custom type through the Inspector window to use that type for a variable in Visual Scripting.</p>
+<p>You have two options to enable variable assignment and initialization:</p>
+<ul class="simple">
+<li><p>If you have access to the source code, you can add the <code class="docutils literal notranslate"><span class="pre">[Inspectable]</span></code> attribute to the classes and fields that you want to display and modify in the Editor.</p></li>
+<li><p>If you don’t have access to the source code, you must create a custom PropertyDrawer and generate the required property provider scripts.</p></li>
+</ul>
+<section id="add-the-inspectable-attribute">
+<h2>Add the [Inspectable] attribute<a class="headerlink" href="#add-the-inspectable-attribute" title="Permalink to this heading">¶</a></h2>
+<p>Add the <code class="docutils literal notranslate"><span class="pre">[Inspectable]</span></code> attribute to the code for your custom class to display its available properties in the Inspector window and Visual Scripting’s <a class="reference internal" href="vs-interface-overview.html#the-graph-inspector"><span class="std std-ref">Graph Inspector</span></a>. You can’t view your classes and fields in the Inspector window without the <code class="docutils literal notranslate"><span class="pre">[Inspectable]</span></code> attribute.</p>
+<p>Unity provides a basic UI for your types in the Inspector window, which might not give the aesthetic results you want. If you or your users want to configure a property for a custom type with a slider, for example, don’t use the <code class="docutils literal notranslate"><span class="pre">[Inspectable]</span></code> attribute method. For more information on how to add the <code class="docutils literal notranslate"><span class="pre">[Inspectable]</span></code> attribute to a custom class, see <a class="reference internal" href="vs-add-inspectable-attribute-custom-types.html"><span class="std std-doc">Add the Inspectable attribute to the source code for a custom type</span></a>.</p>
+</section>
+<section id="create-a-custom-propertydrawer">
+<h2>Create a custom PropertyDrawer<a class="headerlink" href="#create-a-custom-propertydrawer" title="Permalink to this heading">¶</a></h2>
+<p>Create a custom PropertyDrawer to choose how to display each property for a custom class in the Inspector window.</p>
+<p>Without access to the source code, you must create a PropertyDrawer to interact with custom-typed variables in Visual Scripting. If you see an error in the Unity Editor’s Inspector window when you try to use a type from a third-party package, you must create a custom PropertyDrawer.</p>
+<blockquote>
+<div><p>[!NOTE]
+If you are a package developer, or plan to provide your custom classes and types to other users and want those types to be available in Visual Scripting, create a custom PropertyDrawer to get the best results for your users.</p>
+</div></blockquote>
+<p>For more information on how to create a custom PropertyDrawer, see <a class="reference internal" href="vs-create-custom-drawer.html"><span class="std std-doc">Create a custom PropertyDrawer for a custom type</span></a>.</p>
+<p>After you create a custom PropertyDrawer for a custom type, you must generate the necessary property provider scripts. For more information, see the <strong>Generate</strong> option in <a class="reference internal" href="vs-configuration.html"><span class="std std-doc">Configure project settings</span></a>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Use a custom type</a><ul>
+<li><a class="reference internal" href="#add-the-inspectable-attribute">Add the [Inspectable] attribute</a></li>
+<li><a class="reference internal" href="#create-a-custom-propertydrawer">Create a custom PropertyDrawer</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-using-custom-types.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Use a custom type</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

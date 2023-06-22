@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ITestAdaptor &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ITestAdaptor</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="itestadaptor">
+<h1>ITestAdaptor<a class="headerlink" href="#itestadaptor" title="Permalink to this heading">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">ITestAdaptor</span></code> is a representation of a node in the test tree implemented as a wrapper around the <a class="reference external" href="http://www.nunit.org/">NUnit</a> <a class="reference external" href="https://github.com/nunit/nunit/blob/master/src/NUnitFramework/framework/Interfaces/ITest.cs">ITest</a> interface.</p>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">¶</a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntax</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">Id</span></code></p></td>
+<td><p>The ID of the test tree node. The ID can change if you add new tests to the suite. Use <code class="docutils literal notranslate"><span class="pre">UniqueName</span></code>, if you want to have a more permanent point of reference.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">Name</span></code></p></td>
+<td><p>The name of the test. E.g., <code class="docutils literal notranslate"><span class="pre">MyTest</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">FullName</span></code></p></td>
+<td><p>The full name of the test. E.g., <code class="docutils literal notranslate"><span class="pre">MyNamespace.MyTestClass.MyTest</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">TestCaseCount</span></code></p></td>
+<td><p>The total number of test cases in the node and all sub-nodes.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">HasChildren</span></code></p></td>
+<td><p>Whether the node has any children.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">IsSuite</span></code></p></td>
+<td><p>Whether the node is a test suite/fixture.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IEnumerable&lt;ITestAdaptor&gt;</span> <span class="pre">Children</span></code></p></td>
+<td><p>The child nodes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ITestAdaptor</span> <span class="pre">Parent</span></code></p></td>
+<td><p>The parent node, if any.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">TestCaseTimeout</span></code></p></td>
+<td><p>The test case timeout in milliseconds. Note that this value is only available on TestFinished.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ITypeInfo</span> <span class="pre">TypeInfo</span></code></p></td>
+<td><p>The type of test class as an <code class="docutils literal notranslate"><span class="pre">NUnit</span></code> <a class="reference external" href="https://github.com/nunit/nunit/blob/master/src/NUnitFramework/framework/Interfaces/ITypeInfo.cs">ITypeInfo</a>. If the node is not a test class, then the value is <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IMethodInfo</span> <span class="pre">Method</span></code></p></td>
+<td><p>The <a class="reference external" href="https://github.com/nunit/nunit/blob/master/src/NUnitFramework/framework/Interfaces/IMethodInfo.cs">Nunit IMethodInfo</a> of the test method. If the node is not a test method, then the value is <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">string[]</span> <span class="pre">Categories</span></code></p></td>
+<td><p>An array of the categories applied to the test or fixture.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">IsTestAssembly</span></code></p></td>
+<td><p>Whether the node represents a test assembly.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RunState</span> <span class="pre">RunState</span></code></p></td>
+<td><p>The run state of the test node. Either <code class="docutils literal notranslate"><span class="pre">NotRunnable</span></code>, <code class="docutils literal notranslate"><span class="pre">Runnable</span></code>, <code class="docutils literal notranslate"><span class="pre">Explicit</span></code>, <code class="docutils literal notranslate"><span class="pre">Skipped</span></code>, or <code class="docutils literal notranslate"><span class="pre">Ignored</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">Description</span></code></p></td>
+<td><p>The description of the test.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">SkipReason</span></code></p></td>
+<td><p>The skip reason. E.g., if ignoring the test.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">ParentId</span></code></p></td>
+<td><p>The ID of the parent node.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">ParentFullName</span></code></p></td>
+<td><p>The full name of the parent node.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">UniqueName</span></code></p></td>
+<td><p>A unique generated name for the test node. E.g., <code class="docutils literal notranslate"><span class="pre">Tests.dll/MyNamespace/MyTestClass/[Tests][MyNamespace.MyTestClass.MyTest]</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">ParentUniqueName</span></code></p></td>
+<td><p>A unique name of the parent node. E.g., <code class="docutils literal notranslate"><span class="pre">Tests.dll/MyNamespace/[Tests][MyNamespace.MyTestClass][suite]</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">ChildIndex</span></code></p></td>
+<td><p>The child index of the node in its parent.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TestMode</span> <span class="pre">TestMode</span></code></p></td>
+<td><p>The mode of the test. Either <strong>Edit Mode</strong> or <strong>Play Mode</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p><strong>Note</strong>: Some properties are not available when receiving the test tree as a part of a test result coming from a standalone Player, such as <code class="docutils literal notranslate"><span class="pre">TypeInfo</span></code> and <code class="docutils literal notranslate"><span class="pre">Method</span></code>.</p>
+</div></blockquote>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ITestAdaptor</a><ul>
+<li><a class="reference internal" href="#properties">Properties</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.test-framework@1.1.31/Documentation~/reference-itest-adaptor.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ITestAdaptor</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

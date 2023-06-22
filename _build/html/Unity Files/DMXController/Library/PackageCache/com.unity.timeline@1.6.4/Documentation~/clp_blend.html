@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Blending clips &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Blending clips</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="blending-clips">
+<h1>Blending clips<a class="headerlink" href="#blending-clips" title="Permalink to this heading">¶</a></h1>
+<p>Blend two clips on the same track to create a smooth transition between two Animation clips, two Audio clips, or two Playable clips. To blend two clips, select the Mix Clip Edit mode and position or trim one clip until it overlaps an adjacent clip.</p>
+<p>In a blend, the first clip is referred to as the <strong>outgoing clip</strong> and the second clip is referred to as the <strong>incoming clip</strong>. The area where the outgoing clip transitions to the incoming clip is referred to as the <strong>blend area</strong>. The blend area sets the duration of the transition.</p>
+<p><img alt="The blend area shows the transition between the outgoing clip and incoming clip" src="../../../../../../_images/timeline_clip_blend_area.png" /></p>
+<p><em>The blend area shows the transition between the outgoing clip and incoming clip</em></p>
+<p>Although the Clips view represents a blend area as a single linear curve, the transition between clips is actually comprised of two blend curves. The blend curve for the outgoing clip is referred to as the <strong>Blend Out</strong> curve. The blend curve for the incoming clip is referred to as the <strong>Blend In</strong> curve. By default, each blend curve is automatically set to an ease-in and ease-out curve.</p>
+<p><img alt="Use Blend Curves to customize the blend area" src="../../../../../../_images/timeline_inspector_blend_curves.png" /></p>
+<p><em>Use Blend Curves to customize the blend area</em></p>
+<p>Use the <strong>Blend Curves</strong> in the Inspector window to change the shape for either the Blend In or Blend Out curve of the selected clip. However, the Inspector window only allows you to edit the properties of one clip at a time. You cannot simultaneously customize both blend curves from the same blend area.</p>
+<p>To customize the <strong>Blend Curves</strong> for the transition between two clips:</p>
+<ol class="arabic simple">
+<li><p>Select the outgoing clip to customize its Blend Out curve (labelled <strong>Out</strong>).</p></li>
+<li><p>Select the incoming clip to customize its Blend In curve (labelled <strong>In</strong>).</p></li>
+</ol>
+<p>To customize either the Blend Out curve or Blend In curve, use the drop-down menu to switch from <strong>Auto</strong> to <strong>Manual</strong>. With <strong>Manual</strong> selected, the Inspector window shows a preview of the blend curve. Click the curve preview to open the Curve Editor below the Inspector window.</p>
+<p><img alt="Select Manual and click the curve preview to open the Curve Editor" src="../../../../../../_images/timeline_inspector_curve_editor.png" /></p>
+<p><em>Select Manual and click the curve preview to open the Curve Editor</em></p>
+<p>Use the Curve Editor to customize the shape of the blend curve. By default, the blend curve includes a key at the beginning of the curve and a key at the end of the curve. The Curve Editor provides the following different methods of modifying the blend curve:</p>
+<ul class="simple">
+<li><p>Select the key at the start or end of the blend curve and use the tangent handles to adjust the interpolation between keys.</p></li>
+<li><p>Add additional keys to change the shape of the blend curve by adding more interpolation points. Adding keys in the Curve Editor is the same as <a class="reference internal" href="crv_keys_add.html"><span class="std std-doc">adding keys in the Curves view</span></a>.</p></li>
+<li><p>Right-click a key to delete or edit the key. Editing keys in the Curve Editor is the same as <a class="reference internal" href="crv_keys_edit.html"><span class="std std-doc">editing keys in the Curves view</span></a>. Note that you cannot delete the first and last keys.</p></li>
+<li><p>Select a shape template from the bottom of the Curve Editor.</p></li>
+</ul>
+<p>The Curve Editor also includes shape templates based on whether you are modifying the Blend In curve or the Blend Out curve. Select a shape template to change the blend curve to the selected shape template.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.timeline@1.6.4/Documentation~/clp_blend.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Blending clips</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

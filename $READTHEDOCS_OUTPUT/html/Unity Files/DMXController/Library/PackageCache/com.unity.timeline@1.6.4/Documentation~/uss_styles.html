@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Defining custom USS styles &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Defining custom USS styles</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="defining-custom-uss-styles">
+<h1>Defining custom USS styles<a class="headerlink" href="#defining-custom-uss-styles" title="Permalink to this heading">¶</a></h1>
+<p>The first step to define a USS style is to create a new stylesheet. Stylesheets can be used to extend the Editor’s visual appearance.
+This can be done by adding a file named <code class="docutils literal notranslate"><span class="pre">common.uss</span></code> in an Editor folder in a <code class="docutils literal notranslate"><span class="pre">StyleSheets/Extensions</span></code> folder hierarchy.
+For example, the following locations are valid:</p>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>Assets/Editor/Stylesheets/Extensions/common.uss
+Assets/Editor/MyFolder/Stylesheets/Extensions/common.uss
+Assets/Editor/MyFolder1/MyFolder2/Stylesheets/Extensions/common.uss
+</pre></div>
+</div>
+<p>USS files (for Unity Style Sheet) use a <a class="reference external" href="https://docs.unity3d.com/Manual/UIE-USS.html">CSS-like syntax to describe new styles</a>. Here is an example:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">myStyle</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nf">resource</span><span class="p">(</span><span class="s2">&quot;Assets/Editor/icon.png&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this style, we specified that we wish to use a custom icon along with size properties. USS styles also support <a class="reference external" href="https://docs.unity3d.com/Manual/UIE-USS-Selectors.html">pseudo-states</a>, which works like <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">pseudo-classes in CSS</a>. Timeline markers support the following pseudo-states:</p>
+<ul class="simple">
+<li><p>Collapsed: <code class="docutils literal notranslate"><span class="pre">.myStyle</span></code></p></li>
+<li><p>Normal: <code class="docutils literal notranslate"><span class="pre">.myStyle:checked</span></code></p></li>
+<li><p>Selected: <code class="docutils literal notranslate"><span class="pre">.myStyle:hover:focus:checked</span></code></p></li>
+</ul>
+<p>USS stylesheets also support Unity’s light and dark themes. Styles in files named <code class="docutils literal notranslate"><span class="pre">dark.uss</span></code> and <code class="docutils literal notranslate"><span class="pre">light.uss</span></code> will be used as an override of the style in <code class="docutils literal notranslate"><span class="pre">common.uss</span></code>. For example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">common.uss</span></code></p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">myStyle</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="k">width</span><span class="p">:</span><span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">   </span><span class="k">height</span><span class="p">:</span><span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">   </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">125</span><span class="p">,</span><span class="w"> </span><span class="mi">125</span><span class="p">,</span><span class="w"> </span><span class="mi">125</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dark.uss</span></code></p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">myStyle</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">   </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nf">resource</span><span class="p">(</span><span class="s2">&quot;icon_dark.png&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">light.uss</span></code></p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">myStyle</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
+<span class="w">   </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nf">resource</span><span class="p">(</span><span class="s2">&quot;icon_light.png&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the dark theme, <code class="docutils literal notranslate"><span class="pre">myStyle</span></code> will be resolved to:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">myStyle</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="k">width</span><span class="p">:</span><span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">   </span><span class="k">height</span><span class="p">:</span><span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">   </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">   </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nf">resource</span><span class="p">(</span><span class="s2">&quot;icon_dark.png&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>and in the light theme:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">myStyle</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="k">width</span><span class="p">:</span><span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">   </span><span class="k">height</span><span class="p">:</span><span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">   </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
+<span class="w">   </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nf">resource</span><span class="p">(</span><span class="s2">&quot;icon_light.png&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.timeline@1.6.4/Documentation~/uss_styles.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Defining custom USS styles</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

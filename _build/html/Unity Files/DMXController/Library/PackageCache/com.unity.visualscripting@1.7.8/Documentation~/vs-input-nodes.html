@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Input Event nodes &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Input Event nodes</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="input-event-nodes">
+<h1>Input Event nodes<a class="headerlink" href="#input-event-nodes" title="Permalink to this heading">¶</a></h1>
+<p>Input nodes are an Event node type that can read input from Unity’s <a class="reference external" href="https://docs.unity3d.com/Manual/class-InputManager.html">Input Manager</a> or <a class="reference external" href="https://docs.unity3d.com/Packages/com.unity.inputsystem&#64;latest">Input System package</a> for use in a Script Graph.</p>
+<p>For more information about how to read and capture input in Visual Scripting, see <a class="reference internal" href="vs-capture-player-input.html"><span class="std std-doc">Capture user input in an application</span></a>.</p>
+<section id="input-system-package-nodes">
+<h2>Input System package nodes<a class="headerlink" href="#input-system-package-nodes" title="Permalink to this heading">¶</a></h2>
+<p>The following nodes read and interact with Events from the Input System package:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Node</strong></p></th>
+<th class="head text-left"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="vs-nodes-events-input-system-button.html"><span class="std std-doc"><strong>On Input System Event Button</strong></span></a></p></td>
+<td class="text-left"><p>The On Input System Event Button node listens for a specific Input Action from a Player Input component. It doesn’t send or read any other data.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="vs-nodes-events-input-system-float.html"><span class="std std-doc"><strong>On Input System Event Float</strong></span></a></p></td>
+<td class="text-left"><p>The On Input System Event Float node listens for a specific Input Action from a Player Input component. The node can output a <strong>single float value</strong>.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="vs-nodes-events-input-system-vector2.html"><span class="std std-doc"><strong>On Input System Event Vector 2</strong></span></a></p></td>
+<td class="text-left"><p>The On Input System Event Vector 2 node listens for a specific Input Action from a Player Input component. The node can output <strong>two values as a Vector 2</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="input-manager-nodes">
+<h2>Input Manager nodes<a class="headerlink" href="#input-manager-nodes" title="Permalink to this heading">¶</a></h2>
+<p>The following nodes read and interact with Events from Unity’s Input Manager:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Node</strong></p></th>
+<th class="head text-left"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="vs-nodes-events-on-button-input.html"><span class="std std-doc"><strong>On Button Input</strong></span></a></p></td>
+<td class="text-left"><p>The On Button Input node listens for a specified action on a virtual button from your Input Manager configuration.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="vs-nodes-events-on-keyboard-input.html"><span class="std std-doc"><strong>On Keyboard Input</strong></span></a></p></td>
+<td class="text-left"><p>The On Keyboard Input node listens for a specified action on a keyboard key.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="vs-nodes-events-on-mouse-down.html"><span class="std std-doc"><strong>On Mouse Down</strong></span></a></p></td>
+<td class="text-left"><p>The On Mouse Down node listens for a mouse click action on a specific GameObject in your application.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="vs-nodes-events-on-mouse-drag.html"><span class="std std-doc"><strong>On Mouse Drag</strong></span></a></p></td>
+<td class="text-left"><p>The On Mouse Drag node listens for a mouse click and hold on a specific GameObject in your application. It triggers the next node connected to it as long as the mouse button is held down on that GameObject.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="vs-nodes-events-on-mouse-enter.html"><span class="std std-doc"><strong>On Mouse Enter</strong></span></a></p></td>
+<td class="text-left"><p>The On Mouse Enter node listens for the user’s mouse pointer location to enter the Collider of a specified GameObject. When the mouse enters the Collider or GUI element, the node triggers the next node connected to it.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="vs-nodes-events-on-mouse-exit.html"><span class="std std-doc"><strong>On Mouse Exit</strong></span></a></p></td>
+<td class="text-left"><p>The On Mouse Exit node listens for the user’s mouse pointer location to exit the Collider of a specified GameObject. When the mouse exits the Collider or GUI element, the node triggers the next node connected to it.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="vs-nodes-events-on-mouse-input.html"><span class="std std-doc"><strong>On Mouse Input</strong></span></a></p></td>
+<td class="text-left"><p>The On Mouse Input node listens for a specific action on a user’s mouse. The action doesn’t need to happen on a specific GameObject’s Collider.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="vs-nodes-events-on-mouse-over.html"><span class="std std-doc"><strong>On Mouse Over</strong></span></a></p></td>
+<td class="text-left"><p>The On Mouse Over node listens for a user’s mouse to land over a specified GameObject’s Collider. While the user’s mouse is over the Collider, it triggers the next node connected to it once every frame.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="vs-nodes-events-on-mouse-up-button.html"><span class="std std-doc"><strong>On Mouse Up As Button</strong></span></a></p></td>
+<td class="text-left"><p>The On Mouse Up As Button node listens for a user to release their mouse button after they click a Collider in your application. To trigger the On Mouse Up As Button node, the user must release their mouse button over the same Collider they clicked.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="vs-nodes-events-on-mouse-up.html"><span class="std std-doc"><strong>On Mouse Up</strong></span></a></p></td>
+<td class="text-left"><p>The On Mouse Up node listens for a user to release their mouse button after they click a Collider in your application. The user can release their mouse button anywhere in your application to trigger the On Mouse Up node.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="additional-resources">
+<h2>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="vs-capture-player-input.html"><span class="std std-doc">Capturing input in your application</span></a></p></li>
+<li><p><a class="reference internal" href="vs-capturing-player-inputs-new.html"><span class="std std-doc">Capture input using the Input System package</span></a></p></li>
+<li><p><a class="reference internal" href="vs-capturing-player-inputs-old.html"><span class="std std-doc">Capture input using the Input Manager</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Input Event nodes</a><ul>
+<li><a class="reference internal" href="#input-system-package-nodes">Input System package nodes</a></li>
+<li><a class="reference internal" href="#input-manager-nodes">Input Manager nodes</a></li>
+<li><a class="reference internal" href="#additional-resources">Additional resources</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-input-nodes.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Input Event nodes</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

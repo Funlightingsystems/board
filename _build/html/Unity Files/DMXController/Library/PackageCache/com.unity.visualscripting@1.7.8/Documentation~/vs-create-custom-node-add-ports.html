@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Add ports to a Custom C# node &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Add ports to a Custom C# node</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="add-ports-to-a-custom-c-node">
+<h1>Add ports to a Custom C# node<a class="headerlink" href="#add-ports-to-a-custom-c-node" title="Permalink to this heading">¶</a></h1>
+<blockquote>
+<div><p>[!NOTE]
+To add ports to your node, you must create the C# file for the node. [!include<a class="reference internal" href="snippets/custom-c-nodes/vs-tasks-note-end.html"><span class="std std-doc">vs-tasks-note-end</span></a>]</p>
+</div></blockquote>
+<p>After you create a Custom C# node, add ports to allow the node to send and receive data or trigger other nodes in a Script Graph.</p>
+<p>To add ports to a node:</p>
+<ol class="arabic simple">
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-project-window.html"><span class="std std-doc">open-project-window</span></a>]</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-existing-external-code.html"><span class="std std-doc">open-existing-external-code</span></a>]</p></li>
+</ol>
+<section id="add-control-ports">
+<h2>Add control ports<a class="headerlink" href="#add-control-ports" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic" start="3">
+<li><p>In your external editor, under the class definition for the node, add two public variables: one with a <strong>ControlInput</strong> type and one with a <strong>ControlOutput</strong> type.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">Definition</span></code> method for the node, use the variables to define the control ports, as shown below:</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Unity.VisualScripting</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyNode</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Unit</span>
+<span class="p">{</span>
+<span class="na">[DoNotSerialize]</span><span class="w"> </span><span class="c1">// No need to serialize ports.</span>
+<span class="k">public</span><span class="w"> </span><span class="n">ControlInput</span><span class="w"> </span><span class="n">inputTrigger</span><span class="p">;</span><span class="w"> </span><span class="c1">//Adding the ControlInput port variable</span>
+
+<span class="na">[DoNotSerialize]</span><span class="w"> </span><span class="c1">// No need to serialize ports.</span>
+<span class="k">public</span><span class="w"> </span><span class="n">ControlOutput</span><span class="w"> </span><span class="n">outputTrigger</span><span class="p">;</span><span class="c1">//Adding the ControlOutput port variable.</span>
+
+<span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Definition</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">//Making the ControlInput port visible, setting its key and running the anonymous action method to pass the flow to the outputTrigger port.</span>
+<span class="w">    </span><span class="n">inputTrigger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ControlInput</span><span class="p">(</span><span class="s">&quot;inputTrigger&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">flow</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">outputTrigger</span><span class="p">;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="c1">//Making the ControlOutput port visible and setting its key.</span>
+<span class="w">    </span><span class="n">outputTrigger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ControlOutput</span><span class="p">(</span><span class="s">&quot;outputTrigger&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-save-script.html"><span class="std std-doc">save-script</span></a>]</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-return-unity.html"><span class="std std-doc">return-unity</span></a>]</p></li>
+<li><p>Do one of the following:</p>
+<ul class="simple">
+<li><p>[!include<a class="reference internal" href="snippets/custom-c-nodes/vs-open-graph-w-node.html"><span class="std std-doc">open-graph-w-node</span></a>].</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/custom-c-nodes/vs-ff-add-node.html"><span class="std std-doc">ff-add-node</span></a>]</p></li>
+</ul>
+<p>If you used the previous code sample, Visual Scripting adds input and output control ports to the node.</p>
+<p><img alt="An image of the Graph window. The Custom C# node, My Node, now appears with an Input Trigger port and an Output Trigger port." src="../../../../../../_images/vs-my-node-custom-node-control-input-output.png" /></p>
+</li>
+</ol>
+</section>
+<section id="add-value-ports">
+<h2>Add value ports<a class="headerlink" href="#add-value-ports" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic" start="8">
+<li><p>In your external editor, under the class definition for the node, add any number of variables with either a <strong>Generic</strong> or specific type value:</p>
+<ul class="simple">
+<li><p><strong>Generic</strong>: The port can receive or output any data type. Corresponds to Unity’s <strong>Object</strong> type.</p></li>
+<li><p><strong>Specific Type Value</strong>: The port can only receive or output a specific data type. For example, <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, or <code class="docutils literal notranslate"><span class="pre">integer</span></code>.</p></li>
+</ul>
+<p>For more information on types in Visual Scripting, see <a class="reference internal" href="vs-types.html"><span class="std std-doc">Object types</span></a>.</p>
+</li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">Definition</span></code> method for the node, use the variables to define the value ports. In the example below, there are two input ports with a type value of <code class="docutils literal notranslate"><span class="pre">string</span></code>, and one <code class="docutils literal notranslate"><span class="pre">string</span></code> output port:</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Unity.VisualScripting</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyNode</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Unit</span>
+<span class="p">{</span>
+<span class="na">[DoNotSerialize]</span>
+<span class="k">public</span><span class="w"> </span><span class="n">ControlInput</span><span class="w"> </span><span class="n">inputTrigger</span><span class="p">;</span>
+
+<span class="na">[DoNotSerialize]</span>
+<span class="k">public</span><span class="w"> </span><span class="n">ControlOutput</span><span class="w"> </span><span class="n">outputTrigger</span><span class="p">;</span>
+
+<span class="na">[DoNotSerialize]</span><span class="w"> </span><span class="c1">// No need to serialize ports</span>
+<span class="k">public</span><span class="w"> </span><span class="n">ValueInput</span><span class="w"> </span><span class="n">myValueA</span><span class="p">;</span><span class="w"> </span><span class="c1">// Adding the ValueInput variable for myValueA</span>
+
+<span class="na">[DoNotSerialize]</span><span class="w"> </span><span class="c1">// No need to serialize ports</span>
+<span class="k">public</span><span class="w"> </span><span class="n">ValueInput</span><span class="w"> </span><span class="n">myValueB</span><span class="p">;</span><span class="w"> </span><span class="c1">// Adding the ValueInput variable for myValueB</span>
+
+<span class="na">[DoNotSerialize]</span><span class="w"> </span><span class="c1">// No need to serialize ports</span>
+<span class="k">public</span><span class="w"> </span><span class="n">ValueOutput</span><span class="w"> </span><span class="n">result</span><span class="p">;</span><span class="w"> </span><span class="c1">// Adding the ValueOutput variable for result</span>
+
+<span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">resultValue</span><span class="p">;</span><span class="w"> </span><span class="c1">// Adding the string variable for the processed result value</span>
+<span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Definition</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">inputTrigger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ControlInput</span><span class="p">(</span><span class="s">&quot;inputTrigger&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">flow</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">outputTrigger</span><span class="p">;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="n">outputTrigger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ControlOutput</span><span class="p">(</span><span class="s">&quot;outputTrigger&quot;</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">//Making the myValueA input value port visible, setting the port label name to myValueA and setting its default value to Hello.</span>
+<span class="w">    </span><span class="n">myValueA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ValueInput</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;myValueA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">//Making the myValueB input value port visible, setting the port label name to myValueB and setting its default value to an empty string.</span>
+<span class="w">    </span><span class="n">myValueB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ValueInput</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;myValueB&quot;</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">//Making the result output value port visible, setting the port label name to result and setting its default value to the resultValue variable.</span>
+<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ValueOutput</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;result&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">flow</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">resultValue</span><span class="p">;</span><span class="w"> </span><span class="p">});</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-save-script.html"><span class="std std-doc">save-script</span></a>]</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-return-unity.html"><span class="std std-doc">return-unity</span></a>]</p></li>
+<li><p>Do one of the following:</p>
+<ul class="simple">
+<li><p>[!include<a class="reference internal" href="snippets/custom-c-nodes/vs-open-graph-w-node.html"><span class="std std-doc">open-graph-w-node</span></a>].</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/custom-c-nodes/vs-ff-add-node.html"><span class="std std-doc">ff-add-node</span></a>]</p></li>
+</ul>
+<p>If you used the previous code sample, Visual Scripting adds two input ports, <strong>My Value A</strong> and <strong>My Value B</strong>, and one output port, <strong>Result</strong> to the node.</p>
+<p><img alt="An image of the Graph window. The Graph Inspector displays with information about all of the ports on the Custom C# node, My Node. The node has been added to the Script Graph and now has an Input Trigger port, an Output Trigger port, two data input ports, and a data output port. The data ports have been assigned the string data type. " src="../../../../../../_images/vs-my-node-custom-node-data-input-output.png" /></p>
+</li>
+</ol>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">¶</a></h2>
+<p>After you add ports to a node, <a class="reference internal" href="vs-create-custom-node-add-logic.html"><span class="std std-doc">add logic</span></a> to tell the node what to do with the data it receives.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Add ports to a Custom C# node</a><ul>
+<li><a class="reference internal" href="#add-control-ports">Add control ports</a></li>
+<li><a class="reference internal" href="#add-value-ports">Add value ports</a></li>
+<li><a class="reference internal" href="#next-steps">Next steps</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-create-custom-node-add-ports.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Add ports to a Custom C# node</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

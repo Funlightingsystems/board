@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <ul class="simple">
+<li><p><a class="reference internal" href="index.html"><span class="doc std std-doc">About Code Coverage</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="whats-new.html"><span class="std std-doc">What’s new</span></a></p></li>
+<li><p><a class="reference internal" href="upgrade-guide.html"><span class="std std-doc">Upgrade guide</span></a></p></li>
+<li><p><a class="reference internal" href="#index#code-coverage-package"><span class="xref myst">Code Coverage package</span></a></p></li>
+<li><p><a class="reference internal" href="#index#coverage-html-report"><span class="xref myst">Coverage HTML Report</span></a></p></li>
+<li><p><a class="reference internal" href="#index#other-reports"><span class="xref myst">Other Reports</span></a></p></li>
+<li><p><a class="reference internal" href="#index#coverage-summary-badges"><span class="xref myst">Coverage Summary Badges</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="Quickstart.html"><span class="doc std std-doc">Quickstart</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#Quickstart#1-what-is-code-coverage-sub2-minsub"><span class="xref myst">What is Code Coverage</span></a></p></li>
+<li><p><a class="reference internal" href="#Quickstart#2-install-the-code-coverage-package-sub2-minsub"><span class="xref myst">Install the Code Coverage package</span></a></p></li>
+<li><p><a class="reference internal" href="#Quickstart#3-install-the-asteroids-sample-project-sub1-minsub"><span class="xref myst">Install the Asteroids sample project</span></a></p></li>
+<li><p><a class="reference internal" href="#Quickstart#4-enable-code-coverage-sub1-minsub"><span class="xref myst">Enable Code Coverage</span></a></p></li>
+<li><p><a class="reference internal" href="#Quickstart.html#5-understanding-the-game-code-shoot-function-sub4-minsub"><span class="xref myst">Understanding the game code: Shoot() function</span></a></p></li>
+<li><p><a class="reference internal" href="#Quickstart#6-generate-a-coverage-report-from-playmode-tests-sub3-minsub"><span class="xref myst">Generate a Coverage report from PlayMode tests</span></a></p></li>
+<li><p><a class="reference internal" href="#Quickstart#7-add-weapon-tests-to-improve-coverage-sub3-minsub"><span class="xref myst">Add Weapon tests to improve coverage</span></a></p></li>
+<li><p><a class="reference internal" href="#Quickstart#8-add-a-test-for-the-lasercontroller-sub4-minsub"><span class="xref myst">Add a test for the LaserController</span></a></p></li>
+<li><p><a class="reference internal" href="#Quickstart#9-clear-the-coverage-data-sub1-minsub"><span class="xref myst">Clear the coverage data</span></a></p></li>
+<li><p><a class="reference internal" href="#Quickstart#10-generate-a-coverage-report-using-coverage-recording-sub4-minsub"><span class="xref myst">Generate a Coverage report using Coverage Recording</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="InstallingCodeCoverage.html"><span class="doc std std-doc">Installing Code Coverage</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#InstallingCodeCoverage#from-the-unity-package-manager"><span class="xref myst">From the Unity Package Manager</span></a></p></li>
+<li><p><a class="reference internal" href="#InstallingCodeCoverage#manually-from-the-package-manifest"><span class="xref myst">Manually from the Package Manifest</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="UsingCodeCoverage.html"><span class="doc std std-doc">Using Code Coverage</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="CodeCoverageWindow.html"><span class="doc std std-doc">Code Coverage window</span></a></p></li>
+<li><p><a class="reference internal" href="CoverageTestRunner.html"><span class="doc std std-doc">Using Code Coverage with Test Runner</span></a></p></li>
+<li><p><a class="reference internal" href="CoverageRecording.html"><span class="doc std std-doc">On demand coverage recording</span></a></p></li>
+<li><p><a class="reference internal" href="CoverageBatchmode.html"><span class="doc std std-doc">Using Code Coverage in batchmode</span></a></p></li>
+<li><p><a class="reference internal" href="#UsingCodeCoverage#using-code-coverage-with-burst-compiler"><span class="xref myst">Using Code Coverage with Burst compiler</span></a></p></li>
+<li><p><a class="reference internal" href="#UsingCodeCoverage#using-code-coverage-with-code-optimization"><span class="xref myst">Using Code Coverage with Code Optimization</span></a></p></li>
+<li><p><a class="reference internal" href="#UsingCodeCoverage#excluding-code-from-code-coverage"><span class="xref myst">Excluding code from Code Coverage</span></a></p></li>
+<li><p><a class="reference internal" href="#UsingCodeCoverage#ignoring-tests-for-code-coverage"><span class="xref myst">Ignoring tests for Code Coverage</span></a></p></li>
+<li><p><a class="reference internal" href="#UsingCodeCoverage#subscribing-to-code-coverage-session-events"><span class="xref myst">Subscribing to Code Coverage session events</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="HowToInterpretResults.html"><span class="doc std std-doc">How to interpret the results</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#HowToInterpretResults#summary-view"><span class="xref myst">Summary View</span></a></p></li>
+<li><p><a class="reference internal" href="#HowToInterpretResults#classstruct-view"><span class="xref myst">Class/Struct View</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="TechnicalDetails.html"><span class="doc std std-doc">Technical details</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#TechnicalDetails#how-it-works"><span class="xref myst">How it works</span></a></p></li>
+<li><p><a class="reference internal" href="#TechnicalDetails#requirements"><span class="xref myst">Requirements</span></a></p></li>
+<li><p><a class="reference internal" href="#TechnicalDetails#3rd-party-libraries-used"><span class="xref myst">3rd party libraries used</span></a></p></li>
+<li><p><a class="reference internal" href="#TechnicalDetails#known-limitations"><span class="xref myst">Known limitations</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="DocumentRevisionHistory.html"><span class="doc std std-doc">Document revision history</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="DocumentArchive.html"><span class="doc std std-doc">Archive</span></a></p></li>
+</ul>
+</li>
+</ul>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/Documentation~/TableOfContents.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

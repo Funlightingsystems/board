@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Adding clips &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Adding clips</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="adding-clips">
+<h1>Adding clips<a class="headerlink" href="#adding-clips" title="Permalink to this heading">¶</a></h1>
+<p>The Timeline window supports different methods of adding clips to tracks, depending on the type of track, where you click, and whether a clip or track is already selected.</p>
+<p>The quickest method to add a clip is to right-click on an empty area within a track and select the appropriate Add option from the context menu. Depending on the track, the options for adding a clip change.</p>
+<p><img alt="Context menu for adding an Activation clip" src="../../../../../../_images/timeline_clips_view_adding.png" /></p>
+<p><em>Context menu for adding an Activation clip.</em></p>
+<p>There are other ways to add clips:</p>
+<ul class="simple">
+<li><p>Select a clip option from the Track menu in the Track Header to add a clip at the location of the Timeline Playhead.</p></li>
+<li><p>Drag an animation Source Asset from the Project window to an empty area in the Timeline window to automatically create an Animation track and add an Animation clip.</p></li>
+<li><p>Drag an animation Source Asset from the Project window to an existing track in the Timeline window to add an Animation clip to the same track.</p></li>
+<li><p>Drag an audio Source Asset from the Project window to an empty area in the Timeline window to automatically create an Audio track and add an Audio clip.</p></li>
+<li><p>Drag a GameObject with a PlayableDirector component to create a nested Timeline instance. This automatically creates a Control track and adds a Control clip for the nested Timeline instance.</p></li>
+<li><p>Drag a Prefab from the Project window to an empty area in the Timeline window to add a Prefab instance to your Timeline instance. This automatically creates a Control track and adds a Control clip for the Prefab instance.</p></li>
+<li><p>Drag a GameObject with a Particle component to add a particle effect to your Timeline instance. This automatically creates a Control track and adds a Control clip for the duration of the Particle effect.</p></li>
+</ul>
+<p>When you add a clip, the <a class="reference internal" href="clp_about.html"><span class="std std-doc">selected Clip Edit mode</span></a> determines how the added clip interacts with surrounding clips. For example, if you add an Animation clip or an Audio clip in Mix mode and the added clip intersects a clip on the same track, Timeline <a class="reference internal" href="clp_blend.html"><span class="std std-doc">creates a blend</span></a>.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.timeline@1.6.4/Documentation~/clp_add.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Adding clips</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

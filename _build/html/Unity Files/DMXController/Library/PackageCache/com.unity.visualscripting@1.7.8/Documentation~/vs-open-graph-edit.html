@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Open a graph file &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Open a graph file</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="open-a-graph-file">
+<h1>Open a graph file<a class="headerlink" href="#open-a-graph-file" title="Permalink to this heading">¶</a></h1>
+<p>You can open a graph file from multiple locations, based on the graph type and its source type.</p>
+<p>For information on how to create a new graph file, see <a class="reference internal" href="vs-create-graph.html"><span class="std std-doc">Create a new graph file</span></a>.</p>
+<section id="from-the-project-window">
+<h2>From the Project window<a class="headerlink" href="#from-the-project-window" title="Permalink to this heading">¶</a></h2>
+<p>To open a graph from the Project window:</p>
+<ol class="arabic">
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-project-window.html"><span class="std std-doc">open-project-window</span></a>]</p></li>
+<li><p>Find the location in your Project window’s folders where you saved the graph file you want to edit.</p>
+<p><img alt="An image of the Editor's Project window. It displays graph files that can be opened to edit." src="../../../../../../_images/vs-open-project-window-graph-files.png" /></p>
+</li>
+<li><p>Double-click the graph file to open it in the Graph window.</p></li>
+</ol>
+</section>
+<section id="from-the-graph-inspector">
+<h2>From the Graph Inspector<a class="headerlink" href="#from-the-graph-inspector" title="Permalink to this heading">¶</a></h2>
+<p>If you have a nested or embedded graph inside another graph file, you can open it from the Graph Inspector.</p>
+<ol class="arabic simple">
+<li><p>In the Graph window, select the node that represents the graph you want to edit.
+This node could be a transition, Super State, Subgraph, or State Unit.</p></li>
+<li><p>Open the <a class="reference internal" href="vs-interface-overview.html#the-graph-inspector"><span class="std std-ref">Graph Inspector</span></a>.</p></li>
+<li><p>In the Graph Inspector, select <strong>Edit Graph</strong>.
+The graph opens in the same Graph window.</p></li>
+</ol>
+<p><img alt="An image of a graph open in the Graph Inspector, with a Subgraph node selected." src="../../../../../../_images/vs-existing-graph-example-subgraph.png" /></p>
+</section>
+<section id="from-a-script-machine-or-state-machine">
+<h2>From a Script Machine or State Machine<a class="headerlink" href="#from-a-script-machine-or-state-machine" title="Permalink to this heading">¶</a></h2>
+<p>If you’ve attached or embedded a graph in a Script Machine or State Machine on a GameObject, you can open the graph from the component on the GameObject:</p>
+<ol class="arabic simple">
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-hierarchy-window.html"><span class="std std-doc">open-hierarchy-window</span></a>]</p></li>
+<li><p>In the Hierarchy window, select the GameObject that has the Script Machine or State Machine with the graph you want to edit.</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-inspector-window.html"><span class="std std-doc">open-inspector-window</span></a>]</p></li>
+<li><p>On the Script Machine or State Machine component, select <strong>Edit Graph</strong>.</p></li>
+</ol>
+<p><img alt="An image of a Script Machine component in the Inspector." src="../../../../../../_images/vs-script-machine.png" /></p>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">¶</a></h2>
+<p>After you open a graph file, you can add a node to the graph. For more information on how to add a node to a Script Graph, see <a class="reference internal" href="vs-add-node-to-graph.html"><span class="std std-doc">Add a node to a Script Graph</span></a>.</p>
+<p>For more information on how to edit a State Graph, see <a class="reference internal" href="vs-state-graphs-intro.html"><span class="std std-doc">Develop logic transitions with State Graphs</span></a>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Open a graph file</a><ul>
+<li><a class="reference internal" href="#from-the-project-window">From the Project window</a></li>
+<li><a class="reference internal" href="#from-the-graph-inspector">From the Graph Inspector</a></li>
+<li><a class="reference internal" href="#from-a-script-machine-or-state-machine">From a Script Machine or State Machine</a></li>
+<li><a class="reference internal" href="#next-steps">Next steps</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-open-graph-edit.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Open a graph file</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

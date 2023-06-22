@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Changelog &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">¶</a></h1>
+<p>All notable changes to this project will be documented in this file.
+The format is based on <a class="reference external" href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a></p>
+<section id="id1">
+<h2>[1.7.8] - 2022-02-22<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<section id="fixed">
+<h3>Fixed<a class="headerlink" href="#fixed" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Handle ReflectionTypeLoadException for TypeUtility to remove warning <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1900">BOLT-1900</a></p></li>
+<li><p>Fixed drag inconsistency in Graph Variables <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-2113">BOLT-2113</a></p></li>
+<li><p>Fixed exception after creating a graph from the Welcome Window on Linux <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1828">BOLT-1828</a></p></li>
+<li><p>Fixed the Cooldown node not becoming “Ready” when the “Reset” port is triggered</p></li>
+<li><p>Fixed exception thrown after changing Hierarchy selection after removing Saved variable <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1919">BOLT-1919</a></p></li>
+<li><p>Fixed old Bolt saved variables not loading when using a build created using a newer version of Visual Scripting <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-2052">BOLT-2052</a></p></li>
+<li><p>Fixed a performance issue when using lots of Get/Set Scene variable nodes in an open graph</p></li>
+<li><p>Fixed zooming out in the Graph to be relative to the mouse cursor <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1667">BOLT-1667</a></p></li>
+<li><p>Fixed a compilation error when migrating from Visual Scripting 1.7.6 to 1.7.7 with InputSystem-1.1.1 or below installed.</p></li>
+<li><p>Fixed a performance issue when using lots of Get/Set Scene variable nodes in an open graph</p></li>
+<li><p>Fixed default inspectors for nodes not appearing in the correct position after a connected node is deleted <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1457">BOLT-1457</a></p></li>
+<li><p>Fixed Scene variables drag and drop in graph having wrong scope <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-2247">BOLT-2247</a></p></li>
+</ul>
+</section>
+<section id="changed">
+<h3>Changed<a class="headerlink" href="#changed" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Small optimization of load times involving generic types.</p></li>
+<li><p>Renamed ContinuousNumberDrawer.cs.cs to ContinuousNumberDrawer.cs <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-2288">BOLT-2288</a></p></li>
+</ul>
+</section>
+<section id="added">
+<h3>Added<a class="headerlink" href="#added" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>TextMeshPro assembly is now added by default in Project Settings/Visual Scripting/Node Library</p></li>
+<li><p>Added highlight to new VS graph drop down items <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-2205">BOLT-2205</a></p></li>
+<li><p>Added margins to the UI for project settings and editor preferences</p></li>
+</ul>
+</section>
+</section>
+<section id="id2">
+<h2>[1.7.7] - 2021-11-23<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<section id="id3">
+<h3>Fixed<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fix an NullException error that occurs when creating a Variable right after project initialization.</p></li>
+<li><p>Fix Visual scripting naming in Project Settings and listener.</p></li>
+<li><p>Scene is marked as dirty when a graph is created on a new or exiting GameObject <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1859">BOLT-1860</a></p></li>
+<li><p>Fix Flow Variables missing icon</p></li>
+<li><p>Improved node regeneration speed</p></li>
+<li><p>Fix null texture error when switching platform after a build failure</p></li>
+<li><p>Fix null texture error when entering play mode</p></li>
+<li><p>Fix Linux build failing when run from command line</p></li>
+<li><p>Fix Editor Assemblies not detected correctly at Codebase initialization</p></li>
+<li><p>Fix Wait nodes naming inconsistency <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1886">BOLT-1886</a></p></li>
+<li><p>Fix constant being stripped in IL2CPP builds <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1638">BOLT-1638</a></p></li>
+<li><p>TryConvert<T> now returns true when the conversion was successful <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-2105">BOLT-2105</a></p></li>
+<li><p>Fix Input system by using correct Input API <a class="reference external" href="https://issuetracker.unity3d.com/issues/input-action-is-not-recognized-when-manipulating-canvas-text-using-visual-scripting">BOLT-2078</a></p></li>
+</ul>
+</section>
+</section>
+<section id="id4">
+<h2>[1.7.6] - 2021-11-05<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<section id="id5">
+<h3>Fixed<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed a regression where AOT Stubs were not being generated correctly, causing AOT builds to fail when run.</p></li>
+</ul>
+</section>
+</section>
+<section id="id6">
+<h2>[1.7.5] - 2021-08-30<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
+<section id="id7">
+<h3>Changed<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Removed unused Preferences</p></li>
+<li><p>Renamed preference “Update Units Automatically” to “Update Nodes Automatically”</p></li>
+<li><p>Reduced domain reload performance cost of visual scripting to 1ms or less when not actively used by a project</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>Fixed<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed an issue where uncaught exceptions were thrown in Debug builds of the Windows editor</p></li>
+<li><p>Fixed the missing arrow when the “Transition End Arrow” is on. <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1535">BOLT-1535</a></p></li>
+<li><p>Fixed wrong graph is showed after creating script graph form selected object in “Welcome Screen”</p></li>
+<li><p>Fixed duplicate variable error. <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1569">BOLT-1569</a></p></li>
+<li><p>Fixed ‘ReadOnlySpan&lt;&gt;’ does not exist in the namespace ‘System’” error with AOT build. <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1648">BOLT-1648</a></p></li>
+<li><p>Fixed jitter when the fuzzy window is on the bottom of the screen and the user scrolls <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1530">BOLT-1530</a></p></li>
+<li><p>Fixed missing AOT prebuild step when building an IL2CPP project in batchmode <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1649">BOLT-1649</a></p></li>
+<li><p>Restored a public icon set API in UnitPortDescription.cs that was by mistake</p></li>
+<li><p>Fixed il2cpp crash caused by a recursion of the machine states in itself when  AOTstubs is generating.<a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1656">BOLT-1656</a></p></li>
+</ul>
+</section>
+</section>
+<section id="id9">
+<h2>[1.7.3] - 2021-06-30<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h2>
+<section id="id10">
+<h3>Changed<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Removed unused Preferences</p></li>
+<li><p>Renamed preference “Update Units Automatically” to “Update Nodes Automatically”</p></li>
+</ul>
+</section>
+<section id="id11">
+<h3>Fixed<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed an issue where uncaught exceptions were thrown in Debug builds of the Windows editor</p></li>
+<li><p>Fixed custom units not appearing in the finder</p></li>
+</ul>
+</section>
+</section>
+<section id="id12">
+<h2>[1.7.2] - 2021-05-17<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h2>
+<section id="id13">
+<h3>Changed<a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>NotEquals node in non-scalar mode is now consistent with Equals</p></li>
+</ul>
+</section>
+<section id="id14">
+<h3>Fixed<a class="headerlink" href="#id14" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed long values not preserved in literal nodes.</p></li>
+<li><p>Fixed root icons in breadcrumbs in the graph editor window. <a class="reference external" href="https://issuetracker.unity3d.com/issues/wrong-icons-when-opening-a-script-graph">BOLT-1290</a></p></li>
+<li><p>Fixed graph nodes icons</p></li>
+<li><p>Fixed project settings will not show when looking for graphs</p></li>
+<li><p>Fixed exception when user double clicks on a graph</p></li>
+<li><p>Raise warnings at edit time when a MouseEvent node is used when targeting handheld devices instead of build time.</p></li>
+</ul>
+</section>
+</section>
+<section id="id15">
+<h2>[1.7.1] - 2021-05-07<a class="headerlink" href="#id15" title="Permalink to this heading">¶</a></h2>
+<section id="removed">
+<h3>Removed<a class="headerlink" href="#removed" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>For performance reasons, the BackgroundWorker attribute is now obsolete and won’t have any effect. Use BackgroundWorker.Schedule() directly</p></li>
+</ul>
+</section>
+<section id="id16">
+<h3>Changed<a class="headerlink" href="#id16" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Renamed the VSSettingsProvider assembly to Unity.VisualScripting.SettingsProvider.Editor</p></li>
+<li><p>Variables Saver GameObject no longer appears until a variable is created or changed. <a class="reference external" href="https://jira.unity3d.com/browse/BOLT-1343">BOLT-1343</a></p></li>
+<li><p>Renamed Singleton GameObjects created by Visual Scripting to use “VisualScripting —” names.</p></li>
+<li><p>All internal plugin and product versions have been normalized to use the package version.</p></li>
+<li><p>NotEquals node in non-scalar mode is now consistent with Equals</p></li>
+<li><p>SuperUnits have been renamed into Subgraphs</p></li>
+<li><p>No longer have a hard dependency on any of the following built-in modules: ai, animation, particlesystem, physics, physics2d</p></li>
+<li><p>ScriptMachine is now displayed as “Script Machine” instead of “Flow Machine” in the Gizmo window.</p></li>
+<li><p>Update, Start, Fixed Update and Late Update nodes have been renamed into On Update, On Start, On Fixed Update and On Late Update.</p></li>
+<li><p>Moved project settings from Assets directory to the ProjectSettings directory in Unity projects</p></li>
+<li><p>Renamed control schemes to Default/Alternate</p></li>
+<li><p>The UI references to ‘Unit’ were changed to ‘Node’ without any change to the underlying types</p></li>
+<li><p>Nodes from Timeline, Cinemachine and InputSystem packages are now automatically included, with their assemblies part of the default assemblyOptions.</p></li>
+<li><p>Progress bar titles for initial node generation have been tweaked to better indicate that it is a one-time process</p></li>
+<li><p>Various optimizations to reduce the duration of domain reloads</p></li>
+</ul>
+</section>
+<section id="id17">
+<h3>Added<a class="headerlink" href="#id17" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added workflows to create new graphs directly from the Graph Window</p></li>
+<li><p>SetScriptGraph node</p></li>
+<li><p>SetStateGraph node</p></li>
+<li><p>Support for RenamedFrom attribute on enum members</p></li>
+<li><p>GetStateGraphs node</p></li>
+<li><p>GetScriptGraphs node</p></li>
+<li><p>GetScriptGraph node</p></li>
+<li><p>GetStateGraph node</p></li>
+<li><p>HasStateGraph node</p></li>
+<li><p>HasScriptGraph node</p></li>
+</ul>
+</section>
+<section id="id18">
+<h3>Fixed<a class="headerlink" href="#id18" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed the problem were on Linux the fuzzy window would remains above all others. <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1197">BOLT-1197</a></p></li>
+<li><p>There is no more crash when the user navigates quickly between fuzzy finder levels on Linux <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1196">BOLT-1197</a></p></li>
+<li><p>Fixed variable type turns to null when clicked outside of the graph</p></li>
+<li><p>Fixed rearranging variables, if type is not set, it sets to the type that is bellow it</p></li>
+<li><p>Lots of miscellaneous migration fixes and quality of life changes</p></li>
+<li><p>Fixed unexpected error when exceptions are thrown by flow graph units and caught by the TryCatch unit <a class="reference external" href="https://issuetracker.unity3d.com/issues/graph-fails-with-recursion-error-trycatch-unit-catches-exception-from-throw-unit">BOLT-1392</a></p></li>
+</ul>
+</section>
+</section>
+<section id="id19">
+<h2>[1.6.1] - 2021-03-30<a class="headerlink" href="#id19" title="Permalink to this heading">¶</a></h2>
+<section id="id20">
+<h3>Fixed<a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed bug caused by Editor API transitioning from private to public</p></li>
+</ul>
+</section>
+</section>
+<section id="id21">
+<h2>[1.6.0] - 2021-03-23<a class="headerlink" href="#id21" title="Permalink to this heading">¶</a></h2>
+<section id="id22">
+<h3>Changed<a class="headerlink" href="#id22" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Updated graph migration process</p></li>
+</ul>
+</section>
+</section>
+<section id="id23">
+<h2>[1.5.2] - 2021-03-05<a class="headerlink" href="#id23" title="Permalink to this heading">¶</a></h2>
+<section id="id24">
+<h3>Changed<a class="headerlink" href="#id24" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>User interface updated</p></li>
+<li><p>Names in different UI elements made to be more consistent with new naming schemes</p></li>
+</ul>
+</section>
+</section>
+<section id="id25">
+<h2>[1.5.1] - 2021-02-23<a class="headerlink" href="#id25" title="Permalink to this heading">¶</a></h2>
+<section id="id26">
+<h3>Added<a class="headerlink" href="#id26" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Warn the user when an Input System Package event is referencing an action of the wrong type for that event</p></li>
+<li><p>A warning is raised when adding more than one Input unit in a SuperUnit</p></li>
+<li><p>“Open” inspector button and double clicking a graph in the project browser now opens the visual scripting editor</p></li>
+<li><p>A warning is raised when the step’s default value of the For unit is set to 0.</p></li>
+</ul>
+</section>
+<section id="id27">
+<h3>Fixed<a class="headerlink" href="#id27" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fixed “Restore to Defaults” buttons in the Project Settings window</p></li>
+<li><p>Fixed ThreadAbortException when entering Play Mode while searching in the Fuzzy Finder</p></li>
+<li><p>Fixed Visual Scripting Preferences being searchable <a class="reference external" href="https://issuetracker.unity3d.com/issues/visual-scripting-preferences-are-not-searchable-when-using-search-in-the-preferences-window">BOLT-1218</a></p></li>
+<li><p>Fixed ScalarAdd unit migration from 1.4.13 to 1.4.14 and above</p></li>
+<li><p>Fixed Open the graph window no longer causes Unity UI to stop processing mouse clicks” <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1159">BOLT-1159</a>,</p></li>
+<li><p>Fixed Fuzzy finder no longer blinks when trying to add a node <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1157">BOLT-1157</a>,</p></li>
+<li><p>Fixed Fuzzy search no longer drops keyboard inputs and respond slowly <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1214">BOLT-1214</a>,</p></li>
+<li><p>Fixed Fuzzy finder search window no longer remains above all other windows <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1197">BOLT-1197</a>”</p></li>
+<li><p>Fixed Dropdown icon is not clipped with TextField under “Get Variable”</p></li>
+<li><p>Fixed Scale groups when zoom is not at 1x</p></li>
+<li><p>Fixed graph getting corrupted when adding “Get Action Map” unit</p></li>
+<li><p>Fixed node description being sometimes clipped</p></li>
+<li><p>Fixed warnings overflow in the console when deleting and adding a boolean variable in the blackboard</p></li>
+<li><p>Fixed warnings when entering play mode when the “Script Changes While Playing” is set to Recompile And Continue Playing</p></li>
+<li><p>Fixed resize cursor rect on group when graph window is zoomed</p></li>
+<li><p>Fixed VisualScripting.Generated folder is removed when removing the VisualScripting package.</p></li>
+<li><p>Fixed error when executing “Fix Missing Scripts” in a HDRP project</p></li>
+<li><p>Visual Scripting Preferences spacing has been adjusted to avoid overlaps</p></li>
+<li><p>Fixed rendering of inactive ObjectFields</p></li>
+<li><p>Fixed sidebar (graph inspector/blackboard) resize when a vertical scrollbar is needed</p></li>
+<li><p>Fixed variable type reset to Enum when changing from Enum to GameObject when both Blackbaord and Variables inspector are displayed</p></li>
+<li><p>Help button in the visual scripting Assets and Behaviours inspector now link to the package documentation.</p></li>
+<li><p>FlowMachine type is now back in usable types.</p></li>
+<li><p>Fixed GraphPointerException occurs when nesting graph within itself <a class="reference external" href="https://issuetracker.unity3d.com/issues/visual-scripting-graphpointerexception-occurs-when-nesting-graph-within-itself">BOLT-1257</a></p></li>
+<li><p>Fixed RenamedFrom attribute does not function correctly on array references to a renamed type <a class="reference external" href="https://issuetracker.unity3d.com/product/unity/issues/guid/BOLT-1149">BOLT-1149</a></p></li>
+<li><p>Fixed error message when custom inspectors are generated</p></li>
+<li><p>Fixed missing succession for Cooldown. Output of Cooldown completed is treated as unentered.  <a class="reference external" href="https://issuetracker.unity3d.com/issues/bolt-1-output-of-cooldown-completed-is-treated-as-unentered">BOLT-725</a></p></li>
+<li><p>Fixed infinite loop when setting the For unit’s step’s default value to 0. Instead, the unit won’t be executed and the exit output will be triggered directly.</p></li>
+<li><p>Fixed Object Variables tabs not updated when creating a Prefab</p></li>
+<li><p>Fixed console errors when deleting a Prefab with a Visual Script</p></li>
+<li><p>Fixed console errors when editing nested graphs during Play Mode</p></li>
+<li><p>Fixed console errors when opening the standalone profiler window</p></li>
+</ul>
+</section>
+</section>
+<section id="pre-5-2021-01-20">
+<h2>[1.5.1-pre.5] - 2021-01-20<a class="headerlink" href="#pre-5-2021-01-20" title="Permalink to this heading">¶</a></h2>
+<section id="id28">
+<h3>Changed<a class="headerlink" href="#id28" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Removed code referring to an unused SceneManagement.PrefabStage API</p></li>
+</ul>
+</section>
+</section>
+<section id="pre-3-2020-12-07">
+<h2>[1.5.1-pre.3] - 2020-12-07<a class="headerlink" href="#pre-3-2020-12-07" title="Permalink to this heading">¶</a></h2>
+<section id="id29">
+<h3>Added<a class="headerlink" href="#id29" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Added Visual Scripting as built-in package as of Unity 2021.1</p></li>
+<li><p>Added New Input System Support. You can import the Input System package, activate the back-end and regenerate units to use.</p></li>
+<li><p>Added AOT Pre-Compile to automatically run when building AOT platforms</p></li>
+<li><p>Improved UI for deprecated built-in nodes</p></li>
+<li><p>Added automatic unit generation the first time the graph window is opened</p></li>
+</ul>
+</section>
+<section id="id30">
+<h3>Changed<a class="headerlink" href="#id30" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Switched to delivering source instead of pre-built .NET 3/4 assemblies</p></li>
+<li><p>Updated Documentation</p></li>
+<li><p>Renamed assemblies to match Unity.VisualScripting naming scheme (Ex: Bolt.Core -&gt; Unity.VisualScripting.Core)</p></li>
+<li><p>Merged Ludiq.Core and Ludiq.Graphs into Unity.VisualScripting.Core</p></li>
+<li><p>Moved Setup Wizard contents from pop-up on Editor startup to Player Settings. You can change the default settings from “Player Settings &gt; Visual Scripting”</p></li>
+<li><p>Renamed “Assembly Options” to “Node Library”</p></li>
+<li><p>Renamed “Flow Graph” to “Script Graph”</p></li>
+<li><p>Renamed “Flow Machine” to “Script Machine”</p></li>
+<li><p>Renamed “Macro” graphs to “Graph” in machine source configuration and “GraphAsset” in Assets</p></li>
+<li><p>Renamed “Control Input/Output” to “Trigger Input/Output”</p></li>
+<li><p>Renamed “Value Input/Output” to “Data Input/Output”</p></li>
+<li><p>Updated built-in nodes. The Fuzzy Finder still accepts earlier version names of nodes.</p></li>
+<li><p>Renamed “Branch” node to “If”</p></li>
+<li><p>Renamed “Self” node to “This”</p></li>
+<li><p>Deprecated the previous Add unit. The Sum unit has been renamed to Add.</p></li>
+<li><p>Updated Window Naming</p></li>
+<li><p>Changed “Variables” window to “Blackboard”</p></li>
+<li><p>Changed “Graph” window to “Script Graph” and “State Graph”</p></li>
+<li><p>Updated Bolt Preferences</p></li>
+<li><p>Renamed Bolt Preferences to “Visual Scripting”</p></li>
+<li><p>Removed BoltEx</p></li>
+<li><p>Moved settings previously accessed from “Window &gt; Bolt” to preferences</p></li>
+<li><p>Renamed Control Schemes from “Unity/Unreal” to “Default/Alternate” (Neither control scheme currently matches their respective editors’ controls and will be updated in a future release)</p></li>
+<li><p>Consolidated Graph editor, Blackboard and Graph Inspector into a single window</p></li>
+<li><p>Updated Third-Party Notices</p></li>
+<li><p>Plugin version information has been removed from the Visual Scripting settings window. This information can be retrieved from the Package Manager.</p></li>
+</ul>
+</section>
+<section id="id31">
+<h3>Fixed<a class="headerlink" href="#id31" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Corrected UGUI event management to trickle down correctly when the hierarchy contains a Unity Message Listener <a class="reference external" href="https://issuetracker.unity3d.com/issues/bolt-1-unity-message-listener-blocks-proper-trickling-of-ugui-events-in-hierarchies">BOLT-2</a></p></li>
+<li><p>Fixed backup failures with large projects <a class="reference external" href="https://issuetracker.unity3d.com/issues/bolt-1-backup-fails-to-complete">BOLT-10</a></p></li>
+<li><p>Fixed “Null Reference” when opening the Graph Window for the first time <a class="reference external" href="https://issuetracker.unity3d.com/issues/nullreferenceexception-when-graph-window-is-opened-on-a-new-project">BOLT-996</a></p></li>
+<li><p>Fixed IL2CPP build crash on startup <a class="reference external" href="https://issuetracker.unity3d.com/issues/bolt-bolt-1-il2cpp-release-build-crashes-on-startup-when-there-is-at-least-1-node-present-in-a-graph">BOLT-1036</a></p></li>
+<li><p>Fixed IL2CPP issue around converting certain managed types <a class="reference external" href="https://issuetracker.unity3d.com/issues/bolt-1-il2cpp-encountered-a-managed-type-which-it-cannot-convert-ahead-of-time">BOLT-8</a></p></li>
+<li><p>Fixed deserialization issues when undoing graphs with Wait nodes <a class="reference external" href="https://issuetracker.unity3d.com/issues/bolt-deserialization-error-and-nodes-missing-after-pressing-undo-when-update-coroutine-with-wait-node-is-present-in-graph">BOLT-679</a></p></li>
+<li><p>Fixed “SelectOnEnum” node behavior enums containing non-unique values e.g. “RuntimePlatform” <a class="reference external" href="https://issuetracker.unity3d.com/issues/select-on-enum-doesnt-work-with-the-runtimeplatform-enum">BOLT-688</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#id1">[1.7.8] - 2022-02-22</a><ul>
+<li><a class="reference internal" href="#fixed">Fixed</a></li>
+<li><a class="reference internal" href="#changed">Changed</a></li>
+<li><a class="reference internal" href="#added">Added</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">[1.7.7] - 2021-11-23</a><ul>
+<li><a class="reference internal" href="#id3">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">[1.7.6] - 2021-11-05</a><ul>
+<li><a class="reference internal" href="#id5">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">[1.7.5] - 2021-08-30</a><ul>
+<li><a class="reference internal" href="#id7">Changed</a></li>
+<li><a class="reference internal" href="#id8">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9">[1.7.3] - 2021-06-30</a><ul>
+<li><a class="reference internal" href="#id10">Changed</a></li>
+<li><a class="reference internal" href="#id11">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id12">[1.7.2] - 2021-05-17</a><ul>
+<li><a class="reference internal" href="#id13">Changed</a></li>
+<li><a class="reference internal" href="#id14">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id15">[1.7.1] - 2021-05-07</a><ul>
+<li><a class="reference internal" href="#removed">Removed</a></li>
+<li><a class="reference internal" href="#id16">Changed</a></li>
+<li><a class="reference internal" href="#id17">Added</a></li>
+<li><a class="reference internal" href="#id18">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id19">[1.6.1] - 2021-03-30</a><ul>
+<li><a class="reference internal" href="#id20">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id21">[1.6.0] - 2021-03-23</a><ul>
+<li><a class="reference internal" href="#id22">Changed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id23">[1.5.2] - 2021-03-05</a><ul>
+<li><a class="reference internal" href="#id24">Changed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id25">[1.5.1] - 2021-02-23</a><ul>
+<li><a class="reference internal" href="#id26">Added</a></li>
+<li><a class="reference internal" href="#id27">Fixed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pre-5-2021-01-20">[1.5.1-pre.5] - 2021-01-20</a><ul>
+<li><a class="reference internal" href="#id28">Changed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pre-3-2020-12-07">[1.5.1-pre.3] - 2020-12-07</a><ul>
+<li><a class="reference internal" href="#id29">Added</a></li>
+<li><a class="reference internal" href="#id30">Changed</a></li>
+<li><a class="reference internal" href="#id31">Fixed</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/CHANGELOG.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

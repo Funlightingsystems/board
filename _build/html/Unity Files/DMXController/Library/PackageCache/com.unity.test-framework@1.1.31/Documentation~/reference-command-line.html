@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Running tests from the command line &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Running tests from the command line</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="running-tests-from-the-command-line">
+<h1>Running tests from the command line<a class="headerlink" href="#running-tests-from-the-command-line" title="Permalink to this heading">¶</a></h1>
+<p>It’s pretty simple to run a test project from the command line. Here is an example in Windows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Unity.exe<span class="w"> </span>-runTests<span class="w"> </span>-batchmode<span class="w"> </span>-projectPath<span class="w"> </span>PATH_TO_YOUR_PROJECT<span class="w"> </span>-testResults<span class="w"> </span>C:<span class="se">\t</span>emp<span class="se">\r</span>esults.xml<span class="w"> </span>-testPlatform<span class="w"> </span>PS4
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Note</strong>: Use the <code class="docutils literal notranslate"><span class="pre">-batchmode</span></code> option when running tests on the command line to remove the need for manual user inputs. For more information, see Unity <a class="reference external" href="https://docs.unity3d.com/Manual/CommandLineArguments.html">Command line arguments</a>.</p>
+</div></blockquote>
+<section id="test-framework-command-line-arguments">
+<h2>Test Framework command line arguments<a class="headerlink" href="#test-framework-command-line-arguments" title="Permalink to this heading">¶</a></h2>
+<section id="forgetprojectpath">
+<h3>forgetProjectPath<a class="headerlink" href="#forgetprojectpath" title="Permalink to this heading">¶</a></h3>
+<p>Don’t save your current <strong>Project</strong> into the Unity launcher/hub history.</p>
+</section>
+<section id="runtests">
+<h3>runTests<a class="headerlink" href="#runtests" title="Permalink to this heading">¶</a></h3>
+<p>Runs tests in the Project.</p>
+</section>
+<section id="testcategory">
+<h3>testCategory<a class="headerlink" href="#testcategory" title="Permalink to this heading">¶</a></h3>
+<p>A semicolon-separated list of test categories to include in the run. A semi-colon separated list should be formatted as a string enclosed in quotation marks, e.g. <code class="docutils literal notranslate"><span class="pre">testCategory</span> <span class="pre">&quot;firstCategory;secondCategory&quot;</span></code>. If using both <code class="docutils literal notranslate"><span class="pre">testFilter</span></code> and <code class="docutils literal notranslate"><span class="pre">testCategory</span></code>, then only tests that match both are run. This argument supports negation using ‘!’. If using ‘!MyCategory’ then no tests with the ‘MyCategory’ category will be included in the run.</p>
+</section>
+<section id="testfilter">
+<h3>testFilter<a class="headerlink" href="#testfilter" title="Permalink to this heading">¶</a></h3>
+<p>A semicolon-separated list of test names to run, or a regular expression pattern to match tests by their full name. A semi-colon separated list should be formatted as a string enclosed in quotation marks, e.g. <code class="docutils literal notranslate"><span class="pre">testFilter</span> <span class="pre">&quot;Low;Medium&quot;</span></code>. This argument supports negation using ‘!’. If using the test filter ‘!MyNamespace.Something.MyTest’, then all tests except that test will be run.</p>
+</section>
+<section id="testplatform">
+<h3>testPlatform<a class="headerlink" href="#testplatform" title="Permalink to this heading">¶</a></h3>
+<p>The platform to run tests on. Accepted values:</p>
+<ul class="simple">
+<li><p><strong>EditMode</strong></p>
+<ul>
+<li><p>Edit Mode tests. Equivalent to running tests from the EditMode tab of the Test Runner window.</p></li>
+</ul>
+</li>
+<li><p><strong>PlayMode</strong></p>
+<ul>
+<li><p>Play Mode tests that run in the Editor. Equivalent to running tests from the PlayMode tab of the Test Runner window.</p></li>
+</ul>
+</li>
+<li><p>Any value from the <a class="reference external" href="https://docs.unity3d.com/ScriptReference/BuildTarget.html">BuildTarget</a> enum.</p>
+<ul>
+<li><p>Play Mode tests that run on a player built for the specified platform. Equivalent to using the <strong>Run all tests (<code class="docutils literal notranslate"><span class="pre">&lt;target_platform&gt;</span></code>)</strong> dropdown in the PlayMode tab of the Test Runner window.</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><p><strong>Note</strong>: If no value is specified for this argument, tests run in Edit Mode.</p>
+</div></blockquote>
+</section>
+<section id="assemblynames">
+<h3>assemblyNames<a class="headerlink" href="#assemblynames" title="Permalink to this heading">¶</a></h3>
+<p>A semicolon-separated list of test assemblies to include in the run. A semi-colon separated list should be formatted as a string enclosed in quotation marks, e.g. <code class="docutils literal notranslate"><span class="pre">assemblyNames</span> <span class="pre">&quot;firstAssembly;secondAssembly&quot;</span></code>.</p>
+</section>
+<section id="testresults">
+<h3>testResults<a class="headerlink" href="#testresults" title="Permalink to this heading">¶</a></h3>
+<p>The path where Unity should save the result file. By default, Unity saves it in the Project’s root folder. Test results follow the XML format as defined by NUnit, see the <a class="reference external" href="https://docs.nunit.org/articles/nunit/technical-notes/usage/Test-Result-XML-Format.html">NUnit documentation</a>. There is currently no common definition for exit codes reported by individual Unity components under test. The best way to understand the source of a problem is the content of error messages and stack traces.</p>
+</section>
+<section id="playerheartbeattimeout">
+<h3>playerHeartbeatTimeout<a class="headerlink" href="#playerheartbeattimeout" title="Permalink to this heading">¶</a></h3>
+<p>The time, in seconds, the editor should wait for heartbeats after starting a test run on a player. This defaults to 10 minutes.</p>
+</section>
+<section id="runsynchronously">
+<h3>runSynchronously<a class="headerlink" href="#runsynchronously" title="Permalink to this heading">¶</a></h3>
+<p>If included, the test run will run tests synchronously, guaranteeing that all tests runs in one editor update call. Note that this is only supported for EditMode tests, and that tests which take multiple frames (i.e. <code class="docutils literal notranslate"><span class="pre">[UnityTest]</span></code> tests, or tests with <code class="docutils literal notranslate"><span class="pre">[UnitySetUp]</span></code> or <code class="docutils literal notranslate"><span class="pre">[UnityTearDown]</span></code> scaffolding) will be filtered out.</p>
+</section>
+<section id="testsettingsfile">
+<h3>testSettingsFile<a class="headerlink" href="#testsettingsfile" title="Permalink to this heading">¶</a></h3>
+<p>Path to a <em>TestSettings.json</em> file that allows you to set up extra options for your test run. An example of the <em>TestSettings.json</em> file could look like this:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;scriptingBackend&quot;</span><span class="p">:</span><span class="s2">&quot;WinRTDotNET&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Architecture&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;apiProfile&quot;</span><span class="p">:</span><span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="apiprofile">
+<h4>apiProfile<a class="headerlink" href="#apiprofile" title="Permalink to this heading">¶</a></h4>
+<p>The .Net compatibility level. Set to one of the following values:</p>
+<ul class="simple">
+<li><p>1 - .Net 2.0</p></li>
+<li><p>2 - .Net 2.0 Subset</p></li>
+<li><p>3 - .Net 4.6</p></li>
+<li><p>5 - .Net micro profile (used by Mono scripting backend if <strong>Stripping Level</strong> is set to <strong>Use micro mscorlib</strong>)</p></li>
+<li><p>6 - .Net Standard 2.0</p></li>
+</ul>
+</section>
+<section id="appleenableautomaticsigning">
+<h4>appleEnableAutomaticSigning<a class="headerlink" href="#appleenableautomaticsigning" title="Permalink to this heading">¶</a></h4>
+<p>Sets option for automatic signing of Apple devices.</p>
+</section>
+<section id="appledeveloperteamid">
+<h4>appleDeveloperTeamID<a class="headerlink" href="#appledeveloperteamid" title="Permalink to this heading">¶</a></h4>
+<p>Sets the team ID for the apple developer account.</p>
+</section>
+<section id="architecture">
+<h4>architecture<a class="headerlink" href="#architecture" title="Permalink to this heading">¶</a></h4>
+<p>Target architecture for Android. Set to one of the following values:</p>
+<ul class="simple">
+<li><p>None = 0</p></li>
+<li><p>ARMv7 = 1</p></li>
+<li><p>ARM64 = 2</p></li>
+<li><p>X86 = 4</p></li>
+<li><p>All = 4294967295</p></li>
+</ul>
+</section>
+<section id="iosmanualprovisioningprofiletype">
+<h4>iOSManualProvisioningProfileType<a class="headerlink" href="#iosmanualprovisioningprofiletype" title="Permalink to this heading">¶</a></h4>
+<p>Set to one of the following values:</p>
+<ul class="simple">
+<li><p>0 - Automatic</p></li>
+<li><p>1 - Development</p></li>
+<li><p>2 - Distribution iOSManualProvisioningProfileID</p></li>
+</ul>
+</section>
+<section id="scriptingbackend">
+<h4>scriptingBackend<a class="headerlink" href="#scriptingbackend" title="Permalink to this heading">¶</a></h4>
+<p>Set to one of the following values, which should be given as a string literal enclosed in quotes:</p>
+<ul class="simple">
+<li><p>Mono2x</p></li>
+<li><p>IL2CPP</p></li>
+<li><p>WinRTDotNET</p></li>
+</ul>
+</section>
+<section id="playergraphicsapi">
+<h4>playerGraphicsAPI<a class="headerlink" href="#playergraphicsapi" title="Permalink to this heading">¶</a></h4>
+<p>Set graphics API that will be used during test execution in the player. Value can be any <a class="reference external" href="https://docs.unity3d.com/ScriptReference/Rendering.GraphicsDeviceType.html">GraphicsDeviceType</a> as a string literal enclosed in quotes. Value will only be set if it is supported on the target platform.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Running tests from the command line</a><ul>
+<li><a class="reference internal" href="#test-framework-command-line-arguments">Test Framework command line arguments</a><ul>
+<li><a class="reference internal" href="#forgetprojectpath">forgetProjectPath</a></li>
+<li><a class="reference internal" href="#runtests">runTests</a></li>
+<li><a class="reference internal" href="#testcategory">testCategory</a></li>
+<li><a class="reference internal" href="#testfilter">testFilter</a></li>
+<li><a class="reference internal" href="#testplatform">testPlatform</a></li>
+<li><a class="reference internal" href="#assemblynames">assemblyNames</a></li>
+<li><a class="reference internal" href="#testresults">testResults</a></li>
+<li><a class="reference internal" href="#playerheartbeattimeout">playerHeartbeatTimeout</a></li>
+<li><a class="reference internal" href="#runsynchronously">runSynchronously</a></li>
+<li><a class="reference internal" href="#testsettingsfile">testSettingsFile</a><ul>
+<li><a class="reference internal" href="#apiprofile">apiProfile</a></li>
+<li><a class="reference internal" href="#appleenableautomaticsigning">appleEnableAutomaticSigning</a></li>
+<li><a class="reference internal" href="#appledeveloperteamid">appleDeveloperTeamID</a></li>
+<li><a class="reference internal" href="#architecture">architecture</a></li>
+<li><a class="reference internal" href="#iosmanualprovisioningprofiletype">iOSManualProvisioningProfileType</a></li>
+<li><a class="reference internal" href="#scriptingbackend">scriptingBackend</a></li>
+<li><a class="reference internal" href="#playergraphicsapi">playerGraphicsAPI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.test-framework@1.1.31/Documentation~/reference-command-line.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Running tests from the command line</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

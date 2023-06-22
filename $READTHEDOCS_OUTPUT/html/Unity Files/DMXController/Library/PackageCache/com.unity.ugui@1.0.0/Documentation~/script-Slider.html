@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Slider &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Slider</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="slider">
+<h1>Slider<a class="headerlink" href="#slider" title="Permalink to this heading">¶</a></h1>
+<p>The <strong>Slider</strong> control allows the user to select a numeric value from a predetermined range by dragging the mouse. Note that the similar <a class="reference internal" href="script-Scrollbar.html"><span class="std std-doc">ScrollBar</span></a> control is used for scrolling rather than selecting numeric values. Familiar examples include difficulty settings in games and brightness settings in image editors.</p>
+<p><img alt="A Slider." src="../../../../../../_images/UI_SliderExample.png" /></p>
+<p><img alt="" src="../../../../../../_images/UI_SliderInspector.png" /></p>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">¶</a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Property:</strong></p></th>
+<th class="head text-left"><p><strong>Function:</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Interactable</strong></p></td>
+<td class="text-left"><p>Will this component accept input? See <a class="reference internal" href="script-Selectable.html"><span class="std std-doc">Interactable</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Transition</strong></p></td>
+<td class="text-left"><p>Properties that determine the way the control responds visually to user actions. See <a class="reference internal" href="script-SelectableTransition.html"><span class="std std-doc">Transition Options</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Navigation</strong></p></td>
+<td class="text-left"><p>Properties that determine the sequence of controls. See <a class="reference internal" href="script-SelectableNavigation.html"><span class="std std-doc">Navigation Options</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Fill Rect</strong></p></td>
+<td class="text-left"><p>The graphic used for the fill area of the control.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Handle Rect</strong></p></td>
+<td class="text-left"><p>The graphic used for the sliding “handle” part of the control</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Direction</strong></p></td>
+<td class="text-left"><p>The direction in which the slider’s value will increase when the handle is dragged. The options are <em>Left To Right</em>, <em>Right To Left</em>, <em>Bottom To Top</em> and <em>Top To Bottom</em>.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Min Value</strong></p></td>
+<td class="text-left"><p>The value of the slider when the handle is at its extreme lower end (determined by the <em>Direction</em> property).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Max Value</strong></p></td>
+<td class="text-left"><p>The value of the slider when the handle is at its extreme upper end (determined by the <em>Direction</em> property).</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Whole Numbers</strong></p></td>
+<td class="text-left"><p>Should the slider be constrained to integer values?</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Value</strong></p></td>
+<td class="text-left"><p>Current numeric value of the slider.  If the value is set in the inspector it will be used as the initial value, but this will change at runtime when the value changes.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this heading">¶</a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><strong>Property:</strong></p></th>
+<th class="head text-left"><p><strong>Function:</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>On Value Changed</strong></p></td>
+<td class="text-left"><p>A <a class="reference external" href="https://docs.unity3d.com/Manual/UnityEvents.html">UnityEvent</a> that is invoked when the current value of the Slider has changed. The event can send the current value as a <code class="docutils literal notranslate"><span class="pre">float</span></code> type dynamic argument. The value is passed as a float type regardless of whether the <em>Whole Numbers</em> property is enabled.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this heading">¶</a></h2>
+<p>The value of a Slider is determined by the position of the handle along its length. The value increases from the <em>Min Value</em> up to the <em>Max Value</em> in proportion to the distance the handle is dragged. The default behaviour is for the slider to increase from left to right but it is also possible to reverse this behavior using the <em>Direction</em> property. You can also set the slider to increase vertically by selecting <em>Bottom To Top</em> or <em>Top To Bottom</em> for the <em>Direction</em> property.</p>
+<p>The slider has a single event called <em>On Value Changed</em> that responds as the user drags the handle. The current numeric value of the slider is passed to the function as a <code class="docutils literal notranslate"><span class="pre">float</span></code> parameter. Typical use cases include:</p>
+<ul class="simple">
+<li><p>Choosing a level of difficulty in a game, brightness of a light, etc.</p></li>
+<li><p>Setting a distance, size, time or angle.</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Slider</a><ul>
+<li><a class="reference internal" href="#properties">Properties</a></li>
+<li><a class="reference internal" href="#events">Events</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.ugui@1.0.0/Documentation~/script-Slider.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Slider</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Working with debug messages &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Working with debug messages</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="working-with-debug-messages">
+<h1>Working with debug messages<a class="headerlink" href="#working-with-debug-messages" title="Permalink to this heading">¶</a></h1>
+<p>You can use debug nodes to see the result of a code segment inside the Unity console. For example, attaching a Debug node to a Variable node outputs the value of the variable.</p>
+<blockquote>
+<div><p>[!TIP]
+Debugs are a useful tool when prototyping.</p>
+</div></blockquote>
+<section id="to-create-a-debug-message">
+<h2>To create a debug message<a class="headerlink" href="#to-create-a-debug-message" title="Permalink to this heading">¶</a></h2>
+<blockquote>
+<div><p>[!IMPORTANT]
+Remove or disconnect the debugs from the graphs before producing the final executable.</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Add a Script Machine component to the GameObject.</p></li>
+<li><p>Select <strong>Edit Graph</strong>.</p></li>
+<li><p>Do one of the following:</p>
+<ul class="simple">
+<li><p>Use the starting events that are created with the script machine.</p></li>
+<li><p>Add an event node to the graph.</p></li>
+</ul>
+</li>
+<li><p>Drag and release from the node port.</br>
+The fuzzy finder appears.</p></li>
+<li><p>In the finder field, enter “Log”.</br>
+A list of Debug nodes appears.</p></li>
+<li><p>Select the relevant debug message type you want to use (for example <strong>Log(Message)</strong>, <strong>Log Error(Message)</strong> or <strong>Log Warning(Message)</strong>).</br>
+The select Debug node is placed in the graph and linked to the event.</p></li>
+<li><p>Drag and release from the Debug green (output) port.</br>
+The fuzzy finder appears.</p></li>
+<li><p>In the list, select the String node.</br>
+A String node appears on the graph, connected to the Debug node.v
+Enter the debug message in the string node**.**</p></li>
+</ol>
+<blockquote>
+<div><p>[!TIP]
+You can link variables or GameObjects other than a string to the port to see the value in the console.</p>
+</div></blockquote>
+<p>Whenever the graph is run and the Event is fired, the debug node executes and the text in the String appears in the console.</p>
+<blockquote>
+<div><p>[!NOTE]
+The debug bar indicates the number of messages of each debug type (in the following order Message, Error, Warning).</p>
+</div></blockquote>
+<p><img alt="" src="../../../../../../_images/vs-unity-console-w-warnings.png" /></p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Working with debug messages</a><ul>
+<li><a class="reference internal" href="#to-create-a-debug-message">To create a debug message</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-debug-messages.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Working with debug messages</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

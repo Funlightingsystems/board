@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Messaging System &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Messaging System</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="messaging-system">
+<h1>Messaging System<a class="headerlink" href="#messaging-system" title="Permalink to this heading">¶</a></h1>
+<p>The new UI system uses a messaging system designed to replace SendMessage. The system is pure C# and aims to address some of the issues present with SendMessage. The system works using custom interfaces that can be implemented on a MonoBehaviour to indicate that the component is capable of receiving a callback from the messaging system. When the call is made a target GameObject is specified; the call will be issued on all components of the GameObject that implement the specified interface that the call is to be issued against. The messaging system allows for custom user data to be passed, as well as how far through the GameObject hierarchy the event should propagate; that is should it just execute for the specified GameObject, or should it also execute on children and parents. In addition to this the messaging framework provides helper functions to search for and find GameObjects that implement a given messaging interface.</p>
+<p>The messaging system is generic and designed for use not just by the UI system but also by general game code. It is relatively trivial to add custom messaging events and they will work using the same framework that the UI system uses for all event handling.</p>
+<section id="defining-a-custom-message">
+<h2>Defining A Custom Message<a class="headerlink" href="#defining-a-custom-message" title="Permalink to this heading">¶</a></h2>
+<p>If you wish to define a custom message it is relatively simple. In the UnityEngine.EventSystems namespace there is a base interface called ‘IEventSystemHandler’. Anything that extends from this can be considered as a target for receiving events via the messaging system.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="n">interface</span> <span class="n">ICustomMessageTarget</span> <span class="p">:</span> <span class="n">IEventSystemHandler</span>
+<span class="p">{</span>
+    <span class="o">//</span> <span class="n">functions</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">called</span> <span class="n">via</span> <span class="n">the</span> <span class="n">messaging</span> <span class="n">system</span>
+    <span class="n">void</span> <span class="n">Message1</span><span class="p">();</span>
+    <span class="n">void</span> <span class="n">Message2</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Once this interface is defined then it can be implemented by a MonoBehaviour. When implemented it defines the functions that will be executed if the given message is issued against this MonoBehaviours GameObject.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">CustomMessageTarget</span> <span class="p">:</span> <span class="n">MonoBehaviour</span><span class="p">,</span> <span class="n">ICustomMessageTarget</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">Message1</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Debug</span><span class="o">.</span><span class="n">Log</span> <span class="p">(</span><span class="s2">&quot;Message 1 received&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">Message2</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Debug</span><span class="o">.</span><span class="n">Log</span> <span class="p">(</span><span class="s2">&quot;Message 2 received&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now that a script exists that can receive the message we need to issue the message. Normally this would be in response to some loosely coupled event that occurs. For example, in the UI system we issue events for such things as PointerEnter and PointerExit, as well as a variety of other things that can happen in response to user input into the application.</p>
+<p>To send a message a static helper class exists to do this. As arguments it requires a target object for the message, some user specific data, and a functor that maps to the specific function in the message interface you wish to target.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ExecuteEvents</span><span class="o">.</span><span class="n">Execute</span><span class="o">&lt;</span><span class="n">ICustomMessageTarget</span><span class="o">&gt;</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">null</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">=&gt;</span><span class="n">x</span><span class="o">.</span><span class="n">Message1</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>This code will execute the function Message1 on any components on the GameObject target that implement the ICustomMessageTarget interface. The scripting documentation for the ExecuteEvents class covers other forms of the Execute functions, such as Executing in children or in parents.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Messaging System</a><ul>
+<li><a class="reference internal" href="#defining-a-custom-message">Defining A Custom Message</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.ugui@1.0.0/Documentation~/MessagingSystem.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Messaging System</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

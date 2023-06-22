@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Recording basic animation with an Infinite clip &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Recording basic animation with an Infinite clip</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="recording-basic-animation-with-an-infinite-clip">
+<h1>Recording basic animation with an Infinite clip<a class="headerlink" href="#recording-basic-animation-with-an-infinite-clip" title="Permalink to this heading">¶</a></h1>
+<p>You can record animation directly to an Animation track. When you record directly to an empty Animation track, you create an <strong>Infinite clip</strong>.</p>
+<p>An Infinite clip is a clip that contains basic key animation recorded through the Timeline window. An Infinite clip cannot be positioned, trimmed, or split because it does not have a defined size: it spans the entirety of an Animation track.</p>
+<p>Before creating an Infinite clip, you must <a class="reference internal" href="trk_add.html"><span class="std std-doc">add an empty Animation track</span></a> for the GameObject that you want to animate.</p>
+<p>In the Track list, click the red circular Record button for the empty Animation track to enable Record mode.</p>
+<p><img alt="Click the Record button on an empty track to enable Record mode" src="../../../../../../_images/timeline_workflow_record_button.png" /></p>
+<p><em>Click the Record button on an empty track to enable Record mode</em></p>
+<p>When a track is in Record mode, the clip area of the track is drawn in red with the “Recording…” message, and the Record button blinks on and off.</p>
+<p><img alt="Timeline window in Record mode" src="../../../../../../_images/timeline_workflow_recording.png" /></p>
+<p><em>Timeline window in Record mode</em></p>
+<p>When in Record mode, any modification to an animatable property of the GameObject sets a key at the location of the Timeline Playhead.</p>
+<p>To start creating an animation, move the Timeline Playhead to the location of the first key, and do <strong>one</strong> of the following:</p>
+<ul class="simple">
+<li><p>In the Inspector window, right-click the name of the property and choose <strong>Add Key</strong>. This adds an animation key for the property without changing its value. A diamond appears in the Infinite clip to show the position of the key.</p></li>
+<li><p>In the Inspector window, change the value of the animatable property of the GameObject. This adds an animation key for the property with its changed value. A diamond appears in the Infinite clip.</p></li>
+<li><p>In the Scene view, either move, rotate, or scale the GameObject. This automatically adds a key for the properties you change. A diamond appears in the Infinite clip.</p></li>
+</ul>
+<p><img alt="Red background indicates that you’ve added an animation curve for the property to the clip" src="../../../../../../_images/timeline_property_red.png" /></p>
+<p><em>Red background indicates that you’ve added an animation curve for the property to the clip</em></p>
+<p><img alt="Setting a key adds a diamond to the Infinite clip" src="../../../../../../_images/timeline_workflow_recording_diamonds.png" /></p>
+<p><em>Setting a key adds a diamond to the Infinite clip</em></p>
+<p>Move the playhead to a different position on the Timeline and change the animatable properties of the GameObject. At each position, the Timeline window adds a diamond to the Infinite clip for any changed properties and adds a key to its associated animation curves.</p>
+<p>While in Record mode, you can right-click the name of an animatable property name to perform keying operations such as setting a key without changing its value, jumping to the next or previous keys, and removing keys. For example, to set a key for the position of a GameObject without changing its value, right-click <strong>Position</strong> and select <strong>Add Key</strong> from the context menu.</p>
+<p><img alt="Right-click the name of an animatable property to perform keying operations" src="../../../../../../_images/timeline_workflow_keyframing_menu.png" /></p>
+<p><em>Right-click the name of an animatable property to perform keying operations</em></p>
+<p>When you finish the animation, click the blinking Record button to disable Record mode.</p>
+<p>An Infinite clip appears as a dope sheet in the Timeline window, but you cannot edit the keys in this view. Use <a class="reference internal" href="crv_keys_edit.html"><span class="std std-doc">the Curves view to edit keys</span></a>. You can also double-click the Infinite clip and edit the keys with the Animation window.</p>
+<p><img alt="An Infinite clip appears as a dope sheet" src="../../../../../../_images/timeline_workflow_dopesheet.png" /></p>
+<p><em>An Infinite clip appears as a dope sheet</em></p>
+<p>Save the Scene or Project to save the Timeline Asset and the Infinite clip. The Timeline window saves the key animation from the Infinite clip as a source asset. The source asset is named “Recorded” and saved as a child of the Timeline Asset in the Project.</p>
+<p><img alt="Recorded clips are saved under the Timeline Asset in the Project" src="../../../../../../_images/timeline_workflow_clip_in_project.png" /></p>
+<p><em>Recorded clips are saved under the Timeline Asset in the Project</em></p>
+<p>For every additional recorded Infinite clip, the Timeline window numbers each clip sequentially, starting at “(1)”. For example, a Timeline Asset with three recorded Infinite clips are named “Recorded”, “Recorded (1)”, and “Recorded (2)”. If you delete a Timeline Asset, its recorded clips are also removed.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.timeline@1.6.4/Documentation~/wf_rec_anim.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Recording basic animation with an Infinite clip</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

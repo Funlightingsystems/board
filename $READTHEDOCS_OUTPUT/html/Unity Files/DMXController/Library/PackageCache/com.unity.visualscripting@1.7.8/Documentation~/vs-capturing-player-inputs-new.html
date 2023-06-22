@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Capture input with the Input System package &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Capture input with the Input System package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="capture-input-with-the-input-system-package">
+<h1>Capture input with the Input System package<a class="headerlink" href="#capture-input-with-the-input-system-package" title="Permalink to this heading">¶</a></h1>
+<blockquote>
+<div><p>[!IMPORTANT]
+If you don’t complete the prerequisite configuration for your project, you can’t use the Input System package with Visual Scripting. For more information, see <a class="reference internal" href="vs-capture-player-input.html#input-system-package-prerequisites"><span class="std std-ref">Input System package prerequisites</span></a>.</p>
+</div></blockquote>
+<p>To use the Input System package with Visual Scripting to capture input in your project:</p>
+<ol class="arabic">
+<li><p><a class="reference internal" href="vs-open-graph-edit.html"><span class="std std-doc">Open</span></a> or <a class="reference internal" href="vs-create-graph.html"><span class="std std-doc">create</span></a> a Script Graph attached to the GameObject that you want your users to move.</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-fuzzy-finder.html"><span class="std std-doc">open-fuzzy-finder</span></a>]</p></li>
+<li><p>Go to <strong>Events</strong> &gt; <strong>Input</strong> or search for <strong>On Input System Event</strong>.</p></li>
+<li><p>Select an Input System Event node. In this example, select the <strong>On Input System Event Vector 2</strong> node to add it to the graph.</p></li>
+<li><p>Set the <strong>On Input System Event Vector 2</strong> node’s <strong>Input Action Change Type</strong> control to <strong>On Hold</strong>:</p>
+<p><img alt="An image of the Graph window, that displays an On Input System Event Vector 2 node. The Input Action Change Type control is open and being set to On Hold." src="../../../../../../_images/vs-input-new-system-v2-node-set.png" /></p>
+</li>
+<li><p>In the <strong>Input Action</strong> list on the <strong>On Input System Event Vector 2</strong> node, select an Input Action to trigger the node. In this example, select <strong>Move</strong>.</p>
+<blockquote>
+<div><p>[!NOTE]
+By default, Visual Scripting displays all Input Actions from the Input Action asset attached to your current GameObject’s Player Input component.</p>
+</div></blockquote>
+</li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-fuzzy-finder.html"><span class="std std-doc">open-fuzzy-finder</span></a>]</p>
+<blockquote>
+<div><p>[!TIP]
+If a context menu appears when you right-click, select <strong>Add Node</strong> to open the fuzzy finder.</p>
+</div></blockquote>
+</li>
+<li><p>Go to <strong>Codebase</strong> &gt; <strong>Unity Engine</strong> &gt; <strong>Vector 3</strong> or search for <strong>Vector 3 Get X</strong>.</p></li>
+<li><p>Select <strong>Get X</strong> to add the <strong>Vector 3 Get X</strong> node to the graph.</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-fuzzy-finder.html"><span class="std std-doc">open-fuzzy-finder</span></a>]</p></li>
+<li><p>Go to <strong>Codebase</strong> &gt; <strong>Unity Engine</strong> &gt; <strong>Vector 3</strong> or search for <strong>Vector 3 Get Z</strong>.</p></li>
+<li><p>Select <strong>Get Z</strong> to add the <strong>Vector 3 Get Z</strong> node to the graph.</p></li>
+<li><p>Select the <strong>Vector 2 Value</strong> output port on the <strong>On Input System Event Vector 2</strong> node.</p></li>
+<li><p><a class="reference internal" href="vs-creating-connections.html"><span class="std std-doc">Make a connection</span></a> to the <strong>Target</strong> input port on the <strong>Vector 3 Get X</strong> node:</p>
+<p><img alt="An image of the Graph window, that displays the On Input System Event Vector 2 node, the Vector 3 Get X, and Vector 3 Get Z nodes. A connection is being made from the Vector 2 Value port on the On Input System Event Vector 2 node and the Target port on the Vector 3 Get X node." src="../../../../../../_images/vs-input-new-system-connect-nodes-example.png" /></p>
+</li>
+<li><p>Select the <strong>Vector 2 Value</strong> output port.</p></li>
+<li><p><a class="reference internal" href="vs-creating-connections.html"><span class="std std-doc">Make a connection</span></a> to the <strong>Target</strong> port on the <strong>Vector 3 Get Z</strong> node.</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-fuzzy-finder.html"><span class="std std-doc">open-fuzzy-finder</span></a>]</p></li>
+<li><p>Go to <strong>Codebase</strong> &gt; <strong>Unity Engine</strong> &gt; <strong>Transform</strong> or search for <strong>Translate</strong>.</p></li>
+<li><p>Select <strong>Transform: Translate (X, Y, Z)</strong> to add the Translate node to the graph.</p></li>
+<li><p>Select the <strong>Value: Float</strong> output port on the <strong>Vector 3 Get X</strong> node.</p></li>
+<li><p><a class="reference internal" href="vs-creating-connections.html"><span class="std std-doc">Make a connection</span></a> to the <strong>X</strong> float input port on the <strong>Translate</strong> node.</p></li>
+<li><p>Select the <strong>Value: Float</strong> output port on the <strong>Vector 3 Get X</strong> node.</p></li>
+<li><p><a class="reference internal" href="vs-creating-connections.html"><span class="std std-doc">Make a connection</span></a> to the <strong>Z</strong> float input port on the <strong>Translate</strong> node.</p>
+<p>The finished graph looks similar to the following image:</p>
+<p><img alt="An image of the Graph window, that displays the final result of a simple input capture graph with the Input System package. An On Input System Event Vector 2 node connects its output trigger port to the input trigger port on a Transform Translate node. The On Input System Event Vector 2 node's Vector 2 output port connects to the Vector 3 input on a Vector 3 Get X node and a Vector 3 Get Z node. The Vector 3 Get X node connects its Float result port to the X input port on the Translate node. The Vector 3 Get Z node connects its Float result port to the Z input port on the Translate node." src="../../../../../../_images/vs-input-new-system-example.png" /></p>
+</li>
+<li><p>To enter Play mode, select <strong>Play</strong> from <a class="reference external" href="https://docs.unity3d.com/Manual/Toolbar.html">the Unity Editor’s Toolbar</a>.</p></li>
+<li><p>While in the <a class="reference external" href="https://docs.unity3d.com/Manual/GameView.html">Game view</a>, press a key defined under the Input Actions asset for <strong>Move</strong> in the <strong>Player</strong> Action Map.</p></li>
+</ol>
+<p>The GameObject moves along the X or Z axis in the Game view, based on the key pressed and the Input Actions asset.</p>
+<p>For more information on how to define Input Actions, see <a class="reference external" href="https://docs.unity3d.com/Packages/com.unity.inputsystem&#64;latest/index.html?subfolder=/manual/ActionAssets.html">Input Action Assets</a> in the Input System package documentation.</p>
+<section id="additional-resources">
+<h2>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="vs-capture-player-input.html"><span class="std std-doc">Capture user input in an application</span></a></p></li>
+<li><p><a class="reference internal" href="vs-capture-player-input-add-component.html"><span class="std std-doc">Add and configure a Player Input component</span></a></p></li>
+<li><p><a class="reference internal" href="vs-nodes-events-input-system-button.html"><span class="std std-doc">On Input System Event Button node</span></a></p></li>
+<li><p><a class="reference internal" href="vs-nodes-events-input-system-float.html"><span class="std std-doc">On Input System Event Float node</span></a></p></li>
+<li><p><a class="reference internal" href="vs-nodes-events-input-system-vector2.html"><span class="std std-doc">On Input System Event Vector 2 node</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Capture input with the Input System package</a><ul>
+<li><a class="reference internal" href="#additional-resources">Additional resources</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-capturing-player-inputs-new.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Capture input with the Input System package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

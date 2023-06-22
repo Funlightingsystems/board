@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Selecting clips &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Selecting clips</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="selecting-clips">
+<h1>Selecting clips<a class="headerlink" href="#selecting-clips" title="Permalink to this heading">¶</a></h1>
+<p>Click to select a single clip. The Clips view displays the selected clip with a white border, including its blends. Selecting a clip deselects all other tracks or clips.</p>
+<p>Selecting a clip also shows its properties in the Inspector window. The clip properties change depending on the type of clip and whether multiple clips are selected. See <a class="reference internal" href="insp_clp.html"><span class="std std-doc">Setting Clip properties</span></a> for details.</p>
+<p>Hold Shift and click to select contiguous clips vertically on different tracks or horizontally on the same track. For example, to select three contiguous clips on the same track, select the first clip, then hold Shift and click the third clip. All three clips are selected.</p>
+<p><img alt="Click to select the first clip" src="../../../../../../_images/timeline_clips_select_first.png" /></p>
+<p><em>Click to select the first clip</em></p>
+<p><img alt="Shift-click the third clip to select contiguous clips on the same track" src="../../../../../../_images/timeline_clips_select_last.png" /></p>
+<p><em>Shift-click the third clip to select contiguous clips on the same track</em></p>
+<p>Hold Command/Control and click to select discontiguous clips. Hold Command/Control and click a selected clip to deselect it.</p>
+<p>Click and drag on an empty area in the Clips view to draw a selection rectangle. This selects all clips inside the rectangle, including the clips that intersect the rectangle. Hold down Shift and draw a selection rectangle to add clips to the current selection.</p>
+<p>You can also press the Tab key to select clips. The behaviour of the Tab key changes depending on the current selection:</p>
+<ul class="simple">
+<li><p>If a track is selected, press Tab to select the first clip on the selected track.</p></li>
+<li><p>If many tracks are selected, press Tab to select the first clip on the first selected track.</p></li>
+<li><p>If a clip is selected, press Tab to <a class="reference internal" href="trk_select.html"><span class="std std-doc">select its track</span></a>.</p></li>
+<li><p>If there are no clips or tracks selected, press Tab to select the first clip on the first track.</p></li>
+</ul>
+<p>Use the arrow keys to change the selected clips. The behaviour and results depend on the current selection and which modifier keys you press:</p>
+<ul class="simple">
+<li><p>If nothing is selected in the Timeline window, press the Tab, Up arrow, or Down arrow key to select the first clip on the first track.</p></li>
+<li><p>If a clip is selected, press the Left arrow key to select the previous clip. If the selected clip is the first clip on a track, the Left arrow key selects the track.</p></li>
+<li><p>If a clip is selected, press the Right arrow key to select the next clip. Press the Up arrow key to select the closest clip on a previous track. Press the Down arrow key to select the closest clip on a next track.</p></li>
+<li><p>Hold Shift and press either the Left arrow key or Right arrow key to add or remove clips from the selection of clips. Whether a clip is added to or removed from the selection of clips is relative to the first selected clip.</p></li>
+</ul>
+<p>If you zoom into the Clips view, it pans to show either the start or end of the most recently selected clip. For example, if a selected clip is framed in the Clips view and you press the Right arrow key to select the next clip which is outside the Clips view, the Clips view pans to show the start of the selected clip.</p>
+<p>You can also select clips with the Timeline Playhead. Right-click the Timeline Playhead and choose a selection option. This selects clips that either start after, start before, end after, end before, or intersect the Timeline Playhead. Clips are selected on all tracks.</p>
+<p><img alt="Right-click the Timeline Playhead and choose Select for more clip selection options" src="../../../../../../_images/timeline_playhead_select_menu.png" /></p>
+<p><em>Right-click the Timeline Playhead and choose <strong>Select</strong> for more clip selection options</em></p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.timeline@1.6.4/Documentation~/clp_select.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Selecting clips</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

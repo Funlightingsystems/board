@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../../../../" id="documentation_options" src="../../../../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>== PlasticWkExplFullEmpty ==
+[title]ワークスペースが空で、リポジトリも空です[/title]</p>
+<p>[bold]既存のプロジェクトを追加しますか?[/bold]
+1.上のリストで、ワークスペースパスを右クリックします。
+2.「開く」を選択します。(コンテキストメニューを使用するということを覚えておいてください。後で役に立ちます。)
+3.[windows]Windows エクスプローラー[/windows][macos]Finder[/macos][linux]File Explorer[/linux] が開きます。
+4.ワークスペースにプロジェクトをコピーまたは移動します。
+5.完了したら、”{viewname}” に移動してリポジトリに初期コードをチェックインします。</p>
+<p>[bold]アドバイス[/bold]:大規模なプロジェクトを追加する必要がありますか?(ファイル数 30 万以上や数ギガバイト)
+その場合は、コマンドラインを使用するとインポート速度が上がります。
+1.ワークスペースにプロジェクトをコピーまたは移動します。
+2.コマンドプロンプトを開き、ワークスペースに移動します。
+3.次のコマンドを使用して、1 ステップですべてをチェックインします (コメントを変更):</p>
+<p>[bold]cm ci –all -c “This is the initial import”[/bold]</p>
+<p>[bold]代わりに、既存のプロジェクトに参加しますか?[/bold]
+1.「リポジトリ」ビューに移動します。
+2.作業を行うリポジトリを見つけます。
+3.右クリックして、そのリポジトリ用のワークスペースを作成します。
+(他にも方法はありますが、これが一番簡単です。)</p>
+<p>[bold]リモートリポジトリをクローン/プルしますか?[/bold]
+1.ブランチエクスプローラーに移動します。
+2.メインブランチを右クリックします。
+3.「レプリケーション/このブランチをプル」を選択します。
+または、複数のブランチをプルする場合は同期ビューを作成します。</p>
+<p>== PlasticWkExplGeneralHelp ==
+[title]エクスプローラーの概要[/title]</p>
+<p>このビューは、バージョン管理情報を付加した [windows]Windows エクスプローラー[/windows][macos]Finder[/macos][linux]File Explorer[/linux] のようなものです。</p>
+<p>[help:PlasticWkExplExplainSearch]ファイルの検索[/help]に非常に役立ちます。</p>
+<p>他にも、ファイルの削除、名前変更、チェックアウト、移動、履歴の表示など、さまざまなアクションを実行できます。</p>
+<p>[bold]ヒント[/bold]:ファイルのコンテキストメニューを見てみましょう。</p>
+<p>== PlasticWkExplRunUpdate ==
+[title]リポジトリにダウンロードが必要なコンテンツがあります[/title]</p>
+<p>「[action:UpdateWorkspace]ワークスペースを更新[/action]」をクリックして、最新の変更を取得してください。</p>
+<p>[bold]Git ユーザーですか?[/bold]Git で[italic]チェックアウト[/italic]と呼ばれる操作を、ここでは[italic]更新[/italic]と呼びます。</p>
+<p>== PlasticWkExplExplainSearch ==
+[title]組み込みの検索を使用すると、瞬時にファイルが検索できます[/title]</p>
+<p>[windows]CTRL-F[/windows][macos]Command-F[/macos][linux]CTRL-F[/linux] を押して「検索」フィールドにフォーカスを設定し、使用を開始します。</p>
+<p>== PlasticWkExplWorkingOnChangeset ==
+[title]「ワークスペースを更新」で最新の変更が取得されない場合[/title]</p>
+<p>ワークスペースの更新を試みましたが、変更セットで作業中であることが検出されました。</p>
+<p>変更セットに切り替えると、ワークスペースを更新してもブランチ上の最新の変更がダウンロードされません。新しい変更をダウンロードするには、ブランチに切り替える必要があります。</p>
+<p>単一ブランチのワークフローの詳細については、[link:https://plasticscm.com/book/#_conflicts_during_checkin_working_on_a_single_branch]こちら[/link]をご覧ください。</p>
+<p>== PlasticPendingChangesEmptyState ==
+[title]ワークスペースで変更が検出されませんでした[/title]</p>
+<p>変更の検索に {totaltime} かかりました。{description}</p>
+<p>== PlasticPendingChangesOnboarding ==
+[title]これは “{viewname}” ビューです[/title]</p>
+<p>{viewname} は、変更のチェックイン、新規ファイルの追加、移動/名前変更/削除のチェックインに使用するビューです。</p>
+<p>これはおそらく、最も頻繁に使用することになる機能の 1 つです。</p>
+<p>移動されたファイルを正確に検索するなど、優れた機能を備えています。</p>
+<p>[link:https://www.plasticscm.com/download/help/pendingchangesview]{viewname} の詳細については、こちらをご覧ください[/link]。</p>
+<p>== PlasticPendingChangesOptionWarningCheckouts ==
+[title]保留中の変更はありませんが…[/title]</p>
+<p>ディスク上の変更を検索するのではなく、チェックアウトのみを表示しています。</p>
+<p>これが予期した動作ではない場合は、「[action:PendingChangesOpenOptions]オプション[/action]」ボタンをクリックし、設定を変更してください。</p>
+<p>== PlasticPendingChangesFrustrationFilter ==
+[title]保留中の変更がありますが、フィルターが有効になっています…[/title]</p>
+<p>これが予期した結果ではない場合は、[action:PendingChangesRemoveFilter]フィルターを解除[/action]するか変更してください。</p>
+<p>== PlasticPendingChangesFrustrationRefreshNoFilter ==
+[title]変更が見つかりませんか?[/title]</p>
+<p>念のため、「[action:PendingChangesOpenOptions]オプション[/action]」を確認してください。</p>
+<p>== PlasticPendingChangesWithAdded ==
+[title]バージョン管理に追加する準備ができたファイルがあります[/title]</p>
+<p>まだバージョン管理に追加されていないファイルは、「ステータス」列で「非公開」とマークされています。</p>
+<p>非公開ファイルの中には、何度も {viewname} に表示されないように無視した方がよいものもあります。</p>
+<p>ファイルを無視するには、右クリックして「無視リストに追加」を選択します。</p>
+<p>無視したファイル、非表示の変更、その他の設定オプションの詳細については、[link:https://plasticscm.com/download/help/ignored-hidden-etc]こちら[/link]をご覧ください。</p>
+<p>== PlasticPendingChangesDotPrivate ==
+[title]一部のファイルを .private に名前変更する必要がありました[/title]
+あわてる必要はありません。これは、Plastic が更新時に上書きできないファイルを保持するために作成するコピーです。</p>
+<p>たとえば、非公開ファイル “src/foo.c” をお持ちで、ワークスペースを、誰かが “src/foo.c” を追加したブランチに切り替えるとします。新しいファイルはソース管理下にあり、あなたのファイルはソース管理下にないため、Plastic は新しいファイルをダウンロードします。しかしあなたのファイルを削除することはできないので、.private.0 に名前変更します。</p>
+<p>以上が行われるプロセスです。</p>
+<p>== PlasticPendingChangesMovedOnlyFiles ==
+[title]ローカルでファイルを移動したことが検出されました[/title]</p>
+<p>ワークスペースでファイルを移動/名前変更すると、Plastic はそれを古いファイルと照合して、同じファイルかどうかを判断します。それが類似度の列に反映されます。</p>
+<p>一致に必要なパーセンテージは「[action:PendingChangesOpenOptions]オプション[/action]」で調整できます。</p>
+<p>新しいファイルとの違いが大きすぎる場合、Plastic は、単に古いファイルを削除して新しいファイルを追加したと見なします。</p>
+<p>[bold]ヒント[/bold]:ファイルの移動と推測させるのではなく、プロジェクト構造を再編成し、それを Plastic に認識させる必要がある場合は、ワークスペースエクスプローラーで切り取り/貼り付けを行うことで移動を実行できます。</p>
+<p>移動と名前変更の詳細については、[link:https://plasticscm.com/download/help/moveandrenames]こちらをご覧ください[/link]。</p>
+<p>== PlasticPendingChangesMovedOnlyDirectories ==
+[title]移動されたディレクトリが検出されました[/title]</p>
+<p>Plastic はディレクトリのコンテンツの類似度を比較するので、移動されたディレクトリを追跡できます。</p>
+<p>そのため、ワークスペースで (Plastic を使用せずに、[windows]Windows エクスプローラー[/windows][macos]Finder[/macos][linux]File Explorer[/linux] またはコマンドラインを使用して) ディレクトリの名前を変更した場合、Plastic はそのディレクトリのコンテンツが古いコンテンツと一致するかどうかを調べます。一致する場合は移動と見なします。</p>
+<p>コンテンツが変更されていても、指定された類似度のしきい値の範囲内であれば、Plastic は移動を検出できます。このしきい値は「[action:PendingChangesOpenOptions]オプション[/action]」で調整できます。</p>
+<p>移動と名前変更の詳細については、[link:https://plasticscm.com/download/help/moveandrenames]こちらをご覧ください[/link]。</p>
+<p>== PlasticPendingChangesMovedFilesAndDirectories ==
+[title]ファイルとディレクトリを移動しようとしています[/title]</p>
+<p>Plastic は、移動の検出と追跡の機能に非常に優れています。</p>
+<ul class="simple">
+<li><p>[help:PlasticPendingChangesMovedOnlyFiles]ファイル移動[/help]の検出についての詳細をご覧ください。</p></li>
+<li><p>[help:PlasticPendingChangesMovedOnlyDirectories]ディレクトリ移動[/help]の検出についての詳細をご覧ください。ディレクトリ移動とファイル移動とで検出の方法が異なります。</p></li>
+</ul>
+<p>[bold]ヒント[/bold]:ファイルの移動と推測させるのではなく、プロジェクト構造を再編成し、それを Plastic に認識させる必要がある場合は、ワークスペースエクスプローラーで切り取り/貼り付けを行うことで移動を実行できます。</p>
+<p>移動と名前変更の詳細については、[link:https://plasticscm.com/download/help/moveandrenames]こちらをご覧ください[/link]。</p>
+<p>== PlasticPendingChangesAddedDeleted ==
+[title]移動が見つかりませんか?[/title]</p>
+<p>ファイル/ディレクトリを追加して削除したことが検出されました。</p>
+<p>おそらく、そのとおりの操作を実行されたのでしょう。その場合は、ご面倒をおかけして申し訳ありません。</p>
+<p>しかし、追加/削除されたペアが、検出されていない移動を意味することもあります。</p>
+<p>追加/削除されたものを照合し、移動としてマークする必要がある場合は、追加されたファイルを右クリックして「一致を検索」を選択します。</p>
+<p>「[action:PendingChangesOpenOptions]オプション[/action]」で、移動の検出の類似度の設定を調整することもできます。</p>
+<p>移動と名前変更の詳細については、[link:https://plasticscm.com/download/help/moveandrenames]こちらをご覧ください[/link]。</p>
+<p>== PlasticPendingChangesSlowTooManyPrivates ==
+[title]非公開ファイルの数が少ないほど、{viewname} ビューが高速になります[/title]</p>
+<p>変更の検索に {totaltime} かかりました。時間がかかりすぎています。</p>
+<p>ワークスペース内の非公開ファイルの数が多すぎます。これらは、バージョン管理下にないファイル、設定ファイル、中間ビルドファイルなどのファイルです。</p>
+<p>計算を高速化するには:</p>
+<ul class="simple">
+<li><p>これらのファイルを ignore.conf に追加できます。</p></li>
+</ul>
+<p>1.ファイルを右クリックします。
+2.「無視リストに追加」を選択します。</p>
+<ul class="simple">
+<li><p>または、これらのファイルを {viewname} ビューで非表示にできます。</p></li>
+</ul>
+<p>1.「[action:PendingChangesOpenOptions]オプション[/action]」を開きます。
+2.「非公開ファイルを表示」の選択を解除します。</p>
+<blockquote>
+<div><p>この方法の欠点は、バージョン管理に追加する必要がある新しいファイルが表示されなくなることです。</p>
+</div></blockquote>
+<p>[link:https://www.plasticscm.com/download/help/statusperfhintsignoreprivates]変更の検出を高速化するための非公開ファイルの処理方法の詳細をご覧ください[/link]。</p>
+<p>== PlasticPendingChangesSlowMoveCalculation ==
+[title]移動の計算にかかった時間が長すぎます[/title]</p>
+<p>変更の検索に {totaltime} もかかりました。</p>
+<p>移動の計算は {movestime} でした。</p>
+<p>非公開ファイルとローカルで削除されたファイルの数が多すぎるため、Plastic がそれらを照合して移動を検索するのに時間がかかりすぎています。</p>
+<p>[link:https://www.plasticscm.com/download/help/statusperfhintsmoved]それらのファイルを ignore.conf に追加するか、移動の計算を無効にすることで高速化してください[/link]。</p>
+<p>== PlasticPendingChangesSlowFindChanges ==
+[title]変更の検索にかかった時間が長すぎます[/title]</p>
+<p>変更の検索に {totaltime} もかかりました。</p>
+<p>この操作は本来非常に高速で、そうでない場合は問題があります。</p>
+<p>これにはいくつかの理由が考えられます。</p>
+<ul class="simple">
+<li><p>ハードドライブが十分に高速ではありません。機械的ハードドライブを使用していますか?ディスク使用率を高くしている他のプロセスはありませんか?</p></li>
+<li><p>おそらくウイルス対策ソフトではないでしょうか?開発者のマシンで実行されているウイルス対策ソフトが原因で、すべてのバージョン管理操作の速度が低下することはよくあります。変更の検索時にウイルス対策ソフトが CPU やディスク IO を使いすぎていないかどうか、念のため確認してください。</p></li>
+<li><p>Windows で作業している場合は、Windows スーパーフェッチサービスを確認してください。スーパーフェッチサービスは、ディスクのパフォーマンスの問題の原因となる可能性があることが判明しています。[link:http://windowsreport.com/service-host-local-service-network-restricted-causing-high-cpu-usage/]このサービスを停止するとコンピューターのパフォーマンスが改善される可能性があります[/link]。</p></li>
+</ul>
+<p>== PlasticPendingChangesMergeInProgress ==
+[title]進行中のマージが検出されました[/title]</p>
+<p>これは、マージ ({inprogressmergefrom}) を開始し、処理が必要なファイルがまだ残っていることを意味します。</p>
+<p>その処理を完了しないと、変更をチェックインできません。</p>
+<p>クリックして、進行中の[action:PendingChangesLaunchInProgressMerge]マージを続行[/action]してください。または、すべての保留中の変更を[action:PendingChangesUndoChanges]取り消し[/action]て、進行中のマージをキャンセルすることもできます。</p>
+<p>== BrExNoDataFound ==
+[title]{fromtimestamp} 以降の変更セットがありません[/title]</p>
+<p>結果が予想と異なる場合は、日付範囲を変更するか、フィルタリングオプションを確認してください。</p>
+<p>== BrExEmptyRepo ==
+[title]ブランチエクスプローラーは今のところ空です…[/title]
+… しかし、すぐに[link:https://plasticscm.com/download/help/branchexplorer]こちらの図[/link]のようになるでしょう。</p>
+<p>[bold]代わりに、リモートリポジトリからプルしますか?[/bold]
+1.ブランチを右クリックします。
+2.「レプリケーション/このブランチをプル」を選択します。</p>
+<p>[bold]ブランチを効率的に使用する方法については、以下をご覧ください[/bold]:
+[link:https://plasticscm.com/download/help/taskbranches]タスクブランチのチュートリアル[/link]</p>
+<p>== BrExSlowRangeTooBig ==
+[title]ブランチエクスプローラーを高速化できます[/title]</p>
+<p>日付フィルターをもっと狭い範囲に設定しましょう。</p>
+<p>これにより、ブランチエクスプローラーのデータのロードとレンダリングが大幅に高速化されます。</p>
+<p>== BrExTipUseContextMenu ==
+[title]コンテキストメニューを利用しましょう[/title]</p>
+<p>ブランチ、変更セット、そしてマージリンクにも、右クリックで利用できるコンテキストメニューがあります。</p>
+<p>コンテキストメニューでは、ブランチやマージ、差分表示、プッシュ/プルブランチ、Git へのプッシュ/プルなどのさまざまなアクションを実行できます。</p>
+<p>== BrExTipOnlyRelevant ==
+[title]注目!関連のない変更セットを非表示にできることをご存知ですか?[/title]</p>
+<p>詳細ではなく概要のみが必要で、重要なものだけに焦点を絞りたいことがあります。</p>
+<p>ツールバーの「[action:BrExOnlyRelevant]関連のみ[/action]」をクリックすると、(トポロジーの観点から)「関連のない」変更セットの表示/非表示を切り替えることができます。</p>
+<p>== BrExTipFilterBranches ==
+[title]重要なブランチに焦点を絞りましょう[/title]</p>
+<p>1.ブランチを右クリックします。
+2.ブランチエクスプローラーのメニューに移動します。
+3.フィルタリングオプションを選択します。</p>
+<p>選択したブランチをフィルタリングすることもできます。</p>
+<p>これは、本当に重要なものに焦点を絞って、ダイアグラムを大幅に縮小するのに非常に役立ちます。</p>
+<p>== BrExTipCustomColors ==
+[title]色を付けましょう![/title]</p>
+<p>ダイアグラムに色を付けるためのオプションがいくつか用意されています。</p>
+<p>変更セットにユーザーごとに色を付けたり、変更セットが作成されたサーバーに応じて色を付けたりできます (レプリカを使用する場合)。</p>
+<p>ブランチに色を付けるための条件付きルールを追加することもできます。</p>
+<p>開始するには、「[action:BrExShowOptions]オプション[/action]」に移動します。</p>
+<p>== BrExTipUseTheSearch ==
+[title]検索を活用しましょう[/title]</p>
+<p>検索ボックスを使用して、番号または GUID で変更セットを検索できます。</p>
+<p>検索ボックスはブランチとラベルの検索にも役立ちます。</p>
+<p>部分検索も便利です。複数の一致の間を移動することもできます。</p>
+<p>== BrExGeneralIntro ==
+[title]このダイアグラムは一体何でしょうか?[/title]</p>
+<p>ブランチエクスプローラーは、リポジトリの履歴をできるだけわかりやすく視覚的に説明しようとしたものです。</p>
+<p>それぞれの円は変更セットを示し、すべての変更セットはブランチ内にあります。</p>
+<p>[link:https://plasticscm.com/download/help/branchexplorer]ブランチエクスプローラーの詳細については、こちらをご覧ください[/link]。</p>
+<p>== PlasticLabelsEmptyState ==
+[title]ラベルは、重要な変更セット (多くの場合、新しいリリース) をマークするために使用します[/title]
+ここからラベルを作成できますが、ブランチエクスプローラーから作成する方がより快適です。
+1.マークする変更セットを右クリックします。
+2.「この変更セットにラベルを付ける」を選択します。</p>
+<p>[bold]アドバイス[/bold]:リリースにラベルを付けるための適切な命名規則を使用し、それを守りましょう。</p>
+<p>[bold]Git ユーザー向けのヒント[/bold]:ラベルはタグに相当するものです。</p>
+<p>== PlasticBranchesEmptyState ==
+[title]Plastic では、ブランチと…マージがすべてです![/title]
+「ブランチリスト」よりもブランチエクスプローラーを使用することをお勧めしますが、ブランチをすばやく検索するのにブランチリストが役立つこともあります。</p>
+<p>「main」は、Plastic に作成されるデフォルトのブランチです。Git の「master」、Subversion の「trunk」に相当します。</p>
+<p>ブランチを右クリックすると、コンテキストメニューが表示されます。</p>
+<p>[bold]ブランチを効率的に使用する方法については、以下をご覧ください[/bold]:
+[link:https://plasticscm.com/download/help/taskbranches]タスクブランチのチュートリアル[/link]</p>
+<p>== PlasticChangesetsEmptyState ==
+[title]チェックインするたびに新しい変更セットが作成されます[/title]</p>
+<p>変更セットには 2 つの機能があります。
+1.何をチェックインしたかを記録します。
+2.リポジトリ全体のスナップショットとしても機能します。</p>
+<p>いくつかのヒント:
+* 変更セットは、リポジトリ内で一意の「整数」によって識別されます。しかし、レプリケーションを使用する場合は、代わりに GUID を使用します。
+* すべての新しいリポジトリセットに「変更セット 0」があります。
+* 変更セットはよく「cset」と呼ばれます。
+* 変更セットを右クリックすると、実行できるすべてのアクションが表示されます。
+* 変更セットの検索にはブランチエクスプローラーを使用することをお勧めしますが、すばやく検索するのにこのリストが役立つこともあります。
+* Git ユーザー向け:「cset」は「コミット」に相当するものです。</p>
+<p>== PlasticAttributesEmptyState ==
+[title]属性とは何でしょうか?[/title]</p>
+<p>属性とは、Plastic SCM 内のオブジェクト (多くの場合、ブランチと変更セット) に割り当てることができるキー/値のペアです。</p>
+<p>ここで新しい属性を作成すると新しい「キー」が作成され、後でそれを使用して、特定のオブジェクトに関連付けられた値を割り当てることができます。</p>
+<p>簡単な例:ブランチを「ステータス」属性でマークして、「開く」、「解決済み」、「テスト済み」、「失敗」、「マージ済み」などに設定できます。</p>
+<p>== PlasticShelvesEmptyState ==
+[title]シェルブは、進行中の作業を含んでいる一時的な変更セットです[/title]</p>
+<p>シェルブは、実際にチェックインを行わずに変更を安全に保存する方法の 1 つです。</p>
+<p>一時ストレージのようなものです。</p>
+<p>変更をシェルブして、ワークスペースをクリーンアップしたり、それらの変更を後で別のブランチに適用したりできます。</p>
+<p>作成方法:
+1.「保留中の変更」に移動します。
+2.「チェックイン」ボタンのドロップダウンを表示します。
+3.「保留中の変更をシェルブ」アクションを選択します。</p>
+<p>[link:https://plasticscm.com/download/help/shelves]いつ、どのようにシェルブを使用できるかについての詳細をご覧ください[/link]。</p>
+<p>== PlasticReposExplained ==
+[title]リポジトリには、すべてのファイルデータとメタデータが格納されます[/title]</p>
+<p>リポジトリには、行ったすべてのファイルとディレクトリの変更に加えて、そのメタデータ (作成者、ブランチ、マージ情報など) も含まれます。</p>
+<p>すべての Plastic SCM サーバーは、多数のリポジトリをホストできます。</p>
+<p>リポジトリにはローカルとリモートがあります。</p>
+<p>作業は[link:https://plasticscm.com/download/help/distributedvscentralized]集中型または分散型[/link]で行うことができます。</p>
+<p>ここからリポジトリの作成、他のサーバーからのリポジトリの一覧表示 (その権限がある場合)、リポジトリの削除と名前変更を行うことができます。</p>
+<p>[windows]リポジトリを右クリックすると、権限の設定、ブランチエクスプローラーの起動、ブランチの一覧表示、その他のさまざまな操作を実行できます。[/windows]</p>
+<p>「サブモジュール」(他のリポジトリ内にあるリポジトリ。たとえば「default/subrepo00」) を作成することもできます。</p>
+<p>[link:https://plasticscm.com/download/help/repos]リポジトリの使用方法の詳細については、こちらをご覧ください[/link]。</p>
+<p>== PlasticWorkspacesExplained ==
+[title]ワークスペースは、ローカルの作業コピーです[/title]</p>
+<p>ワークスペースは、ディスク上のファイルが存在する場所であり、IDE、エディター、設計プログラムなどを使用して新しいコンテンツを作成する場所です。</p>
+<p>ワークスペースには、リポジトリから取得された作業コピーが 1 つ含まれます。リポジトリは、すべての履歴が格納されているデータベースです。</p>
+<p>[bold]Git ユーザー向けのヒント[/bold]:Git では、リポジトリと作業コピーが同じディレクトリの下に一緒に配置されます。一方、Plastic では別々に配置されます。実際には、同じリポジトリに接続された多数の作業コピーを持つことができます。</p>
+<p>[link:https://plasticscm.com/download/help/workspaces]ワークスペースの使用方法の詳細については、こちらをご覧ください[/link]。</p>
+<p>== PlasticCloudEditionGeneralHelp ==
+[title]Cloud Edition リポジトリのリスト[/title]</p>
+<p>ここには、Cloud Edition 組織内のリポジトリのリストが表示されます。</p>
+<p>このビューを使用して、必要に応じて追加のリポジトリの作成、名前変更、削除を行うことができます。</p>
+<p>[windows]ここから権限も設定できます。リポジトリのコンテキストメニューを使用してください。[/windows]</p>
+<p>== PlasticCloudExplained ==
+[title]Plastic Cloud をご存知でしたか?[/title]</p>
+<p>私たちは Cloud ホスティングサービスを提供しています。</p>
+<p>Cloud でホストされたリポジトリを、直接チェックイン/更新 (集中型の場合) またはプッシュ/プル (分散型の場合) することができます。</p>
+<p>すでに Cloud 組織に所属していることが確実な場合:
+1.「サーバー」領域にその組織を入力します。組織の名前が robotmaker である場合は、<a class="reference external" href="mailto:robotmaker&#37;&#52;&#48;cloud">robotmaker<span>&#64;</span>cloud</a> のようになります。
+2.「最新情報に更新」をクリックして、リポジトリを再ロードします。必要に応じて資格情報を入力するように求められます。</p>
+<p>[link:https://plasticscm.com/download/help/cloudextension]Plastic Cloud extension の詳細については、こちらをご覧ください[/link]。</p>
+<p>== PlasticCloudEmptyOrganization ==
+[title]組織名が空です[/title]
+まだ [bold]Plastic Cloud 組織[/bold]がないようです。組織があることが確実な場合は、現在のユーザーがまだその組織に所属していない可能性があります。[bold]その組織名を右上の「サーバー」横に入力してください[/bold]。組織の名前が [italic]robotmaker[/italic] である場合は、[italic]robotmaker&#64;cloud[/italic] のように入力します。</p>
+<p>== PlasticSyncDistributedCloudProject ==
+[title]変更を同期する方法は?[/title]
+1.Cloud リポジトリから必要なブランチをプルします。(通常は、完全クローンは必要ありません。)
+2.完了したら、ブランチに切り替えて作業を開始します。</p>
+<p>== PlasticMergeNoConflicts ==
+[title]これは簡単なマージです[/title]</p>
+<p>競合は発生していないので、あとは「[action:MergeProcessAllMerges]変更を適用[/action]」をクリックしてブランチをマージするだけです。</p>
+<p>マージのしくみと共同作成者についてより深く理解するには、「[action:MergeExplainMerge]マージの説明[/action]」をクリックします。</p>
+<p>ファイルのコンテキストメニューを使用して、使用可能なオプションを確認してください。</p>
+<p>[link:https://plasticscm.com/download/help/merges]マージの詳細については、こちらをご覧ください[/link]。</p>
+<p>== PlasticMergeIncomingFromCheckin ==
+[title]チェックインできないのはなぜですか?[/title]</p>
+<p>作業中のブランチに[bold]新しい変更[/bold]があるからです。</p>
+<p>チェックインを実行する前に、最新の状態に更新 (さらに、競合があればそれを解決) する必要があります。</p>
+<p>更新と競合解決が完了したら、保留中の変更ビューに移動してチェックインします。</p>
+<p>== PlasticMergeIncomingFromUpdate ==
+[title]更新できないのはなぜですか?[/title]</p>
+<p>作業中のブランチに[bold]新しい変更[/bold]があり、ワークスペースでファイルを変更したからです。</p>
+<p>保留中の変更をブランチ内の最新の変更で更新 (さらに、競合があればそれを解決) する必要があります</p>
+<p>完了したら、ワークスペースが作業中のブランチ上の最新バージョンに更新されます。</p>
+<p>== PlasticMergeWithConflicts ==
+[title]解決する必要がある競合が発生しました![/title]</p>
+<p>[bold]アドバイス[/bold]:「[action:MergeProcessAllMerges]競合を解決[/action]」をクリックすると、考えられるすべてのマージ競合の解決を開始できます。
+(各ファイルを右クリックして、ファイルごとにマージを起動する必要はありません。)</p>
+<p>詳細オプションについては、競合が発生している各ファイルのコンテキストメニューを確認してください。</p>
+<p>マージのしくみと共同作成者についてより深く理解するには、「[action:MergeExplainMerge]マージの説明[/action]」をクリックします。</p>
+<p>[link:https://plasticscm.com/download/help/merges]マージの詳細については、こちらをご覧ください[/link]。</p>
+<p>== PlasticMergeWithDirectoryConflicts ==
+[title]ディレクトリ競合が発生しました![/title]</p>
+<p>あわてる必要はありません。Plastic はこの問題にうまく対処できます。</p>
+<p>これは、ディレクトリ構造をマージする必要がある場合に発生します。</p>
+<p>たとえば、同じファイルを 2 つのブランチ内で異なる名前に変更した場合などです。</p>
+<p>適切な「解決方法」を選択してください。</p>
+<p>初めてこの問題に遭遇した場合は、先に進む前に少し時間をとって、[link:https://www.plasticscm.com/download/help/directorymerges]考えられるディレクトリマージ競合についての詳細をご覧ください[/link]。</p>
+<p>== PlasticMergeRecursiveMergeDetected ==
+[title]大当たりです[/title]
+再帰的マージ競合が発生しました。</p>
+<p>心配は無用ですが、3 方向マージツールが複数回表示される可能性があるため、これは難しい競合です。</p>
+<p>必要なのは、いつものように「競合を解決」をクリックすることだけです。</p>
+<p>しかし、初めて再帰的マージに遭遇した場合は、最初に[link:https://plasticscm.com/download/help/recursivemerge]再帰的マージの詳細を学習しておく[/link]ことをお勧めします。</p>
+<p>それが終われば、マージの勉強は完了です。</p>
+<p>== PlasticMergeServerSideMergeFinished ==
+[title]マージが終了しました[/title]</p>
+<p>「[action:MergeProcessAllMerges]マージをチェックイン[/action]」をクリックして、リポジトリに[bold]マージを送信[/bold]してください。</p>
+<p>キャンセルするには、「[action:MergeCloseView]閉じる[/action]」を選択します。</p>
+<p>== PlasticMergeGeneralHelp ==
+[title]マージのプレビュー[/title]</p>
+<p>これがマージのプレビューです。</p>
+<p>マージされる対象を把握し、考えられる競合を解決するのにも役立ちます。</p>
+<p>すべての要素のコンテキストメニューを調べて、オプションをよく理解してください。</p>
+<p>[bold]アドバイス[/bold]:ファイルを 1 つずつマージする代わりに「競合を解決」を使用しましょう。</p>
+<p>== PlasticWkExplPendingChangesUnityFirstTime ==
+[title]Unity で作業するための便利なヒント[/title]</p>
+<ul class="simple">
+<li><p>ロックを設定しましょう。おそらく、.prefab を排他的にロックしたいとお考えのことでしょう。[action:WebAdminOpenInLocks]WebAdmin に移動して、ロックを設定しましょう[/action]。</p></li>
+<li><p>チェックアウトを使用しましょう。ロックするためには、ファイルを編集前にチェックアウト (ロック) する必要があります。チェックアウトは、「ファイルを変更しようとしている」ことを Plastic に知らせるためのアクションです。これは各ファイルの右クリックメニューから実行できます。</p></li>
+<li><p>無視するファイルを設定しましょう。バージョン管理に追加したくないファイルがある場合、[action:IgnoreConfCreateUnity]こちらをクリック[/action]して、Unity 用の ignore.conf を作成しましょう。[link:https://plasticscm.com/download/help/ignored-hidden-etc]ignore.conf についての詳細はこちらをご覧ください[/link]。</p></li>
+</ul>
+<p>== PlasticWkExplPendingChangesVisualStudioFirstTime ==
+[title]Visual Studio プロジェクトで作業するためのヒント[/title]
+「bin」および「debug」ディレクトリと、「.csproj.user」などの一部のファイルを無視すると役に立ちます。</p>
+<p>[action:IgnoreConfCreateVisualStudio]こちらをクリック[/action]して ignore.conf に適切なルールを追加し、Visual Studio 使用時のエクスペリエンスを向上しましょう。</p>
+<p>== PlasticQueryViewsExplainFilterAndAdvanced ==
+[title]上の「フィルター」に入力して、リストをすばやくフィルタリングしましょう[/title]</p>
+<p>フィルターはクエリ結果に対してローカルで動作します。</p>
+<p>[bold]フィルターに関するヒント[/bold]:特定のフィールドでフィルタリングするには、[italic]フィールド名[/italic]:値を使用します。
+例:</p>
+<blockquote>
+<div><p>“created by:maria”
+“creation date:10/25/2018”
+name:111923</p>
+</div></blockquote>
+<p>「[action:QueryViewClickAdvanced]詳細[/action]」をクリックしてクエリをカスタマイズすることもできます。</p>
+<p>クエリの詳細については、[link:https://plasticscm.com/download/help/cmfind]こちら[/link]をご覧ください。</p>
+<p>リスト内の要素のコンテキストメニューには、他にもさまざまなオプションがあります (右クリックするだけで利用できます)。</p>
+<p>== PlasticQueryViewsFrustrationCustomQuery ==
+[title]カスタムクエリが有効になっています[/title]</p>
+<p>お探しのものが見つからないのは、おそらくそれが理由です。</p>
+<p>「[action:QueryViewClickAdvanced]詳細[/action]」をクリックしてカスタマイズしてください。</p>
+<p>== PlasticFrustrationFilterEnabled ==
+[title]フィルターが有効になっています[/title]</p>
+<p>お探しのものが見つからないのは、おそらくそれが理由です。</p>
+<p>== PlasticNewVersionAvailableWithDownloadAction ==
+[title]新しいバージョンが使用可能になっています[/title]</p>
+<p>[bold]新しい {version} - {releaseDate}[/bold] ({versionsBehind})</p>
+<p>[action:DownloadNewVersion]ダウンロード[/action] - [link:{releaseNotesLink}]リリースノートを見る[/link]</p>
+<p>{releaseNotes}</p>
+<p>== PlasticNewVersionAvailable ==
+[title]新しいバージョンが使用可能になっています[/title]</p>
+<p>[bold]新しい {version} - {releaseDate}[/bold] ({versionsBehind})</p>
+<p>[link:{downloadLink}]ダウンロード[/link] - [link:{releaseNotesLink}]リリースノートを見る[/link]</p>
+<p>{releaseNotes}</p>
+<p>== PlasticPendingChangesMerge ==
+[title]チェックインの準備ができたマージがあります[/title]</p>
+<p>マージ中のステータス列の意味をご存知ですか?</p>
+<p>マージされたファイルが、他のローカルの変更と区別するために「ステータス / cset 番号からマージ」とマークされていることがわかります。</p>
+<ul class="simple">
+<li><p>[bold]チェックアウト済み[/bold]:ファイルは同時に変更されたため、マージされました。マージは自動で行われた可能性もありますが、いずれにしてもマージが発生しました。</p></li>
+<li><p>[bold]置換済み[/bold]:ファイルはブランチにすでに存在しましたが、新しいバージョンで置き換えられました。競合は発生しませんでした。</p></li>
+<li><p>[bold]コピー (新規)[/bold]:ファイルはブランチに存在しなかったため、マージ中に作成されました (マージ元から取り込まれました)。</p></li>
+<li><p>[bold]削除済み[/bold]:ファイルはマージ中に削除されました。</p></li>
+</ul>
+<p>チェックイン時に作成されるマージリンクに関する情報も表示されます。マージリンクにより、実際に行われたマージ操作が追跡されます。</p>
+<p>== PlasticPendingChangesMergeEmpty ==
+[title]このマージに変更はありませんが…[/title]</p>
+<p>特殊なシナリオに遭遇しました。</p>
+<p>マージしようとしていましたが、すでに持っているファイルがマージしようとしていたファイルと一致しました。</p>
+<p>そのため、マージリンク以外にチェックインするものがありません。</p>
+<p>この場合、実際のファイルに変更がなくてもこのマージを完了としてマークするため、マージリンクは非常に重要です。マージリンクはマージの追跡に必要です。</p>
+<p>== PlasticPendingChangesAllMergeChangesRequired ==
+[title]一緒にマージされたファイルは一緒にチェックインされる必要があります[/title]</p>
+<p>Plastic および最新のすべての分散型バージョン管理システムは、次のように動作します:ブランチをマージするときは、ブランチ全体をマージします。</p>
+<p>これは、Plastic がブランチ全体をマージ済みとしてマークする必要があるからです。いくつかのファイルだけをマージしてから、サイクルを繰り返して残りのファイルをマージすることはできません。</p>
+<p>なぜなら、マージリンクは個別のファイルではなく変更セット間で設定されるからです。
+この設計では、マージのパフォーマンスが大幅に向上しますが、ファイルごとの柔軟性が犠牲になります。</p>
+<p>== PlasticPendingChangesMergeSingleBranch ==
+[title]おっと、これは何ですか?[/title]</p>
+<p>あわてる必要はありません。ブランチでの作業中にマージを実行しただけです。何が起きたかご説明しましょう。</p>
+<p>いくつかのファイルだけをマージしたのに、これらの他のファイルが表示されたのはなぜでしょう?</p>
+<p>理由は非常に単純です。ブランチのヘッドにマージすると、他の人によって行われた変更が取り込まれます。</p>
+<p>マージが必要だったファイルは、「ステータス」列で「[bold]チェックアウト済み[/bold]」とマークされます。</p>
+<p>他のすべてのファイルは、次のようにマークされます:</p>
+<ul class="simple">
+<li><p>[bold]置換済み[/bold]:ファイルはヘッドからワークスペースにコピーされました。</p></li>
+<li><p>[bold]コピー (新規)[/bold]:持っていなかった新しいファイルがワークスペースにコピーされました。</p></li>
+<li><p>[bold]削除済み[/bold]:ファイルはヘッドに存在しなくなったため、ワークスペースからも削除されました。</p></li>
+</ul>
+<p>落ち着きましたか?:-)</p>
+<p>== PlasticSyncViewGeneralHelp ==
+[title]複数のブランチを一度に同期しましょう[/title]</p>
+<p>{viewname} では、多数のブランチを 1 ステップで同期できるのが強みです。</p>
+<p>ブランチごとにプッシュ/プルする代わりに、(必要に応じてさまざまなサーバーから) リポジトリのペアを作成し、1 ステップで同期できます。</p>
+<p>リポジトリ全体を同期する必要はなく、目的のブランチをフィルタリングできます。</p>
+<p>最新情報に更新し、指定したブランチ名でフィルタリングしてから、一致するすべてのブランチをまとめてプッシュ/プルできるため、Xlink に非常に役立ちます。</p>
+<p>[link:https://plasticscm.com/download/help/syncview]同期ビューの詳細については、こちらをご覧ください[/link]。</p>
+<p>== CodeReviewWindowGeneralHelp ==
+[title]プロのようにレビューしましょう![/title]</p>
+<p>私たちは、すべてのタスクを[link:https://www.plasticscm.com/book/#_review_each_task]レビュー[/link]する必要があると考えています。この考えに基づいて、レビューを設計しました。</p>
+<p>[bold]優れたレビューを行う方法[/bold]
+1.レビューモードを選択します。モードは「変更セットごと」または「ブランチ全体」のいずれかです。詳細については以下をご覧ください。
+2.変更のリクエスト、作成者への質問、またはその両方を行うことができます。
+3.最後に、レビューのステータスを設定します。ステータスは「再作業が必要」または「レビュー済み」のいずれかです。</p>
+<p>[bold]「変更セットごと」と「ブランチ全体」のレビュー[/bold]
+- 「ブランチ全体」では、ブランチ全体の差分を表示します。これは、誰もが知っている一般的なレビューです。
+- 「変更セットごと」では、変更ごとに調べることができます。適切な規律の下で使用すれば、これはすばらしい機能です。作成者がそれぞれの変更について説明し、ストーリーを語ることで、その思考の流れを追いやすくなります。200 件もの変更のレビューで気が変になりそうになるよりもずっとよいでしょう。</p>
+<p>レビュー担当者を念頭に置いて変更をチェックインする方法の詳細については、[link:https://www.plasticscm.com/book/#_checkin_often_and_keep_reviewers_in_mind]こちら[/link]をご覧ください。</p>
+<p>[bold]コメント/質問/変更のリクエストを追加する方法[/bold]
+差分パネルの右側に、「+」アイコンの付いたクリック可能な縦棒があります。それをクリックするだけです。</p>
+<p>== CodeReviewWindowNewComment ==
+[title]変更のリクエスト、質問[/title]</p>
+<p>次のことを実行できます:</p>
+<p>1.[bold]変更をリクエスト[/bold]:承認前に作成者に何らかの変更を行ってもらう必要がある場合に使用します。変更が適用されたかどうかが Plastic によって追跡されるため、次のレビューサイクルが簡単になります。</p>
+<p>2.[bold]質問する[/bold]:承認前に回答が必要な場合。質問への回答があったかどうかが Plastic によって追跡されます。</p>
+<p>通常の古き良きコメントも使用できますが、変更と質問では最も重要なこと、つまりレビュープロセスの簡素化に的を絞っているので、回答や変更があったかどうかの把握が簡単になります。</p>
+<p>== CodeReviewWindowWithPendingComments ==
+[title]質問への回答と変更のリクエストの解決[/title]</p>
+<p>1.変更のリクエストと質問のリストを確認します。ダブルクリックすると詳細が表示されます。
+2.変更のリクエストを解決するには:チェックインのコメントで、変更リクエストの GUID を確認します。下の例を参照してください。「保留中の変更」のコンボを利用して情報を入力することもできます。
+3.保留中の質問があれば回答します。
+4.完了したら、コードレビューのステータスを「レビュー済み」に変更します。</p>
+<p>[bold]変更のリクエストを適用/終了する方法[/bold]
+変更の要求を終了するには、チェックインのコメントにあるその変更リクエスト GUID を使用します。
+2 つのモードがあります:
+* 長い:[bold][apply-change:516a2741-9069-4c08-983f-71149f0a93c8][/bold]
+* 短い:[bold][apply-change:516a2741][/bold] (GUID の最初の部分だけを指定します)</p>
+<p>== GluonWkExplFullEmpty ==
+[title]ワークスペースが空で、リポジトリも空です[/title]</p>
+<p>[bold]既存のプロジェクトを追加しますか?[/bold]
+1.ワークスペースのディレクトリ ({workspacepath}) にプロジェクトをコピーまたは移動します。
+2.完了したら、「変更をチェックイン」に移動してリポジトリにすべてをチェックインします。</p>
+<p>[bold]代わりに、既存のプロジェクトに参加しますか?[/bold]
+1.「[action:GluonSwitchWorkspace]ワークスペースを切り替え[/action]」をクリックします。
+2.作業を行うリポジトリ用の新しいワークスペースを作成します。</p>
+<p>== GluonWkExplSuggestConfigure ==
+[title]リポジトリにダウンロードが必要なコンテンツがあります[/title]</p>
+<p>不要なものを省き本当に必要なものだけをリポジトリからダウンロードするには、「[action:GluonConfigure]設定[/action]」をクリックします。</p>
+<p>ワークスペースにダウンロードするファイルを正確に選択できます。</p>
+<p>== GluonConfigureNoPreviousConfig ==
+[title]作業が必要なファイルをロードする[/title]</p>
+<p>リポジトリを参照し、作業が必要なファイルやディレクトリを正確に選択します。</p>
+<p>Gluon では、作業する必要があるものだけをダウンロードできます。</p>
+<p>これは容量とダウンロード時間を大幅に節約できるので、大規模なリポジトリに役立ちます。</p>
+<p>[bold]ヒント[/bold]:ファイルを検索するには、「[action:GluonConfigSearch]検索[/action]」をクリックします。</p>
+<p>== GluonWkExplExplainUpdate ==
+[title]ダウンロード可能な新しいバージョンがあります[/title]</p>
+<p>「[action:GluonUpdateWorkspace]更新[/action]」を使用して、ワークスペース内にあるファイルの新しいバージョンをすべてダウンロードします。</p>
+<p>ファイルに新しいバージョンがある場合は、そのステータス列に「最新でない」と表示されます。「更新」ボタンを使用してワークスペース全体を更新する代わりに、そのファイルだけを個別に更新したい場合は、ファイルを右クリックします。</p>
+<p>[bold]ヒント[/bold]:新しいファイルはいつダウンロードされるのでしょうか?誰かがリポジトリに新しいファイルを追加したとします。そのファイルは「更新」をクリックするとダウンロードされるのでしょうか?ディレクトリが「全体をチェックする」ように設定されている場合はそうなります。しかし、部分的にチェックするように設定されている場合は違います。なぜでしょうか?それは、「部分的にチェックする」が、特定のファイルのみのダウンロードを希望していたことを意味するからです。そのため、すべての新しいファイルが自動的にダウンロードされることはありません。</p>
+<p>== GluonWkExplNewAddedFilesInRepo ==
+[title]リポジトリに新しいファイルが追加されました[/title]</p>
+<p>ワークスペースにない新しいファイルがリポジトリにあります。</p>
+<p>ワークスペースを[action:GluonConfigure]設定[/action]して、それらのファイルをダウンロードするファイルとしてマークできます。</p>
+<p>== GluonConfigureEmpty ==
+[title]リポジトリが空です[/title]</p>
+<p>どうやらリポジトリが空なので、設定するものがありません。</p>
+<p>このリポジトリにプロジェクトを追加する必要があります。</p>
+<p>または、間違ったリポジトリに参加している可能性があります。</p>
+<p>[help:GluonWkExplFullEmpty]Plastic にプロジェクトを追加する方法、または別のリポジトリで作業する方法はこちらから確認できます[/help]。</p>
+<p>== GluonConfigurePreviousConfig ==
+[title]ワークスペースを微調整しましょう[/title]</p>
+<ul class="simple">
+<li><p>緑のチェックマーク:ダウンロードする新しいファイルまたはディレクトリを設定します。</p></li>
+<li><p>赤のチェックマーク:要素の設定を解除します。</p></li>
+<li><p>黒のチェックマーク:すでにダウンロード対象として設定されているものを示します。</p></li>
+<li><p>チェックマークなし:ワークスペースにダウンロードするように設定されていません。</p></li>
+<li><p>ディレクトリ上の部分的なチェックマーク:そのディレクトリのすべてのコンテンツがダウンロードされるわけではないことを意味します。これは、いくつかのファイルのみを選択した場合に発生します。</p></li>
+</ul>
+<p>作業する必要があるものだけをダウンロードすると、容量とダウンロード時間を大幅に節約できるので、大規模なリポジトリに非常に役立ちます。</p>
+<p>[bold]ヒント[/bold]:ファイルを検索するには、「[action:GluonConfigSearch]検索[/action]」をクリックします。</p>
+<p>== GluonWkExplExplainSearch ==
+[title]組み込みの検索を使用すると、瞬時にファイルが検索できます[/title]</p>
+<p>[windows]CTRL-F[/windows][macos]Command-F[/macos][linux]CTRL-F[/linux] を押すと検索ダイアログが表示されます。</p>
+<p>== GluonWkExplTipUseContextMenu ==
+[title]コンテキストを利用しましょう[/title]</p>
+<p>右クリックするだけで利用できるコンテキストメニューがあります。</p>
+<p>ここにはさまざまな役に立つアクションがあります。</p>
+<p>== GluonWkExplTipHowToLockFiles ==
+[title]ファイルをロックする方法はご存知ですか?[/title]</p>
+<p>ロックは[bold]チェックアウト[/bold]時に自動的に行われます。</p>
+<p>1.ファイルを右クリックします。
+2.「チェックアウト」を選択します。</p>
+<p>このファイルタイプに対してロックが設定されている場合は、チェックアウト時にサーバーによってファイルがロックされます。</p>
+<p>[link:https://plasticscm.com/download/help/locking]ロックの詳細については、こちらをご覧ください[/link]。</p>
+<p>== GluonWkExplTipUseHistory ==
+[title]選択されたファイルの履歴をいつでも利用できることをご存知でしたか?[/title]</p>
+<p>それだけではなく、そこからバージョンの差分も簡単に表示できます。</p>
+<p>== GluonChangesetsEmptyState ==
+[title]チェックインするたびに新しい変更セットが作成されます[/title]</p>
+<p>変更セットには 2 つの機能があります。
+1.何をチェックインしたかを記録します。
+2.リポジトリ全体のスナップショットとしても機能します。</p>
+<p>いくつかのヒント:
+* 変更セットは、リポジトリ内で一意の「整数」によって識別されます。しかし、レプリケーションを使用する場合は、代わりに GUID を使用します。
+* すべての新しいリポジトリセットに「変更セット 0」があります。
+* 変更セットはよく「cset」と呼ばれます。
+* 変更セットの差分を表示するには、コンテキストメニューを使用します。
+* Git ユーザー向け:「cset」は「コミット」に相当するものです。</p>
+<p>== GluonChangesetsExplainFilterAndAdvanced ==
+[title]上の「フィルター」に入力して、リストをすばやくフィルタリングしましょう[/title]</p>
+<p>フィルターはクエリ結果に対してローカルで動作します。</p>
+<p>[bold]フィルターに関するヒント[/bold]:特定のフィールドでフィルタリングするには、[italic]フィールド名[/italic]:値を使用します。
+例: 名前:13055</p>
+<p>「[action:QueryViewClickAdvanced]詳細[/action]」をクリックしてクエリをカスタマイズすることもできます。</p>
+<p>クエリの詳細については、[link:https://plasticscm.com/download/help/cmfind]こちら[/link]をご覧ください。</p>
+<p>コンテキストメニュー (右クリックするだけで表示されます) を使用すると、変更セットの差分を表示できます。</p>
+<p>[windows]アドバイス:テーブルの上の領域に列をドラッグすると、変更セットの表示方法をカスタマイズできます。日付、作者などでグループ化することができます。[/windows]</p>
+<p>== GluonPendingChangesEmptyState ==
+[reference]PlasticPendingChangesEmptyState[/reference]</p>
+<p>== GluonPendingChangesOnboarding ==
+[reference]PlasticPendingChangesOnboarding[/reference]</p>
+<p>== GluonPendingChangesOptionWarningCheckouts ==
+[reference]PlasticPendingChangesOptionWarningCheckouts[/reference]</p>
+<p>== GluonPendingChangesFrustrationFilter ==
+[reference]PlasticPendingChangesFrustrationFilter[/reference]</p>
+<p>== GluonPendingChangesFrustrationRefreshNoFilter ==
+[reference]PlasticPendingChangesFrustrationRefreshNoFilter[/reference]</p>
+<p>== GluonPendingChangesFirstTimeWithAdded ==
+[reference]PlasticPendingChangesFirstTimeWithAdded[/reference]
+== GluonPendingChangesWithAdded ==
+[reference]PlasticPendingChangesWithAdded[/reference]</p>
+<p>== GluonPendingChangesMovedOnlyFiles ==
+[reference]PlasticPendingChangesMovedOnlyFiles[/reference]</p>
+<p>== GluonPendingChangesMovedOnlyDirectories ==
+[reference]PlasticPendingChangesMovedOnlyDirectories[/reference]</p>
+<p>== GluonPendingChangesMovedFilesAndDirectories ==
+[reference]PlasticPendingChangesMovedFilesAndDirectories[/reference]</p>
+<p>== GluonPendingChangesSlowTooManyPrivates ==
+[reference]PlasticPendingChangesSlowTooManyPrivates[/reference]</p>
+<p>== GluonPendingChangesSlowMoveCalculation ==
+[reference]PlasticPendingChangesSlowMoveCalculation[/reference]</p>
+<p>== GluonPendingChangesSlowFindChanges ==
+[reference]PlasticPendingChangesSlowFindChanges[/reference]</p>
+<p>== GluonReposExplained ==
+[reference]PlasticReposExplained[/reference]</p>
+<p>== GluonWorkspacesExplained ==
+[reference]PlasticWorkspacesExplained[/reference]</p>
+<p>== GluonQueryViewsFrustrationCustomQuery ==
+[reference]PlasticQueryViewsFrustrationCustomQuery[/reference]</p>
+<p>== GluonFrustrationFilterEnabled ==
+[reference]PlasticFrustrationFilterEnabled[/reference]</p>
+<p>== GluonWkExplGeneralHelp ==
+[reference]PlasticWkExplGeneralHelp[/reference]</p>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.collab-proxy@1.17.7/Lib/Editor/PlasticSCM/localization/guihelp.ja.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

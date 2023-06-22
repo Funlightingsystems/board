@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../../../../" id="documentation_options" src="../../../../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>== Base ==
+베이스:</p>
+<p>== ChangedResultFile ==
+결과 파일을 저장하시겠습니까?</p>
+<p>== ChangedDestinationFile ==
+대상 파일을 저장하시겠습니까?</p>
+<p>== CloseButton ==
+닫기</p>
+<p>== ConfiguredStatus ==
+구성 완료됨!</p>
+<p>== NotConfigureStatus ==
+구성되지 않음</p>
+<p>== Destination ==
+대상:</p>
+<p>== ErrorAutomaticOptionNeeded ==
+비표시 모드에서는 자동 병합 옵션이 필요합니다</p>
+<p>== ErrorComparisonMethod ==
+잘못된 비교 방법</p>
+<p>== ErrorConflictCanNotBeApplied ==
+이 충돌 해결은 다른 충돌 해결에 따라 달라지므로 적용할 수 없습니다. 순서를 다르게 하여 충돌을 해결하십시오. 이 충돌 해결이 다음 오류를 반환했습니다: {0}</p>
+<p>== ErrorContributorsMustBeSpecified ==
+기여자를 지정해야 합니다</p>
+<p>== ErrorEncoding ==
+지정된 인코딩을 식별할 수 없습니다({0}).</p>
+<p>== ErrorExecutingExternalDiffTool ==
+외부 비교 툴을 실행하는 중에 오류가 발생했습니다:</p>
+<p>== ErrorExecutingExternalMergeTool ==
+외부 병합 툴을 실행하는 중에 오류가 발생했습니다:</p>
+<p>== ErrorExecutingExternal2WayMergeTool ==
+외부 2단계 병합 툴을 실행하는 중에 오류가 발생했습니다:</p>
+<p>== ErrorFileTitleType ==
+이런! 아직 해당 언어를 지원하지 않습니다!</p>
+<p>== ErrorFileType ==
+SemanticMerge에서 다음 파일을 수신했습니다: {0}.
+지원 언어로 파일 확장자가 인식되지 않습니다.
+기본 텍스트 기반 {1} 툴을 실행할 수 있습니다.</p>
+<p>참고: 이러한 파일에 지원 언어가 포함되어 있음을 알고 있는 경우에는 SementicMerge에서 -l 매개 변수를 사용하는 방법을 확인하십시오.</p>
+<p>== ErrorJVMNotAvailableTitle ==
+이런! JVM을 찾을 수 없습니다. 파일을 구문분석해야 합니다</p>
+<p>== ErrorJVMNotAvailable ==
+SemanticMerge에서
+{0}개의 파일을 구문분석하려면 유효한 JVM 설치 파일이 필요합니다.</p>
+<p>그 대신 기본 텍스트 기반 {1} 툴을 실행해도 됩니다.</p>
+<p>== ErrorNumberOfContributorsDoesNotMatch ==
+기여자 수가 일치하지 않습니다</p>
+<p>== ErrorTabSpaces ==
+탭 공백이 잘못되었습니다</p>
+<p>== ErrorVersionControl ==
+구성에 필요한 버전 제어가 잘못되었습니다</p>
+<p>== OpenDialogFilterForExecutableFile ==
+실행 파일(<em>.exe)|</em>.exe</p>
+<p>== OpenDialogTitleForConfigFile ==
+구성 파일 탐색</p>
+<p>== OpenDialogTitleForExecutableFile ==
+실행 파일 탐색</p>
+<p>== PlasticSCMConfigurationNotification ==
+Plastic SCM GUI를 다시 열 때까지 변경사항이 영향을 주지 않습니다</p>
+<p>== RestartMergeWithConfigChangesMessage ==
+새롭게 저장한 구성을 적용하려면 병합을 재시작해야 합니다.</p>
+<p>== RestartDiffWithConfigChangesMessage ==
+새롭게 저장한 구성을 적용하려면 비교를 재시작해야 합니다.</p>
+<p>== RestartMergeQuestion ==
+사라질 {0}개 충돌을 이미 해결했습니다. 병합을 재시작하시겠습니까?</p>
+<p>== ResultNeeded ==
+결과 파일 경로를 지정해야 합니다</p>
+<p>== Source ==
+소스:</p>
+<p>== UnsolvedPendingConflicts ==
+파일에 아직 {0}개의 미해결 충돌이 있습니다.</p>
+<p>== UnexpectedError ==
+예상치 못한 오류가 발생했습니다.</p>
+<dl>
+<dt>== Usage ==</dt><dd><p>사용법: semanticmerge [&lt;configureversioncontrol&gt; | &lt;mergeOptions&gt;]</p>
+<dl class="simple">
+<dt>configureversioncontrol:       {–configure-version-control}=&lt;versioncontrolkey&gt;</dt><dd><p>versioncontrolkey:       {plasticscm | git}</p>
+</dd>
+<dt>mergeOptions: &lt;files&gt; [-a|–automatic] [–silent] [–merge-decl] [–process-all-merges]</dt><dd><p>[–nolangwarn] [–nostructurewarn] [–include-format-change] [–log-external-parser]
+[&lt;contributorSymbolicNames&gt;] [&lt;generalOptions&gt;]
+[&lt;contributorExtendedInfo&gt;]</p>
+</dd>
+<dt>files: {&lt;sortedFiles&gt; | &lt;unsortedFiles&gt;}</dt><dd><dl class="simple">
+<dt>sortedFiles: &lt;filename1&gt; &lt;filename2&gt; &lt;filename3&gt; &lt;filename4&gt; &lt;fileparamorder&gt;</dt><dd><dl class="simple">
+<dt>fileparamorder:    {-fpo | –fileparamorder}=&lt;세미콜론으로 구분된 키 목록&gt;</dt><dd><p>기본값: –fileparamorder=s;d;b;r</p>
+</dd>
+</dl>
+</dd>
+<dt>unsortedFiles: &lt;sourceFile&gt; &lt;destinationFile&gt; &lt;baseFile&gt; &lt;resultFile&gt;</dt><dd><p>sourceFile:        {-s | –source}=&lt;filename&gt;
+destinationFile:   {-d | –destination}=&lt;filename&gt;
+baseFile:          {-b | –base}=&lt;filename&gt;
+resultFile:        {-r | –result}=&lt;filename&gt;</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>-a | –automatic:        충돌이 발견되지 않을 경우 사용자 상호작용 없이 자동으로 병합합니다.</p>
+<dl class="simple">
+<dt>–silent:                이 옵션은 –automatic 옵션과 함께 사용해야 합니다.</dt><dd><p>병합을 자동으로 해결할 수 없는 경우 이 옵션으로 인해 툴에서
+0이 아닌 종료 코드를 즉시 반환합니다(SemanticMerge 툴이 표시되지 않음).
+툴에서 자동으로 병합을 해결할 수 있는 경우 프로그램에서 종료 코드 0을 반환합니다.</p>
+</dd>
+</dl>
+<p>–merge-decl:            최대한 많은 선언*을 자동으로 병합합니다.</p>
+<dl>
+<dt>–process-all-merges:    최대한 많은 선언*을 자동으로 병합하고</dt><dd><blockquote>
+<div><p>비자동 병합 선언마다 외부 텍스트 기반 툴을 실행합니다.</p>
+</div></blockquote>
+<dl class="simple">
+<dt><a href="#id1"><span class="problematic" id="id2">*</span></a>선언은 지원되는 구문 요소(예: 클래스, 메서드, 속성)를 정의하는 문입니다.</dt><dd><p>요소 유형(예: 클래스, 메서드)에 따라 요소가 구현된 본문이 포함됩니다.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>–nolangwarn:            언어가 지원되지 않는 경우 외부 텍스트 기반 툴을 바로 실행합니다.</p>
+<p>–nostructurewarn:       구조 오류가 발견되면 외부 텍스트 기반 툴을 바로 실행합니다.</p>
+<dl class="simple">
+<dt>–include-format-change: 들여쓰기와 EOL만 수정된 변경사항을 포함합니다.</dt><dd><p>여기에는 첫 행의 공백 및 탭의 차이점과
+EOL 차이점이 포함됩니다. 첫 선언의 빈 행도 포함됩니다.
+기본적으로 이러한 차이점은 병합/비교를 간소화하기 위해 모두 무시됩니다.</p>
+</dd>
+</dl>
+<p>–log-external-parser:   외부 구문분석기를 디버그하기 위해 파일 내용을 기록합니다.</p>
+<dl>
+<dt>contributorSymbolicNames: &lt;srcSymbolicName&gt; &lt;dstSymbolicName&gt; &lt;baseSymbolicName&gt;</dt><dd><p>srcSymbolicName:     {-sn | –srcsymbolicname}=&lt;symbolicname&gt;
+dstSymbolicName:     {-dn | –dstsymbolicname}=&lt;symbolicname&gt;
+baseSymbolicName:    {-bn | –basesymbolicname}=&lt;symbolicname&gt;</p>
+</dd>
+<dt>generalOptions: [&lt;defaultEncoding&gt;] [&lt;resultEncoding&gt;] [&lt;fileLanguage&gt;] [&lt;virtualMachine&gt;]</dt><dd><blockquote>
+<div><p>[&lt;externalMergeTool&gt;] [&lt;external2WayMerge&gt;] [&lt;externalDiffTool&gt;]
+[&lt;tabSpaces&gt;] [&lt;extrainfofile&gt;] [&lt;progress&gt;]</p>
+</div></blockquote>
+<p>defaultEncoding:     {-e | –defaultencoding}=&lt;encoding&gt;
+resultEncoding:      {-re | –resultencoding}=&lt;encoding&gt;</p>
+<blockquote>
+<div><p>encoding:      {ascii | ansi | unicode | bigendian | utf7 | utf8 | utf8bom | utf32be | utf32le}</p>
+</div></blockquote>
+<p>fileLanguage:        {-l | –fileslanguage}={csharp | vb | java | cplusplus | php}
+virtualMachine:      {-vm | –virtualmachine}=&lt;Java 가상 머신 실행 파일 경로&gt;
+externalParser:      {-ep | –externalparser}=&lt;외부 구문분석기 실행 명령&gt;
+externalMergeTool:   {-emt  | –externalmergetool}={default | &lt;사용자 정의 툴&gt;}
+external2WayMerge:   {-e2mt | –external2waymergetool}={ &lt;사용자 정의 툴&gt;}
+externalDiffTool:    {-edt  | –externalDiffTool}={default | &lt;사용자 정의 툴&gt;}
+tabSpaces:           {-ts   | –tabspaces}={4 | &lt;사용자 정의&gt;}
+extrainfofile:       {-ei   | –extrainfofile}={추가 병합 정보를 포함하는 파일의 경로}
+progress:            {-pg   | –progress}={전체 병합 프로세스의 진행도를 나타내는 문자열}</p>
+</dd>
+<dt>contributorExtendedInfo: &lt;contributorOwnerName&gt; &lt;contributorBranchName&gt;</dt><dd><p>&lt;contributorChangeset&gt; &lt;contributorComment&gt;</p>
+</dd>
+<dt>contributorOwnerName: &lt;srcOwnerName&gt; &lt;dstOwnerName&gt; &lt;baseOwnerName&gt;</dt><dd><p>srcOwnerName:        {-so | –srcowner}=&lt;ownername&gt;
+dstOwnerName:        {-do | –dstowner}=&lt;ownername&gt;
+baseOwnerName:       {-bo | –baseowner}=&lt;ownername&gt;</p>
+</dd>
+<dt>contributorBranchName: &lt;srcBranchName&gt;; &lt;dstBranchName&gt; &lt;baseBranchName&gt;</dt><dd><p>srcBranchName:       {-sb | –srcbranch}=&lt;name&gt;
+dstBranchName:       {-db | –dstbranch}=&lt;branchname&gt;
+baseBranchName:      {-bb | –basebranch}=&lt;branchname&gt;</p>
+</dd>
+<dt>contributorChangeset: &lt;srcChangeset&gt; &lt;dstChangeset&gt; &lt;baseChangeset&gt;</dt><dd><p>srcChangeset:        {-sc | –srccset}=&lt;changeset&gt;
+dstChangeset:        {-dc | –dstcset}=&lt;changeset&gt;
+baseChangeset:       {-bc | –basecset}=&lt;changeset&gt;</p>
+</dd>
+<dt>contributorComment: &lt;srcComment&gt; &lt;dstComment&gt; &lt;baseComment&gt;</dt><dd><p>srcComment:          {-sm | –srccomment}=&lt;changeset&gt;
+dstComment:          {-dm | –dstcomment}=&lt;changeset&gt;
+baseComment:         {-bm | –basecomment}=&lt;changeset&gt;</p>
+</dd>
+</dl>
+<p>예:</p>
+<blockquote>
+<div><p>semanticmergetool -b=base.cs -d=dst.cs -s=src.cs -r=result.cs</p>
+<p>semanticmergetool base.cs dst.cs src.cs result.cs –fileparamorder=b;d;s;r</p>
+<dl class="simple">
+<dt>semanticmergetool -b=base.cs -d=dst.cs -s=src.cs -r=result.cs</dt><dd><p>-e2mt=””kdiff3.exe #sourcefile #destinationfile -o #output””</p>
+</dd>
+<dt>semanticmergetool -b=base.cs -d=dst.cs -s=src.cs -r=result.cs</dt><dd><p>-emt=””kdiff3.exe #basefile #sourcefile #destinationfile -o #output””</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+<p>== UsageCaption ==
+SemanticMerge 툴 사용</p>
+<p>== WarningNoExternalDiffTool ==
+비교에 필요한 외부 비교 툴이 지정되지 않았습니다.</p>
+<p>== WarningNoExternal2MergeTool ==
+선택한 충돌의 내용을 병합하는 데 필요한 외부 2단계 병합 툴이 지정되지 않았습니다.</p>
+<p>== WarningNoExternalMergeTool ==
+병합에 필요한 외부 병합 툴이 지정되지 않았습니다.</p>
+<p>== WarningExternalToolNotFound ==
+툴을 찾을 수 없습니다. 유효한 툴을 입력하십시오</p>
+<p>== WarningSemanticToolNotFound ==
+SemanticMerge 툴을 찾을 수 없습니다. 유효한 툴을 입력하십시오</p>
+<p>== WarningConfigFileNotFound ==
+구성 파일을 찾을 수 없습니다. 유효한 툴을 입력하십시오</p>
+<p>== WarningInvalidJavaVirtualMachinePath ==
+Java 가상 머신 경로를 찾을 수 없습니다</p>
+<p>== WarningInvalidTabSize ==
+탭 크기가 잘못되었습니다</p>
+<p>== RenameWindowTitle ==
+소스 이름 변경</p>
+<p>== RenameWindowLabel ==
+{0}의 새 이름:</p>
+<p>== RenameButton ==
+이름 변경</p>
+<p>== CancelButton ==
+취소</p>
+<p>== PendingConflictsToSolve ==
+{0}/{1}  -  해결할 충돌: {2}</p>
+<p>== NextConflictButtonTooltip ==
+다음 충돌(Ctrl+PagDown)</p>
+<p>== PreviousConflictButtonTooltip ==
+이전 충돌(Ctrl+PageUp)</p>
+<p>== SaveAndExitExplanation ==
+결과 파일 저장 및 툴 종료</p>
+<p>== SaveAndExitButton ==
+저장 및 종료 (_X)</p>
+<p>== MergeWaitingAnimation ==
+충돌 계산 중입니다. 잠시 기다려 주십시오…</p>
+<p>== SyncDeclarationMenuItem ==
+선언 동기화</p>
+<p>== OptionsButton ==
+옵션</p>
+<p>== FindMenuItem ==
+찾기…</p>
+<p>== OptionsMenuItem ==
+옵션</p>
+<p>== ConfigureFontsAndColorsMenuItem ==
+폰트 및 색상 구성…</p>
+<p>== DisplayInfoAboutThisMerge ==
+이 병합에 대한 정보 표시</p>
+<p>== LeftEncodingMenuItem ==
+왼쪽 인코딩</p>
+<p>== RightEncodingMenuItem ==
+오른쪽 인코딩</p>
+<p>== SkipFormatChangesMenuItem ==
+형식 변경 건너뛰기</p>
+<p>== ReformatSourceCode ==
+소스 코드 형식 변경</p>
+<p>== ConfigurationMenuItem ==
+구성…</p>
+<p>== GetLicense ==
+라이센스 받기</p>
+<p>== ShowUserGuideMenuItem ==
+사용자 가이드</p>
+<p>== UserGuideURL ==
+<a class="reference external" href="https://semanticmerge.com/documentation">https://semanticmerge.com/documentation</a></p>
+<p>== ShowIntroGuideMenuItem ==
+소개 가이드 표시</p>
+<p>== OpenSamplesDirectoryMenuItem ==
+샘플 열기</p>
+<p>== FollowSemanticmergeMenuItem ==
+&#64;semanticmerge 팔로우하기</p>
+<p>== AboutSemanticmergeMenuItem ==
+정보 및 라이센스</p>
+<p>== VisualDiffWindowTitle ==
+시각적 비교</p>
+<p>== VisualDiffExplanation ==
+비교를 설명하는 그림 표시</p>
+<p>== VisualDiffOptionExplanation ==
+차이점을 확인하려면 선언 2개를 선택하고 비교를 클릭하십시오</p>
+<p>== VisualDiffControlExplanation ==
+확대/축소하려면 스크롤 휠과 Ctrl 키를 사용하십시오</p>
+<p>== ZoomInExplanation ==
+그림을 확대합니다. Ctrl 키와 스크롤 휠을 사용해 확대해도 됩니다</p>
+<p>== ZoomOutExplanation ==
+그림을 축소합니다. Ctrl 키와 스크롤 휠을 사용해 축소해도 됩니다</p>
+<p>== VisualMergeWindowTitle ==
+시각적 병합</p>
+<p>== VisualMerge ==
+시각적 병합 (_V)</p>
+<p>== VisualMergeExplanation ==
+병합을 설명하는 그림 표시</p>
+<p>== RunTextMerge ==
+텍스트 병합 실행 (_T)</p>
+<p>== RunTextMergeExplanation ==
+기존의 텍스트 기반 병합 툴 실행</p>
+<p>== RestartMerge ==
+병합 재시작 (_E)</p>
+<p>== RestartMergeExplanation ==
+모든 변경사항 제거 및 병합 작업 재시작</p>
+<p>== ProcessAllMerges ==
+모든 병합 처리</p>
+<p>== ProcessAllMergesExplanation ==
+최대한 많은 선언을 자동으로 병합하고 비자동 병합 선언마다 외부 텍스트 기반 툴을 실행합니다</p>
+<p>== VisualDiffButton ==
+시각적 비교 (_V)</p>
+<p>== RestartDiffButton ==
+비교 재시작 (_R)</p>
+<p>== RestartDiffExplanation ==
+비교 작업 재시작</p>
+<p>== RunTextDiffButton ==
+텍스트 비교 실행 (_T)</p>
+<p>== RunTextDiffExplanation ==
+기존의 텍스트 기반 비교 툴 실행</p>
+<p>== OutlinePanelVisualDiffButton ==
+시각적 비교 (_V)</p>
+<p>== OutlinePanelRunTextDiffButton ==
+텍스트 비교 실행 (_T)</p>
+<p>== DivergentMoveDetails ==
+분기 이동 세부사항</p>
+<p>== ShowMergeInfoExplanation ==
+병합 정보 표시</p>
+<p>== MergeInfoResultFile ==
+결과 파일:</p>
+<p>== MergeInfoLanguage ==
+언어:</p>
+<p>== MergeInfoBaseFile ==
+베이스 파일</p>
+<p>== MergeInfoSourceFile ==
+소스 파일</p>
+<p>== MergeInfoDestinationFile ==
+대상 파일</p>
+<p>== MergeInfoFileName ==
+이름:</p>
+<p>== MergeInfoFilePath ==
+경로:</p>
+<p>== MergeInfoExtraInfo ==
+추가 정보</p>
+<p>== SemanticOutline ==
+의미 외곽선</p>
+<p>== ExpandSemanticOutlineTooltip ==
+의미 외곽선 펼치기</p>
+<p>== CollapseSemanticOutlineTooltip ==
+의미 외곽선 접기</p>
+<p>== PendingConflicts ==
+해결할 충돌({0})</p>
+<p>== PendingConflictsExplanation ==
+수동으로 해결해야 할 충돌을 표시합니다. 이러한 충돌은 동일한 요소가 ‘제3자 변경사항’과 ‘내 변경사항’에서 수정되었을 때 발생합니다</p>
+<p>== DiffExplanation ==
+이 요소의 차이점 표시</p>
+<p>== SourceDifferences ==
+소스 - 제3자 변경사항({0})</p>
+<p>== SourceDifferencesExplanation ==
+병합할 코드에서 제3자가 적용한 변경사항입니다. 베이스 기여자와 소스 기여자 간의 차이점을 표시합니다</p>
+<p>== DestinationDifferences ==
+대상 - 내 변경사항({0})</p>
+<p>== DestinationDifferencesExplanation ==
+작업 복사본에서 귀하가 적용한 변경사항입니다. 베이스 기여자와 대상 기여자 간의 차이점을 표시합니다</p>
+<p>== NoConflictMessageText ==
+확인할 충돌이 없습니다.</p>
+<p>== NoConflictMessageDetail ==
+즉 사용자 개입 없이 툴에서 병합을 해결할 수 있습니다.</p>
+<p>병합을 검토하는 경우 이 메시지가 표시될 수 있습니다.</p>
+<p>단, 충돌 해결을 최대한 자동화하려는 경우 &quot;-a&quot; 인수를 SemanticMerge 명령줄에 추가하십시오.</p>
+<p>== MaximizeButtonLeftTooltip ==
+왼쪽 패널 최대화</p>
+<p>== RestoreButtonLeftTooltip ==
+왼쪽 패널 복원</p>
+<p>== MaximizeButtonSrcTooltip ==
+소스 패널 최대화</p>
+<p>== RestoreButtonSrcTooltip ==
+소스 패널 복원</p>
+<p>== MaximizeButtonDstTooltip ==
+대상 패널 최대화</p>
+<p>== RestoreButtonDstTooltip ==
+대상 패널 복원</p>
+<p>== MaximizeButtonBaseTooltip ==
+베이스 패널 최대화</p>
+<p>== RestoreButtonBaseTooltip ==
+베이스 패널 복원</p>
+<p>== MaximizeButtonResultTooltip ==
+결과 패널 최대화</p>
+<p>== RestoreButtonResultTooltip ==
+결과 패널 복원</p>
+<p>== CopyToClipboard ==
+클립보드로 복사</p>
+<p>== BackButtonTooltip ==
+뒤로</p>
+<p>== FindMatchesButton ==
+일치 찾기 (_M)</p>
+<p>== DiffMatchButton ==
+비교 (_D)</p>
+<p>== MatchButton ==
+일치 (_M)</p>
+<p>== UnMatchButton ==
+불일치 (_U)</p>
+<p>== SelectElementToMatch ==
+일치시킬 요소 선택</p>
+<p>== EditResultExplanation ==
+모든 충돌이 해결될 때까지 결과 파일을 편집할 수 없습니다. {0}개의 충돌이 남아 있습니다.</p>
+<p>== KeepSourceExplanation ==
+소스 변경사항 유지</p>
+<p>== KeepDestinationExplanation ==
+대상 변경사항 유지</p>
+<p>== KeepBothExplanation ==
+두 변경사항 유지</p>
+<p>== RenameExplanation ==
+대상 이름 변경</p>
+<p>== MergeExplanation ==
+이 충돌을 해결할 외부 텍스트 병합 툴 실행</p>
+<p>== TwoWayMergeExplanation ==
+이 충돌을 해결할 외부 2단계 Mergetool 실행</p>
+<p>== DisplayConfigurationWindowExplanation ==
+구성 창 표시</p>
+<p>== DisplayAboutWindowExplanation ==
+정보 창 표시</p>
+<p>== HideUnchangedSelectionExplanation ==
+변경된 선언만 표시</p>
+<p>== ShowUnchangedSelectionExplanation ==
+전체 파일 트리를 표시하므로 모든 선언을 확인할 수 있음</p>
+<p>== GroupUnchangedSelectionExplanation ==
+변경된 선언을 표시하고 나머지 선언은 미변경 그룹으로 구성</p>
+<p>== ExplainMoveMoveExplanation ==
+어떻게 요소가 소스 기여자 및 대상 기여자의 다른 위치에 이동했는지 설명합니다</p>
+<p>== SourceFileExplanation ==
+소스 기여자 파일</p>
+<p>== BaseFileExplanation ==
+베이스 파일, 병합에 사용되는 소스 및 대상 파일의 조상</p>
+<p>== DestinationFileExplanation ==
+대상 기여자 파일</p>
+<p>== FindMatchesExplanation ==
+추가 및 삭제된 항목을 일치시키기 위한 일치 창을 엽니다</p>
+<p>== UnmatchExplanation ==
+불일치 - 베이스 기여자 및 이 기여자 간에 방법이 일치하지 않는 경우 불일치 판정을 내리고 추가/삭제된 항목으로 변환하여 수동으로 일치사항을 수정할 수 있습니다</p>
+<p>== MatchExplanation ==
+선택한 항목에 일치사항 적용</p>
+<p>== InvalidEmail ==
+잘못된 이메일</p>
+<p>== InvalidReport ==
+잘못된 보고서</p>
+<p>== EnterValidEmailAndReport ==
+이메일 주소, 제목, 내용을 입력하십시오.</p>
+<p>== EnterValidEmailAddress ==
+유효한 이메일 주소를 입력하십시오.</p>
+<p>== ErrorReadingSampleTitle ==
+샘플을 읽는 중 오류가 발생했습니다</p>
+<p>== ErrorReadingSampleDescription ==
+{0} 파일에서 샘플을 구문분석할 수 없습니다. {1}</p>
+<p>== SamplesWindowExplanation ==
+각 샘플 케이스의 경우 기존 병합 툴을 실행하여 SemanticMerge와 비교하는 것이 좋습니다</p>
+<p>== ShowIntroGuideButton ==
+소개 가이드 표시 (_G)</p>
+<p>== RunTextMergetoolButton ==
+텍스트</p>
+<p>== RunSemanticMergetoolButton ==
+의미</p>
+<p>== WelcomeSemantic20 ==
+SemanticMerge 2.0을 시작합니다</p>
+<p>== WelcomeExplanation1 ==
+Semantic은 다른 형태의 병합 툴입니다. 이 툴은 병합을 계산하기 전에 코드를 구문분석하므로 대부분의 충돌을 감지하고 자동으로 해결할 수 있습니다.</p>
+<p>== WelcomeExplanation2 ==
+지금까지 사용한 대부분의 병합 툴과 다르겠지만 몇 분만 할애해 샘플 케이스를 살펴보면 병합 전문가가 되어 툴을 최대한 활용할 수 있습니다.</p>
+<p>== ExploreTheSamplesButton ==
+샘플 살펴보기 (_E)</p>
+<p>== ReadTheIntroGuideLinkText1 ==
+SemanticMerge의 기본적인 내용에 대해 알아보려면</p>
+<p>== ReadTheIntroGuideLinkText2 ==
+소개 가이드를 참조하십시오</p>
+<dl class="simple">
+<dt>== ReadTheIntroGuideLinkText3 ==</dt><dd><p>(3분 분량).</p>
+</dd>
+</dl>
+<p>== DontShowThisDialogOnStartup ==
+시작 시 이 다이얼로그를 표시하지 않음 (_S)</p>
+<p>== RunTheToolButton ==
+툴 실행 (_T)</p>
+<p>== ParsingErrorsLabel ==
+이 파일을 처리하는 중에 문제가 발견되었습니다.</p>
+<p>== ShowParsingErrorsButton ==
+구문분석 오류 표시</p>
+<p>== ReleaseNotesBaseUrl ==
+<a class="reference external" href="https://www.plasticscm.com/download/releasenotes">https://www.plasticscm.com/download/releasenotes</a></p>
+<p>== MultifileCurrentFile ==
+파일 {0}/{1}:</p>
+<p>== MultifileCurrentFileExplanation ==
+이 파일은 현재 파일입니다. 파일을 변경하려면 충돌 탐색 버튼이나 여러 파일 이동을 사용하십시오.</p>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.collab-proxy@1.17.7/Lib/Editor/PlasticSCM/localization/semantic.ko.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

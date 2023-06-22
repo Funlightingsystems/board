@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Create a Custom Scripting Event Sender node &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Create a Custom Scripting Event Sender node</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="create-a-custom-scripting-event-sender-node">
+<h1>Create a Custom Scripting Event Sender node<a class="headerlink" href="#create-a-custom-scripting-event-sender-node" title="Permalink to this heading">¶</a></h1>
+<blockquote>
+<div><p>[!NOTE]
+Before you create a Custom Scripting Event Sender node, you must create a Custom Scripting Event node. [!include<a class="reference internal" href="snippets/custom-events/vs-tasks-note-end.html"><span class="std std-doc">tasks-note-end</span></a>].</p>
+</div></blockquote>
+<p>After you create a Custom Scripting Event node, you can create a Custom Scripting Event Sender node to trigger the Event from any other Script Graph in the same scene, or the same Script Graph.</p>
+<p>You can also choose to create a separate script to trigger the Event from code. For more information, see <a class="reference internal" href="vs-create-own-custom-event-node-trigger-code.html"><span class="std std-doc">Trigger a Custom Scripting Event from a C# script</span></a>.</p>
+<section id="create-a-node-and-add-it-to-the-fuzzy-finder">
+<h2>Create a node and add it to the fuzzy finder<a class="headerlink" href="#create-a-node-and-add-it-to-the-fuzzy-finder" title="Permalink to this heading">¶</a></h2>
+<p>To create a Custom Scripting Event Sender node and add it to the fuzzy finder:</p>
+<ol class="arabic">
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-project-window.html"><span class="std std-doc">open-project-window</span></a>]</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/custom-events/vs-right-click-project.html"><span class="std std-doc">right-click-project</span></a>]</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-create-c-script-project.html"><span class="std std-doc">create-c-script-project</span></a>]</p></li>
+<li><p>Enter a name, such as <code class="docutils literal notranslate"><span class="pre">SendMyEventNode</span></code>, for the new script file.</p></li>
+<li><p>Press Enter.</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-new-external-code.html"><span class="std std-doc">open-new-external-code</span></a>]</p></li>
+<li><p>In your external editor, copy and paste the following code into the C# script:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">Unity.VisualScripting</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="c1">//Custom node to send the Event</span>
+<span class="na">[UnitTitle(&quot;Send My Custom Event&quot;)]</span>
+<span class="na">[UnitCategory(&quot;Events\\MyEvents&quot;)]</span><span class="c1">//Setting the path to find the node in the fuzzy finder as Events &gt; My Events.</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">SendMyEvent</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Unit</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="na">[DoNotSerialize]</span><span class="c1">// Mandatory attribute, to make sure we don’t serialize data that should never be serialized.</span>
+<span class="w">  </span><span class="na">[PortLabelHidden]</span><span class="c1">// Hide the port label, as we normally hide the label for default Input and Output triggers.</span>
+<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="n">ControlInput</span><span class="w"> </span><span class="n">inputTrigger</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="na">[DoNotSerialize]</span>
+<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="n">ValueInput</span><span class="w"> </span><span class="n">myValue</span><span class="p">;</span>
+<span class="w">  </span><span class="na">[DoNotSerialize]</span>
+<span class="w">  </span><span class="na">[PortLabelHidden]</span><span class="c1">// Hide the port label, as we normally hide the label for default Input and Output triggers.</span>
+<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="n">ControlOutput</span><span class="w"> </span><span class="n">outputTrigger</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Definition</span><span class="p">()</span>
+<span class="w">  </span><span class="p">{</span>
+
+<span class="w">      </span><span class="n">inputTrigger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ControlInput</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">inputTrigger</span><span class="p">),</span><span class="w"> </span><span class="n">Trigger</span><span class="p">);</span>
+<span class="w">      </span><span class="n">myValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ValueInput</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">myValue</span><span class="p">),</span><span class="m">1</span><span class="p">);</span>
+<span class="w">      </span><span class="n">outputTrigger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ControlOutput</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">outputTrigger</span><span class="p">));</span>
+<span class="w">      </span><span class="n">Succession</span><span class="p">(</span><span class="n">inputTrigger</span><span class="p">,</span><span class="w"> </span><span class="n">outputTrigger</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">//Send the Event MyCustomEvent with the integer value from the ValueInput port myValueA.</span>
+<span class="w">  </span><span class="k">private</span><span class="w"> </span><span class="n">ControlOutput</span><span class="w"> </span><span class="nf">Trigger</span><span class="p">(</span><span class="n">Flow</span><span class="w"> </span><span class="n">flow</span><span class="p">)</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">      </span><span class="n">EventBus</span><span class="p">.</span><span class="n">Trigger</span><span class="p">(</span><span class="n">EventNames</span><span class="p">.</span><span class="n">MyCustomEvent</span><span class="p">,</span><span class="w"> </span><span class="n">flow</span><span class="p">.</span><span class="n">GetValue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">myValue</span><span class="p">));</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">outputTrigger</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-save-script.html"><span class="std std-doc">save-script</span></a>]</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-return-unity.html"><span class="std std-doc">return-unity</span></a>]</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-regen-node-library.html"><span class="std std-doc">regen-node-library</span></a>]</p></li>
+</ol>
+<p>After you regenerate your Node Library, the Custom Scripting Event Sender node appears in the fuzzy finder. If you didn’t change the <code class="docutils literal notranslate"><span class="pre">[UnitCategory]</span></code> or <code class="docutils literal notranslate"><span class="pre">[UnitTitle]</span></code> from the sample code, then the fuzzy finder displays the node under <strong>Events</strong> &gt; <strong>MyEvents</strong>, as the <strong>Send My Custom Event</strong> node. For more information on the fuzzy finder, see <a class="reference internal" href="vs-interface-overview.html#the-fuzzy-finder"><span class="std std-ref">The interface</span></a>.</p>
+</section>
+<section id="trigger-your-custom-scripting-event-node">
+<h2>Trigger your Custom Scripting Event node<a class="headerlink" href="#trigger-your-custom-scripting-event-node" title="Permalink to this heading">¶</a></h2>
+<p>You might use your <strong>Send My Custom Event</strong> node to trigger your Event based on keyboard input:</p>
+<ol class="arabic">
+<li><p><a class="reference internal" href="vs-open-graph-edit.html"><span class="std std-doc">Open a Script Graph</span></a> where you want to add the new node. This can be the same or a different Script Graph from the one that contains your Custom Scripting Event node.</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-fuzzy-finder.html"><span class="std std-doc">open-fuzzy-finder</span></a>].</p></li>
+<li><p>Go to <strong>Events</strong> &gt; <strong>Input</strong>.</p></li>
+<li><p>Select the <strong>On Keyboard Input</strong> node to add it to the graph.</p></li>
+<li><p>Right-click again in the Graph Editor to open the fuzzy finder.</p></li>
+<li><p>Go to <strong>Events</strong> &gt; <strong>My Events</strong>.</p></li>
+<li><p>Select your <strong>Send My Custom Event</strong> node to add it to the graph.</p></li>
+<li><p>Connect the <strong>On Keyboard Input</strong> node’s Trigger output port to the <strong>Send My Custom Event</strong> node’s Input Trigger input port, as shown in the following image.</p>
+<p><img alt="An image of the Graph Editor. An On Keyboard Input node with its Key set to Space and its Action set to Up connects to the Send My Custom Event node." src="../../../../../../_images/vs-custom-event-send-my-custom-event-node-keyboard.png" /></p>
+</li>
+<li><p>Select <strong>Play</strong> from <a class="reference external" href="https://docs.unity3d.com/Manual/Toolbar.html">the Unity Editor’s Toolbar</a> to enter Play mode.</p></li>
+<li><p>Press and release the Spacebar in the <a class="reference external" href="https://docs.unity3d.com/Manual/GameView.html">Game view</a>.</p></li>
+</ol>
+<p>The Custom Scripting Event Sender node triggers the Custom Scripting Event in your graph and sends the Event the value from <strong>My Value A</strong>.</p>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">¶</a></h2>
+<p>After you create a Custom Scripting Event Sender node, you can <a class="reference internal" href="vs-create-own-custom-event-node-trigger-code.html"><span class="std std-doc">create a script to trigger your Event from code</span></a> or <a class="reference internal" href="vs-create-own-custom-event-listen-code.html"><span class="std std-doc">create a script to listen to your Event</span></a>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Create a Custom Scripting Event Sender node</a><ul>
+<li><a class="reference internal" href="#create-a-node-and-add-it-to-the-fuzzy-finder">Create a node and add it to the fuzzy finder</a></li>
+<li><a class="reference internal" href="#trigger-your-custom-scripting-event-node">Trigger your Custom Scripting Event node</a></li>
+<li><a class="reference internal" href="#next-steps">Next steps</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-create-own-custom-event-send-node.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Create a Custom Scripting Event Sender node</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

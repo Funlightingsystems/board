@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>About the Profile Analyzer package &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">About the Profile Analyzer package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="about-the-profile-analyzer-package">
+<h1>About the Profile Analyzer package<a class="headerlink" href="#about-the-profile-analyzer-package" title="Permalink to this heading">¶</a></h1>
+<p>The Profile Analyzer aggregates and visualizes frame and marker data from a set of <a class="reference external" href="https://docs.unity3d.com/Manual/Profiler.html">Unity Profiler</a> frames to help you understand their behavior. You can use the Profile Analyzer to compare two sets of data side-by-side, which complements the single frame analysis already available in the Unity Profiler.</p>
+<p>For information on how to use the Profile Analyzer, see the documentation on the <a class="reference internal" href="profile-analyzer-window.html"><span class="std std-doc">Profile Analyzer window</span></a></p>
+<p><img alt="The Profile Analyzer window" src="../../../../../../_images/profile-analyzer-compare-view.png" /><br/><em>The Profile Analyzer window, with two sets of data loaded to compare</em></p>
+<section id="installing-the-profile-analyzer">
+<h2>Installing the Profile Analyzer<a class="headerlink" href="#installing-the-profile-analyzer" title="Permalink to this heading">¶</a></h2>
+<p>To install this package into versions of Unity that support the package manager follow the instructions in the <a class="reference external" href="https://docs.unity3d.com/Packages/com.unity.package-manager-ui&#64;latest/index.html">Package Manager documentation</a>.</p>
+<p>When using any Unity version newer than 2021.2.0a5, you can just click <strong><a class="reference internal" href="#com.unity3d.kharma:upmpackage/com.unity.performance.profile-analyzer"><span class="xref myst">this link to install it by name</span></a></strong>.</p>
+<section id="earlier-versions-of-unity">
+<h3>Earlier versions of Unity<a class="headerlink" href="#earlier-versions-of-unity" title="Permalink to this heading">¶</a></h3>
+<p>For earlier versions, follow this link to the Profile Analyzer <a class="reference external" href="https://download.packages.unity.com/com.unity.performance.profile-analyzer/-/com.unity.performance.profile-analyzer-1.1.1.tgz">download</a> and place the contents into your Project’s Assets folder.</p>
+</section>
+</section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">¶</a></h2>
+<p>This version of the Profile Analyzer is compatible with the following versions of the Unity Editor:</p>
+<ul class="simple">
+<li><p>5.6 and later</p></li>
+</ul>
+</section>
+<section id="known-limitations">
+<h2>Known limitations<a class="headerlink" href="#known-limitations" title="Permalink to this heading">¶</a></h2>
+<p>The Profile Analyzer has the following known limitations:</p>
+<ul class="simple">
+<li><p>The original Profile data is not saved in the Profile Analyzer .pdata file. Therefore, you should store both the Unity Profiler .data file (or the .raw file exported from a stand alone player) along with the .pdata file.</p></li>
+<li><p>When you click on a marker, the Profile Analyzer attempts to jump to the same marker in the Unity Profiler if the same data is loaded. You must make a selection in the Unity Profiler beforehand for this to work. In the Unity Profiler in the UI view, the vertical height is not correct.</p></li>
+<li><p>On Unity 5.6 and 2017.4, the Thread Select Window allows you to collapse the ‘All’ threads item, which has no purpose.</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">About the Profile Analyzer package</a><ul>
+<li><a class="reference internal" href="#installing-the-profile-analyzer">Installing the Profile Analyzer</a><ul>
+<li><a class="reference internal" href="#earlier-versions-of-unity">Earlier versions of Unity</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#known-limitations">Known limitations</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.performance.profile-analyzer@1.1.1/Documentation~/index.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">About the Profile Analyzer package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

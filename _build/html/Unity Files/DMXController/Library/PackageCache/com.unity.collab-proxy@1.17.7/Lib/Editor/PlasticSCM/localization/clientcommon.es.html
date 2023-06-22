@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../../../../" id="documentation_options" src="../../../../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>== AddNotAllowedPathIsFreeByTransformerRule ==
+El ítem ‘{0}’ no se puede añadir. La ruta ‘{0}’ ya está en uso en el servidor, pero está libre en el cliente debido a la regla de transformación ‘{1}’.</p>
+<p>== AddedItemCannotBeLocked ==
+El ítem ‘{0}’ no se puede bloquear porque es un añadido. (Nota: si el ítem no le aparece como añadido entonces el espacio de trabajo podría estar corrupto. Por favor, contacte con soporte)</p>
+<p>== AdminReadonlyNotSupported ==
+La versión del servidor ‘{0}’ no soporta el comando admin readonly. Por favor actualice la versión del servidor.</p>
+<p>== AttNameField ==
+El nombre del atributo</p>
+<p>== BisyncMissingChangesPull ==
+Hay revisiones pendientes de importar del SCM externo ({0} no es el último cambio del SCM externo.). Todos los cambios del SCM externo tienen que ser importados antes de poder exportar los cambios de Plastic SCM.</p>
+<p>== BisyncMissingSubmoduleConfiguration ==
+El repositorio equivalente en Git para ‘{0}’ no se ha definido. El xlink no puede ser importado. Por favor, añada la equivalencia dentro de la configuración de los submodules en el fichero ‘{1}’.</p>
+<p>== BisyncMissingSubmoduleTarget ==
+El commit <a class="reference external" href="mailto:{0}&#37;&#52;&#48;{1">{0}<span>&#64;</span>{1</a>} no está sincronizado. Debe sincronizar primero el repositorio {1}.</p>
+<p>== BisyncMissingXlinkedCset ==
+El changeset <a class="reference external" href="mailto:{0}&#37;&#52;&#48;{1">{0}<span>&#64;</span>{1</a>} no está sincronizado. Debe sincronizar primero el repositorio {1}.</p>
+<p>== BothDirectoriesMustBeOnSameMountToMove ==
+Ambos directorios deben estar en el mismo punto de montaje para poder moverse. {0}, {1}.</p>
+<p>== BrNameField ==
+El nombre de la rama</p>
+<p>== BranchDoesnotexist ==
+La rama especificada {0} no existe</p>
+<p>== BranchOrMarkerChangesetDoesntexist ==
+La etiqueta o rama {0} no es válida. El changeset etiquetado (o el head de la rama) {1} no existe.</p>
+<p>== BranchParentDoesnotexist ==
+La rama especificada {0} no tiene ningún padre</p>
+<p>== BusyWorkspace ==
+El espacio de trabajo ‘{0}’ está actualmente ocupado. Pruebe más adelante.</p>
+<p>== CannotDoChangeEditedXlink ==
+No se puede llevar a cabo la operación de checkout en un xlink editado.</p>
+<p>== CannotDoChangeReadonlyXlink ==
+No es posible modificar los elementos de un xlink de sólo lectura.</p>
+<p>== CannotDoChangeUnresolvedXlink ==
+No es posible modificar los elementos dentro de un xlink que no se pudo resolver.</p>
+<p>== CannotEditXlinkRoot ==
+No se puede editar la raiz de xlink.</p>
+<p>== CannotIncomingChangesMergeInProgress ==
+No se pueden traer nuevos cambios (Incoming Changes) porque hay un merge en progreso. Es necesario terminar el merge primero.
+Merge en progreso: {0} desde el changeset {1}</p>
+<p>== CannotIncomingChangesMergePendingToConfirm ==
+No se pueden traer cambios (Incoming Changes) con un merge pendiente de confirmar. Es necesario hacer checkin en una nueva rama o bien hacer merge del último changeset de la rama actual.</p>
+<p>== CannotMergeIncomingChangesInProgress ==
+No se puede lanzar un merge porque hay una operación de Incoming Changes en progreso. Hay que terminarla primero.</p>
+<p>== CannotMergeMergeInProgress ==
+Un nuevo merge no puede empezar porque hay ya un merge en progreso: Finalízalo antes de iniciar uno nuevo.
+Merge en progreso: {0} desde el changeset {1}</p>
+<p>== CannotMergetoWithConflicts ==
+Es posible que el servidor de Plastic SCM al que se está conectando no sea compatible con esta nueva funcionalidad. Para utilizar el merge en el lado del servidor (o “merge-to” con resolución de conflictos), necesita una versión 7.0.16.2077 o superior. Si éste es su caso, actualize la instalación de su servidor. Sino, revise los logs de su servidor para más información.</p>
+<p>== CannotPerformPartialCheckin ==
+No es posible realizar la operación de checkin. Todos los cambios del merge deben de ser almacenados juntos para asegurar que la trazabilidad del merge es guardada correctamente. Por favor, repita la operación incluyendo todos los cambios del merge.</p>
+<p>== CannotPerformPartialUndo ==
+No es posible deshacer los cambios. Todos los cambios del merge deben deshacer juntos. Por favor, repita la operación incluyendo todos o ninguno de sus cambios.</p>
+<p>== CannotSwitchWithPendingChanges ==
+No se puede cambiar de rama/etiqueta/changeset/shelve porque hay cambios pendientes. Por favor, revise dichos cambios e intente de nuevo la operación.</p>
+<p>== CannotUndoAdded ==
+No puede deshacerse el añadido ‘{0}’ porque contiene cambios no añadidos</p>
+<p>== CannotUndoCopied ==
+No puede deshacerse el copiado de un directorio con contenido</p>
+<p>== CannotUndoMoved ==
+No puede deshacerse el movido desde {0} a {1} porque {2} ha sido borrado</p>
+<p>== CannotUpdateWithPendingChanges ==
+No se puede actualizar el espacio de trabajo porque hay cambios pendientes. Por favor, revise dichos cambios e intente de nuevo la operación.</p>
+<p>== CantArchiveAnAlreadyArchivedRevision ==
+No se puede archivar una revisión que ya está archivada. {0}</p>
+<p>== CantArchiveCheckedoutrev ==
+No se puede archivar una revisión en checkout. {0}</p>
+<p>== CantArchiveDirectory ==
+No se puede archivar un directorio. {0}</p>
+<p>== CantArchiveFromDifferentRepositories ==
+No se pueden archivar revisiones de diferentes repositorios en una única llamada</p>
+<p>== CantDiffBranchNoParent ==
+No se pueden calcular las diferencias de la rama {0} porque no se pudo encontrar su changeset padre.</p>
+<p>== CantDiffCsetNoParent ==
+No se pueden calcular las diferencias del changeset {0} porque no tiene padre.</p>
+<p>== CantEditAndDeleteReview ==
+El uso simultáneo de los argumentos -e y -d no está permitido.</p>
+<p>== CantFindDataForArchived ==
+No se han podido encontrar datos para ninguna de las revisiones archivadas que ha solicitado</p>
+<p>== CantRenameElementAlreadyExist ==
+No se puede renombrar el elemento “{0}” con el nombre “{1}” porque ya existe otro elemento con ese nombre</p>
+<p>== CantRestoreNonArchivedData ==
+No se pueden restaurar los datos para {0} porque esa revisión no está archivada. Si está seguro de que los datos para esa revisión han sido archivados, compruebe la configuración del servidor, si el servidor está resolviendo los datos archivados no podrá realizar la restauración</p>
+<p>== CantRevertToDifferentItem ==
+La operación de revert no puede ser realizada porque la revisión especificada ‘{0}’ hace referencia a otro ítem.</p>
+<p>== CantUpdateBaseChangesetBranchWithRevisions ==
+Para poder modificar la base de una rama, ésta debe estar vacía.</p>
+<p>== ChangeMustBeSelected ==
+Para seleccionar el cambio ‘{0}’ el cambio ‘{1}’ debe ser seleccionado también.</p>
+<p>== ChangelistAddtoBuiltinmergeEx ==
+No se puede añadir un cambio a un changelist del tipo ‘built-in’: ‘{0}’.</p>
+<p>== ChangelistAlreadyExist ==
+Ya existe un changelist con el nombre {0}</p>
+<p>== ChangelistCannotDeleteBuiltinEx ==
+No se puede borrar un changelist del tipo ‘built-in’.</p>
+<p>== ChangelistCannotEditBuiltinEx ==
+No se puede editar un changelist del tipo ‘built-in’.</p>
+<p>== ChangelistCannotShowBuiltinEx ==
+No se puede mostrar el contenido del changelist:’ {0}’ al ser del tipo ‘built-in’.
+Para mostrar este tipo de changelists, use el comando ‘cm status –changelist’.</p>
+<p>== ChangelistCorruptedStorageFile ==
+No se pudo cargar la información del changelist. Es posible que su fichero de datos tenga un formato no válido.</p>
+<p>== ChangelistDeletefromBuiltinEx ==
+No se puede borrar un cambio de un changelist del tipo ‘built-in’: ‘{0}’.</p>
+<p>== ChangelistInvalidName ==
+Nombre de changelist no válido: ‘{0}’.</p>
+<p>== ChangelistNotFound ==
+El changelist {0} no existe</p>
+<p>== ChangesetMoveRepositoryMismatch ==
+El changeset objetivo y la rama destino están en repositorios distintos.</p>
+<p>== ChangetNotLoadOnConf ==
+El changeset {0} no se puede cargar con la configuración actual del espacio de trabajo.</p>
+<p>== CheckinTooManyIgnoredErrors ==
+No se pueden proteger demasiados cambios. La operación de checkin no se puede hacer. Por favor revise los cambios e inténtelo de nuevo.</p>
+<p>== CherryPick ==
+Cherry pick</p>
+<p>== ClientconfWithErrors ==
+El fichero de configuración de cliente client.conf contiene errores: {0}</p>
+<p>== CloakedCannotBeDeleted ==
+No se puede borrar ‘{0}’ porque está cloaked.</p>
+<p>== CloakedDstCannotBeMoved ==
+No se puede mover a ‘{0}’ porque ‘{0}’ está cloaked.</p>
+<p>== CloakedSrcCannotBeMoved ==
+No se puede mover ‘{0}’ porque está cloaked.</p>
+<p>== CloudEditionInvalidCredentials ==
+Nombre de usuario o password no válidos</p>
+<p>== CmdBadPosition ==
+La posición del trigger debe ser un entero positivo.</p>
+<p>== CmdErrorInvalidWebtriggerUri ==
+El URI especificado ‘{0}’ no es válido.</p>
+<p>== CmdErrorNoSuchChangeset ==
+No existe changeset {0} en el repositorio {1}.</p>
+<p>== CommentField ==
+El comentario</p>
+<p>== CompMethodError ==
+{0} no es un método de comparación válido</p>
+<p>== ContentMustBeUndoCheckedout ==
+Para deshacer la desprotección sobre ‘{0}’ en su contenido debe ser deshecha también.</p>
+<p>== CorruptConfigurationFile ==
+El fichero de configuración ‘{0}’ no se puede leer, porque su contenido no es válido o está corrupto.</p>
+<p>== CsetTreeCannotBeLoaded ==
+No se ha podido cargar el contenido del changeset ‘{0}’.</p>
+<p>== DaysAgo ==
+hace {0} días</p>
+<p>== OneDayAgo ==
+hace 1 día</p>
+<p>== DeleteNotAllowedTransfomerRuleInside ==
+El ítem ‘{0}’ no se puede borrar porque contiene la regla de transformación ‘{1}’.</p>
+<p>== DestinationField ==
+La ruta de destino</p>
+<p>== DestinationMustBeCheckedin ==
+El movido origen ‘{0}’ no puede ser protegido si el destino ‘{1}’ no está protegido.</p>
+<p>== DifferentRepositoryBrSpecs ==
+No se pueden especificar ramas de diferentes repositorios.</p>
+<p>== DifferentRepositoryCsSpecs ==
+No se pueden especificar changesets de diferentes repositorios.</p>
+<p>== DifftoolsUncorrectDefined ==
+Error en la ejecución de la herramineta de differencias “{0}”. Las herramientas de differencias están mal definidas en el client.conf.</p>
+<p>== SpreadsheetcompareFailed ==
+Ha fallado el ejecución de SpreadsheetCompare.exe. Commando: “{0}”.</p>
+<p>== DirConflictsCannotBeApplied ==
+No se pudieron resolver {0} conflictos con la resolución indicada. Por favor prueba otra resolución para esos conflictos o intente resolver antes otro conflicto.</p>
+<p>== DiscardedDeletedWithDiscardedMoved ==
+El borrado ‘{0}’ no se puede proteger, porque contiene el movido desde ‘{1}’ hasta ‘{2}’ que fue descartado.</p>
+<p>== DmnotavailableWithDir ==
+El comando dm no puede utilizarse con directorios, sino con rutas de ficheros o especificaciones de ficheros.</p>
+<p>== DuplicatedBrSpecified ==
+La lista de ramas especificada contiene entradas duplicadas:{0}. Por favor, elimine una de las entradas duplicadas.</p>
+<p>== DuplicatedItemOnWk ==
+Este elemento está cargado dos veces, en {0} y en {1}. Esto puede ser el resultado de una operación de movido que no ha sido completada. Por favor elimine uno de los dos.</p>
+<p>== EncodingError ==
+{0} no es una codificación de texto válida</p>
+<p>== ErrorAclNoPermissions ==
+No se han especificado permisos</p>
+<p>== ErrorAclNoSuchPermission ==
+No existe el permiso especificado: {0}</p>
+<p>== ErrorAclNoSuchUserOrGroup ==
+No existe el usuario o grupo especificado: {0}</p>
+<p>== ErrorAclNoSuchUserOrGroupSpecified ==
+No se ha especificado ningun usuario o grupo.</p>
+<p>== ErrorAclWrongBranchesArg ==
+El parámetro “–branches” no está bien formado. Por favor, compruebe que no hay espacios entre los nombres de ramas,o use las comillas para delimitar el parámetro.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Ejemplos:</dt><dd><p>–branches=/main,/task001
+–branches=”/main, /task001”
+“–branches=/main, /task001”</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>== ErrorArchiveCantRetrieveData ==
+No se puede obtener el volumen externo de almacenamiento de datos, por favor configure externaldata.conf con los paths adecuados para encontrar los volúmenes archivados. Nombre base de fichero: {0}. Comentario de volumen: {1}. Fichero: {2}</p>
+<p>== ErrorArchiveCantRetrieveTrimmedData ==
+No se puede obtener el contenido del fichero ‘{0}’ porque la revisión (id:{1}) fue recortada y su contenido ya no está disponible.</p>
+<p>== ErrorCannotRenameDynamicWk ==
+Los espacios de trabajo dinámicos no pueden ser renombrados.</p>
+<p>== ErrorCantImportInvalidPackage ==
+Paquete de replicación incorrecto, no se ha encontrado una cabecera válida</p>
+<p>== ErrorClientconfignotfound ==
+El cliente Plastic SCM no está configurado correctamente para el usuario actual: No se ha encontrado el fichero de configuración {0}. Ejecute ‘cm configure’ para realizar una configuración en modo texto o ‘plastic –configure’ para realizarla en modo gráfico.</p>
+<p>== ErrorDiffType ==
+No se pueden mostrar diferencias entre elementos de distinto tipo</p>
+<p>== ErrorEmptySelector ==
+El selector no puede estar vacio.</p>
+<p>== ErrorInvalidPath ==
+El formato del path no está soportado.</p>
+<p>== ErrorMoveSrcDstEqual ==
+No se puede mover {0}. La ruta de origen y la de destino son la misma.</p>
+<p>== ErrorNoRepositoriesFound ==
+No se han encontrado repositorios en ningún servidor</p>
+<p>== ErrorPartialConfigureChangeCannotApply ==
+La operación no puede ser aplicada en la ruta {0}.</p>
+<p>== ErrorPartialConfigurePathNotFound ==
+La ruta {0} no fue encontrada.</p>
+<p>== ErrorPartialConfigureWrongFormat ==
+Formato no esperado. Revisa la ayuda del comando para más información.</p>
+<p>== ErrorReplicatePackageDoesntExist ==
+El paquete de replicación {0} no existe</p>
+<p>== ErrorTwoCsetWithPathDiff ==
+No se pudo calcular las diferencias entre ‘{0}’ y ‘{1}’.</p>
+<p>== ErrorUpdateTrailingDots ==
+Windows no permite puntos al final de los nombres.</p>
+<p>== ExpansionRulesHeader ==
+Reglas de expansión de ramas:</p>
+<p>== FastChgRepNotAllowedOnTransWk ==
+El fast update no se puede usar para cambiar de repositorio cuando se están usando reglas de trasformación. Por favor, use el standard update.</p>
+<p>== FastNotAllowedRuleRestricion ==
+El fast update no está permitido porque el cambio del servidor ‘{0}’ no se puede aplicar en el espacio de trabajo con la regla ‘{1}’. Por favor, utilice el standard update y actualice las reglas de transformación en caso necesario.</p>
+<p>== FastUpdCloakedError ==
+El fast update no se puede usar con reglas de cloaked. Por favor, use el standard update.</p>
+<p>== FastUpdConflictsError ==
+No es posible realizar un fast update porque hay conflictos entre los cambios locales y los del servidor.</p>
+<p>== FastUpdPendingChangesError ==
+No es posible realizar un fast update si hay cambios pendientes. Por favor, revise dichos cambios e intente de nuevo la operación.</p>
+<p>== FastUpdPendingMergesError ==
+No es posible realizar un fast update si hay links de merge pendientes. Por favor, revise dichos merges e intente de nuevo la operación.</p>
+<p>== FastUpdateApplyChangesError ==
+No se puede ejecutar la actualización rápida en el espacio de trabajo: ‘{0}’. Por favor deshaga todos los cambios locales, deshabilite la opción ‘actualizar rápido’ y lance la actualización de nuevo.</p>
+<dl class="simple">
+<dt>== FieldTooLong ==</dt><dd><p>{0} es demasiado grande, tiene {1} caracteres y el tamaño máximo es de {2}</p>
+</dd>
+</dl>
+<p>== FileTypesFileNotFound ==
+No se pudo encontrar el fichero de tipos {0}</p>
+<p>== FindNeedRepositories ==
+Fuera de un espacio de trabajo es necesario especificar los repositorios en la consulta con “on repositories”.</p>
+<p>== FormatterError ==
+El campo {0} no es válido para el tipo de objeto especificado</p>
+<p>== GameUiCiHeadOutOfDateError ==
+La operación de checkin no puede ser completada porque se han hecho nuevos cambios en repositorio ‘{0}’ desde que empezó la operación. Por favor, vuelva a intentar la operación de checkin para que los nuevos cambios del servidor sean tenidos en cuenta.</p>
+<p>== GameuiCiInsideUnresolvedXlinkNotAllowed ==
+El xlink ‘{0}’ no pudo resolverse. Los cambios debajo de un xlink no resuelto no pueden protegerse.</p>
+<p>== GameuiCoBrMissingXlink ==
+No se pueden hacer cambios dentro del xlink ‘{0}’ porque ya no está cargado en el servidor. Por favor, actualice la configuración de su espacio de trabajo.</p>
+<p>== GameuiCoBrUnresolvedXlink ==
+No se pueden hacer cambios dentro del xlink ‘{0}’ porque no puede resolverse ahora mismo debido al error: {1}</p>
+<p>== GenericError ==
+Se ha producido un error en el servidor {0}</p>
+<p>== GluonPartialUpdateToDifferentBranch ==
+La operación de update no puede continuar. El changeset destino debe estar en la rama actual del espacio de trabajo: {0}.</p>
+<p>== HoursAgo ==
+hace {0} horas</p>
+<p>== OneHourAgo ==
+hace 1 hora</p>
+<p>== IncomingChangesCannotCalculateMerge ==
+Los cambios a actualizar no se pueden calcular. Por favor, revise si el changeset cargado en el workspace fue borrado o bien contacte con soporte para obtener más información.</p>
+<p>== IncomingChangesDontMerge ==
+La operación de update detectó conflictos con los cambios del servidor. La operación no puede continuar ya que se lanzó con la opción –dontmerge.</p>
+<p>== IncomingChangesNotSupported ==
+El servidor {0} no soporta la operación de Incoming Changes. Por favor, actualice el servidor o ejecute un merge/update normal para traer los últimos cambios de la rama.</p>
+<p>== IncomingChangesReadonlyXlinksNotSupported ==
+Los Xlinks read-only no están soportados actualmente por la Incoming Changes. Por favor, haga un merge normal para traerse los últimos cambios de la rama.</p>
+<p>== IncomingTansformerRulesNotSupported ==
+El espacio de trabajo contiene reglas de transformación. Las reglas de transformación no se soportan actualmente por la Incoming Changes. Por favor actualice su espacio de trabajo deshaciendo previamente cualquier cambio pendiente. Si tiene algún cambio pendiente que desee conservar, puede hacer un shelve antes de deshacerlos y aplicarlo de nuevo tras actualizar.</p>
+<p>== IncomingWxlinkBackwardEditionNotSupported ==
+El Xlink de escritura ‘{0}’ se editó para apuntar a un changeset anterior (uno más antiguo). Esta edición de un Xlink de escritura no se soporta actualmente por la Incoming Changes. Por favor actualice su espacio de trabajo deshaciendo previamente cualquier cambio pendiente. Si tiene algún cambio pendiente que desee conservar, puede hacer un shelve antes de deshacerlos y aplicarlo de nuevo tras actualizar.</p>
+<p>== IncomingChangesSubbranchesNotSupported ==
+Está trabajando en una subrama. Esto ocurre cuando el changeset cargado no es un padre del head de la rama. Las subramas no están soportadas actualmente por la Incoming Changes. Por favor, haga un merge del cs:{0} para traerse los últimos cambios de la rama.</p>
+<p>== IncompatibleCmdOptions ==
+Opciones de comando incompatibles: {0}.</p>
+<p>== IncorrecBrspec ==
+Especificación de rama incorrecta</p>
+<p>== IncorrectCiDateFormat ==
+La fecha ‘{0}’ no se pudo interpretar a partir del formato ‘{1}’.</p>
+<p>== IncorrectExtensionConfiguration ==
+Datos de configuración de sistema de seguimiento de fallos incorrectos en la línea {0}: {1}</p>
+<p>== IncorrectExtensionConfigurationParameter ==
+Parámetro de configuración de sistema de seguimiento de fallos con formato incorrecto en la línea {0}: {1}</p>
+<p>== IncorrectSelector ==
+El selector no está correctamente definido.</p>
+<p>== IncorrectSelectorErrorMultiplePathsForRep ==
+El selector no está correctamente definido, existen múltiples reglas de path para el repositorio {0}.</p>
+<p>== IncorrectSelectorMultipleRules ==
+El selector no está correctamente definido, existen múltiples reglas de repositorio.</p>
+<p>== IncorrectSelectorNoRule ==
+El selector no está correctamente definido, no existe una regla de repositorio.</p>
+<p>== IncorrectSelectorParamInvalidMountPoint ==
+El selector no está correctamente definido, el repositorio {0} no puede tener un punto de montaje ({1}).</p>
+<p>== IncorrectSelectorParamRepDoesntexist ==
+El selector no está correctamente definido, el repositorio especificado no existe: {0}.</p>
+<p>== IncorrectSelectorParamRepServerCannotBeReached ==
+No se puede localizar el servidor ({0}) asociado al repositorio especificado {1}.</p>
+<p>== IncorrectSelectorParamRepnameCantBeEmpty ==
+El selector no está corrrectamente definido, el nombre de repositorio no puede estar vacío.</p>
+<p>== Incorrectspec ==
+Especificación de objeto incorrecta: {0}</p>
+<p>== InsensitiveDuplicatedItem ==
+Los elementos {0} y {1} no se pueden cargar a la vez en un sistema de ficheros insensitivo. El elemento {0} es descartado.</p>
+<p>== IntervalMerge ==
+Merge de intervalo</p>
+<p>== InvalidCharsInName ==
+{0} no puede contener ninguno de los siguientes caracteres:</p>
+<blockquote>
+<div><p>{1}</p>
+</div></blockquote>
+<p>== InvalidExpansionRule ==
+La regla de expansión de ramas ‘{0}’ no es válida.</p>
+<p>== InvalidExpansionRuleRepNotMatch ==
+La regla de expansión de ramas ‘{0}’ no es válida, porque la rama ‘{1}’ tiene que ser del repositorio ‘{2}’ y es del ‘{3}’.</p>
+<p>== InvalidFieldError ==
+The campo ‘{0}’ no es válido.</p>
+<p>== InvalidFormatString ==
+Cadena de formato incorrecta</p>
+<p>== InvalidMergeDstBrSpec ==
+Una especificación de changeset no es un destino de merge válido.</p>
+<p>== InvalidMergeDstSpec ==
+La especificación de destino para el merge no es válida. Por favor, en su lugar, use una especificación de changeset o rama.</p>
+<p>== InvalidMergespec ==
+Especificación no válida: {0}</p>
+<p>== InvalidMountPoint ==
+El punto de montaje ‘{0}’ para el repositorio {1} no es válido para el espacio de trabajo ‘{2}’. Podría estar desactualizado.</p>
+<p>== InvalidMoveDstPriv ==
+No se puede mover un elemento controlado a un directorio privado.</p>
+<p>== InvalidWorkingMode ==
+Modo de trabajo no válido: {0}</p>
+<p>== IsNotAnXlink ==
+‘{0}’ no es un xlink.</p>
+<p>== ItemAlreadyExistsOnWkWithDifferentTypeDir ==
+El elemento {0} ya existe en el workspace pero pero es un directorio en lugar de un fichero, por tanto no puede ser actualizado</p>
+<p>== ItemAlreadyExistsOnWkWithDifferentTypeFile ==
+El elemento {0} ya existe en el workspace pero es un fichero en lugar de un directorio, por tanto no puede ser actualizado</p>
+<p>== ItemAlreadyLocked ==
+El elemento {0} no puede ser bloquedado porque ya existe un checkout exclusivo {1}.</p>
+<p>== ItemAlreadyLockedOnMergeFromHead ==
+‘{0}’ ya está bloqueado {1} por lo que el merge no puede realizarse. Para continuar, desbloquea el fichero o deshaz los cambios. Para evitar este error en el futuro, recuerda hacer checkout de los ficheros que requieren bloqueo antes de realizar cambios.</p>
+<p>== ItemCannotBeFoundOnRep ==
+No se puede encontrar el ítem ‘{0}’ (ItemId:{1}) en el repositorio ‘{2}’. Probablemente esté trabajando con un espacio de trabajo desactualizado. Por favor, actualícelo.</p>
+<p>== ItemLockOutOfDateOnMergeFromHead ==
+‘{0}’ no puede bloquearse. No es la última revisión, y los bloqueos solo pueden realizarse sobre la última versión. Para continuar, deshaz los cambios y actualiza de nuevo. Para evitar este error en el futuro, recuerda hacer checkout de los ficheros que requieren bloqueo antes de realizar cambios.</p>
+<p>== ItemMustBeUndoCheckedout ==
+No se puede deshacer ‘{0}’ porque depende de ‘{1}’. Añada ‘{1}’ a los argumentos y pruebe de nuevo.</p>
+<p>== ItemNameField ==
+El nombre del ítem</p>
+<p>== ItemPathField ==
+La ruta del ítem</p>
+<p>== JustNow ==
+Ahora mismo</p>
+<p>== LockCopiedItemsNotSupported ==
+El servidor {0} no soporta bloquear elementos copiados. Por favor, actualice el servidor.</p>
+<p>== LogOnPrivateNotCsRep ==
+Para ejecutar el comando log en una ruta privada es necesario especificar una especificación de changeset o de repositorio completa.</p>
+<p>== LsItemNotFound ==
+No se ha podido resolver el selector para el ítem {0}</p>
+<p>== LsItemNotFoundSelector ==
+No se ha podido resolver el selector para el ítem {0}. Como está especificando un selector, recuerde que los paths deben estar en formato ‘repositorio’, es decir, use /src en lugar de c:myworkspacesrc</p>
+<p>== MainBranchesNotAllowed ==
+Las ramas de primer nivel no están permitidas en esta edición, solamente pueden crearse ramas hijas.</p>
+<p>== Merge ==
+Merge</p>
+<p>== MergeAddNotAllowedPathFreeByRule ==
+El ítem ‘{0}’ no se puede añadir. La ruta ‘{0}’ ya está en uso en el servidor, pero está libre en el cliente debido a la regla de transformación ‘{1}’. El merge no puede completarse con las reglas de transformación actuales. Por favor, borre de la regla de transformación involucrada (o use un espacio de trabajo sin transformar) e intente el merge de nuevo.</p>
+<p>== MergeDeleteNotAllowedRuleInside ==
+El ítem ‘{0}’ no se puede borrar porque contiene la regla de transformación ‘{1}’. El merge no puede completarse con las reglas de transformación actuales. Por favor, borre de la regla de transformación involucrada (o use un espacio de trabajo sin transformar) e intente el merge de nuevo.</p>
+<p>== MergeMoveNotAllowedPathFreeByRule ==
+El ítem ‘{0}’ no se puede mover a ‘{1}’. La ruta ‘{1}’ ya está en uso en el servidor, pero está libre en el cliente debido a la regla de transformación ‘{2}’. El merge no puede completarse con las reglas de transformación actuales. Por favor, borre de la regla de transformación involucrada (o use un espacio de trabajo sin transformar) e intente el merge de nuevo.</p>
+<p>== MergeMoveNotAllowedTransformedItem ==
+El ítem ‘{0}’ no puede moverse porque ha sido transformado por la regla ‘{1}’. El merge no puede completarse con las reglas de transformación actuales. Por favor, borre de la regla de transformación involucrada (o use un espacio de trabajo sin transformar) e intente el merge de nuevo.</p>
+<p>== MergeNeeded ==
+Se necesitan combinar los cambios del changeset cs:<a class="reference external" href="mailto:{0}&#37;&#52;&#48;rep">{0}<span>&#64;</span>rep</a>:<a class="reference external" href="mailto:{2}&#37;&#52;&#48;repserver">{2}<span>&#64;</span>repserver</a>:{3}(mount:{4}) con los cambios realizados sobre el changeset cs:<a class="reference external" href="mailto:{1}&#37;&#52;&#48;rep">{1}<span>&#64;</span>rep</a>:<a class="reference external" href="mailto:{2}&#37;&#52;&#48;repserver">{2}<span>&#64;</span>repserver</a>:{3}(mount:{4}) (changeset cargado en su workspace) antes de continuar. Por favor ejecute ‘cm merge “cs:<a class="reference external" href="mailto:{0}&#37;&#52;&#48;rep">{0}<span>&#64;</span>rep</a>:<a class="reference external" href="mailto:{2}&#37;&#52;&#48;repserver">{2}<span>&#64;</span>repserver</a>:{3}”  –merge’ en ‘{5}’ para resolver los conflictos. Después de eso, reintente la operación de checkin.</p>
+<p>== MergeRestorerDeletedPathInUse ==
+El path borrado por la regla de transformación {0}  ha sido reutilizado por la regla de transformación {1}, por lo que el contenido del borrado no se puede restaurar. El merge no puede completarse con las reglas de transformación actuales. Por favor, borre de la regla de transformación involucrada (o use un espacio de trabajo sin transformar) e intente el merge de nuevo.</p>
+<p>== MergeRestorerRmRuleCannotBeLoaded ==
+El contenido de la regla de transformación ‘{0}’ no se puede cargar. El merge no puede completarse con las reglas de transformación actuales. Por favor, borre de la regla de transformación involucrada (o use un espacio de trabajo sin transformar) e intente el merge de nuevo.</p>
+<p>== MergeRestorerRmRuleMountMissing ==
+No se puede encontrar el punto de montaje de la regla de transformación ‘{0}’. El merge no puede completarse con las reglas de transformación actuales. Por favor, borre de la regla de transformación involucrada (o use un espacio de trabajo sin transformar) e intente el merge de nuevo.</p>
+<p>== MergeRestorerRmRuleParentMissing ==
+El contenido de la regla de transformación ‘{0}’ no se puede restaurar porque su padre ‘{1}’ no está cargado en el espacio de trabajo. El merge no puede completarse con las reglas de transformación actuales. Por favor, borre de la regla de transformación involucrada (o use un espacio de trabajo sin transformar) e intente el merge de nuevo.</p>
+<p>== MergeToPendingDirectoryConflicts ==
+Hay conflictos de directorio pendientes que deben ser resueltos antes de procesar el merge-to.</p>
+<p>== MergeToPendingFileConflicts ==
+Hay conflictos de fichero pendientes que deben ser resueltos antes de procesar el merge-to.</p>
+<p>== MergeWithChgInsideMissingNotAllowed ==
+La operación de merge no está permitida con cambios pendientes entre los cloaked o debajo de una regla de transformación de borrado. Por favor, confirme o deshaga los cambios pendientes primero.</p>
+<p>== MergetoolsUncorrectDefined ==
+Error en la ejecución de la herramineta de merge “{0}”. Las herramientas de merge están mal definidas en el client.conf.</p>
+<p>== MinutesAgo ==
+hace {0} minutos</p>
+<p>== OneMinuteAgo ==
+hace 1 minuto</p>
+<p>== MissingUserOrPassword ==
+Necesita especificar un usuario (–username) y una contraseña (–password) para el modo de trabajo ‘{0}’.</p>
+<p>== MissingUserOrToken ==
+Necesita especificar un usuario (–username) y un token (–token) para el modo de trabajo ‘{0}’.</p>
+<p>== MkNameField ==
+El nombre de la etiqueta</p>
+<p>== MkbranchParentnotfound ==
+No se ha podido encontrar la rama padre {0} en el servidor</p>
+<p>== Months ==
+{0} meses</p>
+<p>== MonthsAgo ==
+hace {0} meses</p>
+<p>== OneMonthAgo ==
+hace 1 mes</p>
+<p>== MoveNotAllowedForTransformedItem ==
+El ítem ‘{0}’ no puede moverse porque ha sido transformado por la regla ‘{1}’.</p>
+<p>== MoveNotAllowedPathIsFreeByTransformerRule ==
+El ítem ‘{0}’ no se puede mover a ‘{1}’. La ruta ‘{1}’ ya está en uso en el servidor, pero está libre en el cliente debido a la regla de transformación ‘{2}’.</p>
+<p>== MultipleWorkspaceNotAllowed ==
+La operación de {0} no puede ejecutarse con ítems de varios workspaces. Por favor, repita la operación por separado con los ítems de cada workspace.</p>
+<p>== MustBeOnSameRep ==
+{0} y {1} tienen que estar en el mismo repositorio para poder realizar la operación.</p>
+<p>== NewerWorkspaceVersion ==
+Los metadatos del workspace ‘{0}’ fueron actualizados por un cliente más nuevo de Plastic SCM. Una versión más antigua no puede leer los metadatos del workspace. Para solucionar el problema: 1) Puede actualizar el cliente de Plastic SCM o 2) puede borrar el directorio ‘.plastic’ dentro de su workspace (todos los metadatos del workspace se perderán, los ficheros aparecerán como privados y será necesario actualizar el workspace).</p>
+<p>== NoContentToCompare ==
+No hay contenido para comparar.</p>
+<p>== NoDifftoolDefined ==
+No hay ninguna herramienta de diferencias definida en el fichero de configuración</p>
+<p>== NoElementFound ==
+No se ha encontrado ningún elemento sobre el que mostrar la historia.</p>
+<p>== NoMergesInProgress ==
+No hay merges en progreso en el espacio de trabajo ‘{0}’.</p>
+<p>== NoMergetoolDefined ==
+No hay ninguna herramienta de merge definida en el fichero de configuración</p>
+<p>== NoMountPointForMultirepQuery ==
+No se puede obtener un punto de montaje para un consulta de múltiples repositorios (consulta:’{0}’).</p>
+<p>== NoPathBetweenCsets ==
+No hay un camino entre ‘{0}’ y ‘{1}’.</p>
+<p>== NoPendingMerges ==
+There are not merges in progress on workspace ‘{0}’.</p>
+<p>== NoSuchCodeReview ==
+No se pudo encontrar la revisión de código especificada ‘{0}’.</p>
+<p>== NoSuchCodeReviewStatus ==
+La revisión de código no admite el estado: {0}. Los valores posibles son: {1}</p>
+<p>== NotChange ==
+{0} no es un cambio</p>
+<p>== NotValidCmPath ==
+La ruta especificada: {0} no es una ruta de servidor válida.</p>
+<p>== ObjectNameField ==
+El nombre del objeto</p>
+<p>== OnlyOneRepRuleByRep ==
+El selector no es válido. Hay más de una regla de reposipositorio para el repositorio ‘{0}’, sólo esta permitida una regla de repositorio por repositorio.</p>
+<p>== ParentRevisionNotFound ==
+No se pueden mostrar las diferencias porque el servidor no contiene la revisión padre (revid:<a class="reference external" href="mailto:{0}&#37;&#52;&#48;{1">{0}<span>&#64;</span>{1</a>}) de la revisión seleccionada. Probablemente otra persona eliminó el changeset donde se cargaba dicha revisión.</p>
+<p>== PartialWkWxlinkCannotBeEditedTargetOnExpandedBr ==
+En un espacio de trabajo parcial no se puede cambiar la rama a la que enlaza el Xlink ‘{0}’ cuando ya estás trabajando en ella.</p>
+<p>== PartialWkWxlinkCannotBeEditedTargetOnSameBr ==
+Un espacio de trabajo parcial siempre carga lo último en la rama de trabajo, por ello no es posible editar el Xlink de escritura ‘{0}’ para que apunte a otro changeset de la rama.</p>
+<p>== PendingDirectoryConflict ==
+Hay un conflicto de directorio que debe ser resuelto antes de procesar el merge.</p>
+<p>== PendingDirectoryConflicts ==
+Hay {0} conflictos de directorio que deben ser resueltos antes de procesar el merge.</p>
+<p>== PrivDirDiff ==
+No se soportan diferencias entre directorios privados</p>
+<p>== ProfileNameAlreadyExists ==
+El nombre del perfil ya existe</p>
+<p>== RepCannotBeLoadedInsideItself ==
+Un repositorio no se puede cargar dentro de sí mismo. El repositorio {0} no se puede cargar en ‘{1}’ porque  ya está cargado en ‘{2}’.</p>
+<p>== RepNameField ==
+El nombre del repositorio</p>
+<p>== RepSpecField ==
+La especificación del repositorio</p>
+<p>== RepositoryLoadedTwiceOnWk ==
+El repositorio {0} se monta 2 veces en las rutas ‘{1}’ y ‘{2}’. Por favor, especifique el punto de montaje.</p>
+<p>== RestorePathShouldNotExist ==
+La ruta donde se va a restaurar no debe de estar ocupada.</p>
+<p>== RevdatanotfoundForSpec ==
+No se han encontrado datos para la especificación dada</p>
+<p>== RevertToCurrentRev ==
+La revisión especificada ‘{0}’ es la actual, el revert no es necesario.</p>
+<p>== ReviewNameField ==
+El título para la revisión de código</p>
+<p>== RevisionCannotBeFoundOnRep ==
+La revisión actual de {0} no se puede encontrar en el repositorio ‘{1}’.</p>
+<p>== SecondsAgo ==
+hace {0} segundos</p>
+<p>== SecuredPathField ==
+La ruta segura especificada</p>
+<p>== SecuredPathTagField ==
+La etiqueta para la ruta segura</p>
+<p>== SelectorCsetZeroRootCannotBeLoaded ==
+El espacio de trabajo no se ha podido inicializar para el selector. Posiblemente no tenga los permisos necesarios para cargar el changeset inicial del repositorio del selector.</p>
+<p>== SelectorRepNotFound ==
+El repositorio no se encontró. Posiblemente, el selector del espacio de trabajo contenga errores.</p>
+<p>== SelectorTreeContentCannotBeLoaded ==
+No se ha podido cargar el contenido del selector. Posiblemente no tenga los permisos necesarios para cargarlo.</p>
+<p>== ShelveIdGreaterThanZero ==
+El identificador de shelve debe ser un número entero mayor que cero.</p>
+<p>== SubtractiveIntervalMerge ==
+Merge sustractivo de intervalo</p>
+<p>== SubtractiveMerge ==
+Merge sustractivo</p>
+<p>== SupportBundleAdding ==
+Agregando {0}…</p>
+<p>== SwitchSelectorErrorMultiplePathsInRule ==
+Existen múltiples reglas de path para el repositorio {0}. No se puede cambiar el selector sin editarlo</p>
+<p>== SwitchSelectorErrorNoRepFound ==
+El selector del workspace actual no tiene ninguna regla para el repositorio {0}</p>
+<p>== SwitchSelectorErrorNoRepFoundOnlyOneRule ==
+El selector del workspace actual no tiene ninguna regla para el repositorio {0}</p>
+<p>== SwitchSelectorErrorObjectsOnSameRep ==
+Se ha seleccionado más de una rama o etiqueta para el mismo repositorio</p>
+<p>== PartialSwitchToLabelErrorNotSupported ==
+La operación de switch a un label no está soportada para workspaces parciales</p>
+<p>== SwitchOperationNotSupported ==
+Operación de switch no soportada</p>
+<p>== SyncBranchWithMultipleHeads ==
+La rama {0} tiene más de un head. Por favor, unifíquela para continuar sincronizando.</p>
+<p>== SyncBranchesWithMultipleHeads ==
+Las ramas {0} tienen más de un head. Por favor, unifíquelas para continuar sincronizando.</p>
+<p>== TransformedItemAlreadyApplied ==
+La regla ‘{0}’ no se puede aplicar porque ya se ha aplicado una regla anteriormente sobre el mismo ítem.</p>
+<p>== TransformerMvRuleDstInUseError ==
+La regla ‘{0}’ no se puede aplicar porque la ruta de destino está en uso.</p>
+<p>== TransformerMvRuleDstInsideSrcError ==
+La regla ‘{0}’ no se puede aplicar porque no se puede mover un ítem dentro de si mismo.</p>
+<p>== TransformerMvRuleModifiesAppliedRule ==
+La regla ‘{0}’ no se puede aplicar porque modifica una regla que ya ha sido aplicada (‘{1}’).</p>
+<p>== TransformerRmRuleMvInsideError ==
+La regla ‘{0}’ no se puede aplicar porque contiene regla de movido (‘{1}’).</p>
+<p>== TransformerRuleDeleteRootError ==
+La regla ‘{0}’ no se puede aplicar porque no se puede borrar el directorio raíz.</p>
+<p>== TransformerRuleMissingPathError ==
+La regla ‘{0}’ no se puede aplicar porque no se encuentra la ruta ‘{1}’.</p>
+<p>== TriggerNameField ==
+El nombre del trigger</p>
+<p>== TwoRulesForSameBranchError ==
+La regla de expansión ‘{0} -&gt; {1}’ no se puede añadir por que la rama ‘{0}’ ya tiene la regla de expansión ‘{0} -&gt; {2}’.</p>
+<p>== UnableToOpen ==
+No se pudo abrir la URL:</p>
+<p>== UndeleteNotSupported ==
+La operación de recuperar no esta soportada para xlinks.</p>
+<p>== UnexpectedError ==
+Se ha producido un error no esperado.</p>
+<p>== UnexpectedErrorOnServer ==
+Se ha producido un error no esperado en el servidor. Por favor, para más información compruebe el log del servidor.</p>
+<p>== UnreachableServer ==
+El servidor ‘{0}’ no es alcanzable.</p>
+<p>== UnrecognizedLanguage ==
+El lenguaje del fichero indicado no está soportado actualmente.</p>
+<p>== UnsupportedMergeType ==
+Tipo de merge no soportado</p>
+<p>== UnsupportedWorkingModeArgument ==
+El modo de trabajo ‘{0}’ no está soportado.</p>
+<p>== UpPasswordCorrupt ==
+El parámetro ‘password’ es incorrecto en el fichero de configuración del cliente.</p>
+<p>== UpdateMergeNeeded ==
+Se necesita realizar una operación de merge desde el changeset {0} para poder actualizar el espacio de trabajo.</p>
+<p>== UpdateWkContentError ==
+El contenido del espacio de trabajo ‘{0}’ no ha podido actualizarse debido al siguiente error: {1}</p>
+<dl class="simple">
+<dt>== UserDefinedExpansionRuleSuffix ==</dt><dd><p>[definida por el usuario]</p>
+</dd>
+</dl>
+<p>== UsingDefaultConfiguration ==
+Usando la configuración por defecto</p>
+<p>== WkConfigurationDirAlreadyChanged ==
+El directorio ‘{0}’ no puede ser cargado/descargado porque contiene cambios en ‘{1}’. Por favor, deshaga todos los cambios pendientes dentro del directorio y reintente la operación.</p>
+<p>== WkConfigurationFileAlreadyChanged ==
+El fichero ‘{0}’ no puede ser cargado/descargado porque se encuentra cambiado en el workspace en ‘{1}’. Por favor, deshaga el cambio y reintente la operación.</p>
+<p>== WkConfigurationItemAlreadyLoaded ==
+El ítem ‘{0}’ está ya cargado en el workspace. Por favor, descarguelo de ‘{1}’ para poderlo cargar en la nueva ubicación.</p>
+<p>== WkConfigurationPathAlreadyInUse ==
+Hay otro ítem cargado en el path ‘{0}’. Por favor, descárguelo y reintente la operación.</p>
+<p>== WkConfigurationRootAlreadyChanged ==
+La raíz del workspace no puede ser cargada/descargada porque hay cambios pendientes en el workspace. Por favor, deshaga todos los cambios pendientes y reintente la operación.</p>
+<p>== WkNameField ==
+El nombre del workspace</p>
+<p>== WkPathField ==
+La ruta del workspace</p>
+<p>== WktreeCorrupt ==
+Los metadatos del workspace ‘{0}’ están corruptos. Por favor, actualize el workspace.</p>
+<p>== WorkspacePathNotResolved ==
+La ruta del workspace para el ítem {0} no pudo ser resuelta.</p>
+<p>== WorkspaceWithChangesApplingLabel ==
+El workspace contiene cambios. Una etiqueta no se puede aplicar si existen cambios pendientes en el workspace.</p>
+<p>== WrongConflictToResolve ==
+‘{0}’ no es un conflicto válido para resolver.</p>
+<p>== WrongPercentValue ==
+El valor ‘{0}’ no es un porcentaje válido.</p>
+<p>== WrongResolutionInfo ==
+‘{0}’ no es información válida para la resolución ‘{1}’.</p>
+<p>== WrongResolutionOption ==
+‘{0}’ no es una resolución válida.</p>
+<p>== XlinkCsetNotFound ==
+No se ha podido encontrar el changeset del xlink {0}</p>
+<p>== XlinkRootNotFound ==
+No se puede encontrar la raiz del xlink ‘{0}’ en <a class="reference external" href="mailto:{1}&#37;&#52;&#48;{2">{1}<span>&#64;</span>{2</a><a class="reference external" href="mailto:}&#37;&#52;&#48;{3">}<span>&#64;</span>{3</a>}.</p>
+<p>== Years ==
+{0} años</p>
+<p>== YearsAgo ==
+hace {0} años</p>
+<p>== OneYearAgo ==
+hace 1 año</p>
+<p>== RevisionToReloadNotFound ==
+No fue encontrada la revisión a cargar</p>
+<p>== InvalidEncryptionMethod ==
+El método de cifrado especificado no es válido: {0}. Utiliza AES128, AES192 o AES256</p>
+<p>== MissingEncryptionPassword ==
+Utiliza –encryptpassword para especificar la contraseña</p>
+<p>== EmptyEncryptionPassword ==
+Especifica una contraseña válida</p>
+<p>== MissingEncryptionServer ==
+Utiliza –encryptserver para especificar el servidor</p>
+<p>== EmptyEncryptionServer ==
+Especifica un servidor cifrado válido</p>
+<p>== MkworkspaceDynamicIncorrectTreespec ==
+Especificación de rama, changeset o etiqueta incorrecta: ‘{0}’</p>
+<p>== MkworkspaceDynamicTreespecNotfound ==
+No hay ninguna rama, changeset o etiqueta con la especificación ‘{0}’</p>
+<p>== MkworkspaceDynamicAlreadyExists ==
+El directorio ‘{0}’ ya existe y no está vacío</p>
+<p>== WkDynamicSingleNotMountedYet ==
+No se ha podido montar el espacio de trabajo dinámico {0} después de {1} segundos</p>
+<p>== WkDynamicMultipleNotMountedYet ==
+Los siguientes espacios de trabajo dinámicos todavía no están montados después de {0} segundos: {1}.</p>
+<p>== GameUiCheckinConflictsError ==
+La operación de checkin no puede ser completada porque algunos cambios locales no se pueden aplicar en la versión actual del servidor. Por favor, compruebe los conflictos entre sus cambios locales y la versión actual del servidor.</p>
+<p>== IsNotWk ==
+{0} no está en un espacio de trabajo.</p>
+<p>== CmdPatchFileNotFound ==
+El fichero que contiene el patch no ha sido encontrado.</p>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.collab-proxy@1.17.7/Lib/Editor/PlasticSCM/localization/clientcommon.es.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

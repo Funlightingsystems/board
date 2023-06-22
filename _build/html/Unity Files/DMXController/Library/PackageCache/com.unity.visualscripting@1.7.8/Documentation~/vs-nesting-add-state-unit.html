@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Add a State Unit to a Script Graph &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Add a State Unit to a Script Graph</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="add-a-state-unit-to-a-script-graph">
+<h1>Add a State Unit to a Script Graph<a class="headerlink" href="#add-a-state-unit-to-a-script-graph" title="Permalink to this heading">¶</a></h1>
+<p>Add a State Unit to a Script Graph to trigger a change of state. A state is any set of behaviors that you want a GameObject to perform. For more information on state in Visual Scripting, see <a class="reference internal" href="vs-graph-types.html"><span class="std std-doc">Graphs</span></a>.</p>
+<p>You can add a new State Graph to a State Unit node, or use an existing State Graph from the project. For more information on the State Unit node, see <a class="reference internal" href="vs-nesting-state-unit-node.html"><span class="std std-doc">State Unit node</span></a>.</p>
+<section id="add-a-new-state-graph-as-a-state-unit-node">
+<h2>Add a new State Graph as a State Unit node<a class="headerlink" href="#add-a-new-state-graph-as-a-state-unit-node" title="Permalink to this heading">¶</a></h2>
+<p>To add a new blank State Graph as a State Unit node to a Script Graph:</p>
+<ol>
+<li><p>[!include[with-graph-open-ff](./snippets/vs-with-graph-open-ff.md)]</p></li>
+<li><p>Go to <strong>Nesting</strong>.</p></li>
+<li><p>Select <strong>State Unit</strong> to add a State Unit node to the graph.</p></li>
+<li><p>Open the <a href="vs-interface-overview.md#the-graph-inspector">Graph Inspector</a>.</p></li>
+<li><p>In the Graph Inspector, choose the source for the State Unit:</p>
+<ul>
+    <li><p><strong>Embed</strong>: The State Graph only exists on the State Unit node. You can only change the State Graph from the node in its parent graph.</p></li>
+    <li><p><strong>Graph</strong>: The State Graph exists in a separate file. You can change the State Graph outside of its parent graph and reuse the graph in other areas of an application.</p></li>
+</ul>
+</li>
+<li><p>If you chose <strong>Graph</strong>:</p>
+<ol type="a">
+    <li><p>In the Graph Inspector, select <strong>New</strong>.</p></li>
+    <li><p>Enter a name for the graph file.</p></li>
+    <li><p>Choose where you want to save the graph file in the project.</p></li>
+    <li><p>Select <strong>Save</strong>.</p></li>
+</ol>
+</li>
+</ol>
+<p><img alt="An image of the Graph window that displays a new blank State Unit node added to a Script Graph." src="../../../../../../_images/vs-state-unit-new-state-graph.png" /></p>
+</section>
+<section id="add-an-existing-state-graph-as-a-state-unit-node">
+<h2>Add an existing State Graph as a State Unit node<a class="headerlink" href="#add-an-existing-state-graph-as-a-state-unit-node" title="Permalink to this heading">¶</a></h2>
+<p>To add an existing State Graph file as a State Unit node in a Script Graph:</p>
+<ol class="arabic simple">
+<li><p>[!include<a class="reference internal" href="snippets/vs-with-graph-open-ff.html"><span class="std std-doc">with-graph-open-ff</span></a>]</p></li>
+<li><p>Go to <strong>Nesting</strong>.</p></li>
+<li><p>Select <strong>State Unit</strong> to add a State Unit node to the graph.</p></li>
+<li><p>Open the <a class="reference internal" href="vs-interface-overview.html#the-graph-inspector"><span class="std std-ref">Graph Inspector</span></a>.</p></li>
+<li><p>In the Graph Inspector, set the <strong>Source</strong> to <strong>Graph</strong>.</p></li>
+<li><p>Do one of the following:</p>
+<ul class="simple">
+<li><p>In the <strong>Graph</strong> field, select the object picker (circle icon) and choose a compatible State Graph from the project.</p></li>
+<li><p>Click and drag a State Graph file from the Project window and release on the <strong>Graph</strong> field.</p></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<div><p>[!TIP]
+For a faster way to add a State Graph as a State Unit node:</p>
+<ul class="simple">
+<li><p>Click and drag a State Graph asset from the Project window into the Graph Editor to automatically create a State Unit node.</p></li>
+<li><p>Right-click to open the fuzzy finder. Go to <strong>Graphs</strong> and select a graph file.</p></li>
+</ul>
+</div></blockquote>
+<p><img alt="An image of the Graph window, with a new Super Unit node created from an existing State Graph added to a Script Graph." src="../../../../../../_images/vs-existing-graph-example-state-unit.png" /></p>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">¶</a></h2>
+<p>Select <strong>Edit Graph</strong> in the Graph Inspector to edit the graph. For more information on how to create a State Graph, see <a class="reference internal" href="vs-state-graphs-intro.html"><span class="std std-doc">Develop logic transitions with State Graphs</span></a>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Add a State Unit to a Script Graph</a><ul>
+<li><a class="reference internal" href="#add-a-new-state-graph-as-a-state-unit-node">Add a new State Graph as a State Unit node</a></li>
+<li><a class="reference internal" href="#add-an-existing-state-graph-as-a-state-unit-node">Add an existing State Graph as a State Unit node</a></li>
+<li><a class="reference internal" href="#next-steps">Next steps</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-nesting-add-state-unit.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Add a State Unit to a Script Graph</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

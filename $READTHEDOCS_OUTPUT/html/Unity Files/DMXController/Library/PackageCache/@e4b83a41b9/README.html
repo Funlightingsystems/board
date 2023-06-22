@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome to websocket-sharp! &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Welcome to websocket-sharp!</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p><img alt="Logo" src="../../../../../_images/websocket-sharp_logo.png" /></p>
+<section id="welcome-to-websocket-sharp">
+<h1>Welcome to websocket-sharp!<a class="headerlink" href="#welcome-to-websocket-sharp" title="Permalink to this heading">¶</a></h1>
+<p>websocket-sharp supports:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#supported-websocket-specifications"><span class="xref myst">RFC 6455</span></a></p></li>
+<li><p><a class="reference internal" href="#websocket-client"><span class="xref myst">WebSocket Client</span></a> and <a class="reference internal" href="#websocket-server"><span class="xref myst">Server</span></a></p></li>
+<li><p><a class="reference internal" href="#per-message-compression"><span class="xref myst">Per-message Compression</span></a> extension</p></li>
+<li><p><a class="reference internal" href="#secure-connection"><span class="xref myst">Secure Connection</span></a></p></li>
+<li><p><a class="reference internal" href="#http-authentication"><span class="xref myst">HTTP Authentication</span></a></p></li>
+<li><p><a class="reference internal" href="#query-string-origin-header-and-cookies"><span class="xref myst">Query string, Origin header, and Cookies</span></a></p></li>
+<li><p><a class="reference internal" href="#connecting-through-the-http-proxy-server"><span class="xref myst">Connecting through the HTTP proxy server</span></a></p></li>
+<li><p>.NET Framework <strong>3.5</strong> or later versions of .NET Framework (includes compatible environment such as <a class="reference external" href="http://www.mono-project.com">Mono</a>)</p></li>
+</ul>
+</section>
+<section id="branches">
+<h1>Branches<a class="headerlink" href="#branches" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/sta/websocket-sharp/tree/master">master</a> for production releases.</p></li>
+<li><p><a class="reference external" href="https://github.com/sta/websocket-sharp/tree/hybi-00">hybi-00</a> for older <a class="reference external" href="http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-00">draft-ietf-hybi-thewebsocketprotocol-00</a>. No longer maintained.</p></li>
+<li><p><a class="reference external" href="https://github.com/sta/websocket-sharp/tree/draft75">draft75</a> for even more old <a class="reference external" href="http://tools.ietf.org/html/draft-hixie-thewebsocketprotocol-75">draft-hixie-thewebsocketprotocol-75</a>. No longer maintained.</p></li>
+</ul>
+</section>
+<section id="build">
+<h1>Build<a class="headerlink" href="#build" title="Permalink to this heading">¶</a></h1>
+<p>websocket-sharp is built as a single assembly, <strong>websocket-sharp.dll</strong>.</p>
+<p>websocket-sharp is developed with <a class="reference external" href="http://monodevelop.com">MonoDevelop</a>. So a simple way to build is to open <strong>websocket-sharp.sln</strong> and run build for <strong>websocket-sharp project</strong> with any of the build configurations (e.g. <code class="docutils literal notranslate"><span class="pre">Debug</span></code>) in MonoDevelop.</p>
+</section>
+<section id="install">
+<h1>Install<a class="headerlink" href="#install" title="Permalink to this heading">¶</a></h1>
+<section id="self-build">
+<h2>Self Build<a class="headerlink" href="#self-build" title="Permalink to this heading">¶</a></h2>
+<p>You should add your websocket-sharp.dll (e.g. <code class="docutils literal notranslate"><span class="pre">/path/to/websocket-sharp/bin/Debug/websocket-sharp.dll</span></code>) to the library references of your project.</p>
+<p>If you would like to use that dll in your <a class="reference external" href="http://unity3d.com">Unity</a> project, you should add it to any folder of your project (e.g. <code class="docutils literal notranslate"><span class="pre">Assets/Plugins</span></code>) in the <strong>Unity Editor</strong>.</p>
+</section>
+<section id="nuget-gallery">
+<h2>NuGet Gallery<a class="headerlink" href="#nuget-gallery" title="Permalink to this heading">¶</a></h2>
+<p>websocket-sharp is available on the <a class="reference external" href="http://www.nuget.org">NuGet Gallery</a>, as still a <strong>prerelease</strong> version.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.nuget.org/packages/WebSocketSharp">NuGet Gallery: websocket-sharp</a></p></li>
+</ul>
+<p>You can add websocket-sharp to your project with the NuGet Package Manager, by using the following command in the Package Manager Console.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PM&gt; Install-Package WebSocketSharp -Pre
+</pre></div>
+</div>
+</section>
+</section>
+<section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h1>
+<section id="websocket-client">
+<h2>WebSocket Client<a class="headerlink" href="#websocket-client" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">WebSocketSharp</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Example</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebSocket</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ws://dragonsnest.far/Laputa&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ws</span><span class="p">.</span><span class="n">OnMessage</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">                          </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Laputa says: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Data</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">ws</span><span class="p">.</span><span class="n">Connect</span><span class="w"> </span><span class="p">();</span>
+<span class="w">        </span><span class="n">ws</span><span class="p">.</span><span class="n">Send</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;BALUS&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadKey</span><span class="w"> </span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="step-1">
+<h3>Step 1<a class="headerlink" href="#step-1" title="Permalink to this heading">¶</a></h3>
+<p>Required namespace.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">WebSocketSharp</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> class exists in the <code class="docutils literal notranslate"><span class="pre">WebSocketSharp</span></code> namespace.</p>
+</section>
+<section id="step-2">
+<h3>Step 2<a class="headerlink" href="#step-2" title="Permalink to this heading">¶</a></h3>
+<p>Creating a new instance of the <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> class with the WebSocket URL to connect.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebSocket</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ws://example.com&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> class inherits the <code class="docutils literal notranslate"><span class="pre">System.IDisposable</span></code> interface, so you can create it with the <code class="docutils literal notranslate"><span class="pre">using</span></code> statement.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebSocket</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ws://example.com&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This will <strong>close</strong> the WebSocket connection with status code <code class="docutils literal notranslate"><span class="pre">1001</span></code> (going away) when the control leaves the <code class="docutils literal notranslate"><span class="pre">using</span></code> block.</p>
+</section>
+<section id="step-3">
+<h3>Step 3<a class="headerlink" href="#step-3" title="Permalink to this heading">¶</a></h3>
+<p>Setting the <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> events.</p>
+<section id="websocket-onopen-event">
+<h4>WebSocket.OnOpen Event<a class="headerlink" href="#websocket-onopen-event" title="Permalink to this heading">¶</a></h4>
+<p>This event occurs when the WebSocket connection has been established.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">OnOpen</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="p">...</span>
+<span class="w">             </span><span class="p">};</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">System.EventArgs.Empty</span></code> is passed as <code class="docutils literal notranslate"><span class="pre">e</span></code>, so you do not need to use it.</p>
+</section>
+<section id="websocket-onmessage-event">
+<h4>WebSocket.OnMessage Event<a class="headerlink" href="#websocket-onmessage-event" title="Permalink to this heading">¶</a></h4>
+<p>This event occurs when the <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> instance receives a message.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">OnMessage</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="p">...</span>
+<span class="w">                </span><span class="p">};</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">WebSocketSharp.MessageEventArgs</span></code> instance is passed as <code class="docutils literal notranslate"><span class="pre">e</span></code>.</p>
+<p>If you would like to get the message data, you should access <code class="docutils literal notranslate"><span class="pre">e.Data</span></code> or <code class="docutils literal notranslate"><span class="pre">e.RawData</span></code> property.</p>
+<p><code class="docutils literal notranslate"><span class="pre">e.Data</span></code> property returns a <code class="docutils literal notranslate"><span class="pre">string</span></code>, so it is mainly used to get the <strong>text</strong> message data.</p>
+<p><code class="docutils literal notranslate"><span class="pre">e.RawData</span></code> property returns a <code class="docutils literal notranslate"><span class="pre">byte[]</span></code>, so it is mainly used to get the <strong>binary</strong> message data.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">IsText</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Do something with e.Data.</span>
+<span class="w">  </span><span class="p">...</span>
+
+<span class="w">  </span><span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">IsBinary</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Do something with e.RawData.</span>
+<span class="w">  </span><span class="p">...</span>
+
+<span class="w">  </span><span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>And if you would like to notify that a <strong>ping</strong> has been received, via this event, you should set the <code class="docutils literal notranslate"><span class="pre">WebSocket.EmitOnPing</span></code> property to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">EmitOnPing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="n">ws</span><span class="p">.</span><span class="n">OnMessage</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">IsPing</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">// Do something to notify that a ping has been received.</span>
+<span class="w">                    </span><span class="p">...</span>
+
+<span class="w">                    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">                </span><span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="websocket-onerror-event">
+<h4>WebSocket.OnError Event<a class="headerlink" href="#websocket-onerror-event" title="Permalink to this heading">¶</a></h4>
+<p>This event occurs when the <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> instance gets an error.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">OnError</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="p">...</span>
+<span class="w">              </span><span class="p">};</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">WebSocketSharp.ErrorEventArgs</span></code> instance is passed as <code class="docutils literal notranslate"><span class="pre">e</span></code>.</p>
+<p>If you would like to get the error message, you should access <code class="docutils literal notranslate"><span class="pre">e.Message</span></code> property.</p>
+<p><code class="docutils literal notranslate"><span class="pre">e.Message</span></code> property returns a <code class="docutils literal notranslate"><span class="pre">string</span></code> that represents the error message.</p>
+<p>And <code class="docutils literal notranslate"><span class="pre">e.Exception</span></code> property returns a <code class="docutils literal notranslate"><span class="pre">System.Exception</span></code> instance that represents the cause of the error if it is due to an exception.</p>
+</section>
+<section id="websocket-onclose-event">
+<h4>WebSocket.OnClose Event<a class="headerlink" href="#websocket-onclose-event" title="Permalink to this heading">¶</a></h4>
+<p>This event occurs when the WebSocket connection has been closed.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">OnClose</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="p">...</span>
+<span class="w">              </span><span class="p">};</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">WebSocketSharp.CloseEventArgs</span></code> instance is passed as <code class="docutils literal notranslate"><span class="pre">e</span></code>.</p>
+<p>If you would like to get the reason for the close, you should access <code class="docutils literal notranslate"><span class="pre">e.Code</span></code> or <code class="docutils literal notranslate"><span class="pre">e.Reason</span></code> property.</p>
+<p><code class="docutils literal notranslate"><span class="pre">e.Code</span></code> property returns a <code class="docutils literal notranslate"><span class="pre">ushort</span></code> that represents the status code for the close.</p>
+<p><code class="docutils literal notranslate"><span class="pre">e.Reason</span></code> property returns a <code class="docutils literal notranslate"><span class="pre">string</span></code> that represents the reason for the close.</p>
+</section>
+</section>
+<section id="step-4">
+<h3>Step 4<a class="headerlink" href="#step-4" title="Permalink to this heading">¶</a></h3>
+<p>Connecting to the WebSocket server.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">Connect</span><span class="w"> </span><span class="p">();</span>
+</pre></div>
+</div>
+<p>If you would like to connect to the server asynchronously, you should use the <code class="docutils literal notranslate"><span class="pre">WebSocket.ConnectAsync</span> <span class="pre">()</span></code> method.</p>
+</section>
+<section id="step-5">
+<h3>Step 5<a class="headerlink" href="#step-5" title="Permalink to this heading">¶</a></h3>
+<p>Sending data to the WebSocket server.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">Send</span><span class="w"> </span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">WebSocket.Send</span></code> method is overloaded.</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">WebSocket.Send</span> <span class="pre">(string)</span></code>, <code class="docutils literal notranslate"><span class="pre">WebSocket.Send</span> <span class="pre">(byte[])</span></code>, <code class="docutils literal notranslate"><span class="pre">WebSocket.Send</span> <span class="pre">(System.IO.FileInfo)</span></code>, or <code class="docutils literal notranslate"><span class="pre">WebSocket.Send</span> <span class="pre">(System.IO.Stream,</span> <span class="pre">int)</span></code> method to send the data.</p>
+<p>If you would like to send the data asynchronously, you should use the <code class="docutils literal notranslate"><span class="pre">WebSocket.SendAsync</span></code> method.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">SendAsync</span><span class="w"> </span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">completed</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>And also if you would like to do something when the send is complete, you should set <code class="docutils literal notranslate"><span class="pre">completed</span></code> to any <code class="docutils literal notranslate"><span class="pre">Action&lt;bool&gt;</span></code> delegate.</p>
+</section>
+<section id="step-6">
+<h3>Step 6<a class="headerlink" href="#step-6" title="Permalink to this heading">¶</a></h3>
+<p>Closing the WebSocket connection.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">Close</span><span class="w"> </span><span class="p">(</span><span class="n">code</span><span class="p">,</span><span class="w"> </span><span class="n">reason</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If you would like to close the connection explicitly, you should use the <code class="docutils literal notranslate"><span class="pre">WebSocket.Close</span></code> method.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">WebSocket.Close</span></code> method is overloaded.</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">WebSocket.Close</span> <span class="pre">()</span></code>, <code class="docutils literal notranslate"><span class="pre">WebSocket.Close</span> <span class="pre">(ushort)</span></code>, <code class="docutils literal notranslate"><span class="pre">WebSocket.Close</span> <span class="pre">(WebSocketSharp.CloseStatusCode)</span></code>, <code class="docutils literal notranslate"><span class="pre">WebSocket.Close</span> <span class="pre">(ushort,</span> <span class="pre">string)</span></code>, or <code class="docutils literal notranslate"><span class="pre">WebSocket.Close</span> <span class="pre">(WebSocketSharp.CloseStatusCode,</span> <span class="pre">string)</span></code> method to close the connection.</p>
+<p>If you would like to close the connection asynchronously, you should use the <code class="docutils literal notranslate"><span class="pre">WebSocket.CloseAsync</span></code> method.</p>
+</section>
+</section>
+<section id="websocket-server">
+<h2>WebSocket Server<a class="headerlink" href="#websocket-server" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">WebSocketSharp</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">WebSocketSharp.Server</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Example</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Laputa</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">WebSocketBehavior</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnMessage</span><span class="w"> </span><span class="p">(</span><span class="n">MessageEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="kt">var</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Data</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;BALUS&quot;</span>
+<span class="w">                </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Are you kidding?&quot;</span>
+<span class="w">                </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;I&#39;m not available now.&quot;</span><span class="p">;</span>
+
+<span class="w">      </span><span class="n">Send</span><span class="w"> </span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="kt">var</span><span class="w"> </span><span class="n">wssv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebSocketServer</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ws://dragonsnest.far&quot;</span><span class="p">);</span>
+
+<span class="w">      </span><span class="n">wssv</span><span class="p">.</span><span class="n">AddWebSocketService</span><span class="o">&lt;</span><span class="n">Laputa</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;/Laputa&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="n">wssv</span><span class="p">.</span><span class="n">Start</span><span class="w"> </span><span class="p">();</span>
+<span class="w">      </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadKey</span><span class="w"> </span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="w">      </span><span class="n">wssv</span><span class="p">.</span><span class="n">Stop</span><span class="w"> </span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="id1">
+<h3>Step 1<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<p>Required namespace.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">WebSocketSharp.Server</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">WebSocketBehavior</span></code> and <code class="docutils literal notranslate"><span class="pre">WebSocketServer</span></code> classes exist in the <code class="docutils literal notranslate"><span class="pre">WebSocketSharp.Server</span></code> namespace.</p>
+</section>
+<section id="id2">
+<h3>Step 2<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<p>Creating the class that inherits the <code class="docutils literal notranslate"><span class="pre">WebSocketBehavior</span></code> class.</p>
+<p>For example, if you would like to provide an echo service,</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">WebSocketSharp</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">WebSocketSharp.Server</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Echo</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">WebSocketBehavior</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnMessage</span><span class="w"> </span><span class="p">(</span><span class="n">MessageEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Send</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Data</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>And if you would like to provide a chat service,</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">WebSocketSharp</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">WebSocketSharp.Server</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Chat</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">WebSocketBehavior</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">_suffix</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="nf">Chat</span><span class="w"> </span><span class="p">()</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="n">_suffix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Suffix</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">get</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">_suffix</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">set</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">_suffix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnMessage</span><span class="w"> </span><span class="p">(</span><span class="n">MessageEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Sessions</span><span class="p">.</span><span class="n">Broadcast</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Data</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">_suffix</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can define the behavior of any WebSocket service by creating the class that inherits the <code class="docutils literal notranslate"><span class="pre">WebSocketBehavior</span></code> class.</p>
+<p>If you override the <code class="docutils literal notranslate"><span class="pre">WebSocketBehavior.OnMessage</span> <span class="pre">(MessageEventArgs)</span></code> method, it will be called when the <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> used in a session in the service receives a message.</p>
+<p>And if you override the <code class="docutils literal notranslate"><span class="pre">WebSocketBehavior.OnOpen</span> <span class="pre">()</span></code>, <code class="docutils literal notranslate"><span class="pre">WebSocketBehavior.OnError</span> <span class="pre">(ErrorEventArgs)</span></code>, and <code class="docutils literal notranslate"><span class="pre">WebSocketBehavior.OnClose</span> <span class="pre">(CloseEventArgs)</span></code> methods, each of them will be called when each of the <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> events (<code class="docutils literal notranslate"><span class="pre">OnOpen</span></code>, <code class="docutils literal notranslate"><span class="pre">OnError</span></code>, and <code class="docutils literal notranslate"><span class="pre">OnClose</span></code>) occurs.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">WebSocketBehavior.Send</span></code> method can send data to the client on a session in the service.</p>
+<p>If you would like to get the sessions in the service, you should access the <code class="docutils literal notranslate"><span class="pre">WebSocketBehavior.Sessions</span></code> property (returns a <code class="docutils literal notranslate"><span class="pre">WebSocketSharp.Server.WebSocketSessionManager</span></code>).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">WebSocketBehavior.Sessions.Broadcast</span></code> method can send data to every client in the service.</p>
+</section>
+<section id="id3">
+<h3>Step 3<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<p>Creating a new instance of the <code class="docutils literal notranslate"><span class="pre">WebSocketServer</span></code> class.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">wssv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebSocketServer</span><span class="w"> </span><span class="p">(</span><span class="m">4649</span><span class="p">);</span>
+
+<span class="n">wssv</span><span class="p">.</span><span class="n">AddWebSocketService</span><span class="o">&lt;</span><span class="n">Echo</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;/Echo&quot;</span><span class="p">);</span>
+<span class="n">wssv</span><span class="p">.</span><span class="n">AddWebSocketService</span><span class="o">&lt;</span><span class="n">Chat</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;/Chat&quot;</span><span class="p">);</span>
+<span class="n">wssv</span><span class="p">.</span><span class="n">AddWebSocketService</span><span class="o">&lt;</span><span class="n">Chat</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;/ChatWithNyan&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">Suffix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot; Nyan!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>You can add any WebSocket service to your <code class="docutils literal notranslate"><span class="pre">WebSocketServer</span></code> with the specified behavior and absolute path to the service, by using the <code class="docutils literal notranslate"><span class="pre">WebSocketServer.AddWebSocketService&lt;TBehavior&gt;</span> <span class="pre">(string)</span></code> or <code class="docutils literal notranslate"><span class="pre">WebSocketServer.AddWebSocketService&lt;TBehavior&gt;</span> <span class="pre">(string,</span> <span class="pre">Action&lt;TBehavior&gt;)</span></code> method.</p>
+<p>The type of <code class="docutils literal notranslate"><span class="pre">TBehavior</span></code> must inherit the <code class="docutils literal notranslate"><span class="pre">WebSocketBehavior</span></code> class, and must have a public parameterless constructor.</p>
+<p>So you can use a class in the above Step 2 to add the service.</p>
+<p>If you create a new instance of the <code class="docutils literal notranslate"><span class="pre">WebSocketServer</span></code> class without a port number, it sets the port number to <strong>80</strong>. So it is necessary to run with root permission.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo mono example2.exe
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>Step 4<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<p>Starting the WebSocket server.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">wssv</span><span class="p">.</span><span class="n">Start</span><span class="w"> </span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>Step 5<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<p>Stopping the WebSocket server.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">wssv</span><span class="p">.</span><span class="n">Stop</span><span class="w"> </span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="http-server-with-the-websocket">
+<h2>HTTP Server with the WebSocket<a class="headerlink" href="#http-server-with-the-websocket" title="Permalink to this heading">¶</a></h2>
+<p>I have modified the <code class="docutils literal notranslate"><span class="pre">System.Net.HttpListener</span></code>, <code class="docutils literal notranslate"><span class="pre">System.Net.HttpListenerContext</span></code>, and some other classes from <strong><a class="reference external" href="http://www.mono-project.com">Mono</a></strong> to create an HTTP server that allows to accept the WebSocket handshake requests.</p>
+<p>So websocket-sharp provides the <code class="docutils literal notranslate"><span class="pre">WebSocketSharp.Server.HttpServer</span></code> class.</p>
+<p>You can add any WebSocket service to your <code class="docutils literal notranslate"><span class="pre">HttpServer</span></code> with the specified behavior and path to the service, by using the <code class="docutils literal notranslate"><span class="pre">HttpServer.AddWebSocketService&lt;TBehavior&gt;</span> <span class="pre">(string)</span></code> or <code class="docutils literal notranslate"><span class="pre">HttpServer.AddWebSocketService&lt;TBehavior&gt;</span> <span class="pre">(string,</span> <span class="pre">Action&lt;TBehavior&gt;)</span></code> method.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">httpsv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HttpServer</span><span class="w"> </span><span class="p">(</span><span class="m">4649</span><span class="p">);</span>
+
+<span class="n">httpsv</span><span class="p">.</span><span class="n">AddWebSocketService</span><span class="o">&lt;</span><span class="n">Echo</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;/Echo&quot;</span><span class="p">);</span>
+<span class="n">httpsv</span><span class="p">.</span><span class="n">AddWebSocketService</span><span class="o">&lt;</span><span class="n">Chat</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;/Chat&quot;</span><span class="p">);</span>
+<span class="n">httpsv</span><span class="p">.</span><span class="n">AddWebSocketService</span><span class="o">&lt;</span><span class="n">Chat</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;/ChatWithNyan&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">Suffix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot; Nyan!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>For more information, would you see <strong><a class="reference external" href="https://github.com/sta/websocket-sharp/tree/master/Example3">Example3</a></strong>?</p>
+</section>
+<section id="websocket-extensions">
+<h2>WebSocket Extensions<a class="headerlink" href="#websocket-extensions" title="Permalink to this heading">¶</a></h2>
+<section id="per-message-compression">
+<h3>Per-message Compression<a class="headerlink" href="#per-message-compression" title="Permalink to this heading">¶</a></h3>
+<p>websocket-sharp supports the <a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc7692">Per-message Compression</a> extension (but does not support it with the <a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc7692#section-7.1.1">context take over</a>).</p>
+<p>As a WebSocket client, if you would like to enable this extension, you should set the <code class="docutils literal notranslate"><span class="pre">WebSocket.Compression</span></code> property to a compression method before calling the connect method.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">Compression</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CompressionMethod</span><span class="p">.</span><span class="n">Deflate</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>And then the client will send the following header in the handshake request to the server.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Sec-WebSocket-Extensions: permessage-deflate; server_no_context_takeover; client_no_context_takeover
+</pre></div>
+</div>
+<p>If the server supports this extension, it will return the same header which has the corresponding value.</p>
+<p>So eventually this extension will be available when the client receives the header in the handshake response.</p>
+</section>
+<section id="ignoring-the-extensions">
+<h3>Ignoring the extensions<a class="headerlink" href="#ignoring-the-extensions" title="Permalink to this heading">¶</a></h3>
+<p>As a WebSocket server, if you would like to ignore the extensions requested from a client, you should set the <code class="docutils literal notranslate"><span class="pre">WebSocketBehavior.IgnoreExtensions</span></code> property to <code class="docutils literal notranslate"><span class="pre">true</span></code> in your <code class="docutils literal notranslate"><span class="pre">WebSocketBehavior</span></code> constructor or initializing it, such as the following.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">wssv</span><span class="p">.</span><span class="n">AddWebSocketService</span><span class="o">&lt;</span><span class="n">Chat</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="s">&quot;/Chat&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">s</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">IgnoreExtensions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="w"> </span><span class="c1">// To ignore the extensions requested from a client.</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>If it is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the service will not return the Sec-WebSocket-Extensions header in its handshake response.</p>
+<p>I think this is useful when you get something error in connecting the server and exclude the extensions as a cause of the error.</p>
+</section>
+</section>
+<section id="secure-connection">
+<h2>Secure Connection<a class="headerlink" href="#secure-connection" title="Permalink to this heading">¶</a></h2>
+<p>websocket-sharp supports the secure connection with <strong>SSL/TLS</strong>.</p>
+<p>As a WebSocket client, you should create a new instance of the <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> class with a <strong>wss</strong> scheme WebSocket URL.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebSocket</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;wss://example.com&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If you would like to set a custom validation for the server certificate, you should set the <code class="docutils literal notranslate"><span class="pre">WebSocket.SslConfiguration.ServerCertificateValidationCallback</span></code> property to a callback for it.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">SslConfiguration</span><span class="p">.</span><span class="n">ServerCertificateValidationCallback</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="p">(</span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">certificate</span><span class="p">,</span><span class="w"> </span><span class="n">chain</span><span class="p">,</span><span class="w"> </span><span class="n">sslPolicyErrors</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Do something to validate the server certificate.</span>
+<span class="w">    </span><span class="p">...</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// If the server certificate is valid.</span>
+<span class="w">  </span><span class="p">};</span>
+</pre></div>
+</div>
+<p>The default callback always returns <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p>As a WebSocket server, you should create a new instance of the <code class="docutils literal notranslate"><span class="pre">WebSocketServer</span></code> or <code class="docutils literal notranslate"><span class="pre">HttpServer</span></code> class with some settings for the secure connection, such as the following.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">wssv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebSocketServer</span><span class="w"> </span><span class="p">(</span><span class="m">5963</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">);</span>
+<span class="n">wssv</span><span class="p">.</span><span class="n">SslConfiguration</span><span class="p">.</span><span class="n">ServerCertificate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">X509Certificate2</span><span class="w"> </span><span class="p">(</span>
+<span class="w">                                            </span><span class="s">&quot;/path/to/cert.pfx&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;password for cert.pfx&quot;</span>
+<span class="w">                                          </span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="http-authentication">
+<h2>HTTP Authentication<a class="headerlink" href="#http-authentication" title="Permalink to this heading">¶</a></h2>
+<p>websocket-sharp supports the <a class="reference external" href="http://tools.ietf.org/html/rfc2617">HTTP Authentication (Basic/Digest)</a>.</p>
+<p>As a WebSocket client, you should set a pair of user name and password for the HTTP authentication, by using the <code class="docutils literal notranslate"><span class="pre">WebSocket.SetCredentials</span> <span class="pre">(string,</span> <span class="pre">string,</span> <span class="pre">bool)</span></code> method before calling the connect method.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">SetCredentials</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;nobita&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;password&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">preAuth</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">preAuth</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the client will send the credentials for the Basic authentication in the first handshake request to the server.</p>
+<p>Otherwise, it will send the credentials for either the Basic or Digest (determined by the unauthorized response to the first handshake request) authentication in the second handshake request to the server.</p>
+<p>As a WebSocket server, you should set an HTTP authentication scheme, a realm, and any function to find the user credentials before calling the start method, such as the following.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">wssv</span><span class="p">.</span><span class="n">AuthenticationSchemes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AuthenticationSchemes</span><span class="p">.</span><span class="n">Basic</span><span class="p">;</span>
+<span class="n">wssv</span><span class="p">.</span><span class="n">Realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;WebSocket Test&quot;</span><span class="p">;</span>
+<span class="n">wssv</span><span class="p">.</span><span class="n">UserCredentialsFinder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Return user name, password, and roles.</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;nobita&quot;</span>
+<span class="w">           </span><span class="o">?</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NetworkCredential</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;password&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;gunfighter&quot;</span><span class="p">)</span>
+<span class="w">           </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span><span class="w"> </span><span class="c1">// If the user credentials are not found.</span>
+<span class="w">  </span><span class="p">};</span>
+</pre></div>
+</div>
+<p>If you would like to provide the Digest authentication, you should set such as the following.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">wssv</span><span class="p">.</span><span class="n">AuthenticationSchemes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AuthenticationSchemes</span><span class="p">.</span><span class="n">Digest</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="query-string-origin-header-and-cookies">
+<h2>Query string, Origin header, and Cookies<a class="headerlink" href="#query-string-origin-header-and-cookies" title="Permalink to this heading">¶</a></h2>
+<p>As a WebSocket client, if you would like to send the query string in the handshake request, you should create a new instance of the <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> class with a WebSocket URL that includes the <a class="reference external" href="http://tools.ietf.org/html/rfc3986#section-3.4">Query</a> string parameters.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebSocket</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ws://example.com/?name=nobita&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>And if you would like to send the Origin header in the handshake request, you should set the <code class="docutils literal notranslate"><span class="pre">WebSocket.Origin</span></code> property to an allowable value as the <a class="reference external" href="http://tools.ietf.org/html/rfc6454#section-7">Origin</a> header before calling the connect method.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">Origin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;http://example.com&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>And also if you would like to send the cookies in the handshake request, you should set any cookie by using the <code class="docutils literal notranslate"><span class="pre">WebSocket.SetCookie</span> <span class="pre">(WebSocketSharp.Net.Cookie)</span></code> method before calling the connect method.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">SetCookie</span><span class="w"> </span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Cookie</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;nobita&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>As a WebSocket server, if you would like to get the query string included in a handshake request, you should access the <code class="docutils literal notranslate"><span class="pre">WebSocketBehavior.QueryString</span></code> property, such as the following.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Chat</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">WebSocketBehavior</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">_name</span><span class="p">;</span>
+<span class="w">  </span><span class="p">...</span>
+
+<span class="w">  </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnOpen</span><span class="w"> </span><span class="p">()</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="n">_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">QueryString</span><span class="p">[</span><span class="s">&quot;name&quot;</span><span class="p">];</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>And if you would like to validate the Origin header, cookies, or both, you should set each validation for it with your <code class="docutils literal notranslate"><span class="pre">WebSocketBehavior</span></code>, for example, by using the <code class="docutils literal notranslate"><span class="pre">WebSocketServer.AddWebSocketService&lt;TBehavior&gt;</span> <span class="pre">(string,</span> <span class="pre">Action&lt;TBehavior&gt;)</span></code> method with initializing, such as the following.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">wssv</span><span class="p">.</span><span class="n">AddWebSocketService</span><span class="o">&lt;</span><span class="n">Chat</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="s">&quot;/Chat&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">s</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">OriginValidator</span><span class="w"> </span><span class="o">=</span>
+<span class="w">      </span><span class="n">val</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Check the value of the Origin header, and return true if valid.</span>
+
+<span class="w">        </span><span class="n">Uri</span><span class="w"> </span><span class="n">origin</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="n">val</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="w"> </span><span class="p">()</span>
+<span class="w">               </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="n">TryCreate</span><span class="w"> </span><span class="p">(</span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="n">UriKind</span><span class="p">.</span><span class="n">Absolute</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">origin</span><span class="p">)</span>
+<span class="w">               </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">origin</span><span class="p">.</span><span class="n">Host</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;example.com&quot;</span><span class="p">;</span>
+<span class="w">      </span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">CookiesValidator</span><span class="w"> </span><span class="o">=</span>
+<span class="w">      </span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Check the cookies in &quot;req&quot;, and set the cookies to send to</span>
+<span class="w">        </span><span class="c1">// the client with &quot;res&quot; if necessary.</span>
+
+<span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">cookie</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">req</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">cookie</span><span class="p">.</span><span class="n">Expired</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+
+<span class="w">          </span><span class="n">res</span><span class="p">.</span><span class="n">Add</span><span class="w"> </span><span class="p">(</span><span class="n">cookie</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// If valid.</span>
+<span class="w">      </span><span class="p">};</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="connecting-through-the-http-proxy-server">
+<h2>Connecting through the HTTP proxy server<a class="headerlink" href="#connecting-through-the-http-proxy-server" title="Permalink to this heading">¶</a></h2>
+<p>websocket-sharp supports to connect through the HTTP proxy server.</p>
+<p>If you would like to connect to a WebSocket server through the HTTP proxy server, you should set the proxy server URL, and if necessary, a pair of user name and password for the proxy server authentication (Basic/Digest), by using the <code class="docutils literal notranslate"><span class="pre">WebSocket.SetProxy</span> <span class="pre">(string,</span> <span class="pre">string,</span> <span class="pre">string)</span></code> method before calling the connect method.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WebSocket</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ws://example.com&quot;</span><span class="p">);</span>
+<span class="n">ws</span><span class="p">.</span><span class="n">SetProxy</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;http://localhost:3128&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;nobita&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;password&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>I have tested this with <strong><a class="reference external" href="http://www.squid-cache.org">Squid</a></strong>. It is necessary to disable the following option in <strong>squid.conf</strong> (e.g. <code class="docutils literal notranslate"><span class="pre">/etc/squid/squid.conf</span></code>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deny CONNECT to other than SSL ports</span>
+<span class="c1">#http_access deny CONNECT !SSL_ports</span>
+</pre></div>
+</div>
+</section>
+<section id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">WebSocket</span></code> class has the own logging function.</p>
+<p>You can use it with the <code class="docutils literal notranslate"><span class="pre">WebSocket.Log</span></code> property (returns a <code class="docutils literal notranslate"><span class="pre">WebSocketSharp.Logger</span></code>).</p>
+<p>So if you would like to change the current logging level (<code class="docutils literal notranslate"><span class="pre">WebSocketSharp.LogLevel.Error</span></code> as the default), you should set the <code class="docutils literal notranslate"><span class="pre">WebSocket.Log.Level</span></code> property to any of the <code class="docutils literal notranslate"><span class="pre">LogLevel</span></code> enum values.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">Log</span><span class="p">.</span><span class="n">Level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogLevel</span><span class="p">.</span><span class="n">Debug</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The above means a log with lower than <code class="docutils literal notranslate"><span class="pre">LogLevel.Debug</span></code> cannot be outputted.</p>
+<p>And if you would like to output a log, you should use any of the output methods. The following outputs a log with <code class="docutils literal notranslate"><span class="pre">LogLevel.Debug</span></code>.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">ws</span><span class="p">.</span><span class="n">Log</span><span class="p">.</span><span class="n">Debug</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;This is a debug message.&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">WebSocketServer</span></code> and <code class="docutils literal notranslate"><span class="pre">HttpServer</span></code> classes have the same logging function.</p>
+</section>
+</section>
+<section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h1>
+<p>Examples using websocket-sharp.</p>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://github.com/sta/websocket-sharp/tree/master/Example">Example</a> connects to the server executed by <a class="reference external" href="https://github.com/sta/websocket-sharp/tree/master/Example2">Example2</a> or <a class="reference external" href="https://github.com/sta/websocket-sharp/tree/master/Example3">Example3</a>.</p>
+</section>
+<section id="example2">
+<h2>Example2<a class="headerlink" href="#example2" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://github.com/sta/websocket-sharp/tree/master/Example2">Example2</a> starts a WebSocket server.</p>
+</section>
+<section id="example3">
+<h2>Example3<a class="headerlink" href="#example3" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://github.com/sta/websocket-sharp/tree/master/Example3">Example3</a> starts an HTTP server that allows to accept the WebSocket handshake requests.</p>
+<p>Would you access to <a class="reference external" href="http://localhost:4649">http://localhost:4649</a> to do <strong>WebSocket Echo Test</strong> with your web browser while Example3 is running?</p>
+</section>
+</section>
+<section id="supported-websocket-specifications">
+<h1>Supported WebSocket Specifications<a class="headerlink" href="#supported-websocket-specifications" title="Permalink to this heading">¶</a></h1>
+<p>websocket-sharp supports <strong>RFC 6455</strong>, and it is based on the following references:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://tools.ietf.org/html/rfc6455">The WebSocket Protocol</a></p></li>
+<li><p><a class="reference external" href="http://www.w3.org/TR/websockets">The WebSocket API</a></p></li>
+<li><p><a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc7692">Compression Extensions for WebSocket</a></p></li>
+</ul>
+<p>Thanks for translating to japanese.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.hcn.zaq.ne.jp/___/WEB/RFC6455-ja.html">The WebSocket Protocol 日本語訳</a></p></li>
+<li><p><a class="reference external" href="http://www.hcn.zaq.ne.jp/___/WEB/WebSocket-ja.html">The WebSocket API 日本語訳</a></p></li>
+</ul>
+</section>
+<section id="license">
+<h1>License<a class="headerlink" href="#license" title="Permalink to this heading">¶</a></h1>
+<p>websocket-sharp is provided under <a class="reference external" href="https://raw.github.com/sta/websocket-sharp/master/LICENSE.txt">The MIT License</a>.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Welcome to websocket-sharp!</a></li>
+<li><a class="reference internal" href="#branches">Branches</a></li>
+<li><a class="reference internal" href="#build">Build</a></li>
+<li><a class="reference internal" href="#install">Install</a><ul>
+<li><a class="reference internal" href="#self-build">Self Build</a></li>
+<li><a class="reference internal" href="#nuget-gallery">NuGet Gallery</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#usage">Usage</a><ul>
+<li><a class="reference internal" href="#websocket-client">WebSocket Client</a><ul>
+<li><a class="reference internal" href="#step-1">Step 1</a></li>
+<li><a class="reference internal" href="#step-2">Step 2</a></li>
+<li><a class="reference internal" href="#step-3">Step 3</a><ul>
+<li><a class="reference internal" href="#websocket-onopen-event">WebSocket.OnOpen Event</a></li>
+<li><a class="reference internal" href="#websocket-onmessage-event">WebSocket.OnMessage Event</a></li>
+<li><a class="reference internal" href="#websocket-onerror-event">WebSocket.OnError Event</a></li>
+<li><a class="reference internal" href="#websocket-onclose-event">WebSocket.OnClose Event</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#step-4">Step 4</a></li>
+<li><a class="reference internal" href="#step-5">Step 5</a></li>
+<li><a class="reference internal" href="#step-6">Step 6</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#websocket-server">WebSocket Server</a><ul>
+<li><a class="reference internal" href="#id1">Step 1</a></li>
+<li><a class="reference internal" href="#id2">Step 2</a></li>
+<li><a class="reference internal" href="#id3">Step 3</a></li>
+<li><a class="reference internal" href="#id4">Step 4</a></li>
+<li><a class="reference internal" href="#id5">Step 5</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#http-server-with-the-websocket">HTTP Server with the WebSocket</a></li>
+<li><a class="reference internal" href="#websocket-extensions">WebSocket Extensions</a><ul>
+<li><a class="reference internal" href="#per-message-compression">Per-message Compression</a></li>
+<li><a class="reference internal" href="#ignoring-the-extensions">Ignoring the extensions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#secure-connection">Secure Connection</a></li>
+<li><a class="reference internal" href="#http-authentication">HTTP Authentication</a></li>
+<li><a class="reference internal" href="#query-string-origin-header-and-cookies">Query string, Origin header, and Cookies</a></li>
+<li><a class="reference internal" href="#connecting-through-the-http-proxy-server">Connecting through the HTTP proxy server</a></li>
+<li><a class="reference internal" href="#logging">Logging</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#examples">Examples</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#example2">Example2</a></li>
+<li><a class="reference internal" href="#example3">Example3</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#supported-websocket-specifications">Supported WebSocket Specifications</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../_sources/Unity Files/DMXController/Library/PackageCache/@e4b83a41b9/README.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Welcome to websocket-sharp!</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

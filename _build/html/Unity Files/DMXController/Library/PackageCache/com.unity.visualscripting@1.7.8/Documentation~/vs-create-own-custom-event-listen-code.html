@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Listen to a Custom Scripting Event from a C# script &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Listen to a Custom Scripting Event from a C# script</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="listen-to-a-custom-scripting-event-from-a-c-script">
+<h1>Listen to a Custom Scripting Event from a C# script<a class="headerlink" href="#listen-to-a-custom-scripting-event-from-a-c-script" title="Permalink to this heading">¶</a></h1>
+<p>You can use a C# script to listen for or receive a Custom Scripting Event from a Script Graph. You can use an Event receiver script to execute additional logic in your application.</p>
+<blockquote>
+<div><p>[!NOTE]
+Before you can create a listener for a Custom Scripting Event node, you must create a Custom Scripting Event node and its trigger. [!include<a class="reference internal" href="snippets/custom-events/vs-tasks-note-end.html"><span class="std std-doc">tasks-note-end</span></a>] and <a class="reference internal" href="vs-create-own-custom-event-send-node.html"><span class="std std-doc">Create a Custom Scripting Event Sender node</span></a>.</p>
+</div></blockquote>
+<p>To receive a Custom Scripting Event from a Script Graph:</p>
+<ol class="arabic">
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-project-window.html"><span class="std std-doc">open-project-window</span></a>]</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/custom-events/vs-right-click-project.html"><span class="std std-doc">right-click-project</span></a>]</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-create-c-script-project.html"><span class="std std-doc">create-c-script-project</span></a>]</p></li>
+<li><p>Enter a name, such as <code class="docutils literal notranslate"><span class="pre">EventReceiver</span></code>, for the new script file.</p></li>
+<li><p>Press Enter.</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-new-external-code.html"><span class="std std-doc">open-new-external-code</span></a>]</p></li>
+<li><p>In your external editor, copy and paste the following code into your C# script:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">Unity.VisualScripting</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">EventReceiver</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">      </span><span class="n">EventBus</span><span class="p">.</span><span class="n">Register</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">EventNames</span><span class="p">.</span><span class="n">MyCustomEvent</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">          </span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;RECEIVED &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">      </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-save-script.html"><span class="std std-doc">save-script</span></a>]</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-return-unity.html"><span class="std std-doc">return-unity</span></a>]</p></li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-hierarchy-window.html"><span class="std std-doc">open-hierarchy-window</span></a>]</p></li>
+<li><p>Do one of the following in the Hierarchy window:</p>
+<ul class="simple">
+<li><p>Select an existing GameObject where you want to attach the new script.</p></li>
+<li><p>Select <strong>Add New</strong> (+) and in the menu, select a new GameObject to add to your scene from any of the available options. You can also right-click anywhere in the Hierarchy window and select the same options in the context menu.</p></li>
+</ul>
+</li>
+<li><p>[!include<a class="reference internal" href="snippets/vs-open-inspector-window.html"><span class="std std-doc">open-inspector-window</span></a>]</p></li>
+<li><p>Select <strong>Add Component</strong>.</p></li>
+<li><p>In the Component menu, enter the name of the script file.</p></li>
+<li><p>Select it to add it to the GameObject.</p></li>
+<li><p>Select <strong>Play</strong> from <a class="reference external" href="https://docs.unity3d.com/Manual/Toolbar.html">the Unity Editor’s Toolbar</a> to enter Play mode. If you have <a class="reference internal" href="vs-create-own-custom-event-send-node.html"><span class="std std-doc">a Custom Scripting Event Sender node</span></a> or <a class="reference internal" href="vs-create-own-custom-event-node-trigger-code.html"><span class="std std-doc">a C# script to trigger your Event</span></a>, you can trigger your Custom Scripting Event.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">EventReceiver</span></code> script logs the following message to the console every time the Event is triggered, as shown in the following image.</p>
+<p><img alt="An image of the Console window. The Console contains a &quot;RECEIVED 1&quot; message from the EventReceiver script." src="../../../../../../_images/vs-custom-event-receiver-debug-log.png" /></p>
+</li>
+</ol>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-create-own-custom-event-listen-code.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Listen to a Custom Scripting Event from a C# script</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

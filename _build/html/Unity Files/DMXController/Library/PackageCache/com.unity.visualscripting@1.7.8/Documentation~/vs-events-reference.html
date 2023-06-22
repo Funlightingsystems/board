@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Events node &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Events node</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="events-node">
+<h1>Events node<a class="headerlink" href="#events-node" title="Permalink to this heading">¶</a></h1>
+<blockquote>
+<div><p>[!NOTE]
+For versions 2019/2020 LTS, download the Visual Scripting package from the <a class="reference external" href="https://assetstore.unity.com/packages/tools/visual-bolt-163802">Unity Asset Store</a>.</p>
+</div></blockquote>
+<p>Scripting nodes listen for events. They are the starting point for all scripts and appear as special green nodes in graphs.</p>
+<p>There are many kinds of events, grouped in sub-categories under the root Events category <strong>(fuzzy finder</strong> &gt; <strong>Events</strong>).</p>
+<p>Two simple common events are Start and Update, both located under <strong>Lifecycle</strong>.</p>
+<ul class="simple">
+<li><p>Start is called once when the graph or event handler is first created.</p></li>
+<li><p>Update is called at every frame while the graph or event handler is active.</p></li>
+</ul>
+<p>New script machines start with both these events by default.</p>
+<p><img alt="" src="../../../../../../_images/vs-new-graph-starter-nodes.png" /></p>
+<section id="inputs-outputs">
+<h2>Inputs &amp; Outputs<a class="headerlink" href="#inputs-outputs" title="Permalink to this heading">¶</a></h2>
+<p>All events have a single Trigger control output that starts the script when they are triggered.</p>
+<p>Value inputs are options that influence when the event is triggered. For example, some events have a Target setting that determines which object is listening to the event. Most often, you’ll leave this setting at its default value of Self.</p>
+<p>The value outputs on events are arguments that are passed from the event, giving you more information about what actually happened. For example, on the On Trigger Enter event, the other collider that is involved in the collision is an output.</p>
+<p><img alt="" src="../../../../../../_images/vs-events-on-trigger-enter-node.png" /></p>
+</section>
+<section id="custom-events">
+<h2>Custom Events<a class="headerlink" href="#custom-events" title="Permalink to this heading">¶</a></h2>
+<p>There is a special type of event, the Custom Event that triggers custom events across graphs, along with their custom arguments.</p>
+<p>For example, to create a custom event called On Damage that gets called so the character loses health, the event should have one integer argument that indicates the amount of damage to inflict. Listen to the event by creating a Custom Event node (under Events). Set the name to On Damage. The set the argument count,  below the name, to 1.</p>
+<p><img alt="" src="../../../../../../_images/vs-events-custom-event-node.png" /></p>
+<blockquote>
+<div><p>[!NOTE]
+Indices are zero-based, so the first argument is labeled Arg. 0.</p>
+</div></blockquote>
+<p>To trigger the event from elsewhere, use the Trigger Custom Event node, located right under the Custom Event node in the fuzzy finder. Enter the name of the event exactly as it is sensitive to case and whitespace.</p>
+<p>For example, to create a script machine on a boulder that could hit the player, use the force of the impact as the damage.</p>
+<p><img alt="" src="../../../../../../_images/vs-events-trigger-custom-event-example.png" /></p>
+<p>The collider that hit with the boulder is the target of our trigger; the On Damage event is  triggered on all machines attached to that collider. Use the damage value to subtract health from the receiver object.</p>
+<p><img alt="" src="../../../../../../_images/vs-events-custom-event-example.png" /></p>
+<p>Custom events do not require a receiver and do not cause an error if there isn’t a listener to handle them.</p>
+</section>
+<section id="animation-events">
+<h2>Animation Events<a class="headerlink" href="#animation-events" title="Permalink to this heading">¶</a></h2>
+<p>Use animation events to trigger Bolt graphs when you reach a certain point in your animation. Select an object with a machine and an animator. Then, from the animation window, add an animation event.</p>
+<p><img alt="" src="../../../../../../_images/vs-events-animation-window-add-event.png" /></p>
+<p>With the event selected, choose TriggerAnimationEvent as the function from the inspector.</p>
+<p><img alt="" src="../../../../../../_images/vs-events-animation-choose-animation-function-inspector.png" /></p>
+<p>Use any parameter from the inspector.</p>
+<p><img alt="" src="../../../../../../_images/vs-events-animation-trigger-inspector.png" /></p>
+<p>In your script graph, add an Animation Event node (under <strong>Events</strong> &gt;<strong>Animation</strong>).</p>
+<p>There are two types of events:</p>
+<ul class="simple">
+<li><p>a global animation event, and</p></li>
+<li><p>a named animation event.</p></li>
+</ul>
+<p><img alt="" src="../../../../../../_images/vs-events-animation-event-nodes.png" /></p>
+<p>The difference is that the first type listens to all animation events on the object and return the string parameter. The second type’s trigger is the string parameter that is equal to the specified name input.</p>
+</section>
+<section id="unity-events">
+<h2>Unity Events<a class="headerlink" href="#unity-events" title="Permalink to this heading">¶</a></h2>
+<p>Use Unity Events to trigger events that have been setup from the inspector. These are commonly found in GUI components like buttons, but <a class="reference external" href="https://docs.unity3d.com/ScriptReference/Events.UnityEvent.html">they can also be created in your custom scripts</a>.</p>
+<p>Configure them by selecting an object with a machine and select the Trigger Unity Event method. In the string field, type the event name to listen to in the graph and in the graph, add a UnityEvent node with a matching name.</p>
+<p><img alt="" src="../../../../../../_images/vs-events-unity-event-node.png" /></p>
+<p>Additional arguments are not supported on Unity events.</p>
+</section>
+<section id="events-api">
+<h2>Events API<a class="headerlink" href="#events-api" title="Permalink to this heading">¶</a></h2>
+<p>Visual scripting provides a simple API to trigger custom events from C# script.</p>
+<p>Add the following usings to your C# script to access the API.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">using</span> <span class="n">Unity</span><span class="o">.</span><span class="n">VisualScripting</span>
+</pre></div>
+</div>
+<section id="triggering-api">
+<h3>Triggering API<a class="headerlink" href="#triggering-api" title="Permalink to this heading">¶</a></h3>
+<p>A single method call is needed to trigger a custom event. Pass as many arguments as required.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CustomEvent</span><span class="o">.</span><span class="n">Trigger</span><span class="p">(</span><span class="n">targetGameObject</span><span class="p">,</span> <span class="n">argument1</span><span class="p">,</span> <span class="n">argument2</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For example, this custom event node:</p>
+<p><img alt="" src="../../../../../../_images/vs-events-custom-event-node-blank.png" /></p>
+<p>Can be triggered with this line of code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CustomEvent</span><span class="o">.</span><span class="n">Trigger</span><span class="p">(</span><span class="n">enemy</span><span class="p">,</span> <span class="s2">&quot;Damage&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Events node</a><ul>
+<li><a class="reference internal" href="#inputs-outputs">Inputs &amp; Outputs</a></li>
+<li><a class="reference internal" href="#custom-events">Custom Events</a></li>
+<li><a class="reference internal" href="#animation-events">Animation Events</a></li>
+<li><a class="reference internal" href="#unity-events">Unity Events</a></li>
+<li><a class="reference internal" href="#events-api">Events API</a><ul>
+<li><a class="reference internal" href="#triggering-api">Triggering API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-events-reference.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Events node</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Subgraphs and State Units &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Subgraphs and State Units</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="subgraphs-and-state-units">
+<h1>Subgraphs and State Units<a class="headerlink" href="#subgraphs-and-state-units" title="Permalink to this heading">¶</a></h1>
+<p>In a Script Graph, you can add a node that links directly to another Script Graph or State Graph.</p>
+<ul class="simple">
+<li><p>A nested Script Graph is a Subgraph.</p></li>
+<li><p>A nested State Graph is a State Unit.</p></li>
+</ul>
+<p>A nested Script Graph or State Graph helps you to organize and reuse logic across an application. A Subgraph or State Unit can exist as the node that adds it to a graph, or it can link to an external graph file.</p>
+<p><img alt="An image of two Graph windows. The first Graph window has a Subgraph node, with its details open in the Graph Inspector. The node links to an external graph file. The second Graph window has a State Unit node with no details provided and the node uses an embedded graph." src="../../../../../../_images/vs-nesting-nodes-example.png" /></p>
+<section id="subgraphs">
+<h2>Subgraphs<a class="headerlink" href="#subgraphs" title="Permalink to this heading">¶</a></h2>
+<p>A Subgraph nests a Script Graph inside another Script Graph. Use a Subgraph node to reuse a set of logic across Script Graphs in an application.</p>
+<p>A Subgraph node can take inputs or send outputs back to its parent graph. Add ports to configure what data a Subgraph and its parent graph send to each other.</p>
+<section id="subgraph-inputs-and-outputs">
+<h3>Subgraph inputs and outputs<a class="headerlink" href="#subgraph-inputs-and-outputs" title="Permalink to this heading">¶</a></h3>
+<p>With the Graph Inspector, you can choose and define the ports that appear when you use a Script Graph as a Subgraph. The port definitions for a Script Graph appear in the <a class="reference internal" href="vs-interface-overview.html#the-graph-inspector"><span class="std std-ref">Graph Inspector</span></a> when you have no other items selected in a graph.</p>
+<p><img alt="An image of the Graph Inspector open in the Graph window. The Graph Inspector displays the ports added to the open Script Graph. The graph has a single Trigger Input port, called Start; a Trigger Output port, called Finish; a Data Input port with a float type, called var; and a data output port with a string type, called string." src="../../../../../../_images/vs-data-trigger-subgraph-ports.png" /></p>
+<p>Defined ports appear on any Subgraph node that uses that Script Graph. In the following image, the Subgraph <strong>Rotate the Cube</strong> has:</p>
+<ul class="simple">
+<li><p>A Trigger Input port.</p></li>
+<li><p>An Data Input port.</p></li>
+<li><p>An Trigger Output port.</p></li>
+<li><p>An Data Output port.</p></li>
+</ul>
+<p><img alt="An image of the Graph window. The Graph Inspector is open and displays information for each port added to a Subgraph node. The ports are the same as the ones defined in the previous image: Start, Finish, var, and string. A Float literal node with a value of 2 connects to the var input data port." src="../../../../../../_images/vs-subgraph-ports-example.png" /></p>
+<p>A port definition also changes the <strong>Input</strong> and <strong>Output</strong> nodes for a Subgraph. These nodes control the execution and flow between a Subgraph and its parent graph. In the following image, the Input and Output nodes have the same ports as the <strong>Rotate the Cube</strong> Subgraph node from the previous example.</p>
+<p><img alt="An image of the Graph window that displays the Rotate the Cube Script Graph. The Input and Output nodes are highlighted with a red box. A Get Graph variable node, with the Variable name XRotate, connects to the B input port on an Add Inputs node. The Add Inputs node has only 2 inputs, and receives its second input from the var port on the Input node. The Start port on the Input node connects to the Input Trigger port on a Transform Rotate node. The Transform Rotate node rotates the transform from the current GameObject by the same amount on the X, Y, and Z axis. It takes its X Angle, Y Angle, and Z Angle inputs from the result of the Add Inputs node. The Output Trigger port on the Transform Rotate node connects to the Input Trigger port on a String Concat node. The String Concat node takes the string from a String literal node, &quot;Rotated by&quot; and appends the result of the Add Inputs node. The Output Trigger port on the String Concat node connects to the Input Trigger port, Finish, on the Output node. The string output port on the String Concat node connects to the string input port on the Output node." src="../../../../../../_images/vs-subgraph-ports-example-2.png" /></p>
+<blockquote>
+<div><p>[!NOTE]
+You can only use a single <strong>Input</strong> node and a single <strong>Output</strong> node in a Script Graph. If you add more <strong>Input</strong> or <strong>Output</strong> nodes, Visual Scripting only uses the first <strong>Input</strong> and <strong>Output</strong> nodes you added to the graph.</p>
+</div></blockquote>
+<p>For more information on how to add ports to a Script Graph, see <a class="reference internal" href="vs-nesting-add-triggers-data-graph.html"><span class="std std-doc">Add a Trigger or Data port to a Script Graph</span></a>. For more information on the different types of ports, see <a class="reference internal" href="vs-nesting-subgraph-node.html"><span class="std std-doc">Subgraph node</span></a>. For more information on how to use a Subgraph, see <a class="reference internal" href="vs-nesting-add-subgraph.html"><span class="std std-doc">Add a Subgraph to a Script Graph</span></a>.</p>
+</section>
+</section>
+<section id="state-units">
+<h2>State Units<a class="headerlink" href="#state-units" title="Permalink to this heading">¶</a></h2>
+<p>A State Unit starts a State Graph from a Script Graph. You can’t change the ports that appear on a State Unit node or send data between the State Graph and its parent Script Graph.</p>
+<p><img alt="An image of the Graph window that displays a State Unit node." src="../../../../../../_images/vs-state-unit-node-example.png" /></p>
+<p>The State Unit node starts different logic in a Script Graph, at different times in code execution:</p>
+<ul class="simple">
+<li><p>When the nested State Graph starts to run.</p></li>
+<li><p>While the nested State Graph runs.</p></li>
+<li><p>When the nested State Graph stops.</p></li>
+<li><p>After the nested State Graph stops.</p></li>
+</ul>
+<p>When you start a State Unit node’s Start and Started ports in a parent graph, Visual Scripting marks all Start states inside the node’s State Graph as active. When you start the Stop and Stopped ports, Visual Scripting marks all Start states as inactive.</p>
+<p>For more information on State Graphs and Start states, see <a class="reference internal" href="vs-graph-types.html#state-graphs"><span class="std std-ref">State Graphs</span></a>. For more information on the State Unit node, see <a class="reference internal" href="vs-nesting-state-unit-node.html"><span class="std std-doc">State Unit node</span></a> and <a class="reference internal" href="vs-nesting-add-state-unit.html"><span class="std std-doc">Add a State Unit to a Script Graph</span></a>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Subgraphs and State Units</a><ul>
+<li><a class="reference internal" href="#subgraphs">Subgraphs</a><ul>
+<li><a class="reference internal" href="#subgraph-inputs-and-outputs">Subgraph inputs and outputs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#state-units">State Units</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-nesting-subgraphs-state-units.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Subgraphs and State Units</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

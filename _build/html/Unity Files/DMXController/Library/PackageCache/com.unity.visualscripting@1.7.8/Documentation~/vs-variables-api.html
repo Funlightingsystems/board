@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Variables API &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Variables API</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="variables-api">
+<h1>Variables API<a class="headerlink" href="#variables-api" title="Permalink to this heading">¶</a></h1>
+<blockquote>
+<div><p>[!NOTE]
+For versions 2019/2020 LTS, download the Visual Scripting package from the <a class="reference external" href="https://assetstore.unity.com/packages/tools/visual-bolt-163802">Unity Asset Store</a>.</p>
+</div></blockquote>
+<p>Visual scripting provides an easy API to handle variables, to get or set their value and verify if they are defined. All these operations are available from the Variables class.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Variables</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<section id="usings">
+<h2>Usings<a class="headerlink" href="#usings" title="Permalink to this heading">¶</a></h2>
+<p>Add the following usings to your C# script to access the API:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">using</span> <span class="n">Unity</span><span class="o">.</span><span class="n">VisualScripting</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="scopes">
+<h2>Scopes<a class="headerlink" href="#scopes" title="Permalink to this heading">¶</a></h2>
+<section id="graph">
+<h3>Graph<a class="headerlink" href="#graph" title="Permalink to this heading">¶</a></h3>
+<p>To access variables on a graph, create a graph reference. This is basically a path to the nested graph from its root machine.</p>
+<p>To get the root graph on a machine:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">graphReference</span> <span class="o">=</span> <span class="n">GraphReference</span><span class="o">.</span><span class="n">New</span><span class="p">(</span><span class="n">flowMachine</span><span class="p">,</span> <span class="n">true</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>To access nested graphs, pass their parent nodes as additional parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">graphReference</span> <span class="o">=</span> <span class="n">GraphReference</span><span class="o">.</span><span class="n">New</span><span class="p">(</span><span class="n">flowMachine</span><span class="p">,</span> <span class="n">new</span> <span class="n">IGraphParentElement</span><span class="p">[]</span> <span class="p">{</span> <span class="n">subGraph</span> <span class="p">},</span> <span class="n">true</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>To pass a graph reference:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Variables</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">graphReference</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="object">
+<h3>Object<a class="headerlink" href="#object" title="Permalink to this heading">¶</a></h3>
+<p>To access variables on an object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Variables</span><span class="o">.</span><span class="n">Object</span><span class="p">(</span><span class="n">gameObject</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="scene">
+<h3>Scene<a class="headerlink" href="#scene" title="Permalink to this heading">¶</a></h3>
+<p>To access scene variables, do one of the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Variables</span><span class="o">.</span><span class="n">Scene</span><span class="p">(</span><span class="n">scene</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Variables</span><span class="o">.</span><span class="n">Scene</span><span class="p">(</span><span class="n">gameObjectInScene</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Variables</span><span class="o">.</span><span class="n">ActiveScene</span>
+</pre></div>
+</div>
+</section>
+<section id="application">
+<h3>Application<a class="headerlink" href="#application" title="Permalink to this heading">¶</a></h3>
+<p>To access application variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Variables</span><span class="o">.</span><span class="n">Application</span>
+</pre></div>
+</div>
+</section>
+<section id="saved">
+<h3>Saved<a class="headerlink" href="#saved" title="Permalink to this heading">¶</a></h3>
+<p>To access saved variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Variables</span><span class="o">.</span><span class="n">Saved</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="operations">
+<h2>Operations<a class="headerlink" href="#operations" title="Permalink to this heading">¶</a></h2>
+<p>In these examples, the lowercase scope refers to one of the previous scopes.</p>
+<section id="get">
+<h3>Get<a class="headerlink" href="#get" title="Permalink to this heading">¶</a></h3>
+<p>To get the value of a variable, use the Get method with a name parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scope</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Note that variables are not strongly typed; they need to be cast manually. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">health</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="n">Variables</span><span class="o">.</span><span class="n">Object</span><span class="p">(</span><span class="n">player</span><span class="p">)</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="s2">&quot;health&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="set">
+<h3>Set<a class="headerlink" href="#set" title="Permalink to this heading">¶</a></h3>
+<p>To set the value of a variable, use the Set method with the name and value parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scope</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Variables</span><span class="o">.</span><span class="n">Object</span><span class="p">(</span><span class="n">player</span><span class="p">)</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="s2">&quot;health&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Because variables are not strongly typed, pass any value to the second parameter, even if the variable currently is of a different type.</p>
+<blockquote>
+<div><p>[!NOTE]
+Using the set method with a variable name that does not yet exist defines a new variable.</p>
+</div></blockquote>
+</section>
+<section id="is-defined">
+<h3>Is Defined<a class="headerlink" href="#is-defined" title="Permalink to this heading">¶</a></h3>
+<p>To check if a variable is defined, use the IsDefined method with a name parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scope</span><span class="o">.</span><span class="n">IsDefined</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">Variables</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">IsDefined</span><span class="p">(</span><span class="s2">&quot;score&quot;</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="o">//</span> <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Variables API</a><ul>
+<li><a class="reference internal" href="#usings">Usings</a></li>
+<li><a class="reference internal" href="#scopes">Scopes</a><ul>
+<li><a class="reference internal" href="#graph">Graph</a></li>
+<li><a class="reference internal" href="#object">Object</a></li>
+<li><a class="reference internal" href="#scene">Scene</a></li>
+<li><a class="reference internal" href="#application">Application</a></li>
+<li><a class="reference internal" href="#saved">Saved</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#operations">Operations</a><ul>
+<li><a class="reference internal" href="#get">Get</a></li>
+<li><a class="reference internal" href="#set">Set</a></li>
+<li><a class="reference internal" href="#is-defined">Is Defined</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.visualscripting@1.7.8/Documentation~/vs-variables-api.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Variables API</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Interaction Components &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Interaction Components</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="interaction-components">
+<h1>Interaction Components<a class="headerlink" href="#interaction-components" title="Permalink to this heading">¶</a></h1>
+<p>This section covers components in the UI system that handles interaction, such as mouse or touch events and interaction using a keyboard or controller.</p>
+<p>The interaction components are not visible on their own, and must be combined with one or more <a class="reference internal" href="UIVisualComponents.html"><span class="std std-doc">visual components</span></a> in order to work correctly.</p>
+<section id="common-functionality">
+<h2>Common Functionality<a class="headerlink" href="#common-functionality" title="Permalink to this heading">¶</a></h2>
+<p>Most of the interaction components have some things in common. They are selectables, which means they have shared built-in functionality for visualising transitions between states (normal, highlighted, pressed, disabled), and for navigation to other selectables using keyboard or controller. This shared functionality is described on the <a class="reference internal" href="script-Selectable.html"><span class="std std-doc">Selectable</span></a> page.</p>
+<p>The interaction components have at least one UnityEvent that is invoked when user interacts with the component in specific way. The UI system catches and logs any exceptions that propagate out of code attached to UnityEvent.</p>
+</section>
+<section id="button">
+<h2>Button<a class="headerlink" href="#button" title="Permalink to this heading">¶</a></h2>
+<p>A Button has an <strong>OnClick</strong> UnityEvent to define what it will do when clicked.</p>
+<p><img alt="" src="../../../../../../_images/UI_ButtonExample.png" /></p>
+<p>See the <a class="reference internal" href="script-Button.html"><span class="std std-doc">Button</span></a> page for details on using the Button component.</p>
+</section>
+<section id="toggle">
+<h2>Toggle<a class="headerlink" href="#toggle" title="Permalink to this heading">¶</a></h2>
+<p>A Toggle has an <strong>Is On</strong> checkbox that determines whether the Toggle is currently on or off. This value is flipped when the user clicks the Toggle, and a visual checkmark can be turned on or off accordingly. It also has an <strong>OnValueChanged</strong> UnityEvent to define what it will do when the value is changed.</p>
+<p><img alt="" src="../../../../../../_images/UI_ToggleExample.png" /></p>
+<p>See the <a class="reference internal" href="script-Toggle.html"><span class="std std-doc">Toggle</span></a> page for details on using the Toggle component.</p>
+</section>
+<section id="toggle-group">
+<h2>Toggle Group<a class="headerlink" href="#toggle-group" title="Permalink to this heading">¶</a></h2>
+<p>A Toggle Group can be used to group a set of <a class="reference internal" href="script-Toggle.html"><span class="std std-doc">Toggles</span></a> that are mutually exclusive. Toggles that belong to the same group are constrained so that only one of them can be selected at a time - selecting one of them automatically deselects all the others.</p>
+<p><img alt="" src="../../../../../../_images/UI_ToggleGroupExample.png" /></p>
+<p>See the <a class="reference internal" href="script-ToggleGroup.html"><span class="std std-doc">Toggle Group</span></a> page for details on using the Toggle Group component.</p>
+</section>
+<section id="slider">
+<h2>Slider<a class="headerlink" href="#slider" title="Permalink to this heading">¶</a></h2>
+<p>A Slider has a decimal number <strong>Value</strong> that the user can drag between a minimum and maximum value. It can be either horizontal or vertical. It also has a <strong>OnValueChanged</strong> UnityEvent to define what it will do when the value is changed.</p>
+<p><img alt="" src="../../../../../../_images/UI_SliderExample.png" /></p>
+<p>See the <a class="reference internal" href="script-Slider.html"><span class="std std-doc">Slider</span></a> page for details on using the Slider component.</p>
+</section>
+<section id="scrollbar">
+<h2>Scrollbar<a class="headerlink" href="#scrollbar" title="Permalink to this heading">¶</a></h2>
+<p>A Scrollbar has a decimal number <strong>Value</strong> between 0 and 1. When the user drags the scrollbar, the value changes accordingly.</p>
+<p>Scrollbars are often used together with a <a class="reference internal" href="script-ScrollRect.html"><span class="std std-doc">Scroll Rect</span></a> and a <a class="reference internal" href="script-Mask.html"><span class="std std-doc">Mask</span></a> to create a scroll view. The Scrollbar has a <strong>Size</strong> value between 0 and 1 that determines how big the handle is as a fraction of the entire scrollbar length. This is often controlled from another component to indicate how big a proportion of the content in a scroll view is visible. The Scroll Rect component can automatically do this.</p>
+<p>The Scrollbar can be either horizontal or vertical. It also has a <strong>OnValueChanged</strong> UnityEvent to define what it will do when the value is changed.</p>
+<p><img alt="" src="../../../../../../_images/UI_ScrollbarExample.png" /></p>
+<p>See the <a class="reference internal" href="script-Scrollbar.html"><span class="std std-doc">Scrollbar</span></a> page for details on using the Scrollbar component.</p>
+</section>
+<section id="dropdown">
+<h2>Dropdown<a class="headerlink" href="#dropdown" title="Permalink to this heading">¶</a></h2>
+<p>A Dropdown has a list of options to choose from. A text string and optionally an image can be specified for each option, and can be set either in the Inspector or dynamically from code. It has a <strong>OnValueChanged</strong> UnityEvent to define what it will do when the currently chosen option is changed.</p>
+<p><img alt="" src="../../../../../../_images/UI_DropdownExample.png" /></p>
+<p>See the <a class="reference internal" href="script-Dropdown.html"><span class="std std-doc">Dropdown</span></a> page for details on using the Dropdown component.</p>
+</section>
+<section id="input-field">
+<h2>Input Field<a class="headerlink" href="#input-field" title="Permalink to this heading">¶</a></h2>
+<p>An Input Field is used to make the text of a <a class="reference internal" href="script-Text.html"><span class="std std-doc">Text Element</span></a> editable by the user. It has a UnityEvent to define what it will do when the text content is changed, and an another to define what it will do when the user has finished editing it.</p>
+<p><img alt="" src="../../../../../../_images/UI_InputFieldExample.png" /></p>
+<p>See the <a class="reference internal" href="script-InputField.html"><span class="std std-doc">Input Field</span></a> page for details on using the Input Field component.</p>
+</section>
+<section id="scroll-rect-scroll-view">
+<h2>Scroll Rect (Scroll View)<a class="headerlink" href="#scroll-rect-scroll-view" title="Permalink to this heading">¶</a></h2>
+<p>A Scroll Rect can be used when content that takes up a lot of space needs to be displayed in a small area. The Scroll Rect provides functionality to scroll over this content.</p>
+<p>Usually a Scroll Rect is combined with a <a class="reference internal" href="script-Mask.html"><span class="std std-doc">Mask</span></a> in order to create a scroll view, where only the scrollable content inside the Scroll Rect is visible. It can also additionally be combined with one or two <a class="reference internal" href="script-Scrollbar.html"><span class="std std-doc">Scrollbars</span></a> that can be dragged to scroll horizontally or vertically.</p>
+<p><img alt="" src="../../../../../../_images/UI_ScrollRectExample.png" /></p>
+<p>See the <a class="reference internal" href="script-ScrollRect.html"><span class="std std-doc">Scroll Rect</span></a> page for details on using the Scroll Rect component.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Interaction Components</a><ul>
+<li><a class="reference internal" href="#common-functionality">Common Functionality</a></li>
+<li><a class="reference internal" href="#button">Button</a></li>
+<li><a class="reference internal" href="#toggle">Toggle</a></li>
+<li><a class="reference internal" href="#toggle-group">Toggle Group</a></li>
+<li><a class="reference internal" href="#slider">Slider</a></li>
+<li><a class="reference internal" href="#scrollbar">Scrollbar</a></li>
+<li><a class="reference internal" href="#dropdown">Dropdown</a></li>
+<li><a class="reference internal" href="#input-field">Input Field</a></li>
+<li><a class="reference internal" href="#scroll-rect-scroll-view">Scroll Rect (Scroll View)</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.ugui@1.0.0/Documentation~/UIInteractionComponents.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Interaction Components</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

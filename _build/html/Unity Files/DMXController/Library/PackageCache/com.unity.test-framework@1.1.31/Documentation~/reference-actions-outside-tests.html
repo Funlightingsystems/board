@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Actions outside of tests &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Actions outside of tests</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="actions-outside-of-tests">
+<h1>Actions outside of tests<a class="headerlink" href="#actions-outside-of-tests" title="Permalink to this heading">¶</a></h1>
+<p>When writing tests, it is possible to avoid duplication of code by using the <a class="reference external" href="https://docs.nunit.org/articles/nunit/technical-notes/usage/SetUp-and-TearDown.html">SetUp and TearDown</a> methods built into <a class="reference external" href="http://www.nunit.org/">NUnit</a>. The Unity Test Framework has extended these methods with extra functionality, which can yield commands and skip frames, in the same way as <a class="reference internal" href="reference-attribute-unitytest.html"><span class="std std-doc">UnityTest</span></a>.</p>
+<section id="action-execution-order">
+<h2>Action execution order<a class="headerlink" href="#action-execution-order" title="Permalink to this heading">¶</a></h2>
+<p>The actions related to a test run in the following order:</p>
+<ul class="simple">
+<li><p>Attributes implementing <a class="reference external" href="https://docs.nunit.org/articles/nunit/extending-nunit/IApplyToContext-Interface.html">IApplyToContext</a></p></li>
+<li><p>Any attribute implementing <a class="reference internal" href="reference-outerunitytestaction.html"><span class="std std-doc">OuterUnityTestAction</span></a> has its <code class="docutils literal notranslate"><span class="pre">BeforeTest</span></code> invoked</p></li>
+<li><p>Tests with <a class="reference internal" href="reference-unitysetup-and-unityteardown.html"><span class="std std-doc">UnitySetUp</span></a> methods in their test class</p></li>
+<li><p>Attributes implementing <a class="reference external" href="https://docs.nunit.org/articles/nunit/extending-nunit/ICommandWrapper-Interface.html">IWrapSetUpTearDown</a></p></li>
+<li><p>Any method with the [SetUp]) attribute</p></li>
+<li><p><a class="reference external" href="https://nunit.org/docs/2.6/actionAttributes.html">Action attributes</a> have their <code class="docutils literal notranslate"><span class="pre">BeforeTest</span></code> method invoked</p></li>
+<li><p>Attributes implementing <a class="reference external" href="https://docs.nunit.org/articles/nunit/extending-nunit/ICommandWrapper-Interface.html">IWrapTestMethod</a></p></li>
+<li><p><strong>The test itself runs</strong></p></li>
+<li><p><a class="reference external" href="https://nunit.org/docs/2.6/actionAttributes.html">Action attributes</a> have their <code class="docutils literal notranslate"><span class="pre">AfterTest</span></code> method invoked</p></li>
+<li><p>Any method with the <a class="reference external" href="https://docs.nunit.org/articles/nunit/technical-notes/usage/SetUp-and-TearDown.html">TearDown</a> attribute</p></li>
+<li><p>Tests with <a class="reference internal" href="reference-unitysetup-and-unityteardown.html"><span class="std std-doc">UnityTearDown</span></a> methods in their test class</p></li>
+<li><p>Any <a class="reference internal" href="reference-outerunitytestaction.html"><span class="std std-doc">OuterUnityTestAction</span></a> has its <code class="docutils literal notranslate"><span class="pre">AfterTest</span></code> invoked</p></li>
+</ul>
+<p>The list of actions is the same for both <code class="docutils literal notranslate"><span class="pre">Test</span></code> and <code class="docutils literal notranslate"><span class="pre">UnityTest</span></code>.</p>
+<section id="execution-order-flow">
+<h3>Execution order flow<a class="headerlink" href="#execution-order-flow" title="Permalink to this heading">¶</a></h3>
+<p><img alt="Action Execution Order" src="../../../../../../_images/execution-order-full.svg" /></p>
+<blockquote>
+<div><p><strong>Note</strong>: Some browsers do not support SVG image files. If the image above does not display properly (for example, if you cannot see any text), please try another browser, such as <a class="reference external" href="https://www.google.com/chrome/">Google Chrome</a> or <a class="reference external" href="https://www.mozilla.org">Mozilla Firefox</a>.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="domain-reloads">
+<h2>Domain Reloads<a class="headerlink" href="#domain-reloads" title="Permalink to this heading">¶</a></h2>
+<p>In <strong>Edit Mode</strong> tests it is possible to yield instructions that can result in a domain reload, such as entering or exiting <strong>Play Mode</strong> (see <a class="reference internal" href="reference-custom-yield-instructions.html"><span class="std std-doc">Custom yield instructions</span></a>). When a domain reload happens, all non-Unity actions (such as <code class="docutils literal notranslate"><span class="pre">OneTimeSetup</span></code> and <code class="docutils literal notranslate"><span class="pre">Setup</span></code>) are rerun before the code, which initiated the domain reload, continues. Unity actions (such as <code class="docutils literal notranslate"><span class="pre">UnitySetup</span></code>) are not rerun. If the Unity action is the code that initiated the domain reload, then the rest of the code in the <code class="docutils literal notranslate"><span class="pre">UnitySetup</span></code> method runs after the domain reload.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Actions outside of tests</a><ul>
+<li><a class="reference internal" href="#action-execution-order">Action execution order</a><ul>
+<li><a class="reference internal" href="#execution-order-flow">Execution order flow</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#domain-reloads">Domain Reloads</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.test-framework@1.1.31/Documentation~/reference-actions-outside-tests.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Actions outside of tests</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>

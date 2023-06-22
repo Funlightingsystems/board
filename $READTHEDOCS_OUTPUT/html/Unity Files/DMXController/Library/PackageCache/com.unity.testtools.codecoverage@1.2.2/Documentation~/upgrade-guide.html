@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Upgrading to Code Coverage package version 1.2 &#8212; Board 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/classic.css" />
+    
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Upgrading to Code Coverage package version 1.2</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="upgrading-to-code-coverage-package-version-1-2">
+<h1>Upgrading to Code Coverage package version 1.2<a class="headerlink" href="#upgrading-to-code-coverage-package-version-1-2" title="Permalink to this heading">¶</a></h1>
+<p>To upgrade to Code Coverage package version 1.2, you need to do the following:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#update-assembly-filtering-aliases-in-batchmode"><span class="std std-ref">Update assembly filtering aliases in batchmode</span></a></p></li>
+<li><p><a class="reference internal" href="#rename-pathstrippingpatterns-to-pathreplacepatterns-in-batchmode"><span class="std std-ref">Rename <code class="docutils literal notranslate"><span class="pre">pathStrippingPatterns</span></code> to <code class="docutils literal notranslate"><span class="pre">pathReplacePatterns</span></code> in batchmode</span></a></p></li>
+</ul>
+<p><strong>Note</strong>: If you’re upgrading from a version older than 1.1, follow the upgrade guide for version 1.1 first.</p>
+<section id="update-assembly-filtering-aliases-in-batchmode">
+<h2>Update assembly filtering aliases in batchmode<a class="headerlink" href="#update-assembly-filtering-aliases-in-batchmode" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Rename assembly filtering aliases when running in <a class="reference internal" href="CoverageBatchmode.html"><span class="std std-doc">batchmode</span></a>. <code class="docutils literal notranslate"><span class="pre">&lt;user&gt;</span></code> alias was renamed to <code class="docutils literal notranslate"><span class="pre">&lt;assets&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;project&gt;</span></code> was renamed to <code class="docutils literal notranslate"><span class="pre">&lt;all&gt;</span></code>.</p></li>
+</ul>
+</section>
+<section id="rename-pathstrippingpatterns-to-pathreplacepatterns-in-batchmode">
+<h2>Rename <code class="docutils literal notranslate"><span class="pre">pathStrippingPatterns</span></code> to <code class="docutils literal notranslate"><span class="pre">pathReplacePatterns</span></code> in batchmode<a class="headerlink" href="#rename-pathstrippingpatterns-to-pathreplacepatterns-in-batchmode" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Rename <code class="docutils literal notranslate"><span class="pre">pathStrippingPatterns</span></code> to <code class="docutils literal notranslate"><span class="pre">pathReplacePatterns</span></code> in <a class="reference internal" href="CoverageBatchmode.html"><span class="std std-doc">batchmode</span></a>.<br/><br/><strong>Example:</strong><br/><br/>Change <code class="docutils literal notranslate"><span class="pre">pathStrippingPatterns:C:/MyProject/</span></code> to <code class="docutils literal notranslate"><span class="pre">pathReplacePatterns:C:/MyProject/,</span></code>.<br/>This is equivalent to stripping <code class="docutils literal notranslate"><span class="pre">C:/MyProject/</span></code> by replacing <code class="docutils literal notranslate"><span class="pre">C:/MyProject/</span></code> with an empty string.</p></li>
+</ul>
+</section>
+</section>
+<section id="upgrading-to-code-coverage-package-version-1-1">
+<h1>Upgrading to Code Coverage package version 1.1<a class="headerlink" href="#upgrading-to-code-coverage-package-version-1-1" title="Permalink to this heading">¶</a></h1>
+<p>To upgrade to Code Coverage package version 1.1, you need to do the following:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#update-path-filtering-globbing-rules"><span class="std std-ref">Update path filtering globbing rules</span></a></p></li>
+</ul>
+<section id="update-path-filtering-globbing-rules">
+<h2>Update path filtering globbing rules<a class="headerlink" href="#update-path-filtering-globbing-rules" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Update the path filtering globbing rules in your batchmode commands and code coverage window. To keep the current behavior when using <a class="reference external" href="https://en.wikipedia.org/wiki/Glob_%28programming%29">globbing</a> to match any number of folders, the <code class="docutils literal notranslate"><span class="pre">*</span></code> character should be replaced with <code class="docutils literal notranslate"><span class="pre">**</span></code>. A single <code class="docutils literal notranslate"><span class="pre">*</span></code> character can be used to specify a single folder layer.<br/><br/><strong>Examples:</strong><br/><br/><code class="docutils literal notranslate"><span class="pre">pathFilters:+C:/MyProject/Assets/Scripts/*</span></code> will include all files in the <code class="docutils literal notranslate"><span class="pre">C:/MyProject/Assets/Scripts</span></code> folder. Files in subfolders will not be included.<br/><code class="docutils literal notranslate"><span class="pre">pathFilters:+C:/MyProject/Assets/Scripts/**</span></code> will include all files under the <code class="docutils literal notranslate"><span class="pre">C:/MyProject/Assets/Scripts</span></code> folder and any of its subfolders.</p></li>
+</ul>
+<p>For a full list of changes and updates in this version, see the <a class="reference internal" href="#../changelog/CHANGELOG.html"><span class="xref myst">Code Coverage package changelog</span></a>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Upgrading to Code Coverage package version 1.2</a><ul>
+<li><a class="reference internal" href="#update-assembly-filtering-aliases-in-batchmode">Update assembly filtering aliases in batchmode</a></li>
+<li><a class="reference internal" href="#rename-pathstrippingpatterns-to-pathreplacepatterns-in-batchmode">Rename <code class="docutils literal notranslate"><span class="pre">pathStrippingPatterns</span></code> to <code class="docutils literal notranslate"><span class="pre">pathReplacePatterns</span></code> in batchmode</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#upgrading-to-code-coverage-package-version-1-1">Upgrading to Code Coverage package version 1.1</a><ul>
+<li><a class="reference internal" href="#update-path-filtering-globbing-rules">Update path filtering globbing rules</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../_sources/Unity Files/DMXController/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/Documentation~/upgrade-guide.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../../../../index.html">Board 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Upgrading to Code Coverage package version 1.2</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, The FLS team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    </div>
+  </body>
+</html>
