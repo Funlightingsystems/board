@@ -75,7 +75,7 @@ If you are unsure about the IP please check your routers configuration page.
 ```
 curl -X POST -H "Content-Type: application/json" -d '{
   "serialNumber": SerialNumber,
-  "patch": "DIMMER#, A(button)#",
+  "patch": "DIMMER# OR A(button)#",
   "colour": "Colour setup",
   "type": "Type of light"
 }' http://ADDRESS:3000/lights/1234
@@ -84,7 +84,7 @@ an example of this would look like so:
 ```
 curl -X POST -H "Content-Type: application/json" -d '{
   "serialNumber": 1234,
-  "patch": "D1, A1",
+  "patch": "A1",
   "colour": "RGB",
   "type": "PAR Can"
 }' http://localhost:3000/lights/1234
@@ -93,19 +93,19 @@ or
 ```
 curl -X POST -H "Content-Type: application/json" -d '{
   "serialNumber": 1111,
-  "patch": "A1",
+  "patch": "D1",
   "colour": "green",
   "type": "LED Strip"
 }' http://localhost:3000/lights/1111
 ```
 Before running the command please ensure that for optimal results you run it all on the same line like so.
 ```
-curl -X POST -H "Content-Type: application/json" -d '{"serialNumber": 1234, "patch": "D1, A1", "colour": "RGB", "type": "SomeType"}' http://localhost:3000/lights/1234
+curl -X POST -H "Content-Type: application/json" -d '{"serialNumber": 1234, "patch": "D1", "colour": "RGB", "type": "SomeType"}' http://localhost:3000/lights/1234
 ```
 
 if you are on a windows based powershell command prompt please use this modified command with a simular syntax:
 ```
-curl -X POST -H "Content-Type: application/json" -d "{\"serialNumber\": 1234, \"patch\": \"D1, A1\", \"colour\": \"RGB\", \"type\": \"SomeType\"}" http://localhost:3000/lights/1234
+curl -X POST -H "Content-Type: application/json" -d "{\"serialNumber\": 1234, \"patch\": \"A1\", \"colour\": \"RGB\", \"type\": \"SomeType\"}" http://localhost:3000/lights/1234
 ```
 
 ### If everything went according to plan you should see the output:
