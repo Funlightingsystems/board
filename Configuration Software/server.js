@@ -62,6 +62,18 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// GET request to display the entire code
+app.get('/lights', (req, res) => {
+  fs.readFile(__filename, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading file:', err);
+      res.sendStatus(500);
+    } else {
+      res.send(data);
+    }
+  });
+});
+
 app.listen(3000, () => {
   console.log('API server is running on http://localhost:3000');
 });

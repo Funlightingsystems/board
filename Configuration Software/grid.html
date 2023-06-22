@@ -1,11 +1,25 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Light Configuration</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-      body {
+<head>
+  <title>Light Configurations</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+    body {
         background-color: #f9f9f9;
         color: #333;
         font-family: Arial, sans-serif;
@@ -114,70 +128,17 @@
       .waffle-dropdown li:hover {
         background-color: #f9f9f9;
       }
-    </style>
-    <script>
-      function saveConfig() {
-        var serialNumber = $('#serialNumber').val();
-        var patch = $('#patch').val();
-        var colour = $('#colour').val();
-
-        var config = {
-          serialNumber: parseInt(serialNumber),
-          patch: patch,
-          colour: colour
-        };
-
-        $.ajax({
-          url: 'http://10.0.0.169:3000/lights/' + serialNumber, // Update with the lights URL
-          type: 'POST',
-          data: JSON.stringify(config),
-          contentType: 'application/json',
-          success: function() {
-            alert('Configuration saved successfully.');
-          },
-          error: function(xhr, status, error) {
-            alert('Error saving configuration: ' + error);
-          }
-        });
-      }
-
-      function getConfig() {
-        var serialNumber = $('#serialNumber').val();
-
-        $.ajax({
-          url: 'http://10.0.0.169:3000/lights/' + serialNumber, // Update with the lights URL
-          type: 'GET',
-          success: function(data) {
-            $('#patch').val(data.patch);
-            $('#colour').val(data.colour);
-            $('#type').text(data.type);
-          },
-          error: function(xhr, status, error) {
-            alert('Error retrieving configuration: ' + error);
-          }
-        });
-      }
-
-      function toggleDropdown() {
+  </style>
+  <script>
+function toggleDropdown() {
         $('.waffle-dropdown').toggle();
       }
+</script>
 
-      function addApp(app) {
-        // Code to add the selected app
-        alert('App added: ' + app);
-      }
-
-      function downloadConfig() {
-        var downloadLink = document.createElement('a');
-        downloadLink.href = '/configurations.json';
-        downloadLink.download = 'configurations.json';
-        downloadLink.click();
-      }
-    </script>
-  </head>
-  <body>
-    <h1>Light Configuration</h1>
-    <div class="waffle-menu">
+</head>
+<body>
+  <h1>Light Configurations</h1>
+<div class="waffle-menu">
       <a href="#" class="waffle-link" onclick="toggleDropdown()">
         <div class="waffle-menu-icon"></div>
       </a>
@@ -190,20 +151,48 @@
         </ul>
       </div>
     </div>
-    <label for="serialNumber">Serial Number:</label>
-    <input type="text" id="serialNumber" />
-    <br /><br />
-    <label for="type">Type:</label>
-    <div id="type"></div>
-    <br /><br />
-    <label for="patch">Patch:</label>
-    <input type="text" id="patch" />
-    <br /><br />
-    <label for="colour">Colour:</label>
-    <input type="text" id="colour" />
-    <br /><br />
-    <button onclick="saveConfig()">Save</button>
-    <button onclick="getConfig()">Load</button>
-    <button onclick="downloadConfig()">Download Config</button>
-  </body>
+  <table id="lightTable">
+    <thead>
+      <tr>
+        <th>Serial Number</th>
+        <th>Type</th>
+        <th>Patch</th>
+        <th>Colour</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <script>
+    // Fetch light configurations from the /lights endpoint
+    fetch('http://10.0.0.169:3000/lights')
+      .then(response => response.json())
+      .then(configurations => {
+        const tableBody = document.querySelector('#lightTable tbody');
+
+        // Iterate over the configurations and create table rows
+        Object.values(configurations).forEach(config => {
+          const row = document.createElement('tr');
+          const serialNumberCell = document.createElement('td');
+          const typeCell = document.createElement('td');
+          const patchCell = document.createElement('td');
+          const colourCell = document.createElement('td');
+
+          serialNumberCell.textContent = config.serialNumber;
+          typeCell.textContent = config.type || '-';
+          patchCell.textContent = config.patch || '-';
+          colourCell.textContent = config.colour || '-';
+
+          row.appendChild(serialNumberCell);
+          row.appendChild(typeCell);
+          row.appendChild(patchCell);
+          row.appendChild(colourCell);
+
+          tableBody.appendChild(row);
+        });
+      })
+      .catch(error => console.error('Error fetching configurations:', error));
+  </script>
+</body>
 </html>
