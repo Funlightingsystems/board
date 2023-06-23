@@ -2,3 +2,4 @@ mkdocs==1.2.2
 jinja2==3.0.1
 mkdocs-with-pdf==0.9.3
 weasyprint==59.0
+cairo >= 1.15.10
