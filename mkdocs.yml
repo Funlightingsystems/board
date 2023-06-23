@@ -3,3 +3,4 @@ nav:
     - 'Home' : 'index.md'
 
     - 'Configuration Software': 'configuration-software.md'
+    - 'Light communication' : 'light-communication.md'

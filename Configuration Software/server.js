@@ -62,6 +62,8 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+
+
 // GET request to display the entire code
 app.get('/lights', (req, res) => {
   fs.readFile(__filename, 'utf8', (err, data) => {
