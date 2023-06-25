@@ -4,10 +4,12 @@ nav:
 
     - 'Configuration Software': 'configuration-software.md'
     - 'Light communication' : 'light-communication.md'
+    - 'Showbox ' : 'showbox.md'
 #plugins:
-    #- with-pdf:
-        #author: TheJades, GManAndMarbles
-        #cover_title: Manual
-        #cover_subtitle: Whole Repo
-        #output_path: pdf/manual.pdf
+#    - with-pdf:
+#        author: TheJades, GManAndMarbles
+#        cover_title: Manual
+#        cover_subtitle: Whole Repo
+#        output_path: pdf/manual.pdf
+
         

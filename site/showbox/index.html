@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Showbox  - Board</title>
+<link href="../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../css/font-awesome.min.css" rel="stylesheet"/>
+<link href="../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" rel="stylesheet"/>
+<script defer="" src="../js/jquery-1.10.2.min.js"></script>
+<script defer="" src="../js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link href="../pdf/manual.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="..">Board</a>
+<!-- Expander button -->
+<button class="navbar-toggler" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="navitem">
+<a class="nav-link" href="..">Home</a>
+</li>
+<li class="navitem">
+<a class="nav-link" href="../configuration-software/">Configuration Software</a>
+</li>
+<li class="navitem">
+<a class="nav-link" href="../light-communication/">Light communication</a>
+</li>
+<li class="navitem active">
+<a class="nav-link" href="./">Showbox </a>
+</li>
+</ul>
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="../light-communication/" rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link disabled" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-target="#toc-collapse" data-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-secondary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-level="1"><a class="nav-link" href="#showbox">Showbox</a>
+<ul class="nav flex-column">
+<li class="nav-item" data-level="2"><a class="nav-link" href="#about">About</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#dns">DNS</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#light-configuration">Light configuration</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<h1 id="showbox">Showbox</h1>
+<h2 id="about">About</h2>
+<p>The showbox is a device based around the Raspberry Pi 3B+, designed to run all aspects of the show including lighting and communication. The system is configured to start all of the services on first boot. You can connect into the showbox using the default username and password:</p>
+<pre><code>Username: pi
+Password: raspberry
+</code></pre>
+<p>A wireless access point is also included the default credentials for this are:</p>
+<pre><code>IP address: 10.3.141.1
+DHCP range: 10.3.141.50 — 10.3.141.254
+SSID: raspi-webgui
+Password: ChangeMe
+</code></pre>
+<p>The lighting configuration dashboard runs on port 80, If your computer is setup to point at the DNS server of the showbox or you are connected to the isolated network of the showbox you can view it by going to the addresses</p>
+<pre><code>http://10.3.141.1/ (Configuration Utility)
+ws://10.3.141.1:8081/ (Communication outgoing)
+ws://10.3.141.1:8080/ (Communication incoming)
+http://10.3.141.1:5380/ (DNS configuration)
+</code></pre>
+<p>Do not change the username and password, if you do, you will have to resetup your lights at the software level.</p>
+<h2 id="dns">DNS</h2>
+<p>The showbox comes with a built in DNS server, this DNS server is provided by Technitium DNS, you can see the WebUI for Technitium by going to http://10.3.141.1:5380 in your browser, the default username and password are as follows:</p>
+<pre><code>Username: Admin
+Password: Raspberry
+</code></pre>
+<p>You can add more DNS records here if you want to add additional showboxes into the system.
+The DNS configuration should be set like so on the client machines.</p>
+<pre><code>Server 1: 10.3.141.1
+Server 2: 1.1.1.1
+(Additional server 2 configurations are listed below)
+8.8.8.8
+8.8.4.4
+9.9.9.9
+</code></pre>
+<p>A complete list of DNS servers is available here: https://www.lifewire.com/free-and-public-dns-servers-2626062</p>
+<h2 id="light-configuration">Light configuration</h2>
+<p>To use the light configuration you must first visit the page itself by going to either: http://10.3.141.1/ or http://fls.board/ Once you are on that page you should be greeted with a page that looks like the following
+<img alt="Image of configuration landing screen" src="https://github.com/Funlightingsystems/board-documentation-resources/blob/main/image.png?raw=true"/>
+Each item should be fairly self explanatory but here is a basic breakdown.</p>
+<p>Serial number - The number used to identify your light</p>
+<p>Type - The type of light, not servicable from the webUI, check the documentation for the configuration system and use 'curl' to set it manually.</p>
+<p>Patch - The specific button on the board that the light is controlled with.</p>
+<p>Colour - Doesn't change the colour of the light, it just gives a basic representation of the colour for someone who is looking at the system.</p>
+<p>Save - Saves the configuration currently in the feilds on the website to the configuration file</p>
+<p>Load - Loads the setup for the light from the configuration file.</p>
+<p>Download config - Downloads the config file in a nice JSON format.</p>
+<p><img alt="Image of the configuration utility with all fields filled out" src="https://github.com/Funlightingsystems/board-documentation-resources/blob/main/Screenshot%202023-06-24%20105613.png?raw=true"/></p>
+<p>The next portion of the configuration utility is the grid, the grid shows all of the lights currently defined in the configuration file, this can be accessed by pressing the black dot in the corner of the screen. </p>
+<p><img alt="Dot" src="https://github.com/Funlightingsystems/board-documentation-resources/blob/main/dot.png?raw=true"/></p>
+<p>Once you have loaded the grid view you should be met with a screen that looks like this:</p>
+<p><img alt="grid" src="https://github.com/Funlightingsystems/board-documentation-resources/blob/main/grid.png?raw=true"/></p></div>
+</div>
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script defer="" src="../js/base.js"></script>
+<div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
