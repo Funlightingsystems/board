@@ -4,13 +4,13 @@ nav:
 
     - 'Configuration Software': 'configuration-software.md'
     - 'Light communication' : 'light-communication.md'
-#    - 'Showbox ' : 'showbox.md'
+    - 'Showbox ' : 'showbox.md'
     - 'Led Matrix' : 'led-matrix.md'
-plugins:
-    - with-pdf:
+#plugins:
+#    - with-pdf:
 #        author: TheJades, GManAndMarbles
-        cover_title: Manual
-        cover_subtitle: V1.1
-        output_path: pdf/manual.pdf
+#        cover_title: Manual
+#        cover_subtitle: V1.1
+#        output_path: pdf/manual.pdf
 
         
