@@ -1,5 +1,5 @@
 # The web based system to configure your lighting system.
-This system is designed to be as easy to use a possible.
+This system is designed to be as easy to use a possible. This system is ONLY for devices which are designed to run on the internally developed software, devices such as the Pyro I will NOT work.
 
 
 ## First Run
@@ -69,7 +69,10 @@ If it is on a different device you can access it using the ip address of the dev
 ```
 10.0.0.1:3000
 ```
-If you are unsure about the IP please check your routers configuration page.
+If you are unsure about the IP please check your routers configuration page or type
+```
+hostname -I
+``` at the terminal.
 
 ## Configuring
 ```
@@ -118,7 +121,7 @@ If inputting the lighting data is too hard, an up to date version of the configu
 "
 git clone http://github.com/funlightingsystems/board.git 
 "
-from the directory immediatly outside of the directory called board.
+from the directory directly outside of the directory called board.
 
-Thanks for reading this mouthful of stuff!
+
 

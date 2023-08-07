@@ -6,13 +6,14 @@
   },
   "1": {
     "serialNumber": "1",
-    "patch": "1",
-    "colour": "1"
+    "type": "PAR Can",
+    "patch": "D1",
+    "colour": "Blue"
   },
   "1234": {
     "serialNumber": "1234",
-    "type": "SomeType",
-    "patch": "D1, A1",
-    "colour": "RGB"
+    "type": "PAR Can",
+    "patch": "D1",
+    "colour": "Red"
   }
 }

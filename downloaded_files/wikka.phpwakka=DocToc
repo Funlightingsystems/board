@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>FreeBASIC Manual - FreeBASIC Wiki Manual | FBWiki</title>
+	<base href="https://www.freebasic.net/wiki/" />
+	<meta name="generator" content="WikkaWiki" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="templates/classic/css/classic.css?46cc6" />
+	<link rel="stylesheet" type="text/css" href="templates/classic/css/print.css" media="print" />
+	<link rel="icon" href="templates/classic/images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="templates/classic/images/favicon.ico" type="image/x-icon" />
+	<link rel="alternate" type="application/rss+xml" title="FreeBASIC Wiki Manual | FBWiki: revisions for DocToc (RSS)" href="https://www.freebasic.net/wiki/wikka.php?wakka=DocToc/revisions.xml" />
+	<link rel="alternate" type="application/rss+xml" title="FreeBASIC Wiki Manual | FBWiki: recently edited pages (RSS)" href="https://www.freebasic.net/wiki/wikka.php?wakka=DocToc/recentchanges.xml" />
+</head>
+<body>
+<!-- BEGIN PAGE WRAPPER -->
+<div id="page">
+<!-- BEGIN PAGE HEADER -->
+<div id="header">
+<h1><a href="https://www.freebasic.net/wiki/wikka.php?wakka=DocToc/backlinks" title="Display a list of pages linking to DocToc">FreeBASIC Manual</a> - <a id="homepage_link" href="https://www.freebasic.net/wiki/wikka.php?wakka=FBWiki">FreeBASIC Wiki Manual | FBWiki</a></h1>
+<ul class="menu" id="main_menu">
+<li><a class="" href="https://www.freebasic.net/wiki/wikka.php?wakka=DocToc">DocToc</a></li>
+<li><a class="" href="https://www.freebasic.net/wiki/wikka.php?wakka=PageIndex">PageIndex</a></li>
+<li><a class="" href="https://www.freebasic.net/wiki/wikka.php?wakka=RecentChanges">RecentChanges</a></li>
+<li><a class="" href="https://www.freebasic.net/wiki/wikka.php?wakka=RecentlyCommented">RecentlyCommented</a></li>
+<li><a class="" href="https://www.freebasic.net/wiki/wikka.php?wakka=UserSettings">Login/Register</a></li>
+<li><form action="https://www.freebasic.net/wiki/wikka.php?wakka=TextSearch" id="form_c2b696fff2">
+<fieldset class="hidden">
+	<input type="hidden" name="wakka" value="TextSearch" />
+</fieldset>
+<label for="searchbox">Search: </label><input id="searchbox" name="phrase" size="15" class="searchbox" /></form></li>
+</ul>
+</div>
+<div>
+<ul class="breadcrumb" id="breadcrumb">	
+</div>
+<!-- END PAGE HEADER -->
+
+<!--starting page content-->
+<div id="content">
+<!-- Header ID generation took 0.000013 seconds --><a class="" href="https://www.freebasic.net/wiki/wikka.php?wakka=RecentChanges" title="FB Logo"><img src="https://www.freebasic.net/wiki/images/uploaded/DocToc/FBLOGO.PNG" alt="FB Logo" class="center" /></a><h2 id="hn_FreeBASIC_Manual"><a class="heading" href="https://www.freebasic.net/wiki/wikka.php?wakka=DocToc#">FreeBASIC Manual</a></h2><hr />
+
+<div class="center">
+<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CompilerWelcome">Welcome to FreeBASIC</a> | <a href="https://www.freebasic.net/wiki/wikka.php?wakka=CompilerHelp">Getting Help with FreeBASIC</a>
+</div>
+<br />
+<div class="floatl"><b><u>Language Documentation</u></b><div class="indent">
+	<br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgFullIndex">Keywords - Alphabetical</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgFunctIndex">Keywords - Functional</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgGfx">Graphics Keywords</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgOpIndex">Operator List</a><br />
+	<br />
+	<b>Variables and Data Types</b><br />
+	<div class="indent">
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgVariables">Variable Declarations</a><br />
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgUserDefTypes">User Defined Types</a><br />
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgStdDataTypes">Standard Data Types</a><br />
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=TblVarTypes">Standard Data Type Limits</a><br />
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgCasting">Converting Between Data Types</a><br />
+		<br />
+	</div>
+	<b>Operators</b><br />
+	<div class="indent">
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgOperators">Operator Overview</a><br />
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=OpPrecedence">Operator Precedence</a><br />
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=TblTruth">Bitwise Operators &amp; Truth Tables</a><br />
+		<br />
+	</div>
+	<b>Statements</b><br />
+	<div class="indent">
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgControlFlow">Control Flow</a><br />
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgProcedures">Procedures</a><br />
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgModularizing">Modularizing</a><br />
+		<br />
+	</div>
+	<b>Other</b><br />
+	<div class="indent">
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgPreProcess">Preprocessor</a><br />
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=TblEscapeSequences">Escape Sequences In String Literals</a><br />
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgCompilerSwitches">Meta-statements</a><br />
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgDddefines">Intrinsic Defines</a><br />
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=ProPgErrorHandling">Error Handling</a><br />
+		<a href="https://www.freebasic.net/wiki/wikka.php?wakka=KeyPgAsm">Inline ASM</a><br/>
+	</div>
+</div>
+
+<br />
+<b><u>Runtime Library Reference</u></b><div class="indent">
+	<br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgArray">Array Functions</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgBits">Bit Manipulation</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgConsole">Console Functions</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgDate">Date and Time Functions</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgError">Error Handling Functions</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgFile">File IO Functions</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgMath">Mathematical Functions</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgMemory">Memory Functions</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgOpsys">Operating System Functions</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgString">String Functions</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgThreading">Threading Support Functions</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgInput">User Input Functions</a><br />
+	<br/>
+</div>
+
+<b><u>Graphics Library Reference</u></b><div class="indent">
+	<br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgGfx2D">2D Drawing Functions</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgGfxInput">User Input Functions</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgGfxScreen">Screen Functions</a><br />
+	<br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=GfxLib">Supported graphics drivers (backends)</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=GfxScancodes">Keyboard Scan Codes</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=GfxDefPalettes">Default Palettes</a><br />
+	<br/>
+</div>
+
+</div><div class="floatr"><b><u>Tutorials</u></b><div class="indent">
+	<br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgProgrammer">Programmer's Guide</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CommunityTutorials">Community Tutorials</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CodeLibrary">Community Code Library</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=ExtLibTOC">External Libraries Index</a><br />
+	<br/>
+</div>
+
+<b><u>Using the FreeBASIC compiler</u></b><div class="indent">
+	<br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CompilerInstalling">Installing FreeBASIC</a> | <a href="https://www.freebasic.net/wiki/wikka.php?wakka=CompilerRequirements">Requirements</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CompilerRunning">Running FreeBASIC</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CompilerCmdLine">Using the Command Line</a> | <a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgCompOpt">Command Line Options</a><br />
+	<br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=DebuggerRunning">Debugging with FreeBASIC</a><br />
+	<br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CompilerErrMsg">Compiler Error Messages</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CompilerTools">Tools used by fbc</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CompilerInstallingGcc">Installing gcc for -gen gcc</a><br />
+	<br/>
+</div>
+
+<b><u>FreeBASIC dialects and QBASIC</u></b><div class="indent">
+	<br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CompilerQB">FreeBASIC and Qbasic</a> | 	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=LangQB">Differences from QB</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CompilerDialects">FreeBASIC Dialects</a><br />
+	<br/>
+</div>
+
+<b><u>FAQs</u></b><div class="indent">
+	<br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CompilerFAQ">Compiler FAQ</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=FaqPggfxlib2">Graphics Library FAQ</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=FaqPgrtlib">Runtime Library FAQ</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=FaqPgxbox">Xbox port FAQ</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=FaqDOS">DOS related FAQ</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=FaqPgWin32">Windows related FAQ</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=FaqPgLinux">Linux related FAQ</a><br />
+	<br/>
+</div>
+
+<b><u>Miscellaneous</u></b><div class="indent">
+	<br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=ObsoletedKwds">Obsolete Keywords</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=GlossaryIndex">Glossary</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CatPgMisc">Miscellaneous Keywords</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=ProPgCruntime">C Standard Library Functions</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=CptAscii">ASCII Character Codes</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=TblRuntimeErrors">Runtime Error Codes</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=TblComparisonC">C/C++ vs. FreeBASIC syntax comparison</a><br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=TblComparisonCTypes">C/C++ vs. FreeBASIC integer data type comparison</a><br />
+	<br/>
+</div>
+
+<b><u>Hacking on FreeBASIC</u></b><div class="indent">
+	<br />
+	<a href="https://www.freebasic.net/wiki/wikka.php?wakka=DevToc">Developer's Table of Contents</a><br/>
+</div>
+
+<br />
+</div><div class="clear">&nbsp;</div>
+<br />
+<br />
+<div align="center">Back to <a href="https://www.freebasic.net/wiki/wikka.php?wakka=FBWiki">Main Page</a></div>
+<div style="clear: both"></div>
+
+</div><!--closing page content-->
+
+<!-- BEGIN PAGE FOOTER -->
+<div id="footer">
+<ul class="menu" id="options_menu">
+<li><a href="https://www.freebasic.net/wiki/wikka.php?wakka=DocToc/showcode" title="Display the markup for this page">[Source]</a></li>
+<li><a href="https://www.freebasic.net/wiki/wikka.php?wakka=DocToc/history" title="Click to view recent edits to this page">[History]</a>
+</li>
+<li><a class="datetime" href="https://www.freebasic.net/wiki/wikka.php?wakka=DocToc/revisions" title="Click to view recent revisions list for this page">2018-02-10 22:35:21</a> <a href="https://www.freebasic.net/wiki/wikka.php?wakka=DocToc/revisions.xml" title="Click to display a feed with the latest revisions to this page"><img src="images/feed.png" class="icon" width="14" height="14" alt="feed icon" /></a></li>
+<li>Public page 
+</li>
+<li>Your hostname is <tt>68.146.5.150</tt></li>
+</ul>
+</div>
+<!-- END PAGE FOOTER -->
+<!-- BEGIN SYSTEM INFO -->
+<div id="smallprint">
+<a class="ext" href="http://validator.w3.org/check/referer">Valid XHTML</a> ::
+<a class="ext" href="http://jigsaw.w3.org/css-validator/check/referer">Valid CSS:</a> ::
+<a class="ext" href="http://wikkawiki.org/">Powered by WikkaWiki</a></div>
+<!-- END SYSTEM INFO -->
+
+<p><br/></p>
+<p><br/></p>
+<div align="center">
+<a href="https://sourceforge.net"><img src="https://sourceforge.net/sflogo.php?group_id=122342&amp;type=1" width="88" height="31" border="0" alt="sf.net" /></a>
+<a href="https://www.phatcode.net/"><img src="images/phatcode-logo.gif" border="0" alt="phatcode" /></a>
+</div>
+
+
+</div>
+<!-- END PAGE WRAPPER -->
+</body>
+</html>

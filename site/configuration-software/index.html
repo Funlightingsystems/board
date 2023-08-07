@@ -38,7 +38,7 @@
 <a class="nav-link" href="../light-communication/">Light communication</a>
 </li>
 <li class="navitem">
-<a class="nav-link" href="../showbox/">Showbox </a>
+<a class="nav-link" href="../led-matrix/">Led Matrix</a>
 </li>
 </ul>
 <ul class="nav navbar-nav ml-auto">
@@ -72,10 +72,6 @@
 <ul class="nav flex-column">
 </ul>
 </li>
-<li class="nav-item" data-level="2"><a class="nav-link" href="#configuring">Configuring</a>
-<ul class="nav flex-column">
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -83,7 +79,7 @@
 </div></div>
 <div class="col-md-9" role="main">
 <h1 id="the-web-based-system-to-configure-your-lighting-system">The web based system to configure your lighting system.</h1>
-<p>This system is designed to be as easy to use a possible.</p>
+<p>This system is designed to be as easy to use a possible. This system is ONLY for devices which are designed to run on the internally developed software, devices such as the Pyro I will NOT work.</p>
 <h2 id="first-run">First Run</h2>
 <h3 id="prerequisites">Prerequisites:</h3>
 <ol>
@@ -133,47 +129,52 @@ npm install fs ws express
 <p>If it is on a different device you can access it using the ip address of the device on your local area network (LAN)</p>
 <pre><code>10.0.0.1:3000
 </code></pre>
-<p>If you are unsure about the IP please check your routers configuration page.</p>
-<h2 id="configuring">Configuring</h2>
-<pre><code>curl -X POST -H "Content-Type: application/json" -d '{
+<p>If you are unsure about the IP please check your routers configuration page or type</p>
+<pre><code>hostname -I
+``` at the terminal.
+
+## Configuring
+</code></pre>
+<p>curl -X POST -H "Content-Type: application/json" -d '{
   "serialNumber": SerialNumber,
   "patch": "DIMMER# OR A(button)#",
   "colour": "Colour setup",
   "type": "Type of light"
-}' http://ADDRESS:3000/lights/1234
+}' http://ADDRESS:3000/lights/1234</p>
+<pre><code>an example of this would look like so:
 </code></pre>
-<p>an example of this would look like so:</p>
-<pre><code>curl -X POST -H "Content-Type: application/json" -d '{
+<p>curl -X POST -H "Content-Type: application/json" -d '{
   "serialNumber": 1234,
   "patch": "A1",
   "colour": "RGB",
   "type": "PAR Can"
-}' http://localhost:3000/lights/1234
+}' http://localhost:3000/lights/1234</p>
+<pre><code>or 
 </code></pre>
-<p>or </p>
-<pre><code>curl -X POST -H "Content-Type: application/json" -d '{
+<p>curl -X POST -H "Content-Type: application/json" -d '{
   "serialNumber": 1111,
   "patch": "D1",
   "colour": "green",
   "type": "LED Strip"
-}' http://localhost:3000/lights/1111
+}' http://localhost:3000/lights/1111</p>
+<pre><code>Before running the command please ensure that for optimal results you run it all on the same line like so.
 </code></pre>
-<p>Before running the command please ensure that for optimal results you run it all on the same line like so.</p>
-<pre><code>curl -X POST -H "Content-Type: application/json" -d '{"serialNumber": 1234, "patch": "D1", "colour": "RGB", "type": "SomeType"}' http://localhost:3000/lights/1234
+<p>curl -X POST -H "Content-Type: application/json" -d '{"serialNumber": 1234, "patch": "D1", "colour": "RGB", "type": "SomeType"}' http://localhost:3000/lights/1234</p>
+<pre><code>
+if you are on a windows based powershell command prompt please use this modified command with a simular syntax:
 </code></pre>
-<p>if you are on a windows based powershell command prompt please use this modified command with a simular syntax:</p>
-<pre><code>curl -X POST -H "Content-Type: application/json" -d "{\"serialNumber\": 1234, \"patch\": \"A1\", \"colour\": \"RGB\", \"type\": \"SomeType\"}" http://localhost:3000/lights/1234
+<p>curl -X POST -H "Content-Type: application/json" -d "{\"serialNumber\": 1234, \"patch\": \"A1\", \"colour\": \"RGB\", \"type\": \"SomeType\"}" http://localhost:3000/lights/1234</p>
+<pre><code>
+### If everything went according to plan you should see the output:
 </code></pre>
-<h3 id="if-everything-went-according-to-plan-you-should-see-the-output">If everything went according to plan you should see the output:</h3>
-<pre><code>OK
-</code></pre>
+<p>OK
+```</p>
 <p><br/>
 If inputting the lighting data is too hard, an up to date version of the configuration file will be posted from time to time, this WILL overwrite your current data if you chose to update. Do this carefully. Backup any data you want to keep. To update you can run the command 
 "
 git clone http://github.com/funlightingsystems/board.git 
 "
-from the directory immediatly outside of the directory called board.</p>
-<p>Thanks for reading this mouthful of stuff!</p></div>
+from the directory directly outside of the directory called board.</p></div>
 </div>
 </div>
 <footer class="col-md-12">

@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>freebasic.net - Index page</title>
+
+
+
+
+	<link rel="alternate" type="application/atom+xml" title="Feed - freebasic.net" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f">			<link rel="alternate" type="application/atom+xml" title="Feed - New Topics" href="/forum/app.php/feed/topics?sid=34f8d9a9cdec5999a34660faad04f98f">				
+
+<!--
+	phpBB style name: elegance
+	Based on style:   prosilver
+	Original author:  Arty ( https://www.artodia.com )
+	Modified by: 	  Halil ESEN ( https://halilsn.com/ )
+-->
+
+
+<link href="./assets/css/font-awesome.min.css?assets_version=33" rel="stylesheet">
+<link href="./styles/elegance_steelblue/theme/stylesheet.css?assets_version=33" rel="stylesheet">
+
+
+
+
+<!--[if lte IE 9]>
+	<link href="./styles/elegance_steelblue/theme/tweaks.css?assets_version=33" rel="stylesheet">
+<![endif]-->
+
+
+
+
+
+</head>
+<body id="phpbb" class="nojs notouch section-index ltr " data-online-text="Online">
+
+
+	<a id="top" class="top-anchor" accesskey="t"></a>
+	<div id="page-header" class="page-width">
+		<div class="headerbar" role="banner">
+					<div class="inner">
+
+			<div id="site-description" class="site-description">
+				<a id="logo" class="logo" href="./index.php?sid=34f8d9a9cdec5999a34660faad04f98f" title="Board index">
+					<img src="./styles/elegance_steelblue/theme/images/logo.png" data-src-hd="./styles/elegance_steelblue/theme/images/logo_hd.png" alt="freebasic.net"/>
+				</a>
+				<p class="sitename">freebasic.net</p>
+				<p>FreeBASIC's Official Forums</p>
+				<p class="skiplink"><a href="#start_here">Skip to content</a></p>
+			</div>
+
+															<div id="search-box" class="search-box search-header" role="search">
+				<form action="./search.php?sid=34f8d9a9cdec5999a34660faad04f98f" method="get" id="search">
+				<fieldset>
+					<input name="keywords" id="keywords" type="search" maxlength="128" title="Search for keywords" class="inputbox search tiny" size="20" value="" placeholder="Search…" />
+					<button class="button button-search" type="submit" title="Search">
+						<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Search</span>
+					</button>
+					<a href="./search.php?sid=34f8d9a9cdec5999a34660faad04f98f" class="button button-search-end" title="Advanced search">
+						<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">Advanced search</span>
+					</a>
+					<input type="hidden" name="sid" value="34f8d9a9cdec5999a34660faad04f98f" />
+
+				</fieldset>
+				</form>
+			</div>
+									
+			</div>
+					</div>
+
+
+				
+
+
+<div class="navbar tabbed not-static" role="navigation">
+	<div class="inner page-width">
+		<div class="nav-tabs" data-current-page="index">
+			<ul class="leftside">
+				<li id="quick-links" class="quick-links tab responsive-menu dropdown-container">
+					<a href="#" class="nav-link dropdown-trigger">Quick links</a>
+					<div class="dropdown">
+						<div class="pointer"><div class="pointer-inner"></div></div>
+						<ul class="dropdown-contents" role="menu">
+								
+			<li class="separator"></li>
+													<li>
+								<a href="./search.php?search_id=unanswered&amp;sid=34f8d9a9cdec5999a34660faad04f98f" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>Unanswered topics</span>
+								</a>
+							</li>
+							<li>
+								<a href="./search.php?search_id=active_topics&amp;sid=34f8d9a9cdec5999a34660faad04f98f" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-blue" aria-hidden="true"></i><span>Active topics</span>
+								</a>
+							</li>
+							<li class="separator"></li>
+							<li>
+								<a href="./search.php?sid=34f8d9a9cdec5999a34660faad04f98f" role="menuitem">
+									<i class="icon fa-search fa-fw" aria-hidden="true"></i><span>Search</span>
+								</a>
+							</li>	
+	
+													</ul>
+					</div>
+				</li>
+												<li class="tab forums selected" data-responsive-class="small-icon icon-forums">
+					<a class="nav-link" href="./index.php?sid=34f8d9a9cdec5999a34660faad04f98f">Forums</a>
+				</li>
+											</ul>
+			<ul class="rightside" role="menu">
+								<li class="tab faq" data-select-match="faq" data-responsive-class="small-icon icon-faq">
+					<a class="nav-link" href="/forum/app.php/help/faq?sid=34f8d9a9cdec5999a34660faad04f98f" rel="help" title="Frequently Asked Questions" role="menuitem">
+						<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i><span>FAQ</span>
+					</a>
+				</li>
+																									<li class="tab login"  data-skip-responsive="true" data-select-match="login"><a class="nav-link" href="./ucp.php?mode=login&amp;redirect=index.php&amp;sid=34f8d9a9cdec5999a34660faad04f98f" title="Login" accesskey="x" role="menuitem">Login</a></li>
+											<li class="tab register" data-skip-responsive="true" data-select-match="register"><a class="nav-link" href="./ucp.php?mode=register&amp;sid=34f8d9a9cdec5999a34660faad04f98f" role="menuitem">Register</a></li>
+																	</ul>
+		</div>
+	</div>
+</div>
+
+<div class="navbar secondary">
+	<ul role="menubar">
+											<li class="small-icon icon-search"><a href="./search.php?sid=34f8d9a9cdec5999a34660faad04f98f">Search</a></li>
+														<li class="small-icon icon-login"><a href="./ucp.php?mode=login&amp;redirect=index.php&amp;sid=34f8d9a9cdec5999a34660faad04f98f" title="Login">Login</a></li>
+									<li class="small-icon icon-register"><a href="./ucp.php?mode=register&amp;sid=34f8d9a9cdec5999a34660faad04f98f">Register</a></li>
+									
+			</ul>
+</div>
+
+	</div>
+
+<div id="wrap" class="page-width">
+
+	
+	<a id="start_here" class="top-anchor"></a>
+	<div id="page-body" class="page-body" role="main">
+		<div class="navbar">
+	<ul id="nav-breadcrumbs" class="nav-breadcrumbs linklist navlinks" role="menubar">
+				
+		
+		<li class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+
+			
+						<span class="crumb" itemtype="https://schema.org/ListItem" itemprop="itemListElement" itemscope><a itemprop="item" href="./index.php?sid=34f8d9a9cdec5999a34660faad04f98f" accesskey="h" data-navbar-reference="index"><i class="icon fa-home fa-fw"></i><span itemprop="name">Board index</span></a><meta itemprop="position" content="1" /></span>
+
+			
+			
+		</li>
+
+		
+		
+			<li class="rightside responsive-search">
+				<a href="./search.php?sid=34f8d9a9cdec5999a34660faad04f98f" title="View the advanced search options" role="menuitem">
+					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Search</span>
+				</a>
+			</li>
+				<li class="rightside dropdown-container icon-only">
+			<a href="#" class="dropdown-trigger time" title="It is currently Jun 28, 2023 15:22"><i class="fa fa-clock-o"></i></a>
+			<div class="dropdown">
+				<div class="pointer"><div class="pointer-inner"></div></div>
+				<ul class="dropdown-contents">
+					<li>It is currently Jun 28, 2023 15:22</li>
+					<li>All times are <span title="UTC">UTC</span></li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</div>
+
+		
+		
+
+
+	
+				<div class="forabg category-26 elegant" data-hide-description="1">
+			<div class="inner">
+			<ul class="topiclist">
+				<li class="header">
+										<dl class="row-item">
+						<dt><div class="list-inner">Forum</div></dt>
+												<dd class="lastpost"><span>Last post</span></dd>
+					</dl>
+									</li>
+			</ul>
+			<ul class="topiclist forums">
+		
+					<li class="row forum-26">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - Forum Policy" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=26">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - Forum Policy</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=26&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="26">Forum Policy</a>
+																			<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">1</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">1</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=282762&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p282762" title="Forum Policy" class="lastsubject">Forum Policy</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=220&amp;sid=34f8d9a9cdec5999a34660faad04f98f" style="color: #AA0000;" class="username-coloured">counting_pine</a>, May 08, 2021 14:02</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=282762&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p282762" title="Forum Policy" class="lastsubject">Forum Policy</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=220&amp;sid=34f8d9a9cdec5999a34660faad04f98f" style="color: #AA0000;" class="username-coloured">counting_pine</a>																	<a href="./viewtopic.php?p=282762&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p282762" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2021-05-08T14:02:16+00:00">May 08, 2021 14:02</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+				</ul>
+
+			</div>
+		</div>
+	
+				<div class="forabg category-19 elegant" data-hide-description="1">
+			<div class="inner">
+			<ul class="topiclist">
+				<li class="header">
+										<dl class="row-item">
+						<dt><div class="list-inner"><a href="./viewforum.php?f=19&amp;sid=34f8d9a9cdec5999a34660faad04f98f" data-id="19">FreeBASIC</a></div></dt>
+												<dd class="lastpost"><span>Last post</span></dd>
+					</dl>
+									</li>
+			</ul>
+			<ul class="topiclist forums">
+		
+	
+	
+	
+			
+					<li class="row forum-1">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - News" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=1">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - News</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=1&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="1">News</a>
+						<div class="forum-description">Announcements about new releases and updates.</div>													<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">39</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">44</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=298578&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p298578" title="Version 1.10.0 Released" class="lastsubject">Version 1.10.0 Released</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=523&amp;sid=34f8d9a9cdec5999a34660faad04f98f" style="color: #0000BF;" class="username-coloured">coderJeff</a>, May 15, 2023 1:47</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=298578&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p298578" title="Version 1.10.0 Released" class="lastsubject">Version 1.10.0 Released</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=523&amp;sid=34f8d9a9cdec5999a34660faad04f98f" style="color: #0000BF;" class="username-coloured">coderJeff</a>																	<a href="./viewtopic.php?p=298578&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p298578" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2023-05-15T01:47:31+00:00">May 15, 2023 1:47</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row forum-17">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - Community Discussion" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=17">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - Community Discussion</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=17&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="17">Community Discussion</a>
+						<div class="forum-description">General discussion for topics related to the FreeBASIC project or its community.</div>													<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">2115</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">33930</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=299504&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299504" title="Re: Freebasic 1.20.0 Development" class="lastsubject">Re: Freebasic 1.20.0 Developm…</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=10883&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">Provoni</a>, Jun 27, 2023 20:15</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=299504&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299504" title="Re: Freebasic 1.20.0 Development" class="lastsubject">Re: Freebasic 1.20.0 Developm…</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=10883&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">Provoni</a>																	<a href="./viewtopic.php?p=299504&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299504" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2023-06-27T20:15:43+00:00">Jun 27, 2023 20:15</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row forum-9">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - Documentation" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=9">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - Documentation</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=9&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="9">Documentation</a>
+						<div class="forum-description">Forum for discussion about the documentation project.</div>													<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">569</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">6447</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=298414&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p298414" title="Re: Wiki improvements" class="lastsubject">Re: Wiki improvements</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=523&amp;sid=34f8d9a9cdec5999a34660faad04f98f" style="color: #0000BF;" class="username-coloured">coderJeff</a>, May 07, 2023 20:51</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=298414&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p298414" title="Re: Wiki improvements" class="lastsubject">Re: Wiki improvements</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=523&amp;sid=34f8d9a9cdec5999a34660faad04f98f" style="color: #0000BF;" class="username-coloured">coderJeff</a>																	<a href="./viewtopic.php?p=298414&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p298414" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2023-05-07T20:51:13+00:00">May 07, 2023 20:51</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+				</ul>
+
+			</div>
+		</div>
+	
+				<div class="forabg category-21 elegant" data-hide-description="1">
+			<div class="inner">
+			<ul class="topiclist">
+				<li class="header">
+										<dl class="row-item">
+						<dt><div class="list-inner"><a href="./viewforum.php?f=21&amp;sid=34f8d9a9cdec5999a34660faad04f98f" data-id="21">Platforms</a></div></dt>
+												<dd class="lastpost"><span>Last post</span></dd>
+					</dl>
+									</li>
+			</ul>
+			<ul class="topiclist forums">
+		
+	
+	
+	
+			
+					<li class="row forum-4">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - DOS" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=4">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - DOS</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=4&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="4">DOS</a>
+						<div class="forum-description">DOS specific questions.</div>													<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">534</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">4426</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=299380&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299380" title="Re: [Solved] Xfont error in DOS" class="lastsubject">Re: [Solved] Xfont error in D…</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=1935&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">badidea</a>, Jun 20, 2023 22:09</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=299380&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299380" title="Re: [Solved] Xfont error in DOS" class="lastsubject">Re: [Solved] Xfont error in D…</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=1935&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">badidea</a>																	<a href="./viewtopic.php?p=299380&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299380" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2023-06-20T22:09:47+00:00">Jun 20, 2023 22:09</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row forum-5">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - Linux" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=5">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - Linux</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=5&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="5">Linux</a>
+						<div class="forum-description">Linux specific questions.</div>													<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">1015</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">7478</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=299387&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299387" title="Re: under linux how create buttons and others widgets?" class="lastsubject">Re: under linux how create bu…</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=156&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">marcov</a>, Jun 21, 2023 10:56</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=299387&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299387" title="Re: under linux how create buttons and others widgets?" class="lastsubject">Re: under linux how create bu…</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=156&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">marcov</a>																	<a href="./viewtopic.php?p=299387&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299387" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2023-06-21T10:56:24+00:00">Jun 21, 2023 10:56</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row forum-6">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - Windows" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=6">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - Windows</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=6&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="6">Windows</a>
+						<div class="forum-description">Windows specific questions.</div>													<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">1853</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">14245</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=299502&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299502" title="Re: Very basic process CPU load determiner" class="lastsubject">Re: Very basic process CPU lo…</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=11849&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">deltarho[1859]</a>, Jun 27, 2023 9:52</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=299502&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299502" title="Re: Very basic process CPU load determiner" class="lastsubject">Re: Very basic process CPU lo…</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=11849&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">deltarho[1859]</a>																	<a href="./viewtopic.php?p=299502&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299502" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2023-06-27T09:52:04+00:00">Jun 27, 2023 9:52</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+				</ul>
+
+			</div>
+		</div>
+	
+				<div class="forabg category-20 elegant" data-hide-description="1">
+			<div class="inner">
+			<ul class="topiclist">
+				<li class="header">
+										<dl class="row-item">
+						<dt><div class="list-inner"><a href="./viewforum.php?f=20&amp;sid=34f8d9a9cdec5999a34660faad04f98f" data-id="20">Programming</a></div></dt>
+												<dd class="lastpost"><span>Last post</span></dd>
+					</dl>
+									</li>
+			</ul>
+			<ul class="topiclist forums">
+		
+	
+	
+	
+			
+					<li class="row forum-2">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - Beginners" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=2">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - Beginners</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=2&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="2">Beginners</a>
+						<div class="forum-description">New to FreeBASIC? Post your questions here.</div>													<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">5197</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">43123</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=299484&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299484" title="Re: Recover Losses Problem" class="lastsubject">Re: Recover Losses Problem</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=12632&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">adeyblue</a>, Jun 26, 2023 17:58</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=299484&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299484" title="Re: Recover Losses Problem" class="lastsubject">Re: Recover Losses Problem</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=12632&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">adeyblue</a>																	<a href="./viewtopic.php?p=299484&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299484" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2023-06-26T17:58:02+00:00">Jun 26, 2023 17:58</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row forum-3">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - General" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=3">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - General</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=3&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="3">General</a>
+						<div class="forum-description">General FreeBASIC programming questions.</div>													<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">7822</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">78858</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=299512&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299512" title="Grade 1 Braille" class="lastsubject">Grade 1 Braille</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=11695&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">NorbyDroid</a>, Jun 28, 2023 11:28</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=299512&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299512" title="Grade 1 Braille" class="lastsubject">Grade 1 Braille</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=11695&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">NorbyDroid</a>																	<a href="./viewtopic.php?p=299512&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299512" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2023-06-28T11:28:12+00:00">Jun 28, 2023 11:28</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row forum-15">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - Game Dev" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=15">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - Game Dev</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=15&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="15">Game Dev</a>
+						<div class="forum-description">Game development specific discussions.</div>													<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">595</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">7408</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=299505&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299505" title="Re: Star Trader Game (In-progress)" class="lastsubject">Re: Star Trader Game (In-prog…</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=3&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">Dr_D</a>, Jun 27, 2023 22:10</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=299505&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299505" title="Re: Star Trader Game (In-progress)" class="lastsubject">Re: Star Trader Game (In-prog…</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=3&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">Dr_D</a>																	<a href="./viewtopic.php?p=299505&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299505" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2023-06-27T22:10:52+00:00">Jun 27, 2023 22:10</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row forum-18">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - Hardware Interfaces / Communication" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=18">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - Hardware Interfaces / Communication</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=18&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="18">Hardware Interfaces / Communication</a>
+						<div class="forum-description">For issues with communication ports, protocols, etc.</div>													<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">297</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">2937</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=297678&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p297678" title="Re: SetTime problem" class="lastsubject">Re: SetTime problem</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=275&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">Dinosaur</a>, Mar 30, 2023 22:33</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=297678&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p297678" title="Re: SetTime problem" class="lastsubject">Re: SetTime problem</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=275&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">Dinosaur</a>																	<a href="./viewtopic.php?p=297678&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p297678" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2023-03-30T22:33:23+00:00">Mar 30, 2023 22:33</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+				</ul>
+
+			</div>
+		</div>
+	
+				<div class="forabg category-29 elegant" data-hide-description="1">
+			<div class="inner">
+			<ul class="topiclist">
+				<li class="header">
+										<dl class="row-item">
+						<dt><div class="list-inner"><a href="./viewforum.php?f=29&amp;sid=34f8d9a9cdec5999a34660faad04f98f" data-id="29">Libraries</a></div></dt>
+												<dd class="lastpost"><span>Last post</span></dd>
+					</dl>
+									</li>
+			</ul>
+			<ul class="topiclist forums">
+		
+	
+	
+	
+			
+					<li class="row forum-14">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - Libraries &amp; Headers" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=14">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - Libraries &amp; Headers</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=14&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="14">Libraries &amp; Headers</a>
+						<div class="forum-description">Headers, Bindings, Libraries for use with FreeBASIC,  Please include example of use to help ensure they are tested and usable.</div>													<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">296</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">6973</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=299458&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299458" title="Re: FLTK headers for FreeBasic OOP (no C wrapper)" class="lastsubject">Re: FLTK headers for FreeBasi…</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=177&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">angros47</a>, Jun 25, 2023 16:26</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=299458&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299458" title="Re: FLTK headers for FreeBasic OOP (no C wrapper)" class="lastsubject">Re: FLTK headers for FreeBasi…</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=177&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">angros47</a>																	<a href="./viewtopic.php?p=299458&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299458" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2023-06-25T16:26:50+00:00">Jun 25, 2023 16:26</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row forum-27">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - Libraries Questions" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=27">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - Libraries Questions</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=27&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="27">Libraries Questions</a>
+						<div class="forum-description">External libraries (GTK, GSL, SDL, Allegro, OpenGL, etc) questions.</div>													<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">794</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">5493</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=299516&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299516" title="Re: ncurses &quot;err 24 Invalid data types in mvaddstr()" class="lastsubject">Re: ncurses &quot;err 24 Invalid d…</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=13747&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">Axle</a>, Jun 28, 2023 13:56</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=299516&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299516" title="Re: ncurses &quot;err 24 Invalid data types in mvaddstr()" class="lastsubject">Re: ncurses &quot;err 24 Invalid d…</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=13747&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">Axle</a>																	<a href="./viewtopic.php?p=299516&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299516" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2023-06-28T13:56:51+00:00">Jun 28, 2023 13:56</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+				</ul>
+
+			</div>
+		</div>
+	
+				<div class="forabg category-23 elegant" data-hide-description="1">
+			<div class="inner">
+			<ul class="topiclist">
+				<li class="header">
+										<dl class="row-item">
+						<dt><div class="list-inner"><a href="./viewforum.php?f=23&amp;sid=34f8d9a9cdec5999a34660faad04f98f" data-id="23">User Contributed Sources</a></div></dt>
+												<dd class="lastpost"><span>Last post</span></dd>
+					</dl>
+									</li>
+			</ul>
+			<ul class="topiclist forums">
+		
+	
+	
+	
+			
+					<li class="row forum-8">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - Projects" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=8">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - Projects</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=8&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="8">Projects</a>
+						<div class="forum-description">User projects written in or related to FreeBASIC.</div>													<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">579</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">16194</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=299507&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299507" title="Re: VisualFBEditor - IDE for FreeBasic" class="lastsubject">Re: VisualFBEditor - IDE for …</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=12275&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">Xusinboy Bekchanov</a>, Jun 28, 2023 3:48</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=299507&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299507" title="Re: VisualFBEditor - IDE for FreeBasic" class="lastsubject">Re: VisualFBEditor - IDE for …</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=12275&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">Xusinboy Bekchanov</a>																	<a href="./viewtopic.php?p=299507&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299507" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2023-06-28T03:48:02+00:00">Jun 28, 2023 3:48</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row forum-7">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - Sources, Examples, Tips and Tricks" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=7">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - Sources, Examples, Tips and Tricks</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=7&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="7">Sources, Examples, Tips and Tricks</a>
+						<div class="forum-description">Post your FreeBASIC source, examples, tips and tricks here. Please don’t post code without including an explanation.</div>													<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">2847</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">23292</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=299511&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299511" title="IUP custom Menu" class="lastsubject">IUP custom Menu</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=2263&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">Kuan Hsu</a>, Jun 28, 2023 9:18</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=299511&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299511" title="IUP custom Menu" class="lastsubject">IUP custom Menu</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=2263&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">Kuan Hsu</a>																	<a href="./viewtopic.php?p=299511&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p299511" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2023-06-28T09:18:23+00:00">Jun 28, 2023 9:18</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row forum-30">
+									<dl class="row-item forum_read elegant-row">
+				<dt title="No unread posts">
+										<div class="list-inner">
+													<!--
+								<a class="feed-icon-forum" title="Feed - Archive" href="/forum/app.php/feed?sid=34f8d9a9cdec5999a34660faad04f98f?f=30">
+									<i class="icon fa-rss-square fa-fw icon-orange" aria-hidden="true"></i><span class="sr-only">Feed - Archive</span>
+								</a>
+							-->
+																		<a href="./viewforum.php?f=30&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="forumtitle" data-id="30">Archive</a>
+						<div class="forum-description">User contributed sources that have become inactive, deprecated, or generally unusable.  But ... we don't really want to throw them away either.</div>													<div class="forum-statistics">
+					<span class="dfn">Topics</span>: <span class="value">829</span><span class="comma">, </span>
+					<span class="dfn">Posts</span>: <span class="value">14447</span>
+				</div>
+						
+												
+																										<div class="forum-lastpost" style="display: none;">
+								<span><strong>Last post:</strong> <a href="./viewtopic.php?p=296226&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p296226" title="Re: Console based GUI/SDK Window Maker" class="lastsubject">Re: Console based GUI/SDK Win…</a></span>
+								<span>by <a href="./memberlist.php?mode=viewprofile&amp;u=3754&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">Luxan</a>, Jan 02, 2023 20:20</span>
+							</div>
+																		</div>
+				</dt>
+														<dd class="lastpost">
+						<span>
+							
+															<dfn>Last post</dfn>
+																										<a href="./viewtopic.php?p=296226&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p296226" title="Re: Console based GUI/SDK Window Maker" class="lastsubject">Re: Console based GUI/SDK Win…</a> <br />
+																	by <a href="./memberlist.php?mode=viewprofile&amp;u=3754&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">Luxan</a>																	<a href="./viewtopic.php?p=296226&amp;sid=34f8d9a9cdec5999a34660faad04f98f#p296226" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br /><time datetime="2023-01-02T20:20:27+00:00">Jan 02, 2023 20:20</time>
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+				</ul>
+
+			</div>
+		</div>
+		
+
+
+	<form method="post" action="./ucp.php?mode=login&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="headerspace">
+	<h3><a href="./ucp.php?mode=login&amp;redirect=index.php&amp;sid=34f8d9a9cdec5999a34660faad04f98f">Login</a>&nbsp; &bull; &nbsp;<a href="./ucp.php?mode=register&amp;sid=34f8d9a9cdec5999a34660faad04f98f">Register</a></h3>
+		<fieldset class="quick-login">
+			<label for="username"><span>Username:</span> <input type="text" tabindex="1" name="username" id="username" size="10" class="inputbox" title="Username" /></label>
+			<label for="password"><span>Password:</span> <input type="password" tabindex="2" name="password" id="password" size="10" class="inputbox" title="Password" autocomplete="off" /></label>
+							<a href="/forum/app.php/user/forgot_password?sid=34f8d9a9cdec5999a34660faad04f98f">I forgot my password</a>
+										<span class="responsive-hide">|</span> <label for="autologin">Remember me <input type="checkbox" tabindex="4" name="autologin" id="autologin" /></label>
+						<input type="submit" tabindex="5" name="login" value="Login" class="button2" />
+			<input type="hidden" name="redirect" value="./index.php?sid=34f8d9a9cdec5999a34660faad04f98f" />
+<input type="hidden" name="creation_time" value="1687965720" />
+<input type="hidden" name="form_token" value="f3c0796ff4b07f9fc5cc6d68c8ba1c98dafc2ae8" />
+
+
+			
+
+		</fieldset>
+	</form>
+
+
+	<div class="stat-block online-list">
+		<h3>Who is online</h3>		<p>
+						In total there are <strong>176</strong> users online :: 5 registered, 0 hidden and 171 guests (based on users active over the past 5 minutes)<br />Most users ever online was <strong>2148</strong> on Oct 27, 2019 10:07<br /> 
+								</p>
+	</div>
+
+
+
+	<div class="stat-block statistics">
+		<h3>Statistics</h3>
+		<p>
+						Total posts <strong>284940</strong> &bull; Total topics <strong>27189</strong> &bull; Total members <strong>9880</strong> &bull; Our newest member <strong><a href="./memberlist.php?mode=viewprofile&amp;u=14112&amp;sid=34f8d9a9cdec5999a34660faad04f98f" class="username">imbuildcon</a></strong>
+					</p>
+	</div>
+
+
+			</div>
+
+
+	<div class="navbar" role="navigation">
+	<div class="inner">
+
+	<ul id="nav-footer" class="nav-footer linklist" role="menubar">
+		<li class="breadcrumbs">
+									<span class="crumb"><a href="./index.php?sid=34f8d9a9cdec5999a34660faad04f98f" data-navbar-reference="index"><i class="icon fa-home fa-fw" aria-hidden="true"></i><span>Board index</span></a></span>					</li>
+		
+				<li class="rightside">All times are <span title="UTC">UTC</span></li>
+							<li class="rightside">
+				<a href="./ucp.php?mode=delete_cookies&amp;sid=34f8d9a9cdec5999a34660faad04f98f" data-ajax="true" data-refresh="true" role="menuitem">
+					<i class="icon fa-trash fa-fw" aria-hidden="true"></i><span>Delete cookies</span>
+				</a>
+			</li>
+																<li class="rightside" data-last-responsive="true">
+				<a href="./memberlist.php?mode=contactadmin&amp;sid=34f8d9a9cdec5999a34660faad04f98f" role="menuitem">
+					<i class="icon fa-envelope fa-fw" aria-hidden="true"></i><span>Contact us</span>
+				</a>
+			</li>
+			</ul>
+
+	</div>
+</div>
+</div>
+
+<div id="page-footer" class="page-width" role="contentinfo">
+	
+	<div class="copyright">
+				<p class="footer-row">
+			<span class="footer-copyright">Powered by <a href="https://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Limited</span>
+		</p>
+		<p class="footer-row">
+			<span class="footer-copyright">Style by <a href="https://www.artodia.com/">Arty</a></span>
+		</p>
+						<p class="footer-row" role="menu">
+			<a class="footer-link" href="./ucp.php?mode=privacy&amp;sid=34f8d9a9cdec5999a34660faad04f98f" title="Privacy" role="menuitem">
+				<span class="footer-link-text">Privacy</span>
+			</a>
+			|
+			<a class="footer-link" href="./ucp.php?mode=terms&amp;sid=34f8d9a9cdec5999a34660faad04f98f" title="Terms" role="menuitem">
+				<span class="footer-link-text">Terms</span>
+			</a>
+		</p>
+					</div>
+
+	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="AJAX error" data-ajax-error-text="Something went wrong when processing your request." data-ajax-error-text-abort="User aborted request." data-ajax-error-text-timeout="Your request timed out; please try again." data-ajax-error-text-parsererror="Something went wrong with the request and the server returned an invalid reply.">
+		<div id="darken" class="darken">&nbsp;</div>
+	</div>
+
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="Error" data-l-timeout-processing-req="Request timed out.">
+		<a href="#" class="alert_close">
+		</a>
+		<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="#" class="alert_close">
+		</a>
+		<div class="alert_text"></div>
+	</div>
+</div>
+
+
+<div>
+	<a id="bottom" class="top-anchor" accesskey="z"></a>
+	</div>
+
+<script src="./assets/javascript/jquery-3.6.0.min.js?assets_version=33"></script>
+<script src="./assets/javascript/core.js?assets_version=33"></script>
+
+
+
+<script src="./styles/elegance/template/forum_fn.js?assets_version=33"></script>
+<script src="./styles/elegance/template/ajax.js?assets_version=33"></script>
+
+
+
+</body>
+</html>

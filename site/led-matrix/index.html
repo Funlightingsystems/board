@@ -6,7 +6,7 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../img/favicon.ico" rel="shortcut icon"/>
-<title>Light communication - Board</title>
+<title>Led Matrix - Board</title>
 <link href="../css/bootstrap.min.css" rel="stylesheet"/>
 <link href="../css/font-awesome.min.css" rel="stylesheet"/>
 <link href="../css/base.css" rel="stylesheet"/>
@@ -34,21 +34,21 @@
 <li class="navitem">
 <a class="nav-link" href="../configuration-software/">Configuration Software</a>
 </li>
-<li class="navitem active">
-<a class="nav-link" href="./">Light communication</a>
-</li>
 <li class="navitem">
-<a class="nav-link" href="../led-matrix/">Led Matrix</a>
+<a class="nav-link" href="../light-communication/">Light communication</a>
+</li>
+<li class="navitem active">
+<a class="nav-link" href="./">Led Matrix</a>
 </li>
 </ul>
 <ul class="nav navbar-nav ml-auto">
 <li class="nav-item">
-<a class="nav-link" href="../configuration-software/" rel="prev">
+<a class="nav-link" href="../light-communication/" rel="prev">
 <i class="fa fa-arrow-left"></i> Previous
                                 </a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="../led-matrix/" rel="next">
+<a class="nav-link disabled" rel="next">
                                     Next <i class="fa fa-arrow-right"></i>
 </a>
 </li>
@@ -66,13 +66,9 @@
 </div>
 <div class="navbar-collapse collapse card bg-secondary" id="toc-collapse">
 <ul class="nav flex-column">
-<li class="nav-item" data-level="1"><a class="nav-link" href="#light-communication">Light Communication</a>
+<li class="nav-item" data-level="1"><a class="nav-link" href="#led-matrix">Led Matrix.</a>
 <ul class="nav flex-column">
 <li class="nav-item" data-level="2"><a class="nav-link" href="#setting-up">Setting up</a>
-<ul class="nav flex-column">
-</ul>
-</li>
-<li class="nav-item" data-level="2"><a class="nav-link" href="#about">About</a>
 <ul class="nav flex-column">
 </ul>
 </li>
@@ -82,56 +78,26 @@
 </div>
 </div></div>
 <div class="col-md-9" role="main">
-<h1 id="light-communication">Light Communication</h1>
+<h1 id="led-matrix">Led Matrix.</h1>
+<p>The LED matrix is designed to be as user-friendly as possible while not lacking in feature. This wall was designed by lighting techs, for lighting techs. Please note that this is still heavily in development and many changes are to come. </p>
 <h2 id="setting-up">Setting up</h2>
-<h3 id="prerequisites">Prerequisites</h3>
-<ol>
-<li>
-<p>Have the board, and fixtures.</p>
-</li>
-<li>
-<p>Know the serial numbers of the fixtures.</p>
-</li>
-<li>
-<p>Have a linux based device ready for use.</p>
-</li>
-</ol>
-<h3 id="instructions">Instructions:</h3>
-<ol>
-<li>
-<p>SSH into the computer that you are trying to run the system on, or open up the terminal application.</p>
-</li>
-<li>
-<p>Type in the command</p>
-</li>
-</ol>
-<pre><code>git clone http://github.com/funlightingsystems/board
+<p>To setup your wall matrix you must first assemble the stand. The stand consits of two tripods on either side and an extendable crossbar. </p>
+<pre><code>Add the building instructions here for the stand and tripod
 </code></pre>
-<p>or if you are not using the root user (will prompt for password)</p>
-<pre><code>sudo git clone http://github.com/funlightingsystems/board
+<p>Then after you have assembled the stand you will need to attach the mounting clips. Open the "gate" of the clip and slide it onto the crossbar. After you have attached the sufficient number of clips using the guide down below.</p>
+<pre><code>(Number of light panel columns) x 2 = (Total clips needed)
 </code></pre>
-<p>After running those commands to clone the repo, install the dependencies.</p>
-<pre><code>sudo apt-get update -y &amp;&amp; sudo apt-get upgrade -y
-sudo apt-get install nodejs npm -y
-npm install fs ws express
+<p>Please ensure that you are setting this up in near an outlet or have power planned out. We are not responsible for any damages to your electrical because you made a mistake here.</p>
+<p>After you have attached the clips for the bars you can visually inspect the ties to make sure they are clean and have no blemishes. Once this has been ensured you can start by sliding the wall segments up the cables and attach it to the mounting clip. It will be wobbly but this will be solved once the units touch the ground. </p>
+<p>After you have assembled your unit and it looks like so, you can continue on to the next step.</p>
+<p>The unit is ready for power. Please connect the power distribution unit (PDU) to the wall outlet using the side with one single powercon connector. The remaining 3-4 powercon connectors each provide 5V power out to the unit, if you do not have enough output ports either use a second PDU or use a single powercon cable after it has been through the small power unit. </p>
+<p>Once power has been successfully connected please start up the wireless router provided to you, this can also be in the form of a "showbox". Once the router has been successfully booted please connect to it using the controlling laptop, open the lighting control application called LMCSHD (Large Matrix Control Software High Definition.) Connect the server side controlling pack to the laptop via usb, give it a minute or two to power on. </p>
+<p>Now you can connect power to the rest of the display, the display will boot. To show that it is connected each panel will show a dot in the bottom left corner. Once all dots have been illuminated you can check the webpage hosted by the wall by going to </p>
+<pre><code>IP ADDRESS:80
 </code></pre>
-<p>Once you have installed the required dependencies enter into the directory with the configuration system.</p>
-<pre><code>cd board/'NodeJS'/'RAW Websocket'
-</code></pre>
-<p>To run the system please enter the command:</p>
-<pre><code>node index.js
-</code></pre>
-<ol>
-<li>The server is now setup, you should see the output:</li>
-</ol>
-<pre><code>Incoming WebSocket server running on port 8080
-Outgoing WebSocket server running on port 8081
-</code></pre>
-<ol>
-<li>You have successfully started the server, continuously let this run in the background.</li>
-</ol>
-<h2 id="about">About</h2>
-<p>The server runs by transmitting the data from the board to the lights through a websocket with the plain text protocol. This does mean that theoretically people CAN hack your shows, always plan for people trying to hack your shows. Use an isolated network with a secure password. Hardwire in devices if you have to. The transmitted data is JSON data.</p></div>
+<p>Once it has been verified that all units have been connected you can go into LMCSHD and press Serial -&gt; Connect to device -&gt; (Use all defaults) Connect.</p>
+<p>The visualizer on the side should auto detect your configuration, if it doesn't please try a different COM port after restarting the application. You can now use the various features inside LMCSHD to control your matrix.</p>
+<p>Well, happy Matrixing!</p></div>
 </div>
 </div>
 <footer class="col-md-12">
