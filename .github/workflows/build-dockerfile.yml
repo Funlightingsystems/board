@@ -9,8 +9,8 @@ steps:
 uses: docker/login-action@v1
 with:
 registry: ghcr.io
-username: gmanandmarbles
-password: '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'
+username: ${{ github.actor }}
+password: ${{ secrets.GITHUB_TOKEN }}
 - name: Build the hello-docker Docker image
 run: |
        docker build . --tag ghcr.io/deselikem/hello-docker-gcr-demo:latest
