@@ -10,6 +10,11 @@
     "patch": "D1",
     "colour": "Blue"
   },
+  "100": {
+    "serialNumber": "100",
+    "patch": "10",
+    "colour": "1"
+  },
   "1234": {
     "serialNumber": "1234",
     "type": "PAR Can",

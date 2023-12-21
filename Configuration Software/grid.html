@@ -166,7 +166,7 @@ function toggleDropdown() {
 
   <script>
     // Fetch light configurations from the /lights endpoint
-    fetch('http://10.0.0.169:3000/lights')
+    fetch('http://localhost:3000/lights')
       .then(response => response.json())
       .then(configurations => {
         const tableBody = document.querySelector('#lightTable tbody');

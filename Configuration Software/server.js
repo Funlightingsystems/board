@@ -61,6 +61,9 @@ app.get('/lights/:serialNumber', (req, res) => {
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
+app.get('/grid.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'grid.html'));
+});
 
 // GET request to serve the configurations.json file
 app.get('/lights', (req, res) => {
